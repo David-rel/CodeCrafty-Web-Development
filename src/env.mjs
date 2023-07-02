@@ -21,8 +21,17 @@ export const env = createEnv({
       process.env.VERCEL ? z.string().min(1) : z.string().url()
     ),
     // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
-    // DISCORD_CLIENT_ID: z.string(),
-    // DISCORD_CLIENT_SECRET: z.string(),
+    DISCORD_CLIENT_ID: z.string(),
+    DISCORD_CLIENT_SECRET: z.string(),
+    AUTH0_ID: z.string(),
+    AUTH0_SECRET: z.string(),
+    AUTH0_ISSUER: z.string(),
+    // FACEBOOK_ID: z.string(),
+    // FACEBOOK_SECRET: z.string(),
+    // GITHUB_ID: z.string(),
+    // GITHUB_SECRET: z.string(),
+    // GOOGLE_ID: z.string(),
+    // GOOGLE_SECRET: z.string(),
   },
 
   /**
@@ -43,8 +52,17 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    // DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
-    // DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
+    DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    AUTH0_ID: process.env.AUTH0_ID,
+    AUTH0_SECRET: process.env.AUTH0_SECRET,
+    AUTH0_ISSUER: process.env.AUTH0_ISSUER,
+    // FACEBOOK_ID: process.env.FACEBOOK_ID,
+    // FACEBOOK_SECRET: process.env.FACEBOOK_SECRET,
+    // GITHUB_ID: process.env.GITHUB_ID,
+    // GITHUB_SECRET: process.env.GITHUB_SECRET,
+    // GOOGLE_ID: process.env.GOOGLE_ID,
+    // GOOGLE_SECRET: process.env.GOOGLE_SECRET,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

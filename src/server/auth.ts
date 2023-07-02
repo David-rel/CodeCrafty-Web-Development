@@ -6,9 +6,13 @@ import {
   type DefaultSession,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import Auth0Provider from "next-auth/providers/auth0";
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
-import EmailProvider from "next-auth/providers/email";
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
+import GithubProvider from "next-auth/providers/github";
+
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -48,29 +52,27 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    // DiscordProvider({
-    //   clientId: env.DISCORD_CLIENT_ID,
-    //   clientSecret: env.DISCORD_CLIENT_SECRET,
-    // }),
-
-    EmailProvider({
-      server: {
-        host: process.env.EMAIL_SERVER_HOST,
-        port: process.env.EMAIL_SERVER_PORT,
-        auth: {
-          user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD,
-        },
-      },
-      from: process.env.EMAIL_FROM || "default@default.com",
-      ...(env.NODE_ENV != "production"
-        ? {
-            sendVerificationRequest({ url }) {
-              console.log("LOGIN  LINK ", url);
-            },
-          }
-        : {}),
+    DiscordProvider({
+      clientId: env.DISCORD_CLIENT_ID,
+      clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
+    Auth0Provider({
+      clientId: env.AUTH0_ID,
+      clientSecret: env.AUTH0_SECRET,
+      issuer: env.AUTH0_ISSUER,
+    }),
+    // FacebookProvider({
+    //   clientId: env.FACEBOOK_ID,
+    //   clientSecret: env.FACEBOOK_SECRET,
+    // }),
+    // GithubProvider({
+    //   clientId: env.GITHUB_ID,
+    //   clientSecret: env.GITHUB_SECRET,
+    // }),
+    // GoogleProvider({
+    //   clientId: env.GOOGLE_ID,
+    //   clientSecret: env.GOOGLE_SECRET,
+    // }),
 
     /**
      * ...add more providers here.
