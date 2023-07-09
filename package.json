@@ -18,6 +18,7 @@
     "@trpc/next": "^10.26.0",
     "@trpc/react-query": "^10.26.0",
     "@trpc/server": "^10.26.0",
+    "aos": "^2.3.4",
     "next": "^13.4.2",
     "next-auth": "^4.22.1",
     "nodemailer": "^6.9.3",
@@ -27,6 +28,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/eslint": "^8.37.0",
     "@types/node": "^18.16.0",
     "@types/prettier": "^2.7.2",
