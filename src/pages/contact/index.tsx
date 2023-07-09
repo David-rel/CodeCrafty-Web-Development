@@ -3,9 +3,9 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export default function IndexPage() {
-      const [email, setEmail] = useState(null);
-      const [full_name, setFullName] = useState(null);
-      const [message, setMessage] = useState(null);
+      const [email, setEmail] = useState("");
+      const [full_name, setFullName] = useState("");
+      const [message, setMessage] = useState("");
 
 
 
@@ -110,7 +110,6 @@ export default function IndexPage() {
                       </p>
                       <textarea
                         className="mt-3 w-11/12 resize-none border-2 border-black py-5 pl-4 text-base text-gray-800 hover:border-rose-600 focus:border-rose-600 focus:outline-none lg:w-full xl:h-40 xl:w-10/12"
-                        type="text"
                         name="message"
                         placeholder="Write us something..."
                         defaultValue={""}

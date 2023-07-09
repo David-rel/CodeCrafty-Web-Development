@@ -11,8 +11,11 @@ function Index() {
                 <Image src="/logo.png" width={100} height={40} alt={""} />
                 <p className="ml-3 text-xl font-bold">CodeCrafty</p>
               </div>
+
+              <h1 className="text-xl font-bold pb-4">Phone: +1 (720) 612 2979</h1>
+              <h1 className="text-xl font-bold">Email: davidfalesct@gmail.com</h1>
             </div>
-            
+
             <div className="mx-auto w-11/12 pl-3 pt-3 sm:pl-0 lg:mx-0 lg:w-2/5 xl:mx-0 xl:flex xl:w-1/6 xl:justify-end">
               <ul>
                 <li className="mb-6 text-xl font-bold text-gray-800">
