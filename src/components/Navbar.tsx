@@ -54,7 +54,7 @@ export default function Navbar() {
                 : "text-rose-500 hover:text-rose-700 hover:underline"
             }`}
           >
-            Build a Site
+            Build a site
           </a>
         </Link>
         <Link href="/how" legacyBehavior>
