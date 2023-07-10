@@ -119,14 +119,14 @@ export default function Index() {
                   sentence from that into a new paragraph to create a short
                   story. Unlike the random sentence generator, the sentences
                   from the random paragraph will have some connection to one
-                  another so it will be a bit different. You also won't know
+                  another so it will be a bit different. You also won&apos;t know
                   exactly how many sentences will appear in the random
                   paragraph.Another writing challenge can be to take the
                   individual sentences in the random paragraph and incorporate a
                   single sentence from that into a new paragraph to create a
                   short story. Unlike the random sentence generator, the
                   sentences from the random paragraph will have some connection
-                  to one another so it will be a bit different. You also won't
+                  to one another so it will be a bit different. You also won&apos;t
                   know exactly how many sentences will appear in the random
                   paragraph.
                 </p>
@@ -195,7 +195,7 @@ export default function Index() {
                 </div>
                 <div className="mt-8">
                   <p className="text-center text-xs leading-normal text-white md:text-base lg:text-left">
-                    If you're looking for random facts, you've arrived at the
+                    If you&apos;re looking for random facts, you&apos;ve arrived at the
                     correct webpage. The Random Fact Generator has thousands of
                     facts ready to be revealed with a simple click of a mouse.
                   </p>
