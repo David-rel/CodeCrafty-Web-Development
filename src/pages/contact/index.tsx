@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export default function IndexPage() {
-      const [email, setEmail] = useState("");
-      const [full_name, setFullName] = useState("");
-      const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [full_name, setFullName] = useState("");
+  const [message, setMessage] = useState("");
 
-
+  useEffect(() => {
+    // Importing and initializing AOS
+    import("aos")
+      .then((Aos) => {
+        Aos.init({ duration: 2000 });
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <>
@@ -20,7 +27,7 @@ export default function IndexPage() {
         />
         <div className="relative xl:container  xl:mx-auto ">
           <div className="flex flex-wrap xl:container xl:mx-auto">
-            <div className="relative mb-10 w-full pl-0 lg:w-1/2 xl:mt-10 xl:pl-12 2xl:pl-0 2xl:pr-24 ">
+            <div className="relative mb-10 w-full pl-0 lg:w-1/2 xl:mt-10 xl:pl-12 2xl:pl-0 2xl:pr-24 " data-aos="fade-right">
               <img
                 src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
                 className="absolute inset-0 h-full w-full rounded bg-cover bg-center xl:hidden xl:w-1/2"
@@ -64,7 +71,7 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 lg:pl-24 xl:pt-10">
+            <div className="w-full lg:w-1/2 lg:pl-24 xl:pt-10" data-aos="fade-left">
               <div className="pl-2">
                 <h1 className="text-4xl font-bold tracking-wider text-rose-600 md:text-5xl lg:text-7xl">
                   Let’s Talk

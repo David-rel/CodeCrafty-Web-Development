@@ -4,7 +4,6 @@ import Link from "next/link";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 import { useEffect } from "react";
-import dynamic from "next/dynamic";
 
 // Dynamic Import of AOS
 
@@ -29,7 +28,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-transparent"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-          <div className="max-w-xl text-center sm:text-left">
+          <div data-aos="fade" className="max-w-xl text-center sm:text-left">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Code Crafty
               <strong className="block font-extrabold text-rose-700">

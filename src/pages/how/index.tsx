@@ -54,7 +54,10 @@ export default function Index() {
       <div>
         <div className="pb-20 pt-8">
           <div className="container mx-auto flex w-full flex-col items-center justify-between px-6 md:flex-row lg:px-0">
-            <div className="flex flex-col items-start justify-start px-2 lg:w-2/5 lg:px-0">
+            <div
+              className="flex flex-col items-start justify-start px-2 lg:w-2/5 lg:px-0"
+              data-aos="fade-up"
+            >
               <div className="md:mt-3">
                 <p className="text-3xl font-extrabold leading-9 text-gray-800 lg:text-4xl">
                   How Code Crafty Codes
@@ -108,37 +111,44 @@ export default function Index() {
           <div className="container mx-auto mt-12 flex w-full flex-col items-start justify-between px-6 lg:px-0 xl:flex-row">
             <div className="flex flex-col items-start justify-start xl:w-2/4">
               <div>
-                <h2 className="text-2xl font-bold leading-7 text-gray-800  lg:text-3xl">
+                <h2
+                  className="text-2xl font-bold leading-7 text-gray-800  lg:text-3xl"
+                  data-aos="fade-up"
+                >
                   The details
                 </h2>
               </div>
-              <div className="mt-8">
+              <div className="mt-8" data-aos="fade-up">
                 <p className="text-sm leading-normal text-gray-800  lg:text-base">
                   Another writing challenge can be to take the individual
                   sentences in the random paragraph and incorporate a single
                   sentence from that into a new paragraph to create a short
                   story. Unlike the random sentence generator, the sentences
                   from the random paragraph will have some connection to one
-                  another so it will be a bit different. You also won&apos;t know
-                  exactly how many sentences will appear in the random
+                  another so it will be a bit different. You also won&apos;t
+                  know exactly how many sentences will appear in the random
                   paragraph.Another writing challenge can be to take the
                   individual sentences in the random paragraph and incorporate a
                   single sentence from that into a new paragraph to create a
                   short story. Unlike the random sentence generator, the
                   sentences from the random paragraph will have some connection
-                  to one another so it will be a bit different. You also won&apos;t
-                  know exactly how many sentences will appear in the random
-                  paragraph.
+                  to one another so it will be a bit different. You also
+                  won&apos;t know exactly how many sentences will appear in the
+                  random paragraph.
                 </p>
               </div>
               <div className="mt-8 w-full">
                 <img
                   className="w-full"
+                  data-aos="fade-up"
                   src="https://i.ibb.co/X5br8Zg/Rectangle-44.png"
                   alt="office"
                 />
               </div>
-              <div className="mt-8 flex flex-col items-start justify-start">
+              <div
+                className="mt-8 flex flex-col items-start justify-start"
+                data-aos="fade-up"
+              >
                 <div>
                   <p className="text-sm font-semibold leading-none text-gray-800  lg:text-base">
                     Breakdown of milestones
@@ -186,7 +196,10 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 flex h-full w-full items-center justify-center bg-gradient-to-l from-rose-600 to-rose-400 px-4 md:px-0 md:px-8 lg:px-16 xl:mt-0 xl:w-2/5">
+            <div
+              className="mt-10 flex h-full w-full items-center justify-center bg-gradient-to-l from-rose-600 to-rose-400 px-4 md:px-0 md:px-8 lg:px-16 xl:mt-0 xl:w-2/5"
+              data-aos="fade-up"
+            >
               <div className="my-10 flex flex-col items-center justify-center lg:items-start lg:justify-start">
                 <div>
                   <p className="text-center text-lg font-semibold leading-normal text-white md:text-2xl lg:text-left">
@@ -195,9 +208,10 @@ export default function Index() {
                 </div>
                 <div className="mt-8">
                   <p className="text-center text-xs leading-normal text-white md:text-base lg:text-left">
-                    If you&apos;re looking for random facts, you&apos;ve arrived at the
-                    correct webpage. The Random Fact Generator has thousands of
-                    facts ready to be revealed with a simple click of a mouse.
+                    If you&apos;re looking for random facts, you&apos;ve arrived
+                    at the correct webpage. The Random Fact Generator has
+                    thousands of facts ready to be revealed with a simple click
+                    of a mouse.
                   </p>
                 </div>
                 <div className="mt-8 flex flex-row items-center justify-start space-x-4">
@@ -218,13 +232,13 @@ export default function Index() {
         </div>
       </div>
       <div>
-        <h2 className="text-2xl font-bold leading-7 text-gray-800  lg:text-3xl pl-48 pb-16">
+        <h2 className="pb-16 pl-48 text-2xl font-bold  leading-7 text-gray-800 lg:text-3xl">
           The Super Simple Process
         </h2>
       </div>
       <div className="flex flex-wrap items-center justify-center">
         {steps.map(({ id, title, description, imgUrl }) => (
-          <div key={id} className="w-full p-4 sm:w-1/2">
+          <div key={id} className="w-full p-4 sm:w-1/2" data-aos="fade-up">
             <div className="flex flex-col items-center text-center">
               <img
                 className="mb-4 h-64 w-full object-cover"

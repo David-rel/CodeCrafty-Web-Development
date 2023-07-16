@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import React from 'react'
-import Footer from '~/components/Footer';
-import Navbar from '~/components/Navbar'
+import Link from "next/link";
+import React, { useEffect } from "react";
+import Footer from "~/components/Footer";
+import Navbar from "~/components/Navbar";
 import {
   CarouselProvider,
   Slider,
@@ -12,11 +12,23 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 
 function About() {
+  useEffect(() => {
+    // Importing and initializing AOS
+    import("aos")
+      .then((Aos) => {
+        Aos.init({ duration: 2000 });
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div>
       <Navbar />
       <div className="px-4 py-9 2xl:container md:px-6 md:py-12 lg:px-20 lg:py-16 2xl:mx-auto">
-        <div className="flex flex-col gap-12 sm:gap-10 lg:flex-row lg:gap-8">
+        <div
+          className="flex flex-col gap-12 sm:gap-10 lg:flex-row lg:gap-8"
+          data-aos="fade"
+        >
           <div className="w-full lg:w-6/12">
             <h2 className="w-full text-3xl font-bold leading-9 lg:text-4xl lg:leading-10">
               We are here to make great design accessible and delightfull for
@@ -182,7 +194,10 @@ function About() {
           </div>
           <hr className="absolute top-2/4 z-10 w-full bg-gray-200" />
         </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8">
+        <div
+          className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8"
+          data-aos="fade"
+        >
           <div>
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
               Founded
@@ -302,7 +317,7 @@ function About() {
           <div className="w-full lg:w-6/12">
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-1 lg:gap-12">
               {/* <!-- Team Card --> */}
-              <div className="flex p-4 shadow-md">
+              <div className="flex p-4 shadow-md" data-aos="fade-up">
                 <div className="mr-6">
                   <svg
                     className="mr-6"
@@ -348,7 +363,7 @@ function About() {
               </div>
 
               {/* <!-- Board Card --> */}
-              <div className="flex p-4 shadow-md">
+              <div className="flex p-4 shadow-md" data-aos="fade-up">
                 <div className="mr-6">
                   <svg
                     width="36"
@@ -400,7 +415,7 @@ function About() {
               </div>
 
               {/* <!-- Press Card --> */}
-              <div className="flex p-4 shadow-md">
+              <div className="flex p-4 shadow-md" data-aos="fade-up">
                 <div className="mr-6">
                   <svg
                     width="36"
@@ -459,7 +474,10 @@ function About() {
           />
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-12 sm:mt-12 lg:mt-16 lg:flex-row lg:gap-8">
+        <div
+          className="mt-16 flex flex-col justify-between gap-12 sm:mt-12 lg:mt-16 lg:flex-row lg:gap-8"
+          data-aos="fade-up"
+        >
           <div className="w-full lg:w-6/12 xl:w-5/12">
             <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
               Our Story
@@ -513,7 +531,7 @@ function About() {
 
       <CarouselProvider
         isIntrinsicHeight={true}
-        totalSlides={3}
+        totalSlides={2}
         naturalSlideWidth={100} // Replace 100 with your desired width
         naturalSlideHeight={50} // Replace 50 with your desired height
       >
@@ -557,7 +575,7 @@ function About() {
                   </button>
                 </ButtonBack>
                 <ButtonNext>
-                  <div
+                  <button
                     aria-controls="slide"
                     aria-label="slide forward"
                     className="flex cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2  "
@@ -579,7 +597,7 @@ function About() {
                       <line x1="15" y1="16" x2="19" y2="12" />
                       <line x1="15" y1="8" x2="19" y2="12" />
                     </svg>
-                  </div>
+                  </button>
                 </ButtonNext>
               </div>
             </div>
@@ -697,6 +715,7 @@ function About() {
        *
        * place for computer vision thing
        */}
+
       <CarouselProvider
         isIntrinsicHeight={true}
         totalSlides={3}
@@ -747,7 +766,7 @@ function About() {
                   </button>
                 </ButtonBack>
                 <ButtonNext>
-                  <div
+                  <button
                     aria-controls="slide"
                     aria-label="slide forward"
                     className="flex cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2  "
@@ -769,7 +788,7 @@ function About() {
                       <line x1="15" y1="16" x2="19" y2="12" />
                       <line x1="15" y1="8" x2="19" y2="12" />
                     </svg>
-                  </div>
+                  </button>
                 </ButtonNext>
               </div>
             </div>
@@ -1119,9 +1138,10 @@ function About() {
           </div>
         </div>
       </CarouselProvider>
+
       <Footer />
     </div>
   );
 }
 
-export default About
+export default About;

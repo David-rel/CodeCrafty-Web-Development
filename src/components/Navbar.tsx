@@ -49,7 +49,7 @@ export default function Navbar() {
         <Link href="/build" legacyBehavior>
           <a
             className={`text-2xl font-bold ${
-              isActive("/build-site")
+              isActive("/build")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
             }`}
@@ -60,7 +60,7 @@ export default function Navbar() {
         <Link href="/how" legacyBehavior>
           <a
             className={`text-2xl font-bold ${
-              isActive("/how-we-do-it")
+              isActive("/how")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
             }`}
