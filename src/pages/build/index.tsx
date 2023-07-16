@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import Footer from '~/components/Footer'
 import Navbar from '~/components/Navbar'
 
-function index() {
+function Build() {
 
       useEffect(() => {
         // Importing and initializing AOS
@@ -512,4 +512,4 @@ function index() {
   );
 }
 
-export default index
+export default Build
