@@ -116,11 +116,11 @@ export default function Index() {
               <div className="mt-8" data-aos="fade-up">
                 <p className="text-sm leading-normal text-gray-800  lg:text-base">
                   At CodeCrafty, we believe that creating a website should be a
-                  hassle-free experience. That's why we've made it incredibly
+                  hassle-free experience. That&apos;s why we&apos;ve made it incredibly
                   simple for you to submit your design requirements. Once we
                   receive your submission, our talented team of developers gets
                   straight to work, handling every aspect of your project with
-                  care and speed. We're committed to delivering not only a
+                  care and speed. We&apos;re committed to delivering not only a
                   visually stunning website but also a seamless user experience,
                   all within a quick turnaround time. At CodeCrafty, we craft
                   the web - with you and for you.

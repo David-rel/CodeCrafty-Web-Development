@@ -36,7 +36,7 @@ function About() {
 
             <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
               Welcome to CodeCrafty, your one-stop shop for comprehensive web
-              design and development services. We're a creative powerhouse with
+              design and development services. We&apos;re a creative powerhouse with
               a passion for transforming your ideas into beautifully designed,
               fully functional websites. With a keen understanding of the
               digital landscape, our experts take the complexity out of website
@@ -290,14 +290,14 @@ function About() {
             <p className="mt-6 w-full text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
               Our mission at CodeCrafty is to revolutionize the web development
               industry by making website design and development an accessible,
-              effortless, and efficient process for all. We're here to empower
+              effortless, and efficient process for all. We&apos;re here to empower
               businesses, organizations, and individuals to create a powerful
               online presence, without the hurdles that are typically associated
               with web development.
             </p>
             <p className="mt-10 w-full pb-8 text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
-              Beyond just creating stunning websites, we're passionate about
-              bringing your vision to life quickly and hassle-free. We're
+              Beyond just creating stunning websites, we&apos;re passionate about
+              bringing your vision to life quickly and hassle-free. We&apos;re
               committed to providing our clients with a robust digital platform
               that serves their unique needs and amplifies their online
               influence. At CodeCrafty, our mission is to craft the web in a way
@@ -443,7 +443,7 @@ function About() {
                   </p>
                   <p className="mt-2 text-base font-normal leading-6 text-gray-600">
                     Being able to contact us whenever is one of our biggest
-                    importance's. Making sure that if you have a edit you want
+                    importance&apos;s. Making sure that if you have a edit you want
                     to make you can reach us immediately.
                   </p>
                 </div>
@@ -487,7 +487,7 @@ function About() {
               There was a need for a service that not only provided technical
               expertise but also a client-centered approach, ensuring each
               project was crafted with care, speed, and a deep understanding of
-              the client's vision.
+              the client&apos;s vision.
             </p>
             <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
               Our journey began with a passionate, experienced, and
@@ -496,7 +496,7 @@ function About() {
               efficient and easy-to-use web development services for a diverse
               range of clients. Our story is one of innovation, customer
               dedication, and an unending commitment to creating a smoother,
-              more user-friendly digital world. We're excited to write the next
+              more user-friendly digital world. We&apos;re excited to write the next
               chapters of our story with you and your success at the heart of
               our narrative.
             </p>
