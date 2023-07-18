@@ -2,12 +2,15 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const router = useRouter();
 
   const isActive = (pathname: string) => router.pathname === pathname;
+
+
 
   return (
     <nav className="sticky top-0 z-50 flex items-center justify-between bg-white/60 p-6 text-black backdrop-blur-lg backdrop-filter">

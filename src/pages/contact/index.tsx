@@ -93,7 +93,7 @@ export default function IndexPage() {
                         className="mt-3 w-11/12 border-2 border-black py-5 pl-4 text-base text-gray-800 hover:border-rose-600 focus:border-rose-600 focus:outline-none lg:w-full xl:w-10/12"
                         type="text"
                         name="full_name"
-                        placeholder="Justin Timberlake"
+                        placeholder="Elon Musk"
                         value={full_name || ""}
                         onChange={(e) => setFullName(e.target.value)}
                       />
