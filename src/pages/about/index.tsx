@@ -31,22 +31,21 @@ function About() {
         >
           <div className="w-full lg:w-6/12">
             <h2 className="w-full text-3xl font-bold leading-9 lg:text-4xl lg:leading-10">
-              We are here to make great design accessible and delightfull for
-              everyone
+              We are here to make building your dream website hassle free
             </h2>
 
             <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum.In the first place we have granted to
-              God, and by this our present charter confirmed for us and our
-              heirs forever that the English Church shall be free, and shall
-              have her rights entire,
+              Welcome to CodeCrafty, your one-stop shop for comprehensive web
+              design and development services. We&apos;re a creative powerhouse with
+              a passion for transforming your ideas into beautifully designed,
+              fully functional websites. With a keen understanding of the
+              digital landscape, our experts take the complexity out of website
+              design, streamlining the process to ensure your online presence is
+              built swiftly, efficiently, and aligned with your unique vision.
             </p>
 
             <Link
               href="/how"
-              target="_blank"
               rel="noopener noreferrer"
               className="mr-4 rounded-full bg-rose-500 px-6 py-4 text-xl font-bold text-white hover:bg-rose-700"
             >
@@ -57,17 +56,17 @@ function About() {
           <div className="w-full lg:w-6/12">
             <img
               className="hidden w-full lg:block"
-              src="https://i.ibb.co/RjNH7QB/Rectangle-122-1.png"
+              src="./about_opener.jpeg"
               alt="people discussing on board"
             />
             <img
               className="hidden w-full sm:block lg:hidden"
-              src="https://i.ibb.co/16fPqrg/Rectangle-122-2.png"
+              src="./about_opener.jpeg"
               alt="people discussing on board"
             />
             <img
               className="block w-full sm:hidden"
-              src="https://i.ibb.co/Jxhpxh6/Rectangle-122.png"
+              src="./about_opener.jpeg"
               alt="people discussing on board"
             />
           </div>
@@ -203,26 +202,28 @@ function About() {
               Founded
             </p>
             <p className="mt-6 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+              We were founded in 2023 by David Fales a aspiring full stack web
+              developer. His goal was to make websites easy to build for
+              clients.
             </p>
           </div>
           <div>
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-              50M montly enrichments
+              Creation
             </p>
             <p className="mt-6 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+              The creation process we use to create websites takes your ideas
+              and creates a site based on your likeness. The design and
+              development is controlled by you we do the heavy lifting.
             </p>
           </div>
           <div className="hidden sm:block">
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-              400k User
+              Users
             </p>
             <p className="mt-6 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+              Starting off as a new company we have reached out and created
+              websites for 8 different people/companies.
             </p>
           </div>
         </div>
@@ -236,7 +237,7 @@ function About() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="24" cy="24" r="24" fill="#1F2940" />
+              <circle cx="24" cy="24" r="24" fill="#EC3F56" />
               <path
                 d="M21 23C23.2091 23 25 21.2091 25 19C25 16.7909 23.2091 15 21 15C18.7909 15 17 16.7909 17 19C17 21.2091 18.7909 23 21 23Z"
                 stroke="white"
@@ -287,22 +288,20 @@ function About() {
               Our Mission
             </h2>
             <p className="mt-6 w-full text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum.In the first place we have granted to
-              God, and by this our present charter confirmed for us and our
-              heirs forever that the English Church shall be free, and shall
-              have her rights entire, and her liberties inviolate; and we will
-              that it be thus observed; which is apparent from
+              Our mission at CodeCrafty is to revolutionize the web development
+              industry by making website design and development an accessible,
+              effortless, and efficient process for all. We&apos;re here to empower
+              businesses, organizations, and individuals to create a powerful
+              online presence, without the hurdles that are typically associated
+              with web development.
             </p>
             <p className="mt-10 w-full pb-8 text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum.In the first place we have granted to
-              God, and by this our present charter confirmed for us and our
-              heirs forever that the English Church shall be free, and shall
-              have her rights entire, and her liberties inviolate; and we will
-              that it be thus observed; which is apparent from
+              Beyond just creating stunning websites, we&apos;re passionate about
+              bringing your vision to life quickly and hassle-free. We&apos;re
+              committed to providing our clients with a robust digital platform
+              that serves their unique needs and amplifies their online
+              influence. At CodeCrafty, our mission is to craft the web in a way
+              that fosters your growth and success.
             </p>
             <Link
               href="/contact"
@@ -352,12 +351,11 @@ function About() {
                 </div>
                 <div className="">
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-                    Team
+                    Building
                   </p>
                   <p className="mt-2 text-base font-normal leading-6 text-gray-600">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
+                    We build fast making your website UI and UX design look
+                    still look perfect with your great ideas.
                   </p>
                 </div>
               </div>
@@ -404,12 +402,11 @@ function About() {
                 </div>
                 <div className="">
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-                    Board
+                    Connection
                   </p>
                   <p className="mt-2 text-base font-normal leading-6 text-gray-600">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
+                    We want to establish connections with our clients that puts
+                    them under the control of their site.
                   </p>
                 </div>
               </div>
@@ -442,12 +439,12 @@ function About() {
                 </div>
                 <div className="">
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-                    Press
+                    Contact
                   </p>
                   <p className="mt-2 text-base font-normal leading-6 text-gray-600">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
+                    Being able to contact us whenever is one of our biggest
+                    importance&apos;s. Making sure that if you have a edit you want
+                    to make you can reach us immediately.
                   </p>
                 </div>
               </div>
@@ -459,17 +456,17 @@ function About() {
         <div className="mt-12 sm:mt-10 lg:mt-14">
           <img
             className="hidden w-full lg:block"
-            src="https://i.ibb.co/GvwJnvn/Group-736.png"
+            src="./about_banner.png"
             alt="Group of people Chilling"
           />
           <img
             className="hidden w-full sm:block lg:hidden"
-            src="https://i.ibb.co/5sZTmHq/Rectangle-116.png"
+            src="./about_banner.png"
             alt="Group of people Chilling"
           />
           <img
             className="block w-full sm:hidden"
-            src="https://i.ibb.co/zSxXJGQ/Rectangle-122.png"
+            src="./about_banner.png"
             alt="Group of people Chilling"
           />
         </div>
@@ -483,26 +480,28 @@ function About() {
               Our Story
             </h2>
             <p className="mt-4 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum.In the first place we have granted to
-              God, and by this our present charter confirmed for us and our
-              heirs forever that the English Church shall be free, and shall
-              have her rights entire, and her liberties inviolate; and we will
-              that it be thus observed; which is apparent from
+              CodeCrafty was born out of a desire to make website design and
+              development accessible and seamless for everyone. We noticed a gap
+              in the market - the process of getting a website from conception
+              to live was often long, complex, and fraught with challenges.
+              There was a need for a service that not only provided technical
+              expertise but also a client-centered approach, ensuring each
+              project was crafted with care, speed, and a deep understanding of
+              the client&apos;s vision.
             </p>
             <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum.In the first place we have granted to
-              God, and by this our present charter confirmed for us and our
-              heirs forever that the English Church shall be free, and shall
-              have her rights entire, and her liberties inviolate; and we will
-              that it be thus observed; which is apparent from
+              Our journey began with a passionate, experienced, and
+              forward-thinking web developer and designer who had this vision.
+              Today, CodeCrafty has grown into a trusted platform, providing
+              efficient and easy-to-use web development services for a diverse
+              range of clients. Our story is one of innovation, customer
+              dedication, and an unending commitment to creating a smoother,
+              more user-friendly digital world. We&apos;re excited to write the next
+              chapters of our story with you and your success at the heart of
+              our narrative.
             </p>
             <Link
               href="/build"
-              target="_blank"
               rel="noopener noreferrer"
               className="mr-4 rounded-full bg-rose-500 px-6 py-4 text-xl font-bold text-white hover:bg-rose-700"
             >
@@ -512,27 +511,26 @@ function About() {
           <div className="w-full items-center lg:flex lg:w-1/2 ">
             <img
               className="hidden w-full lg:block"
-              src="https://i.ibb.co/2kxWpNm/Group-740.png"
+              src="./about_person.jpeg"
               alt="people discussing on board"
             />
             <img
-              className="hidden h-3/4 w-full sm:block lg:hidden"
-              src="https://i.ibb.co/ZLgK3NQ/Group-788.png"
+              className="hidden h-3/4 w-full rounded sm:block lg:hidden"
+              src="./about_person.jpeg"
               alt="people discussing on board"
             />
             <img
-              className="block w-full sm:hidden"
-              src="https://i.ibb.co/9g2R7Xr/Group-803.png"
+              className="block w-full rounded sm:hidden"
+              src="./about_person.jpeg"
               alt="people discussing on board"
             />
           </div>
         </div>
       </div>
-
       <CarouselProvider
         isIntrinsicHeight={true}
-        totalSlides={2}
-        naturalSlideWidth={100} // Replace 100 with your desired width
+        totalSlides={3}
+        naturalSlideWidth={200} // Replace 100 with your desired width
         naturalSlideHeight={50} // Replace 50 with your desired height
       >
         {" "}
@@ -540,7 +538,7 @@ function About() {
           <div className="container mx-auto">
             <div className="flex w-full flex-col justify-center py-1  lg:items-center">
               <h1 className="text-3xl font-semibold text-gray-800 md:text-4xl">
-                Updated line
+                Our Work
               </h1>
             </div>
             <div className="flex w-full flex-col items-end justify-center">
@@ -575,7 +573,7 @@ function About() {
                   </button>
                 </ButtonBack>
                 <ButtonNext>
-                  <button
+                  <div
                     aria-controls="slide"
                     aria-label="slide forward"
                     className="flex cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2  "
@@ -597,7 +595,7 @@ function About() {
                       <line x1="15" y1="16" x2="19" y2="12" />
                       <line x1="15" y1="8" x2="19" y2="12" />
                     </svg>
-                  </button>
+                  </div>
                 </ButtonNext>
               </div>
             </div>
@@ -608,8 +606,7 @@ function About() {
                     <div className="flex w-full flex-col items-center justify-center rounded-md">
                       <div
                         style={{
-                          backgroundImage:
-                            "url('https://i.ibb.co/93dVNbx/Rectangle-27.png');",
+                          backgroundImage: "url('/ai.png')",
                         }}
                         className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                       >
@@ -710,17 +707,11 @@ function About() {
           </div>
         </div>
       </CarouselProvider>
-
-      {/**
-       *
-       * place for computer vision thing
-       */}
-
       <CarouselProvider
         isIntrinsicHeight={true}
         totalSlides={3}
-        naturalSlideWidth={100} // Replace 100 with your desired width
-        naturalSlideHeight={50} // Replace 50 with your desired height
+        naturalSlideWidth={200} // Replace 100 with your desired width
+        naturalSlideHeight={100} // Replace 50 with your desired height
       >
         <div className="hidden px-6 lg:block xl:px-0 ">
           <div className="container mx-auto">
@@ -730,7 +721,7 @@ function About() {
                 className="items-left flex w-full flex-col justify-center py-10"
               >
                 <h1 className="text-3xl font-bold text-gray-800 md:text-5xl">
-                  Check Out our products
+                  Our Work
                 </h1>
               </div>
               <div className="my-3 flex w-full flex-col items-end justify-end pr-24">
@@ -766,7 +757,7 @@ function About() {
                   </button>
                 </ButtonBack>
                 <ButtonNext>
-                  <button
+                  <div
                     aria-controls="slide"
                     aria-label="slide forward"
                     className="flex cursor-pointer items-center justify-center rounded-full hover:bg-gray-200 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2  "
@@ -788,7 +779,7 @@ function About() {
                       <line x1="15" y1="16" x2="19" y2="12" />
                       <line x1="15" y1="8" x2="19" y2="12" />
                     </svg>
-                  </button>
+                  </div>
                 </ButtonNext>
               </div>
             </div>
@@ -801,7 +792,7 @@ function About() {
               <div className="slide-ana3">
                 <Slider>
                   <Slide index={0}>
-                    <div className="grid grid-cols-3  gap-6">
+                    <div className="grid grid-cols-2  gap-6">
                       <div
                         aria-live="off"
                         aria-roledescription="slide1"
@@ -809,14 +800,11 @@ function About() {
                       >
                         <div
                           style={{
-                            backgroundImage:
-                              "url('https://i.ibb.co/93dVNbx/Rectangle-27.png');",
+                            backgroundImage: "url('/ai.png')",
                           }}
                           className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                         >
-                          <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-left text-lg  font-semibold text-white">
-                            Who doesn’t love a good swim
-                          </h1>
+                          <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-left text-lg  font-semibold text-black"></h1>
 
                           <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                             <svg
@@ -844,50 +832,11 @@ function About() {
                         >
                           <div
                             style={{
-                              backgroundImage:
-                                "url('https://i.ibb.co/M6jV7ty/Rectangle-28.png');",
+                              backgroundImage: "url('/portDavid.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              A truly immersive experience like never before
-                            </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="">
-                        <div
-                          aria-live="off"
-                          aria-roledescription="slide3"
-                          className="flex w-full flex-col items-center justify-center rounded-md bg-white "
-                        >
-                          <div
-                            style={{
-                              backgroundImage:
-                                "url('https://i.ibb.co/Lgjy80Y/Content-image-1.png');",
-                            }}
-                            className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
-                          >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              Maybe a walk on the beach could help
-                            </h1>
+                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
 
                             <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                               <svg
@@ -911,7 +860,7 @@ function About() {
                     </div>
                   </Slide>
                   <Slide index={1}>
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 gap-6">
                       <div className=" ">
                         <div
                           aria-live="off"
@@ -920,13 +869,11 @@ function About() {
                         >
                           <div
                             style={{
-                              backgroundImage:
-                                "url('https://i.ibb.co/93dVNbx/Rectangle-27.png');",
+                              backgroundImage: "url('/litline.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
                             <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              Who doesn’t love a good swim
                             </h1>
 
                             <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
@@ -956,49 +903,11 @@ function About() {
                         >
                           <div
                             style={{
-                              backgroundImage:
-                                "url('https://i.ibb.co/M6jV7ty/Rectangle-28.png');",
+                              backgroundImage: "url('/photo.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
                             <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              A truly immersive experience like never before
-                            </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div className=" ">
-                        <div
-                          aria-live="off"
-                          aria-roledescription="slide6"
-                          className="flex w-full flex-col items-center justify-center rounded-md  bg-white"
-                        >
-                          <div
-                            style={{
-                              backgroundImage:
-                                "url('https://i.ibb.co/Lgjy80Y/Content-image-1.png');",
-                            }}
-                            className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
-                          >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              Maybe a walk on the beach could help
                             </h1>
 
                             <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
@@ -1023,7 +932,7 @@ function About() {
                     </div>
                   </Slide>
                   <Slide index={2}>
-                    <div className="grid grid-cols-3 gap-6">
+                    <div className="grid grid-cols-2 gap-6">
                       <div className=" ">
                         <div
                           aria-live="off"
@@ -1033,7 +942,7 @@ function About() {
                           <div
                             style={{
                               backgroundImage:
-                                "url('https://i.ibb.co/93dVNbx/Rectangle-27.png');",
+                                "url('/codecrafty.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
@@ -1068,47 +977,11 @@ function About() {
                         >
                           <div
                             style={{
-                              backgroundImage: "url('/banner.jpg')",
+                              backgroundImage: "url('/rjrobo.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
                             <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              A truly immersive experience like never before
-                            </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <div className=" ">
-                        <div
-                          aria-live="off"
-                          aria-roledescription="slide9"
-                          className="flex w-full flex-col items-center justify-center rounded-md  bg-white"
-                        >
-                          <div
-                            style={{
-                              backgroundImage: "url('/banner.jpg')",
-                            }}
-                            className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
-                          >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                              Maybe a walk on the beach could help
                             </h1>
 
                             <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">

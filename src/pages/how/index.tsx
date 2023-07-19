@@ -9,43 +9,38 @@ type Step = {
   imgUrl: string;
 };
 
-
 const steps: Step[] = [
   {
     id: 1,
     title: "Step 1: Idea",
     description:
-      "Every great website starts with a great idea. Think about what you want your website to achieve, and what design elements can help you reach those goals.",
-    imgUrl: "/images/step1.png",
+      "Every great website starts with a great idea. Think about what you want your website to achieve, and what design elements can help you reach those goals. Start with a spark. Share your vision, your goals, and your inspiration with us. We're all ears.",
+    imgUrl: "/idea.jpeg",
   },
   {
     id: 2,
     title: "Step 2: Design",
     description:
-      "A well-designed website is an inviting one. Ensure your design is clean, modern, and easy to navigate.",
-    imgUrl: "/images/step2.png",
+      "A well-designed website is an inviting one. Ensure your design is clean, modern, and easy to navigate. We translate your idea into a visually engaging and functional blueprint, tailored to your unique needs.",
+    imgUrl: "/download.jpg",
   },
   {
     id: 3,
     title: "Step 3: Development",
     description:
-      "The development stage is where your website comes to life. Good development practices ensure your site is functional, fast, and reliable.",
-    imgUrl: "/images/step3.png",
+      "The development stage is where your website comes to life. Good development practices ensure your site is functional, fast, and reliable. Our skilled developers bring the design to life, incorporating the latest technology to build a responsive, efficient website.",
+    imgUrl: "/download-1.jpg",
   },
   {
     id: 3,
     title: "Step 4: Deployment",
     description:
-      "The development stage is where your website comes to life. Good development practices ensure your site is functional, fast, and reliable.",
-    imgUrl: "/images/step3.png",
+      "Once the site has been thoroughly tested and perfected, we launch it to the world. Your idea is now a fully-functional, live website. Enjoy the view!",
+    imgUrl: "/images.jpg",
   },
 
   // add more steps as needed...
 ];
-
-
-
-
 
 export default function Index() {
   return (
@@ -120,21 +115,15 @@ export default function Index() {
               </div>
               <div className="mt-8" data-aos="fade-up">
                 <p className="text-sm leading-normal text-gray-800  lg:text-base">
-                  Another writing challenge can be to take the individual
-                  sentences in the random paragraph and incorporate a single
-                  sentence from that into a new paragraph to create a short
-                  story. Unlike the random sentence generator, the sentences
-                  from the random paragraph will have some connection to one
-                  another so it will be a bit different. You also won&apos;t
-                  know exactly how many sentences will appear in the random
-                  paragraph.Another writing challenge can be to take the
-                  individual sentences in the random paragraph and incorporate a
-                  single sentence from that into a new paragraph to create a
-                  short story. Unlike the random sentence generator, the
-                  sentences from the random paragraph will have some connection
-                  to one another so it will be a bit different. You also
-                  won&apos;t know exactly how many sentences will appear in the
-                  random paragraph.
+                  At CodeCrafty, we believe that creating a website should be a
+                  hassle-free experience. That&apos;s why we&apos;ve made it incredibly
+                  simple for you to submit your design requirements. Once we
+                  receive your submission, our talented team of developers gets
+                  straight to work, handling every aspect of your project with
+                  care and speed. We&apos;re committed to delivering not only a
+                  visually stunning website but also a seamless user experience,
+                  all within a quick turnaround time. At CodeCrafty, we craft
+                  the web - with you and for you.
                 </p>
               </div>
               <div className="mt-8 w-full">
@@ -144,56 +133,6 @@ export default function Index() {
                   src="https://i.ibb.co/X5br8Zg/Rectangle-44.png"
                   alt="office"
                 />
-              </div>
-              <div
-                className="mt-8 flex flex-col items-start justify-start"
-                data-aos="fade-up"
-              >
-                <div>
-                  <p className="text-sm font-semibold leading-none text-gray-800  lg:text-base">
-                    Breakdown of milestones
-                  </p>
-                </div>
-                <div className="mt-4 text-sm leading-normal text-gray-800  lg:text-base">
-                  <ul>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      <div>-</div>
-                      <div>
-                        Mauris ullamcorper neque sed mauris gravida, vel mollis
-                        velit molestie.
-                      </div>
-                    </li>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      <div>-</div>
-                      <div>Donec iaculis erat in vulputate venenatis.</div>
-                    </li>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      <div>-</div>
-                      <div>Vestibulum et velit et metus commodo iaculis.</div>
-                    </li>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      <div>-</div>
-                      <div>
-                        Sed et urna a felis accumsan commodo vel vel nibh.
-                      </div>
-                    </li>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      <div>-</div>
-                      <div>
-                        Praesent sollicitudin nulla non sollicitudin varius.
-                      </div>
-                    </li>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      <div>-</div>
-                      <div>
-                        Integer convallis orci sed diam volutpat feugiat.
-                      </div>
-                    </li>
-                    <li className="flex flex-row items-start justify-start space-x-1">
-                      - Donec posuere arcu non semper maximus.
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
             <div
@@ -208,10 +147,9 @@ export default function Index() {
                 </div>
                 <div className="mt-8">
                   <p className="text-center text-xs leading-normal text-white md:text-base lg:text-left">
-                    If you&apos;re looking for random facts, you&apos;ve arrived
-                    at the correct webpage. The Random Fact Generator has
-                    thousands of facts ready to be revealed with a simple click
-                    of a mouse.
+                    Do you think CodeCrafty is what you are looking for and you
+                    are ready to start building with this company. contact us or
+                    start the process of building your best dream website.
                   </p>
                 </div>
                 <div className="mt-8 flex flex-row items-center justify-start space-x-4">
