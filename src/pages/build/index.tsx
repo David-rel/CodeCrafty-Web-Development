@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect } from 'react'
 import Footer from '~/components/Footer'
 import Navbar from '~/components/Navbar'
@@ -105,9 +106,11 @@ function Build() {
                           <span className="text-2xl font-light">$</span>
                           <span className="text-4xl font-semibold">200</span>
                         </p>
+                        <Link href="/build/customize/basic">
                         <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
                           Choose
                         </button>
+                        </Link>
                       </div>
                     </div>
                     <div className="mb-4 w-full px-6 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3">
@@ -181,9 +184,11 @@ function Build() {
                           <span className="text-2xl font-light">$</span>
                           <span className="text-4xl font-semibold">200</span>
                         </p>
+                        <Link href="/build/customize/pro">
                         <button className="mt-5 w-full rounded bg-white px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none">
                           Choose
                         </button>
+                        </Link>
                       </div>
                     </div>
                     <div className="mb-4 w-full px-6 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3">
@@ -257,9 +262,11 @@ function Build() {
                           <span className="text-2xl font-light">$</span>
                           <span className="text-4xl font-semibold">200</span>
                         </p>
+                        <Link href="/build/customize/enterprise">
                         <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
                           Choose
                         </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
