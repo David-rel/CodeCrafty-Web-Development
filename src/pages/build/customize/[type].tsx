@@ -69,148 +69,151 @@ function CustomizePage() {
 
 
   const basePrice = type === "basic" ? 200 : type === "pro" ? 400 : 600;
-const totalCost =
-  selectedAddOns.reduce(
-    (sum, addOn) => sum + ADD_ONS.find((item) => item.name === addOn)?.cost!,
-    basePrice
-  ) - (hasDesign ? 200 : 0);
+  const totalCost =
+    selectedAddOns.reduce(
+      (sum, addOn) =>
+        sum + (ADD_ONS.find((item) => item.name === addOn)?.cost ?? 0),
+      basePrice
+    ) - (hasDesign ? 200 : 0);
 
 
   return (
     <>
-    <Navbar />
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-12 sm:px-6 lg:px-8">
-      <div className="w-full max-w-xl space-y-8 rounded-lg bg-white p-10 shadow-md">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Customize {type}
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Base price: ${basePrice}
-          </p>
-        </div>
-        <form className="mt-8 space-y-6">
-          {ADD_ONS.map((addOn) => (
-            <div key={addOn.name} className="mb-4">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={selectedAddOns.includes(addOn.name)}
-                  onChange={() => toggleAddOn(addOn.name, addOn.cost)}
-                  className="form-checkbox h-5 w-5 text-rose-600"
-                />
-                <span className="ml-2 text-gray-700">
-                  {addOn.name} (+${addOn.cost})
-                </span>
-              </label>
-              {addOn.scaleable && selectedAddOns.includes(addOn.name) && (
-                <label className="ml-6 flex items-center">
+      <Navbar />
+      <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="w-full max-w-xl space-y-8 rounded-lg bg-white p-10 shadow-md">
+          <div>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              Customize {type}
+            </h2>
+            <p className="mt-2 text-center text-sm text-gray-600">
+              Base price: ${basePrice}
+            </p>
+          </div>
+          <form className="mt-8 space-y-6">
+            {ADD_ONS.map((addOn) => (
+              <div key={addOn.name} className="mb-4">
+                <label className="flex items-center">
                   <input
                     type="checkbox"
-                    checked={!!monthlyBill[addOn.name]}
-                    onChange={() =>
-                      toggleScaleOption(addOn.name, addOn.monthlyCost!)
-                    }
+                    checked={selectedAddOns.includes(addOn.name)}
+                    onChange={() => toggleAddOn(addOn.name, addOn.cost)}
                     className="form-checkbox h-5 w-5 text-rose-600"
                   />
                   <span className="ml-2 text-gray-700">
-                    Does it need to scale? (+ monthly bill)
+                    {addOn.name} (+${addOn.cost})
                   </span>
                 </label>
-              )}
+                {addOn.scaleable && selectedAddOns.includes(addOn.name) && (
+                  <label className="ml-6 flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={!!monthlyBill[addOn.name]}
+                      onChange={() => {
+                        if (addOn.monthlyCost) {
+                          toggleScaleOption(addOn.name, addOn.monthlyCost);
+                        }
+                      }}
+                      className="form-checkbox h-5 w-5 text-rose-600"
+                    />
+                    <span className="ml-2 text-gray-700">
+                      Does it need to scale? (+ monthly bill)
+                    </span>
+                  </label>
+                )}
+              </div>
+            ))}
+            <div className="mb-4">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  checked={hasDesign}
+                  onChange={() => setHasDesign(!hasDesign)}
+                  className="form-checkbox h-5 w-5 text-rose-600"
+                />
+                <span className="ml-2 text-gray-700">
+                  Already have a design (-$200)
+                </span>
+              </label>
             </div>
-          ))}
-          <div className="mb-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={hasDesign}
-                onChange={() => setHasDesign(!hasDesign)}
-                className="form-checkbox h-5 w-5 text-rose-600"
-              />
-              <span className="ml-2 text-gray-700">
-                Already have a design (-$200)
+
+            <div className="text-right text-sm text-gray-700">
+              <span className="">Base price: </span>
+              <span className="">${basePrice}</span>
+              <br />
+              {hasDesign && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    Already have a design: -$200
+                  </span>
+                  <br />
+                </>
+              )}
+              {extraPages > 0 && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    More pages: +${extraPages} per page needed
+                  </span>
+                  <br />
+                </>
+              )}
+              {extraRevisions > 0 && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    More revisions: +${extraRevisions} per revision needed
+                  </span>
+                  <br />
+                </>
+              )}
+              {monthlyCheckups > 0 && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    Monthly checkups: +${monthlyCheckups} a month
+                  </span>
+                  <br />
+                </>
+              )}
+              {(monthlyBill["Need a database"] || 0) > 0 && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    + monthly bill for database
+                  </span>
+                  <br />
+                </>
+              )}
+              {(monthlyBill["Need storage"] || 0) > 0 && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    + monthly bill for storage
+                  </span>
+                  <br />
+                </>
+              )}
+              {(monthlyBill["Need a user account"] || 0) > 0 && (
+                <>
+                  <span className="text-sm text-gray-600">
+                    + monthly bill for user account
+                  </span>
+                  <br />
+                </>
+              )}
+              <span className="text-sm text-gray-600">Total: </span>
+              <span className="text-lg font-semibold text-rose-600">
+                ${totalCost}
               </span>
-            </label>
-          </div>
+            </div>
 
-          <div className="text-right text-sm text-gray-700">
-            <span className="">Base price: </span>
-            <span className="">${basePrice}</span>
-            <br />
-            {hasDesign && (
-              <>
-                <span className="text-sm text-gray-600">
-                  Already have a design: -$200
-                </span>
-                <br />
-              </>
-            )}
-            {extraPages > 0 && (
-              <>
-                <span className="text-sm text-gray-600">
-                  More pages: +${extraPages} per page needed
-                </span>
-                <br />
-              </>
-            )}
-            {extraRevisions > 0 && (
-              <>
-                <span className="text-sm text-gray-600">
-                  More revisions: +${extraRevisions} per revision needed
-                </span>
-                <br />
-              </>
-            )}
-            {monthlyCheckups > 0 && (
-              <>
-                <span className="text-sm text-gray-600">
-                  Monthly checkups: +${monthlyCheckups} a month
-                </span>
-                <br />
-              </>
-            )}
-            {(monthlyBill["Need a database"] || 0) > 0 && (
-              <>
-                <span className="text-sm text-gray-600">
-                  + monthly bill for database
-                </span>
-                <br />
-              </>
-            )}
-            {(monthlyBill["Need storage"] || 0) > 0 && (
-              <>
-                <span className="text-sm text-gray-600">
-                  + monthly bill for storage
-                </span>
-                <br />
-              </>
-            )}
-            {(monthlyBill["Need a user account"] || 0) > 0 && (
-              <>
-                <span className="text-sm text-gray-600">
-                  + monthly bill for user account
-                </span>
-                <br />
-              </>
-            )}
-            <span className="text-sm text-gray-600">Total: </span>
-            <span className="text-lg font-semibold text-rose-600">
-              ${totalCost}
-            </span>
-          </div>
-
-          <div className="mt-6 flex items-center justify-end">
-            <Link href="/build/checkout">
-              <button className="group relative flex w-full justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
-                Send Website Request
-              </button>
-            </Link>
-          </div>
-        </form>
+            <div className="mt-6 flex items-center justify-end">
+              <Link href="/build/checkout">
+                <button className="group relative flex w-full justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
+                  Send Website Request
+                </button>
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 }
