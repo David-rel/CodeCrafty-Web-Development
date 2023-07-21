@@ -1,24 +1,82 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 import { api, type RouterOutputs } from "../../../utils/api";
+import { useSession } from "next-auth/react";
+
+interface TooltipProps {
+  text: string;
+}
+
+const Tooltip: React.FC<TooltipProps> = ({ text }) => (
+  <span
+    className="absolute z-10 rounded-lg bg-black p-1 text-xs text-white opacity-0 group-hover:opacity-100"
+    style={{ top: "-25px", left: "10%", transform: "translateX(-50%)" }}
+  >
+    {text}
+  </span>
+);
 
 interface AddOn {
   name: string;
   cost: number;
   scaleable: boolean;
   monthlyCost?: number; // Added monthlyCost for scalable items
+  description: string;
+  scaleDescription?: string;
 }
 
 const ADD_ONS: AddOn[] = [
-  { name: "More revisions", cost: 30, scaleable: false },
-  { name: "More pages", cost: 30, scaleable: false },
-  { name: "Need a database", cost: 100, scaleable: true, monthlyCost: 100 }, // Cost is back
-  { name: "Need a user base", cost: 50, scaleable: true, monthlyCost: 50 }, // Cost is back
-  { name: "Need storage", cost: 100, scaleable: true, monthlyCost: 100 }, // Cost is back
-  { name: "Want a domain", cost: 20, scaleable: false },
-  { name: "Monthly checkups", cost: 20, scaleable: false },
+  {
+    name: "More revisions",
+    cost: 30,
+    scaleable: false,
+    description:
+      "pays the developer to update the website when you want them to",
+  },
+  {
+    name: "More pages",
+    cost: 30,
+    scaleable: false,
+    description: "add more pages to your site",
+  },
+  {
+    name: "Need a database",
+    cost: 100,
+    scaleable: true,
+    monthlyCost: 100,
+    description: "you need to store any data of any type",
+    scaleDescription: "if you need more room for storing data (recommended)",
+  }, // Cost is back
+  {
+    name: "Need a user base",
+    cost: 50,
+    scaleable: true,
+    monthlyCost: 50,
+    description: "need to authenticated users and keep track of that",
+    scaleDescription: "if you need more room for storing users (recommended)",
+  }, // Cost is back
+  {
+    name: "Need storage",
+    cost: 100,
+    scaleable: true,
+    monthlyCost: 100,
+    description: "need to store videos files or photos",
+    scaleDescription: "if you need more room for storing files (recommended)",
+  }, // Cost is back
+  {
+    name: "Want a domain",
+    cost: 20,
+    scaleable: false,
+    description: "want a special .com domain",
+  },
+  {
+    name: "Monthly checkups",
+    cost: 20,
+    scaleable: false,
+    description: "want the developer to checkup on the site every month",
+  },
 ];
 
 function CustomizePage() {
@@ -28,6 +86,8 @@ function CustomizePage() {
   const [extraRevisions, setExtraRevisions] = useState(0);
   const [monthlyCheckups, setMonthlyCheckups] = useState(0); // Added this line
   const [hasDesign, setHasDesign] = useState(false);
+  const [websiteDescription, setWebsiteDescription] = useState("");
+  const { data: sessionData } = useSession();
 
   const router = useRouter();
   const { type } = router.query;
@@ -79,38 +139,42 @@ function CustomizePage() {
     },
   });
 
-const handleSubmit = () => {
+  const handleSubmit = () => {
+    if (sessionData) {
+      let complexity;
+      if (typeof type === "string") {
+        complexity = type;
+      }
 
-    let complexity;
-    if (typeof type === "string") {
-      complexity = type;
+      const submissionData = {
+        complexity: complexity, // assuming 'pro' and 'premium' are complex
+        revisions: extraRevisions > 0,
+        pages: extraPages > 0,
+        database: selectedAddOns.includes("Need a database"),
+        storage: selectedAddOns.includes("Need storage"),
+        userBase: selectedAddOns.includes("Need a user base"),
+        description: websiteDescription,
+        monthly:
+          monthlyCheckups > 0 ||
+          Object.values(monthlyBill).some((value) => value > 0),
+        design: hasDesign,
+        databaseScale:
+          selectedAddOns.includes("Need a database") &&
+          !!monthlyBill["Need a database"],
+        storageScale:
+          selectedAddOns.includes("Need storage") &&
+          !!monthlyBill["Need storage"],
+        userScale:
+          selectedAddOns.includes("Need a user base") &&
+          !!monthlyBill["Need a user base"],
+        cost: totalCost,
+      };
+      createSubmission.mutate(submissionData);
+      alert("Request Submitted");
+    } else {
+      alert("You must be logged in to submit a request");
     }
-
-
-  const submissionData = {
-    complexity: complexity, // assuming 'pro' and 'premium' are complex
-    revisions: extraRevisions > 0,
-    pages: extraPages > 0,
-    database: selectedAddOns.includes("Need a database"),
-    storage: selectedAddOns.includes("Need storage"),
-    userBase: selectedAddOns.includes("Need a user base"),
-    monthly:
-      monthlyCheckups > 0 ||
-      Object.values(monthlyBill).some((value) => value > 0),
-    design: hasDesign,
-    databaseScale:
-      selectedAddOns.includes("Need a database") &&
-      !!monthlyBill["Need a database"],
-    storageScale:
-      selectedAddOns.includes("Need storage") && !!monthlyBill["Need storage"],
-    userScale:
-      selectedAddOns.includes("Need a user base") &&
-      !!monthlyBill["Need a user base"],
-    cost: totalCost,
   };
-   createSubmission.mutate(submissionData);
-};
-
 
   return (
     <>
@@ -127,7 +191,8 @@ const handleSubmit = () => {
           </div>
           <form className="mt-8 space-y-6">
             {ADD_ONS.map((addOn) => (
-              <div key={addOn.name} className="mb-4">
+              <div key={addOn.name} className="group relative mb-4">
+                <Tooltip text={addOn.description} />
                 <label className="flex items-center">
                   <input
                     type="checkbox"
@@ -140,25 +205,30 @@ const handleSubmit = () => {
                   </span>
                 </label>
                 {addOn.scaleable && selectedAddOns.includes(addOn.name) && (
-                  <label className="ml-6 flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={!!monthlyBill[addOn.name]}
-                      onChange={() => {
-                        if (addOn.monthlyCost) {
-                          toggleScaleOption(addOn.name, addOn.monthlyCost);
-                        }
-                      }}
-                      className="form-checkbox h-5 w-5 text-rose-600"
-                    />
-                    <span className="ml-2 text-gray-700">
-                      Does it need to scale? (+ monthly bill)
-                    </span>
-                  </label>
+                  <div className="group relative ml-6">
+                    <Tooltip text={addOn.scaleDescription || ''} />
+                    <label className="ml-6 flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={!!monthlyBill[addOn.name]}
+                        onChange={() => {
+                          if (addOn.monthlyCost) {
+                            toggleScaleOption(addOn.name, addOn.monthlyCost);
+                          }
+                        }}
+                        className="form-checkbox h-5 w-5 text-rose-600"
+                      />
+                      <span className="ml-2 text-gray-700">
+                        Does it need to scale? (+ monthly bill)
+                      </span>
+                    </label>
+                  </div>
                 )}
               </div>
             ))}
-            <div className="mb-4">
+            <div className="group relative mb-4">
+              <Tooltip text={"If you already have a design for your site"} />
+
               <label className="flex items-center">
                 <input
                   type="checkbox"
@@ -236,6 +306,21 @@ const handleSubmit = () => {
               <span className="text-lg font-semibold text-rose-600">
                 ${totalCost}
               </span>
+            </div>
+            <div className="mb-4">
+              <label className="text-md block font-medium text-gray-700">
+                Website Description
+              </label>
+              <p className="text-sm">
+                What is the name of the website, what is the color scheme, what
+                type of website is it and other important information we might
+                need to build it.
+              </p>
+              <textarea
+                onChange={(e) => setWebsiteDescription(e.target.value)}
+                value={websiteDescription}
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-rose-500 focus:outline-none focus:ring-rose-500 sm:text-sm"
+              />
             </div>
 
             <div className="mt-6 flex items-center justify-end">

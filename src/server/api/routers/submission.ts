@@ -28,6 +28,7 @@ export const submissionRouter = createTRPCRouter({
         database: z.boolean().optional(),
         storage: z.boolean().optional(),
         userBase: z.boolean().optional(),
+        description: z.string().optional(),
         monthly: z.boolean().optional(),
         design: z.boolean().optional(),
         databaseScale: z.boolean().optional(),
