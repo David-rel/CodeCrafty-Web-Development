@@ -79,7 +79,7 @@ function CustomizePage() {
     },
   });
 
-const handleSubmit = async () => {
+const handleSubmit = () => {
 
     let complexity;
     if (typeof type === "string") {
@@ -108,7 +108,7 @@ const handleSubmit = async () => {
       !!monthlyBill["Need a user base"],
     cost: totalCost,
   };
-  createSubmission.mutate(submissionData);
+   createSubmission.mutate(submissionData);
 };
 
 
