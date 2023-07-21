@@ -4,15 +4,12 @@ import {
   protectedProcedure,
 } from "~/server/api/trpc";
 import { submissionInput } from "~/types";
+import { Prisma } from '@prisma/client'; // import Prisma client
+
 
 export const submissionRouter = createTRPCRouter({
   all: protectedProcedure.query(async ({ ctx }) => {
-    const submissions = await ctx.prisma.submission.findMany({
-      where: {
-        authorId: ctx.session.user.id,
-      },
-    });
-   
+    const submissions = await ctx.prisma.submission.findMany();
 
     return [
       ...submissions.map((submission) => ({
@@ -23,12 +20,26 @@ export const submissionRouter = createTRPCRouter({
   }),
 
   create: protectedProcedure
-    .input(submissionInput)
-    .mutation(({ ctx, input }) => {
-      // throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+    .input(
+      z.object({
+        complexity: z.string().optional(),
+        revisions: z.boolean().optional(),
+        pages: z.boolean().optional(),
+        database: z.boolean().optional(),
+        storage: z.boolean().optional(),
+        userBase: z.boolean().optional(),
+        monthly: z.boolean().optional(),
+        design: z.boolean().optional(),
+        databaseScale: z.boolean().optional(),
+        storageScale: z.boolean().optional(),
+        userScale: z.boolean().optional(),
+        cost: z.number().optional(),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
       return ctx.prisma.submission.create({
         data: {
-        
+          ...input,
           createdAt: new Date(),
           author: {
             connect: {
@@ -39,13 +50,6 @@ export const submissionRouter = createTRPCRouter({
       });
     }),
 
-  delete: protectedProcedure.input(z.string()).mutation(({ ctx, input }) => {
-    return ctx.prisma.submission.delete({
-      where: {
-        id: input,
-      },
-    });
-  }),
   toggle: protectedProcedure
     .input(
       z.object({
@@ -53,7 +57,7 @@ export const submissionRouter = createTRPCRouter({
         completed: z.boolean(),
       })
     )
-    .mutation(({ ctx, input:{id, completed} }) => {
+    .mutation(({ ctx, input: { id, completed } }) => {
       return ctx.prisma.submission.update({
         where: {
           id,

@@ -1,20 +1,18 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useEffect } from 'react'
-import Footer from '~/components/Footer'
-import Navbar from '~/components/Navbar'
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import Footer from "~/components/Footer";
+import Navbar from "~/components/Navbar";
 
 function Build() {
-
-      useEffect(() => {
-        // Importing and initializing AOS
-        import("aos")
-          .then((Aos) => {
-            Aos.init({ duration: 2000 });
-          })
-          .catch((error) => console.error(error));
-      }, []);
-
+  useEffect(() => {
+    // Importing and initializing AOS
+    import("aos")
+      .then((Aos) => {
+        Aos.init({ duration: 2000 });
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <>
@@ -63,12 +61,13 @@ function Build() {
               <p className="mt-4 text-base leading-6 text-gray-600 md:w-80">
                 This is for your basic portfolio and personal website
               </p>
-              <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
-                Choose
-              </button>
+              <Link href="/build/customize/basic">
+                <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
+                  Choose
+                </button>
+              </Link>
             </div>
 
-         
             <div
               role="listitem"
               className="relative z-30 mt-3 flex cursor-pointer rounded-lg bg-white shadow"
@@ -87,9 +86,11 @@ function Build() {
                   This is for more complex sites like blogs, education sites,
                   etc...
                 </p>
-                <button className="mt-5 w-full rounded bg-rose-700 px-8 py-3 py-3 text-base font-semibold text-white transition duration-150 ease-in-out hover:bg-rose-600 focus:outline-none">
-                  Choose
-                </button>
+                <Link href="/build/customize/pro">
+                  <button className="mt-5 w-full rounded bg-rose-700 px-8 py-3 py-3 text-base font-semibold text-white transition duration-150 ease-in-out hover:bg-rose-600 focus:outline-none">
+                    Choose
+                  </button>
+                </Link>
               </div>
             </div>
             <div
@@ -108,9 +109,11 @@ function Build() {
                 This is where businesses and startups will get the best value. A
                 subscription based site, e-commerce, media
               </p>
-              <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
-                Choose
-              </button>
+              <Link href="/build/customize/enterprise">
+                <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
+                  Choose
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -150,9 +153,11 @@ function Build() {
                       Basic resources for a starter site. Individuals and small
                       teams.
                     </p>
-                    <button className="rounded border border-rose-600 bg-white px-6 py-2 text-sm text-rose-600 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none">
-                      Choose
-                    </button>
+                    <Link href="/build/customize/basic">
+                      <button className="rounded border border-rose-600 bg-white px-6 py-2 text-sm text-rose-600 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none">
+                        Choose
+                      </button>
+                    </Link>
                   </div>
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
                     <div className="mb-5">
@@ -165,9 +170,11 @@ function Build() {
                       More power for company sites and heavy traffic. Growing
                       business.
                     </p>
-                    <button className="rounded border bg-rose-700 px-6 py-2 text-sm text-white transition duration-150 ease-in-out hover:bg-rose-600 focus:outline-none">
-                      Choose
-                    </button>
+                    <Link href="/build/customize/pro">
+                      <button className="rounded border bg-rose-700 px-6 py-2 text-sm text-white transition duration-150 ease-in-out hover:bg-rose-600 focus:outline-none">
+                        Choose
+                      </button>
+                    </Link>
                   </div>
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
                     <div className="mb-6">
@@ -176,6 +183,7 @@ function Build() {
                         alt=""
                       />
                     </div>
+
                     <p className="mb-3 text-center text-2xl font-bold text-gray-800">
                       Enterprise
                     </p>
@@ -183,9 +191,11 @@ function Build() {
                       Support multi-complex sites and high-resolution photos and
                       videos.
                     </p>
-                    <button className="rounded border border-rose-600 bg-white px-6 py-2 text-sm text-rose-600 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none">
-                      Choose
-                    </button>
+                    <Link href="/build/customize/enterprise">
+                      <button className="rounded border border-rose-600 bg-white px-6 py-2 text-sm text-rose-600 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none">
+                        Choose
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -400,4 +410,4 @@ function Build() {
   );
 }
 
-export default Build
+export default Build;

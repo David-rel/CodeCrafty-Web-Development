@@ -62,7 +62,7 @@ model VerificationToken {
 
 model Submission {
     id            String   @id @default(cuid())
-    complexity    Boolean? @default(false)
+    complexity    String?  
     revisions     Boolean? @default(false)
     pages         Boolean? @default(false)
     database      Boolean? @default(false)

@@ -14,9 +14,6 @@ export default function Home() {
 
 
   useEffect(() => {
-      alert(
-        "We are currently switching code bases at the moment. The only thing you can't do is send a request for a website. If you want to still submit a website request just contact us. Sorry for the inconvenience"
-      );
     // Importing and initializing AOS
     import("aos")
       .then((Aos) => {

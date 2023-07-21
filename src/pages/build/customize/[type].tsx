@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
+import { api, type RouterOutputs } from "../../../utils/api";
 
 interface AddOn {
   name: string;
@@ -65,16 +65,51 @@ function CustomizePage() {
     }));
   };
 
-
-
-
-  const basePrice = type === "basic" ? 200 : type === "pro" ? 400 : 600;
+  const basePrice = type === "basic" ? 400 : type === "pro" ? 600 : 800;
   const totalCost =
     selectedAddOns.reduce(
       (sum, addOn) =>
         sum + (ADD_ONS.find((item) => item.name === addOn)?.cost ?? 0),
       basePrice
     ) - (hasDesign ? 200 : 0);
+
+  const createSubmission = api.submission.create.useMutation({
+    onSuccess: () => {
+      void refetchNotes();
+    },
+  });
+
+const handleSubmit = async () => {
+
+    let complexity;
+    if (typeof type === "string") {
+      complexity = type;
+    }
+
+
+  const submissionData = {
+    complexity: complexity, // assuming 'pro' and 'premium' are complex
+    revisions: extraRevisions > 0,
+    pages: extraPages > 0,
+    database: selectedAddOns.includes("Need a database"),
+    storage: selectedAddOns.includes("Need storage"),
+    userBase: selectedAddOns.includes("Need a user base"),
+    monthly:
+      monthlyCheckups > 0 ||
+      Object.values(monthlyBill).some((value) => value > 0),
+    design: hasDesign,
+    databaseScale:
+      selectedAddOns.includes("Need a database") &&
+      !!monthlyBill["Need a database"],
+    storageScale:
+      selectedAddOns.includes("Need storage") && !!monthlyBill["Need storage"],
+    userScale:
+      selectedAddOns.includes("Need a user base") &&
+      !!monthlyBill["Need a user base"],
+    cost: totalCost,
+  };
+  createSubmission.mutate(submissionData);
+};
 
 
   return (
@@ -204,11 +239,12 @@ function CustomizePage() {
             </div>
 
             <div className="mt-6 flex items-center justify-end">
-              <Link href="/build/checkout">
-                <button className="group relative flex w-full justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2">
-                  Send Website Request
-                </button>
-              </Link>
+              <button
+                className="group relative flex w-full justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
+                onClick={handleSubmit}
+              >
+                Send Website Request
+              </button>
             </div>
           </form>
         </div>
@@ -219,3 +255,6 @@ function CustomizePage() {
 }
 
 export default CustomizePage;
+function refetchNotes() {
+  throw new Error("Function not implemented.");
+}
