@@ -18,7 +18,7 @@ export default function Navbar() {
       <>
         <Link href="/" legacyBehavior>
           <a
-            className={`text-2xl font-bold ${
+            className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
               isActive("/")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
@@ -29,7 +29,7 @@ export default function Navbar() {
         </Link>
         <Link href="/about" legacyBehavior>
           <a
-            className={`text-2xl font-bold ${
+            className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
               isActive("/about")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
@@ -40,7 +40,7 @@ export default function Navbar() {
         </Link>
         <Link href="/contact" legacyBehavior>
           <a
-            className={`text-2xl font-bold ${
+            className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
               isActive("/contact")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
@@ -51,7 +51,7 @@ export default function Navbar() {
         </Link>
         <Link href="/build" legacyBehavior>
           <a
-            className={`text-2xl font-bold ${
+            className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
               isActive("/build")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
@@ -62,7 +62,7 @@ export default function Navbar() {
         </Link>
         <Link href="/how" legacyBehavior>
           <a
-            className={`text-2xl font-bold ${
+            className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
               isActive("/how")
                 ? "text-rose-700 underline"
                 : "text-rose-500 hover:text-rose-700 hover:underline"
@@ -85,12 +85,17 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-1 flex-col overflow-y-auto pb-4 pt-5">
+            {/**logog image */}
+            <div className="flex items-center justify-center">
+              <Image src="/logo.png" alt="Logo" width={150} height={40} />
+            </div>
+
             <div className="px-4">
-              <h2 className="mb-2 text-3xl font-bold underline">
+              <h2 className="mb-8 text-4xl font-bold underline">
                 Navigation
               </h2>
             </div>
-            <nav className=" mb-8 flex-1 flex flex-col space-y-1 px-2">{links}</nav>
+            <nav className=" mb-8 flex-1 flex flex-col space-y-8 px-2">{links}</nav>
             <div className="px-4">
               <div className="flex items-center gap-4">
                 {sessionData && (

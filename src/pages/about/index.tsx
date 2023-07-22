@@ -613,7 +613,7 @@ function About() {
                       >
                         <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
 
-                        <Link href="rj3729.com">
+                        <Link href="https://rj3729.com">
                           <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -981,7 +981,7 @@ function About() {
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
                             <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
-                            <Link href="rj3729.com">
+                            <Link href="https://rj3729.com">
                               <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
