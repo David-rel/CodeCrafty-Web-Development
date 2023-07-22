@@ -60,6 +60,7 @@ export const authOptions: NextAuthOptions = {
       clientId: env.AUTH0_ID,
       clientSecret: env.AUTH0_SECRET,
       issuer: env.AUTH0_ISSUER,
+      allowDangerousEmailAccountLinking: true,
     }),
     // FacebookProvider({
     //   clientId: env.FACEBOOK_ID,
