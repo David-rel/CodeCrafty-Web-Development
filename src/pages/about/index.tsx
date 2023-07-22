@@ -36,12 +36,13 @@ function About() {
 
             <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
               Welcome to CodeCrafty, your one-stop shop for comprehensive web
-              design and development services. We&apos;re a creative powerhouse with
-              a passion for transforming your ideas into beautifully designed,
-              fully functional websites. With a keen understanding of the
-              digital landscape, our experts take the complexity out of website
-              design, streamlining the process to ensure your online presence is
-              built swiftly, efficiently, and aligned with your unique vision.
+              design and development services. We&apos;re a creative powerhouse
+              with a passion for transforming your ideas into beautifully
+              designed, fully functional websites. With a keen understanding of
+              the digital landscape, our experts take the complexity out of
+              website design, streamlining the process to ensure your online
+              presence is built swiftly, efficiently, and aligned with your
+              unique vision.
             </p>
 
             <Link
@@ -290,18 +291,18 @@ function About() {
             <p className="mt-6 w-full text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
               Our mission at CodeCrafty is to revolutionize the web development
               industry by making website design and development an accessible,
-              effortless, and efficient process for all. We&apos;re here to empower
-              businesses, organizations, and individuals to create a powerful
-              online presence, without the hurdles that are typically associated
-              with web development.
+              effortless, and efficient process for all. We&apos;re here to
+              empower businesses, organizations, and individuals to create a
+              powerful online presence, without the hurdles that are typically
+              associated with web development.
             </p>
             <p className="mt-10 w-full pb-8 text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
-              Beyond just creating stunning websites, we&apos;re passionate about
-              bringing your vision to life quickly and hassle-free. We&apos;re
-              committed to providing our clients with a robust digital platform
-              that serves their unique needs and amplifies their online
-              influence. At CodeCrafty, our mission is to craft the web in a way
-              that fosters your growth and success.
+              Beyond just creating stunning websites, we&apos;re passionate
+              about bringing your vision to life quickly and hassle-free.
+              We&apos;re committed to providing our clients with a robust
+              digital platform that serves their unique needs and amplifies
+              their online influence. At CodeCrafty, our mission is to craft the
+              web in a way that fosters your growth and success.
             </p>
             <Link
               href="/contact"
@@ -443,8 +444,8 @@ function About() {
                   </p>
                   <p className="mt-2 text-base font-normal leading-6 text-gray-600">
                     Being able to contact us whenever is one of our biggest
-                    importance&apos;s. Making sure that if you have a edit you want
-                    to make you can reach us immediately.
+                    importance&apos;s. Making sure that if you have a edit you
+                    want to make you can reach us immediately.
                   </p>
                 </div>
               </div>
@@ -496,9 +497,9 @@ function About() {
               efficient and easy-to-use web development services for a diverse
               range of clients. Our story is one of innovation, customer
               dedication, and an unending commitment to creating a smoother,
-              more user-friendly digital world. We&apos;re excited to write the next
-              chapters of our story with you and your success at the heart of
-              our narrative.
+              more user-friendly digital world. We&apos;re excited to write the
+              next chapters of our story with you and your success at the heart
+              of our narrative.
             </p>
             <Link
               href="/build"
@@ -606,30 +607,30 @@ function About() {
                     <div className="flex w-full flex-col items-center justify-center rounded-md">
                       <div
                         style={{
-                          backgroundImage: "url('/ai.png')",
+                          backgroundImage: "url('/rjrobo.png')",
                         }}
                         className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                       >
-                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                          Who doesn’t love a good swim
-                        </h1>
+                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
 
-                        <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-600"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </button>
+                        <Link href="rj3729.com">
+                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6 text-gray-600"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -639,31 +640,29 @@ function About() {
                     <div className=" flex w-full flex-col items-center justify-center rounded-md">
                       <div
                         style={{
-                          backgroundImage:
-                            "url('https://i.ibb.co/M6jV7ty/Rectangle-28.png');",
+                          backgroundImage: "url('/photo.png')",
                         }}
                         className="relative flex w-full flex-col justify-center  rounded-md bg-cover "
                       >
-                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                          A truly immersive experience like never before
-                        </h1>
-
-                        <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-600"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </button>
+                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                        <Link href="https://owenw-photography.vercel.app/">
+                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6 text-gray-600"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -673,31 +672,29 @@ function About() {
                     <div className="flex w-full flex-col items-center justify-center rounded-md">
                       <div
                         style={{
-                          backgroundImage:
-                            "url('https://i.ibb.co/Lgjy80Y/Content-image-1.png');",
+                          backgroundImage: "url('/portDavid.png')",
                         }}
                         className="relative flex w-full flex-col justify-center rounded-md bg-cover "
                       >
-                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                          Maybe a walk on the beach could help
-                        </h1>
-
-                        <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-600"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </button>
+                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                        <Link href="https://my-portfolio-ccab3.web.app/">
+                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-6 w-6 text-gray-600"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -805,39 +802,7 @@ function About() {
                           className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                         >
                           <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-left text-lg  font-semibold text-black"></h1>
-
-                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-6 w-6 text-gray-600"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
-                      <div className="">
-                        <div
-                          aria-live="off"
-                          aria-roledescription="slide2"
-                          className=" flex-colrounded-md flex w-full items-center justify-center "
-                        >
-                          <div
-                            style={{
-                              backgroundImage: "url('/portDavid.png')",
-                            }}
-                            className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
-                          >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
-
+                          <Link href="https://rj-ai-club.vercel.app/">
                             <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -854,6 +819,40 @@ function About() {
                                 />
                               </svg>
                             </button>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="">
+                        <div
+                          aria-live="off"
+                          aria-roledescription="slide2"
+                          className=" flex-colrounded-md flex w-full items-center justify-center "
+                        >
+                          <div
+                            style={{
+                              backgroundImage: "url('/portDavid.png')",
+                            }}
+                            className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
+                          >
+                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <Link href="https://my-portfolio-ccab3.web.app/">
+                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6 text-gray-600"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -873,25 +872,25 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                            </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
+                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <Link href="https://lit-line.vercel.app/">
+                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6 text-gray-600"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -907,25 +906,25 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                            </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
+                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <Link href="https://owenw-photography.vercel.app/">
+                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6 text-gray-600"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -941,31 +940,31 @@ function About() {
                         >
                           <div
                             style={{
-                              backgroundImage:
-                                "url('/codecrafty.png')",
+                              backgroundImage: "url('/codecrafty.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
                             <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
                               Who doesn’t love a good swim
                             </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
+                            <Link href="https://codecrafty.vercel.app/">
+                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6 text-gray-600"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -981,25 +980,25 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
-                            </h1>
-
-                            <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 text-gray-600"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                  stroke-width="2"
-                                  d="M9 5l7 7-7 7"
-                                />
-                              </svg>
-                            </button>
+                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <Link href="rj3729.com">
+                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6 text-gray-600"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

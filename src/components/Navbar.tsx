@@ -80,7 +80,7 @@ export default function Navbar() {
       <>
       {isMobile ? (
         <div
-          className={`fixed right-0 top-0 bottom-0 z-40 w-1/2 overflow-auto bg-white transition-transform duration-200 ease-in-out ${
+          className={`fixed right-0 top-0 bottom-0 z-40 w-full overflow-auto bg-white transition-transform duration-200 ease-in-out ${
             sidebarOpen ? "" : "translate-x-full transform"
           }`}
         >
@@ -141,9 +141,7 @@ export default function Navbar() {
         )}
         {isMobile && sidebarOpen == false && (
           <>
-            <div className="fixed left-0 top-0 z-50 ml-3 mt-3 text-5xl font-bold">
-              <Image src="/logo.png" alt="Logo" width={100} height={40} />
-            </div>
+            
             <div className="fixed right-0 top-0 z-50 mr-3 mt-3 text-5xl font-bold">
               <button onClick={() => setSidebarOpen(true)}>☰</button>
             </div>
