@@ -55,17 +55,8 @@ export const authOptions: NextAuthOptions = {
     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
-    }),
-    Auth0Provider({
-      clientId: env.AUTH0_ID,
-      clientSecret: env.AUTH0_SECRET,
-      issuer: env.AUTH0_ISSUER,
       allowDangerousEmailAccountLinking: true,
     }),
-    // FacebookProvider({
-    //   clientId: env.FACEBOOK_ID,
-    //   clientSecret: env.FACEBOOK_SECRET,
-    // }),
     GithubProvider({
       clientId: env.GITHUB_ID,
       clientSecret: env.GITHUB_SECRET,
