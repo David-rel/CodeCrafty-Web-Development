@@ -12,10 +12,12 @@ export const submissionRouter = createTRPCRouter({
     const submissions = await ctx.prisma.submission.findMany();
 
     return [
-      ...submissions.map((submission: { createdAt: { toISOString: () => any; }; }) => ({
-        ...submission,
-        createdAt: submission.createdAt.toISOString(),
-      })),
+      ...submissions.map(
+        (submission: { createdAt: { toISOString: () => string } }) => ({
+          ...submission,
+          createdAt: submission.createdAt.toISOString(),
+        })
+      ),
     ];
   }),
 
