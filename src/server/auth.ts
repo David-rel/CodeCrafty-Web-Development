@@ -65,14 +65,16 @@ export const authOptions: NextAuthOptions = {
     //   clientId: env.FACEBOOK_ID,
     //   clientSecret: env.FACEBOOK_SECRET,
     // }),
-    // GithubProvider({
-    //   clientId: env.GITHUB_ID,
-    //   clientSecret: env.GITHUB_SECRET,
-    // }),
-    // GoogleProvider({
-    //   clientId: env.GOOGLE_ID,
-    //   clientSecret: env.GOOGLE_SECRET,
-    // }),
+    GithubProvider({
+      clientId: env.GITHUB_ID,
+      clientSecret: env.GITHUB_SECRET,
+      allowDangerousEmailAccountLinking: true,
+    }),
+    GoogleProvider({
+      clientId: env.GOOGLE_ID,
+      clientSecret: env.GOOGLE_SECRET,
+      allowDangerousEmailAccountLinking: true,
+    }),
 
     /**
      * ...add more providers here.

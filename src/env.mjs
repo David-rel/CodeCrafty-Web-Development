@@ -28,10 +28,10 @@ export const env = createEnv({
     AUTH0_ISSUER: z.string(),
     // FACEBOOK_ID: z.string(),
     // FACEBOOK_SECRET: z.string(),
-    // GITHUB_ID: z.string(),
-    // GITHUB_SECRET: z.string(),
-    // GOOGLE_ID: z.string(),
-    // GOOGLE_SECRET: z.string(),
+    GITHUB_ID: z.string(),
+    GITHUB_SECRET: z.string(),
+     GOOGLE_ID: z.string(),
+     GOOGLE_SECRET: z.string(),
   },
 
   /**
@@ -59,10 +59,10 @@ export const env = createEnv({
     AUTH0_ISSUER: process.env.AUTH0_ISSUER,
     // FACEBOOK_ID: process.env.FACEBOOK_ID,
     // FACEBOOK_SECRET: process.env.FACEBOOK_SECRET,
-    // GITHUB_ID: process.env.GITHUB_ID,
-    // GITHUB_SECRET: process.env.GITHUB_SECRET,
-    // GOOGLE_ID: process.env.GOOGLE_ID,
-    // GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+    GITHUB_ID: process.env.GITHUB_ID,
+    GITHUB_SECRET: process.env.GITHUB_SECRET,
+     GOOGLE_ID: process.env.GOOGLE_ID,
+     GOOGLE_SECRET: process.env.GOOGLE_SECRET,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
