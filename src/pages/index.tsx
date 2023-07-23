@@ -43,7 +43,7 @@ export default function Home() {
               website.
             </p>
 
-            <Link href="/login" legacyBehavior>
+            <Link href="/build" legacyBehavior>
               <a className="rounded bg-rose-700 px-6 py-4 font-montserrat text-lg font-bold text-white hover:bg-rose-600">
                 Build Your Dream Site
               </a>
