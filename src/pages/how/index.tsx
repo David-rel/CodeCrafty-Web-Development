@@ -46,7 +46,7 @@ export default function Index() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="font-montserrat">
         <div className="pb-20 pt-8">
           <div className="container mx-auto flex w-full flex-col items-center justify-between px-6 md:flex-row lg:px-0">
             <div
@@ -59,7 +59,7 @@ export default function Index() {
                 </p>
               </div>
               <div className="md:mt-3">
-                <p className="text-sm leading-normal text-gray-600  lg:text-base">
+                <p className="font-merriweather text-sm leading-normal  text-gray-600 lg:text-base">
                   Learn how CodeCrafty Designs and Developes your website based
                   on user use requests.
                 </p>
@@ -114,16 +114,16 @@ export default function Index() {
                 </h2>
               </div>
               <div className="mt-8" data-aos="fade-up">
-                <p className="text-sm leading-normal text-gray-800  lg:text-base">
+                <p className="font-merriweather text-sm leading-normal  text-gray-800 lg:text-base">
                   At CodeCrafty, we believe that creating a website should be a
-                  hassle-free experience. That&apos;s why we&apos;ve made it incredibly
-                  simple for you to submit your design requirements. Once we
-                  receive your submission, our talented team of developers gets
-                  straight to work, handling every aspect of your project with
-                  care and speed. We&apos;re committed to delivering not only a
-                  visually stunning website but also a seamless user experience,
-                  all within a quick turnaround time. At CodeCrafty, we craft
-                  the web - with you and for you.
+                  hassle-free experience. That&apos;s why we&apos;ve made it
+                  incredibly simple for you to submit your design requirements.
+                  Once we receive your submission, our talented team of
+                  developers gets straight to work, handling every aspect of
+                  your project with care and speed. We&apos;re committed to
+                  delivering not only a visually stunning website but also a
+                  seamless user experience, all within a quick turnaround time.
+                  At CodeCrafty, we craft the web - with you and for you.
                 </p>
               </div>
               <div className="mt-8 w-full">
@@ -146,7 +146,7 @@ export default function Index() {
                   </p>
                 </div>
                 <div className="mt-8">
-                  <p className="text-center text-xs leading-normal text-white md:text-base lg:text-left">
+                  <p className="text-center font-merriweather text-xs leading-normal text-white md:text-base lg:text-left">
                     Do you think CodeCrafty is what you are looking for and you
                     are ready to start building with this company. contact us or
                     start the process of building your best dream website.
@@ -177,13 +177,13 @@ export default function Index() {
       <div className="flex flex-wrap items-center justify-center">
         {steps.map(({ id, title, description, imgUrl }) => (
           <div key={id} className="w-full p-4 sm:w-1/2" data-aos="fade-up">
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center font-merriweather">
               <img
                 className="mb-4 h-64 w-full object-cover"
                 src={imgUrl}
                 alt={title}
               />
-              <h2 className="mb-2 font-bold">{title}</h2>
+              <h2 className="mb-2 font-bold font-montserrat">{title}</h2>
               <p>{description}</p>
             </div>
           </div>

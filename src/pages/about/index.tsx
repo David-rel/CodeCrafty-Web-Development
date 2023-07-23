@@ -24,7 +24,7 @@ function About() {
   return (
     <div>
       <Navbar />
-      <div className="px-4 py-9 2xl:container md:px-6 md:py-12 lg:px-20 lg:py-16 2xl:mx-auto">
+      <div className="px-4 py-9 font-montserrat 2xl:container md:px-6 md:py-12 lg:px-20 lg:py-16 2xl:mx-auto">
         <div
           className="flex flex-col gap-12 sm:gap-10 lg:flex-row lg:gap-8"
           data-aos="fade"
@@ -34,7 +34,7 @@ function About() {
               We are here to make building your dream website hassle free
             </h2>
 
-            <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
+            <p className="mt-6 pb-8 font-merriweather text-base font-normal leading-6 text-gray-600">
               Welcome to CodeCrafty, your one-stop shop for comprehensive web
               design and development services. We&apos;re a creative powerhouse
               with a passion for transforming your ideas into beautifully
@@ -202,7 +202,7 @@ function About() {
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
               Founded
             </p>
-            <p className="mt-6 text-base font-normal leading-6 text-gray-600">
+            <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
               We were founded in 2023 by David Fales a aspiring full stack web
               developer. His goal was to make websites easy to build for
               clients.
@@ -212,7 +212,7 @@ function About() {
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
               Creation
             </p>
-            <p className="mt-6 text-base font-normal leading-6 text-gray-600">
+            <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
               The creation process we use to create websites takes your ideas
               and creates a site based on your likeness. The design and
               development is controlled by you we do the heavy lifting.
@@ -222,7 +222,7 @@ function About() {
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
               Users
             </p>
-            <p className="mt-6 text-base font-normal leading-6 text-gray-600">
+            <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
               Starting off as a new company we have reached out and created
               websites for 8 different people/companies.
             </p>
@@ -274,11 +274,11 @@ function About() {
         <div className="grid grid-cols-2 gap-4 sm:hidden sm:grid-cols-3 sm:gap-8">
           <div>
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-              400k User
+              Users
             </p>
-            <p className="mt-6 text-base font-normal leading-6 text-gray-600">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+            <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
+              Starting off as a new company we have reached out and created
+              websites for 8 different people/companies.
             </p>
           </div>
         </div>
@@ -288,7 +288,7 @@ function About() {
             <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
               Our Mission
             </h2>
-            <p className="mt-6 w-full text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
+            <p className="mt-6 w-full font-merriweather text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
               Our mission at CodeCrafty is to revolutionize the web development
               industry by making website design and development an accessible,
               effortless, and efficient process for all. We&apos;re here to
@@ -296,7 +296,7 @@ function About() {
               powerful online presence, without the hurdles that are typically
               associated with web development.
             </p>
-            <p className="mt-10 w-full pb-8 text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
+            <p className="mt-10 w-full pb-8 font-merriweather text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
               Beyond just creating stunning websites, we&apos;re passionate
               about bringing your vision to life quickly and hassle-free.
               We&apos;re committed to providing our clients with a robust
@@ -354,7 +354,7 @@ function About() {
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
                     Building
                   </p>
-                  <p className="mt-2 text-base font-normal leading-6 text-gray-600">
+                  <p className="mt-2 font-merriweather text-base font-normal leading-6 text-gray-600">
                     We build fast making your website UI and UX design look
                     still look perfect with your great ideas.
                   </p>
@@ -405,7 +405,7 @@ function About() {
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
                     Connection
                   </p>
-                  <p className="mt-2 text-base font-normal leading-6 text-gray-600">
+                  <p className="mt-2 font-merriweather text-base font-normal leading-6 text-gray-600">
                     We want to establish connections with our clients that puts
                     them under the control of their site.
                   </p>
@@ -442,7 +442,7 @@ function About() {
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
                     Contact
                   </p>
-                  <p className="mt-2 text-base font-normal leading-6 text-gray-600">
+                  <p className="mt-2 font-merriweather text-base font-normal leading-6 text-gray-600">
                     Being able to contact us whenever is one of our biggest
                     importance&apos;s. Making sure that if you have a edit you
                     want to make you can reach us immediately.
@@ -480,7 +480,7 @@ function About() {
             <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
               Our Story
             </h2>
-            <p className="mt-4 text-base font-normal leading-6 text-gray-600">
+            <p className="mt-4 font-merriweather text-base font-normal leading-6 text-gray-600">
               CodeCrafty was born out of a desire to make website design and
               development accessible and seamless for everyone. We noticed a gap
               in the market - the process of getting a website from conception
@@ -490,7 +490,7 @@ function About() {
               project was crafted with care, speed, and a deep understanding of
               the client&apos;s vision.
             </p>
-            <p className="mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
+            <p className="font-merriweather mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
               Our journey began with a passionate, experienced, and
               forward-thinking web developer and designer who had this vision.
               Today, CodeCrafty has grown into a trusted platform, providing

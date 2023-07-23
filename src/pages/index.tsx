@@ -31,20 +31,20 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div data-aos="fade" className="max-w-xl text-center sm:text-left">
-            <h1 className="text-3xl font-extrabold sm:text-5xl">
+            <h1 className="font-montserrat text-3xl font-extrabold sm:text-5xl ">
               Code Crafty
               <strong className="block font-extrabold text-rose-700">
                 Web Development and Design
               </strong>
             </h1>
 
-            <p className="mt-4 max-w-lg pb-8 font-semibold sm:text-xl sm:leading-relaxed">
+            <p className="mt-4 max-w-lg pb-8 font-merriweather font-semibold sm:text-xl sm:leading-relaxed">
               Welcome to the official CodeCrafty Web Development and Design
               website.
             </p>
 
             <Link href="/login" legacyBehavior>
-              <a className="rounded bg-rose-700 px-6 py-4 text-lg font-bold text-white hover:bg-rose-600">
+              <a className="rounded bg-rose-700 px-6 py-4 font-montserrat text-lg font-bold text-white hover:bg-rose-600">
                 Build Your Dream Site
               </a>
             </Link>
@@ -56,7 +56,7 @@ export default function Home() {
           className="relative mx-auto max-w-screen-xl text-center"
           data-aos="fade-up"
         >
-          <h2 className="text-5xl font-extrabold">
+          <h2 className="font-montserrat text-5xl font-extrabold">
             Transform your online presence with our exceptional web solutions,
             crafted to outshine competitors in speed, affordability, and
             quality.
@@ -76,7 +76,7 @@ export default function Home() {
             />
           </div>
           <div className="mt-8 lg:ml-8 lg:mt-0 lg:w-1/2">
-            <p className="mt-4 text-xl">
+            <p className="mt-4 font-merriweather text-xl">
               At CodeCrafty, we specialize in delivering swift and
               budget-friendly website solutions. Our mission is to simplify the
               entire process, ensuring that building your dream website is a
@@ -84,7 +84,7 @@ export default function Home() {
               efficiency, affordability, and utmost ease.
             </p>
             <Link href="/about" legacyBehavior>
-              <a className="mt-4 inline-block rounded bg-rose-600 px-4 py-2 font-bold text-white hover:bg-rose-700">
+              <a className="mt-4 inline-block rounded bg-rose-600 px-4 py-2 font-montserrat font-bold text-white hover:bg-rose-700">
                 Learn More
               </a>
             </Link>
@@ -94,7 +94,7 @@ export default function Home() {
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
           <div className="mt-8 lg:ml-8 lg:mt-0 lg:w-1/2">
-            <p className="mt-4 text-xl">
+            <p className="mt-4 font-merriweather text-xl">
               Our development approach at CodeCrafty is centered around
               cutting-edge technology. We harness the power of the latest
               JavaScript frameworks to ensure rapid website development, always
@@ -106,7 +106,7 @@ export default function Home() {
               business needs.
             </p>
             <Link href="/how" legacyBehavior>
-              <a className="mt-4 inline-block rounded bg-rose-600 px-4 py-2 font-bold text-white hover:bg-rose-700">
+              <a className="mt-4 inline-block rounded bg-rose-600 px-4 py-2 font-montserrat font-bold text-white hover:bg-rose-700">
                 Learn More
               </a>
             </Link>
@@ -137,7 +137,7 @@ export default function Home() {
           className="absolute right-0 h-96 w-96 -translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
           data-aos="fade-left"
         />
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center font-montserrat">
           <h2 className="mb-4 text-7xl font-extrabold" data-aos="fade">
             Ready to start building your dream site?
           </h2>
@@ -149,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+      <section className="bg-white px-4 py-16 font-montserrat sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl text-center">
           <h2 className="mb-4 text-4xl font-extrabold">Have a question?</h2>
           <Link href="/contact" legacyBehavior>

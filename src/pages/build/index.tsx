@@ -17,7 +17,7 @@ function Build() {
   return (
     <>
       <Navbar />
-      <div className="px-6 py-20 xl:container xl:mx-auto 2xl:px-0">
+      <div className="px-6 py-20 font-montserrat xl:container xl:mx-auto 2xl:px-0">
         <div className="items-center justify-between lg:flex">
           <div className=" w-full lg:w-1/2">
             <p className="text-base leading-4 text-gray-600">
@@ -31,7 +31,7 @@ function Build() {
             </h1>
             <p
               role="contentinfo"
-              className="mt-5 text-base leading-5 text-gray-600"
+              className="mt-5 font-merriweather text-base leading-5 text-gray-600"
             >
               We have several plans to showcase your Business. Get everything
               you need
@@ -58,7 +58,7 @@ function Build() {
                   $400
                 </p>
               </div>
-              <p className="mt-4 text-base leading-6 text-gray-600 md:w-80">
+              <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
                 This is for your basic portfolio and personal website
               </p>
               <Link href="/build/customize/basic">
@@ -82,7 +82,7 @@ function Build() {
                     $600
                   </p>
                 </div>
-                <p className="mt-4 text-base leading-6 text-gray-600 md:w-80">
+                <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
                   This is for more complex sites like blogs, education sites,
                   etc...
                 </p>
@@ -105,7 +105,7 @@ function Build() {
                   $800
                 </p>
               </div>
-              <p className="mt-4 text-base leading-6 text-gray-600 md:w-80">
+              <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
                 This is where businesses and startups will get the best value. A
                 subscription based site, e-commerce, media
               </p>
@@ -119,24 +119,22 @@ function Build() {
         </div>
       </div>
 
-      <div className="pt-16">
+      <div className="pt-16 font-montserrat">
         <div className="w-full bg-gray-100 py-12">
           <div className="container mx-auto">
             <div className="mx-auto mb-12 w-4/5">
               <h1 className="mb-4 text-center text-3xl font-extrabold text-gray-800 xl:text-4xl">
                 Simple &amp; Transparent Pricing
               </h1>
-              <p className="text-center text-xl font-normal text-gray-600">
-                Focus on your business goals and we take care of the rest. From
-                ready-made components to perfect templates to highly
-                customizable design. All you need to do is choose your plan
-                according to your next project.
+              <p className="text-center font-merriweather text-xl font-normal text-gray-600">
+                Build a website of your dream with a couple clicks and Code
+                Crafty and we will do the rest.
               </p>
             </div>
             <div className="mx-auto w-11/12">
               <div className="items-end lg:flex xl:flex">
                 <div className="mb-2 flex flex-wrap items-center justify-center bg-white pb-8 pt-8 shadow sm:mb-2 md:mb-2 lg:mb-0 xl:mb-0 xl:w-1/4">
-                  <Image width={213} height={50} src="/logo.png" alt="" />
+                  <Image width={250} height={50} src="/logo.png" alt="" />
                 </div>
                 <div className="shadow sm:flex md:flex lg:flex xl:flex">
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
@@ -149,7 +147,7 @@ function Build() {
                     <p className="mb-3 text-center text-2xl font-bold text-gray-800">
                       Basic
                     </p>
-                    <p className="mb-6 w-full text-center text-sm font-normal text-gray-600">
+                    <p className="mb-6 w-full text-center font-merriweather text-sm font-normal text-gray-600">
                       Basic resources for a starter site. Individuals and small
                       teams.
                     </p>
@@ -166,7 +164,7 @@ function Build() {
                     <p className="mb-3 text-center text-2xl font-bold text-gray-800">
                       Pro
                     </p>
-                    <p className="mb-6 w-full text-center text-sm font-normal text-gray-600">
+                    <p className="mb-6 w-full text-center font-merriweather text-sm font-normal text-gray-600">
                       More power for company sites and heavy traffic. Growing
                       business.
                     </p>
@@ -187,7 +185,7 @@ function Build() {
                     <p className="mb-3 text-center text-2xl font-bold text-gray-800">
                       Enterprise
                     </p>
-                    <p className="mb-6 w-full text-center text-sm font-normal text-gray-600">
+                    <p className="mb-6 w-full text-center font-merriweather text-sm font-normal text-gray-600">
                       Support multi-complex sites and high-resolution photos and
                       videos.
                     </p>

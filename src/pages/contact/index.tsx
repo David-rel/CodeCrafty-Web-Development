@@ -19,7 +19,7 @@ export default function IndexPage() {
   return (
     <>
       <Navbar />
-      <div className="relative py-4  lg:py-8">
+      <div className="relative py-4  lg:py-8 font-montserrat">
         <img
           src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
           className="absolute inset-0 hidden h-2/5 w-full rounded object-cover object-center lg:h-full lg:w-1/2 xl:block"
