@@ -59,7 +59,7 @@ function IndexPage() {
       {password === process.env.NEXT_PUBLIC_PASSWORD &&
         data.map((submission, index) => {
           return (
-            <div>
+            <div key={index}>
               <h1 className="text-3xl font-bold">Your Submissions</h1>
 
               <div
