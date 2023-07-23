@@ -640,12 +640,12 @@ function About() {
                     <div className=" flex w-full flex-col items-center justify-center rounded-md">
                       <div
                         style={{
-                          backgroundImage: "url('/photo.png')",
+                          backgroundImage: "url('/coerver.png')",
                         }}
                         className="relative flex w-full flex-col justify-center  rounded-md bg-cover "
                       >
                         <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
-                        <Link href="https://owenw-photography.vercel.app/">
+                        <Link href="https://coerver-colorado.vercel.app/">
                           <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -902,12 +902,12 @@ function About() {
                         >
                           <div
                             style={{
-                              backgroundImage: "url('/photo.png')",
+                              backgroundImage: "url('/coerver.png')",
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
                             <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
-                            <Link href="https://owenw-photography.vercel.app/">
+                            <Link href="https://coerver-colorado.vercel.app/">
                               <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
