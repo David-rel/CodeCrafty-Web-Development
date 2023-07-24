@@ -55,7 +55,7 @@ function Build() {
                   Basic
                 </h2>
                 <p className="mt-4 text-2xl font-semibold leading-6 text-gray-800 md:mt-0">
-                  $400
+                  $500
                 </p>
               </div>
               <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
@@ -79,7 +79,7 @@ function Build() {
                     Pro
                   </h2>
                   <p className="mt-4 text-2xl font-semibold leading-6 text-gray-800 md:mt-0">
-                    $600
+                    $700
                   </p>
                 </div>
                 <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
@@ -220,10 +220,10 @@ function Build() {
                           Plan Cost
                         </td>
                         <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          $400
+                          $500
                         </td>
                         <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          $600
+                          $700
                         </td>
                         <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
                           $800
