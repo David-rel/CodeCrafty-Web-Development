@@ -43,7 +43,7 @@ const ADD_ONS: AddOn[] = [
   },
   {
     name: "Need a database",
-    cost: 100,
+    cost: 200,
     scaleable: true,
     monthlyCost: 200,
     description: "you need to store any data of any type",
@@ -51,7 +51,7 @@ const ADD_ONS: AddOn[] = [
   }, // Cost is back
   {
     name: "Need a user base",
-    cost: 50,
+    cost: 150,
     scaleable: true,
     monthlyCost: 150,
     description: "need to authenticated users and keep track of that",
@@ -59,7 +59,7 @@ const ADD_ONS: AddOn[] = [
   }, // Cost is back
   {
     name: "Need storage",
-    cost: 100,
+    cost: 150,
     scaleable: true,
     monthlyCost: 150,
     description: "need to store videos files or photos",
@@ -206,7 +206,7 @@ function CustomizePage() {
                 </label>
                 {addOn.scaleable && selectedAddOns.includes(addOn.name) && (
                   <div className="group relative ml-6">
-                    <Tooltip text={addOn.scaleDescription || ''} />
+                    <Tooltip text={addOn.scaleDescription || ""} />
                     <label className="ml-6 flex items-center">
                       <input
                         type="checkbox"
@@ -241,7 +241,6 @@ function CustomizePage() {
                 </span>
               </label>
             </div>
-
             <div className="text-right text-sm text-gray-700">
               <span className="">Base price: </span>
               <span className="">${basePrice}</span>
@@ -322,7 +321,7 @@ function CustomizePage() {
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-rose-500 focus:outline-none focus:ring-rose-500 sm:text-sm"
               />
             </div>
-
+            Note: You must be logged in to submit a request and price may vary based on complexity. You will get contacted by a developer to discuss the website within 24 hours of requesting.
             <div className="mt-6 flex items-center justify-end">
               <button
                 className="group relative flex w-full justify-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2"
