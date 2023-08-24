@@ -9,11 +9,12 @@ import { useMediaQuery } from "react-responsive";
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const router = useRouter();
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-    const isMobile = useMediaQuery({ query: "(max-width: 1050px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1050px)" });
+
+  // Initialize sidebarOpen based on screen size
+  const [sidebarOpen, setSidebarOpen] = useState(isMobile ? true : false);
 
   const isActive = (pathname: string) => router.pathname === pathname;
-
     const links = (
       <>
         <Link href="/" legacyBehavior>
@@ -80,14 +81,15 @@ export default function Navbar() {
       <>
         {isMobile ? (
           <div
-            className={`fixed bottom-0 right-0 top-0 z-40 w-full overflow-auto bg-white transition-transform duration-200 ease-in-out ${
-              sidebarOpen ? "" : "translate-x-full transform"
-            }`}
+            className={`${ sidebarOpen ? "" : "translate-x-full transform" } fixed bottom-0 right-0
+            top-0
+              z-40 w-full overflow-auto bg-white transition-transform duration-200
+            ease-in-out`}
           >
             <div className="flex flex-1 flex-col overflow-y-auto pb-4 pt-5">
               {/**logog image */}
               <div className="flex items-center justify-center">
-                <Image src="/logo.png" alt="Logo" width={150} height={40} />
+                <Image src="/logo1.png" alt="Logo" width={150} height={40} />
               </div>
 
               <div className="px-4">
@@ -123,7 +125,7 @@ export default function Navbar() {
         ) : (
           <nav className="sticky top-0 z-50 flex items-center justify-between bg-white/60 p-6 text-black backdrop-blur-lg backdrop-filter">
             <div className="flex items-center space-x-16 font-montserrat">
-              <Image src="/logo.png" alt="Logo" width={100} height={40} />
+              <Image src="/logo1.png" alt="Logo" width={100} height={40} />
               {links}
             </div>
             {sessionData && <></>}

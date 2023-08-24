@@ -134,7 +134,7 @@ function Build() {
             <div className="mx-auto w-11/12">
               <div className="items-end lg:flex xl:flex">
                 <div className="mb-2 flex flex-wrap items-center justify-center bg-white pb-8 pt-8 shadow sm:mb-2 md:mb-2 lg:mb-0 xl:mb-0 xl:w-1/4">
-                  <Image width={250} height={50} src="/logo.png" alt="" />
+                  <Image width={250} height={50} src="/logo1.png" alt="" />
                 </div>
                 <div className="shadow sm:flex md:flex lg:flex xl:flex">
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">

@@ -10,7 +10,7 @@ function Index() {
           <div className="pt-6 md:flex lg:flex xl:flex">
             <div className="mx-auto w-11/12 lg:mx-0 lg:w-2/5 xl:mx-0 xl:w-3/6">
               <div className="mb-6 flex items-center lg:mb-0 xl:mb-0">
-                <Image src="/logo.png" width={100} height={40} alt={""} />
+                <Image src="/logo1.png" width={100} height={40} alt={""} />
                 <p className="ml-3 text-xl font-bold">CodeCrafty</p>
               </div>
 
@@ -18,7 +18,10 @@ function Index() {
                 Phone: +1 (720) 612 2979
               </h1>
               <h1 className="text-xl font-bold">
-                Email: davidfalesct@gmail.com
+                Dev Email: davidfales@codecrafty.dev
+              </h1>
+              <h1 className="text-xl font-bold">
+                Marketing Email: diego@codecrafty.dev
               </h1>
             </div>
 

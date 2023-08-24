@@ -16,7 +16,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
       <Head>
         <title>CodeCrafty</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="./logo.png" />
+        <link rel="icon" href="./logo1.png" />
       </Head>
       <Component {...pageProps} />
     </SessionProvider>
