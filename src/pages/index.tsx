@@ -21,7 +21,16 @@ export default function Home() {
     <div>
       <Navbar />
 
-      <section className="relative bg-[url(../../public/banner.jpg)] bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-cover bg-center bg-no-repeat">
+        <Image
+          src="/banner.jpg"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          alt="CodeCrafty Banner"
+          quality={90}
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-white/60 to-transparent"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
