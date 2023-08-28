@@ -28,6 +28,6 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-, "next-sitemap.js"  ],
+, "next-sitemap.config.js"  ],
   "exclude": ["node_modules"]
 }

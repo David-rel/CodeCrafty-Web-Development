@@ -1,4 +1,9 @@
+# *
 User-agent: *
-Disallow: /dev/
+Allow: /
 
+# Host
+Host: https://codecrafty.dev
+
+# Sitemaps
 Sitemap: https://codecrafty.dev/sitemap.xml
