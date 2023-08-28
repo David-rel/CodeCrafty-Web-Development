@@ -30,38 +30,38 @@ interface AddOn {
 const ADD_ONS: AddOn[] = [
   {
     name: "More revisions",
-    cost: 50,
+    cost: 100,
     scaleable: false,
     description:
       "pays the developer to update the website when you want them to",
   },
   {
     name: "More pages",
-    cost: 75,
+    cost: 100,
     scaleable: false,
     description: "add more pages to your site",
   },
   {
     name: "Need a database",
-    cost: 200,
+    cost: 500,
     scaleable: true,
-    monthlyCost: 200,
+    monthlyCost: 500,
     description: "you need to store any data of any type",
     scaleDescription: "if you need more room for storing data (recommended)",
   }, // Cost is back
   {
     name: "Need a user base",
-    cost: 150,
+    cost: 500,
     scaleable: true,
-    monthlyCost: 150,
+    monthlyCost: 500,
     description: "need to authenticated users and keep track of that",
     scaleDescription: "if you need more room for storing users (recommended)",
   }, // Cost is back
   {
     name: "Need storage",
-    cost: 150,
+    cost: 300,
     scaleable: true,
-    monthlyCost: 150,
+    monthlyCost: 300,
     description: "need to store videos files or photos",
     scaleDescription: "if you need more room for storing files (recommended)",
   }, // Cost is back
@@ -73,7 +73,7 @@ const ADD_ONS: AddOn[] = [
   },
   {
     name: "Monthly checkups",
-    cost: 50,
+    cost: 100,
     scaleable: false,
     description: "want the developer to checkup on the site every month",
   },
@@ -125,7 +125,7 @@ function CustomizePage() {
     }));
   };
 
-  const basePrice = type === "basic" ? 500 : type === "pro" ? 700 : 800;
+  const basePrice = type === "basic" ? 1000 : type === "pro" ? 2000 : 3000;
   const totalCost =
     selectedAddOns.reduce(
       (sum, addOn) =>
