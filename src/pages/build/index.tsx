@@ -41,11 +41,16 @@ function Build() {
             className="relative mt-12 w-full md:px-8 lg:mt-0 lg:w-7/12 xl:w-1/2"
             role="list"
           >
-            <img
-              src="https://i.ibb.co/0n6DSS3/bgimg.png"
-              className="absolute -ml-12 mt-24 w-full"
-              alt="background circle images"
-            />
+            <div className="absolute -ml-12 mt-24 w-full">
+              {" "}
+              <Image
+                src="https://i.ibb.co/0n6DSS3/bgimg.png"
+                alt="background circle images"
+                width={1000}
+                height={500}
+              />{" "}
+            </div>
+
             <div
               role="listitem"
               className="relative z-30 cursor-pointer rounded-lg bg-white p-8 shadow"
@@ -139,9 +144,11 @@ function Build() {
                 <div className="shadow sm:flex md:flex lg:flex xl:flex">
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
                     <div className="mb-6">
-                      <img
+                      <Image
                         src="https://cdn.tuk.dev/assets/paper-plane.png"
-                        alt=""
+                        alt="message"
+                        width={40}
+                        height={500}
                       />
                     </div>
                     <p className="mb-3 text-center text-2xl font-bold text-gray-800">
@@ -159,7 +166,12 @@ function Build() {
                   </div>
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
                     <div className="mb-5">
-                      <img src="https://cdn.tuk.dev/assets/plane.png" alt="" />
+                      <Image
+                        src="https://cdn.tuk.dev/assets/plane.png"
+                        alt="img"
+                        width={40}
+                        height={500}
+                      />
                     </div>
                     <p className="mb-3 text-center text-2xl font-bold text-gray-800">
                       Pro
@@ -176,9 +188,11 @@ function Build() {
                   </div>
                   <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
                     <div className="mb-6">
-                      <img
+                      <Image
                         src="https://cdn.tuk.dev/assets/start-button.png"
-                        alt=""
+                        alt="img"
+                        width={40}
+                        height={500}
                       />
                     </div>
 

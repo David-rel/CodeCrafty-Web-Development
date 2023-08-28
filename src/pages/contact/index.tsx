@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Image from "next/image";
 
 export default function IndexPage() {
   const [email, setEmail] = useState("");
@@ -19,20 +20,29 @@ export default function IndexPage() {
   return (
     <>
       <Navbar />
-      <div className="relative py-4  lg:py-8 font-montserrat">
-        <img
-          src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
-          className="absolute inset-0 hidden h-2/5 w-full rounded object-cover object-center lg:h-full lg:w-1/2 xl:block"
-          alt="map"
-        />
+      <div className="relative py-4  font-montserrat lg:py-8">
+        <div className="absolute inset-0 hidden h-2/5 w-full rounded lg:h-full lg:w-1/2 xl:block">
+          <Image
+            src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
+            layout="fill"
+            objectFit="cover"
+            alt="map"
+          />
+        </div>
         <div className="relative xl:container  xl:mx-auto ">
           <div className="flex flex-wrap xl:container xl:mx-auto">
-            <div className="relative mb-10 w-full pl-0 lg:w-1/2 xl:mt-10 xl:pl-12 2xl:pl-0 2xl:pr-24 " data-aos="fade-right">
-              <img
-                src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
-                className="absolute inset-0 h-full w-full rounded bg-cover bg-center xl:hidden xl:w-1/2"
-                alt="map"
-              />
+            <div
+              className="relative mb-10 w-full pl-0 lg:w-1/2 xl:mt-10 xl:pl-12 2xl:pl-0 2xl:pr-24 "
+              data-aos="fade-right"
+            >
+              <div className="absolute inset-0 h-full w-full rounded bg-cover bg-center xl:hidden xl:w-1/2">
+                <Image
+                  src="https://cdn.tuk.dev/assets/templates/radian/Back_Image.png"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="map"
+                />
+              </div>
               <div className="relative z-20 flex w-full  flex-col  items-start px-4 py-4 xl:justify-start xl:px-0 xl:py-0">
                 <div className="w-full xl:pt-1 2xl:pl-48">
                   <h1 className="text-4xl font-bold tracking-wider text-gray-800 md:text-5xl lg:text-7xl">
@@ -71,7 +81,10 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 lg:pl-24 xl:pt-10" data-aos="fade-left">
+            <div
+              className="w-full lg:w-1/2 lg:pl-12 xl:pt-10 pr-4"
+              data-aos="fade-left"
+            >
               <div className="pl-2">
                 <h1 className="text-4xl font-bold tracking-wider text-rose-600 md:text-5xl lg:text-7xl">
                   Let’s Talk

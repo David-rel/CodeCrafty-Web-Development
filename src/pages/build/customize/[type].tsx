@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
-import { api, type RouterOutputs } from "../../../utils/api";
+import { api } from "../../../utils/api";
 import { useSession } from "next-auth/react";
 
 interface TooltipProps {

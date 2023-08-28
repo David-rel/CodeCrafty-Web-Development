@@ -3,8 +3,6 @@ import {
   createTRPCRouter,
   protectedProcedure,
 } from "~/server/api/trpc";
-import { submissionInput } from "~/types";
-import { Prisma } from '@prisma/client'; // import Prisma client
 
 
 export const submissionRouter = createTRPCRouter({

@@ -10,6 +10,7 @@ import {
   ButtonNext,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import Image from "next/image";
 
 function About() {
   useEffect(() => {
@@ -55,21 +56,32 @@ function About() {
           </div>
 
           <div className="w-full lg:w-6/12">
-            <img
-              className="hidden w-full lg:block"
-              src="./about_opener.jpeg"
-              alt="people discussing on board"
-            />
-            <img
-              className="hidden w-full sm:block lg:hidden"
-              src="./about_opener.jpeg"
-              alt="people discussing on board"
-            />
-            <img
-              className="block w-full sm:hidden"
-              src="./about_opener.jpeg"
-              alt="people discussing on board"
-            />
+            <div className="relative hidden w-full lg:block">
+              <Image
+                src="/about_opener.jpeg"
+                width={500}
+                height={500}
+                alt="people discussing on board"
+              />
+            </div>
+
+            <div className="relative hidden w-full sm:block lg:hidden">
+              <Image
+                src="/about_opener.jpeg"
+                width={500}
+                height={500}
+                alt="people discussing on board"
+              />
+            </div>
+
+            <div className="relative block w-full sm:hidden">
+              <Image
+                src="/about_opener.jpeg"
+                width={500}
+                height={500}
+                alt="people discussing on board"
+              />
+            </div>
           </div>
         </div>
 
@@ -455,21 +467,32 @@ function About() {
       </div>
       <div className="px-4 py-9 2xl:container md:px-6 md:py-12 lg:px-20 lg:py-16 2xl:mx-auto">
         <div className="mt-12 sm:mt-10 lg:mt-14">
-          <img
-            className="hidden w-full lg:block"
-            src="./about_banner.png"
-            alt="Group of people Chilling"
-          />
-          <img
-            className="hidden w-full sm:block lg:hidden"
-            src="./about_banner.png"
-            alt="Group of people Chilling"
-          />
-          <img
-            className="block w-full sm:hidden"
-            src="./about_banner.png"
-            alt="Group of people Chilling"
-          />
+          <div className="relative hidden w-full lg:block">
+            <Image
+              src="/about_banner.png"
+              width={2000}
+              height={500}
+              alt="Group of people Chilling"
+            />
+          </div>
+
+          <div className="relative hidden w-full sm:block lg:hidden">
+            <Image
+              src="/about_banner.png"
+              width={2000}
+              height={500}
+              alt="Group of people Chilling"
+            />
+          </div>
+
+          <div className="relative block w-full sm:hidden">
+            <Image
+              src="/about_banner.png"
+              width={2000}
+              height={500}
+              alt="Group of people Chilling"
+            />
+          </div>
         </div>
 
         <div
@@ -490,7 +513,7 @@ function About() {
               project was crafted with care, speed, and a deep understanding of
               the client&apos;s vision.
             </p>
-            <p className="font-merriweather mt-6 pb-8 text-base font-normal leading-6 text-gray-600">
+            <p className="mt-6 pb-8 font-merriweather text-base font-normal leading-6 text-gray-600">
               Our journey began with a passionate, experienced, and
               forward-thinking web developer and designer who had this vision.
               Today, CodeCrafty has grown into a trusted platform, providing
@@ -510,21 +533,30 @@ function About() {
             </Link>
           </div>
           <div className="w-full items-center lg:flex lg:w-1/2 ">
-            <img
-              className="hidden w-full lg:block"
-              src="./about_person.jpeg"
-              alt="people discussing on board"
-            />
-            <img
-              className="hidden h-3/4 w-full rounded sm:block lg:hidden"
-              src="./about_person.jpeg"
-              alt="people discussing on board"
-            />
-            <img
-              className="block w-full rounded sm:hidden"
-              src="./about_person.jpeg"
-              alt="people discussing on board"
-            />
+            <div className="relative hidden w-full lg:block">
+              <Image
+                src="/about_person.jpeg"
+                width={1000}
+                height={500}
+                alt="people discussing on board"
+              />
+            </div>
+            <div className="relative hidden h-3/4 w-full rounded sm:block lg:hidden">
+              <Image
+                src="/about_person.jpeg"
+                width={1000}
+                height={500}
+                alt="people discussing on board"
+              />
+            </div>
+            <div className="relative block w-full rounded sm:hidden">
+              <Image
+                src="/about_person.jpeg"
+                width={1000}
+                height={500}
+                alt="people discussing on board"
+              />
+            </div>
           </div>
         </div>
       </div>

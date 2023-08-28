@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
+import Image from "next/image";
 
 type Step = {
   id: number;
@@ -43,6 +44,15 @@ const steps: Step[] = [
 ];
 
 export default function Index() {
+    useEffect(() => {
+      // Importing and initializing AOS
+      import("aos")
+        .then((Aos) => {
+          Aos.init({ duration: 2000 });
+        })
+        .catch((error) => console.error(error));
+    }, []);
+
   return (
     <>
       <Navbar />
@@ -96,11 +106,15 @@ export default function Index() {
               </div>
             </div>
             <div className="mt-10 flex items-center justify-center md:mt-0 lg:w-2/5">
-              <img
-                className="w-full"
-                src="https://i.ibb.co/181DvLN/Project-Cover-6.png"
-                alt="laptops"
-              />
+              <div className="w-full">
+                {" "}
+                <Image
+                  src="https://i.ibb.co/181DvLN/Project-Cover-6.png"
+                  alt="laptops"
+                  width={1000}
+                  height={500}
+                />
+              </div>
             </div>
           </div>
           <div className="container mx-auto mt-12 flex w-full flex-col items-start justify-between px-6 lg:px-0 xl:flex-row">
@@ -127,12 +141,15 @@ export default function Index() {
                 </p>
               </div>
               <div className="mt-8 w-full">
-                <img
-                  className="w-full"
-                  data-aos="fade-up"
-                  src="https://i.ibb.co/X5br8Zg/Rectangle-44.png"
-                  alt="office"
-                />
+                <div className="w-full">
+                  <Image
+                    data-aos="fade-up"
+                    src="https://i.ibb.co/X5br8Zg/Rectangle-44.png"
+                    alt="office"
+                    width={1000}
+                    height={500}
+                  />
+                </div>
               </div>
             </div>
             <div
@@ -178,17 +195,23 @@ export default function Index() {
         {steps.map(({ id, title, description, imgUrl }) => (
           <div key={id} className="w-full p-4 sm:w-1/2" data-aos="fade-up">
             <div className="flex flex-col items-center text-center font-merriweather">
-              <img
-                className="mb-4 h-64 w-full object-cover"
-                src={imgUrl}
-                alt={title}
-              />
-              <h2 className="mb-2 font-bold font-montserrat">{title}</h2>
+              <div className="relative mb-4 h-64 w-full">
+                <Image
+                  layout="fill"
+                  objectFit="cover"
+                  src={imgUrl}
+                  alt={title}
+                  className="object-cover"
+                />
+              </div>
+
+              <h2 className="mb-2 font-montserrat font-bold">{title}</h2>
               <p>{description}</p>
             </div>
           </div>
         ))}
       </div>
+
       <Footer />
     </>
   );
