@@ -5,11 +5,22 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Head from "next/head";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+
+    useEffect(() => {
+      // Importing and initializing AOS
+      import("aos")
+        .then((Aos) => {
+          Aos.init({ duration: 2000 });
+        })
+        .catch((error) => console.error(error));
+    }, []);
+
   return (
     <SessionProvider session={session}>
       <Head>

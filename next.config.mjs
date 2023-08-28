@@ -3,6 +3,12 @@
  * for Docker builds.
  */
 await import("./src/env.mjs");
+import withBundleAnalyzer from "@next/bundle-analyzer";
+
+// Initialize the bundle analyzer configuration
+const bundleAnalyzerConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -23,4 +29,4 @@ const config = {
   },
 };
 
-export default config;
+export default bundleAnalyzerConfig(config);

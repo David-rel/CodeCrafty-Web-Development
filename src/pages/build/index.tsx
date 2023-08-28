@@ -1,18 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 
 function Build() {
-  useEffect(() => {
-    // Importing and initializing AOS
-    import("aos")
-      .then((Aos) => {
-        Aos.init({ duration: 2000 });
-      })
-      .catch((error) => console.error(error));
-  }, []);
+
 
   return (
     <>
