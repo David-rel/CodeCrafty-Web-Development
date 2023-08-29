@@ -46,7 +46,7 @@ export default function SocialMediaPage() {
                 Connect with us on social media
               </h2>
               <p className="mb-4 pt-4 text-red-300">
-                We're a creative powerhouse with a passion for transforming your
+                We&apos;re a creative powerhouse with a passion for transforming your
                 ideas into beautifully designed, fully functional websites.
               </p>
             </div>
