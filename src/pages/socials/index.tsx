@@ -15,10 +15,18 @@ export default function SocialMediaPage() {
 
   ];
 
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText("https://www.codecrafty.dev/socials"); // Replace with your website URL
-    alert("Link copied to clipboard!");
-  };
+const handleCopyClick = () => {
+  navigator.clipboard.writeText("https://codecrafty.dev/socials")
+    .then(() => {
+      alert("Link copied to clipboard!");
+    })
+    .catch(err => {
+      alert("Failed to copy the link. Please try again.");
+      console.error("Error copying to clipboard:", err);
+    });
+};
+
+
 
   return (
     <div className="relative min-h-screen bg-gray-100">
