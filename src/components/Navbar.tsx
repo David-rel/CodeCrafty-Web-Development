@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const router = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 1100px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1125px)" });
 
   const setLocalStorageSidebarState = (state: boolean) => {
     if (typeof window !== "undefined") {
@@ -121,6 +121,20 @@ const getLocalStorageSidebarState = (): boolean | null => {
           How we do it
         </a>
       </Link>
+       <Link href="/socials" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
+            isActive("/socials")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700 hover:underline"
+          }`}
+        >
+          Socials
+        </a>
+      </Link>
     </>
   );
 
@@ -175,7 +189,10 @@ const getLocalStorageSidebarState = (): boolean | null => {
         <nav className="sticky top-0 z-50 flex items-center justify-between bg-white/60 p-6 text-black backdrop-blur-lg backdrop-filter">
           <div className="flex items-center space-x-16 font-montserrat">
             <Image src="/logo1.png" alt="Logo" width={100} height={40} />
+                        <div className="hidden md:flex space-x-1 md:space-x-10 text-md md:text-2xl">
+
             {links}
+            </div>
           </div>
           {sessionData && <></>}
           <div className="flex items-center gap-4">
