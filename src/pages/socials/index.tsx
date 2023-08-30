@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaCopy, FaWhatsapp, 
 
 export default function SocialMediaPage() {
   const socialLinks = [
-        { href: "https://www.codecrafty.dev", icon: <FaHome />, label: "Get Started on our Website", bgColor: "bg-gray-300" },
+        { href: "https://codecrafty.dev", icon: <FaHome />, label: "Get Started on our Website", bgColor: "bg-gray-300" },
     { href: "https://www.facebook.com/profile.php?id=100094733723225", icon: <FaFacebookF />, label: "Facebook", bgColor: "bg-blue-500" },
     { href: "https://twitter.com/CodeCrafty_", icon: <FaTwitter />, label: "Twitter", bgColor: "bg-blue-300" },
         { href: "https://www.fiverr.com/code_crafty", icon: <FaGreaterThanEqual />, label: "Fiverr", bgColor: "bg-green-400" },
