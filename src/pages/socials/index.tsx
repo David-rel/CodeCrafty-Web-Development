@@ -58,7 +58,7 @@ export default function SocialMediaPage() {
       bgColor: "bg-blue-700",
     },
     {
-      hreg: "https://www.threads.net/@codecrafty_",
+      href: "https://www.threads.net/@codecrafty_",
       icon: <FaBell />,
       label: "Threads",
       bgColor: "bg-black",
