@@ -306,7 +306,7 @@ function Build() {
                     onChange={() => setPageIdea("no")}
                     checked={pageIdea === "no"}
                   />
-                  <span className="text-xl">I don't know</span>
+                  <span className="text-xl">I don&apos;t know</span>
                 </div>
                 <div className="flex items-center space-x-6">
                   <input
