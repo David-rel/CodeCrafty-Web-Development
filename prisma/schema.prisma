@@ -57,24 +57,27 @@ model VerificationToken {
 }
 
 model Submission {
-  id            String   @id @default(cuid())
-  complexity    String?
-  revisions     Boolean? @default(false)
-  pages         Boolean? @default(false)
-  database      Boolean? @default(false)
-  storage       Boolean? @default(false)
-  userBase      Boolean? @default(false)
-  monthly       Boolean? @default(false)
-  design        Boolean? @default(false)
-  databaseScale Boolean? @default(false)
-  storageScale  Boolean? @default(false)
-  userScale     Boolean? @default(false)
-  cost          Int?
-  completed     Boolean  @default(false)
-  createdAt     DateTime @default(now())
-  authorId      String
-  description   String?
-  author        User     @relation(fields: [authorId], references: [id])
+  id                 String   @id @default(cuid())
+  pageIdea           String?
+  pageCount          String?
+  revisions          String?
+  existingWebsite    String?
+  timeline           String?
+  domain             String?
+  extraFeatures      String?
+  longTermDeveloper  String?
+  firstName          String
+  lastName           String
+  emailAddress       String
+  phoneNumber        String?
+  country            String
+  stateAndCity       String
+  companyName        String?
+  instagramName      String?
+  projectDescription String
+  createdAt          DateTime @default(now())
+  authorId           String
+  author             User     @relation(fields: [authorId], references: [id])
 
   @@index([authorId])
 }

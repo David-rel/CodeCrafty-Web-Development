@@ -1,413 +1,476 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaBuilding,
+  FaInstagram,
+  FaGlobeAmericas,
+  FaCity,
+} from "react-icons/fa"; // Importing icons
+import { api } from "~/utils/api";
+import { useSession } from "next-auth/react";
 
 function Build() {
 
+  const {data: sessionData } = useSession()
+
+    const createSubmission = api.submission.create.useMutation({
+      onSuccess: () => {
+        void refetchNotes();
+      },
+    });
+
+
+    
+  const [pageIdea, setPageIdea] = useState("");
+  const [pageCount, setPageCount] = useState("");
+  const [revisions, setRevisions] = useState("");
+  const [existingWebsite, setExistingWebsite] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [domain, setDomain] = useState("");
+  const [extraFeatures, setExtraFeatures] = useState("");
+  const [longTermDeveloper, setLongTermDeveloper] = useState("");
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [country, setCountry] = useState("");
+  const [stateAndCity, setStateAndCity] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [instagramName, setInstagramName] = useState("");
+  const [projectDescription, setProjectDescription] = useState("");
+
+  const englishSpeakingCountries = [
+    "Australia",
+    "Canada",
+    "Ireland",
+    "New Zealand",
+    "United Kingdom",
+    "United States",
+    // ... add other English-speaking countries if needed
+  ];
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    console.log({
+      pageIdea,
+      pageCount,
+      revisions,
+      existingWebsite,
+      timeline,
+      domain,
+      extraFeatures,
+      longTermDeveloper,
+      firstName,
+      lastName,
+      emailAddress,
+      phoneNumber,
+      country,
+      stateAndCity,
+      companyName,
+      instagramName,
+      projectDescription,
+
+    });
+
+    if(sessionData){
+      createSubmission.mutate({
+        pageIdea: pageIdea,
+        pageCount: pageCount,
+        revisions: revisions,
+        existingWebsite: existingWebsite,
+        timeline: timeline,
+        domain: domain,
+        extraFeatures: extraFeatures,
+        longTermDeveloper: longTermDeveloper,
+        firstName: firstName,
+        lastName: lastName,
+        emailAddress: emailAddress,
+        phoneNumber: phoneNumber,
+        country: country,
+        stateAndCity: stateAndCity,
+        companyName: companyName,
+        instagramName: instagramName,
+        projectDescription: projectDescription,
+      });
+
+      alert("Your form has been submitted")
+
+       setPageIdea("");
+       setPageCount("");
+       setRevisions("");
+       setExistingWebsite("");
+       setTimeline("");
+       setDomain("");
+       setExtraFeatures("");
+       setLongTermDeveloper("");
+       setFirstName("");
+       setLastName("");
+       setEmailAddress("");
+       setPhoneNumber("");
+       setCountry("");
+       setStateAndCity("");
+       setCompanyName("");
+       setInstagramName("");
+       setProjectDescription("");
+
+    } else {
+      alert("You must be logged in to submit a form")
+    }
+
+     
+  };
 
   return (
     <>
       <Navbar />
-      <div className="px-6 py-20 font-montserrat xl:container xl:mx-auto 2xl:px-0">
-        <div className="items-center justify-between lg:flex">
-          <div className=" w-full lg:w-1/2">
-            <p className="text-base leading-4 text-gray-600">
-              Choose your plan
-            </p>
-            <h1
-              role="heading"
-              className="mt-3 text-3xl font-bold leading-10 text-gray-800 md:text-5xl"
-            >
-              Our pricing plan
-            </h1>
-            <p
-              role="contentinfo"
-              className="mt-5 font-merriweather text-base leading-5 text-gray-600"
-            >
-              We have several plans to showcase your Business. Get everything
-              you need
-            </p>
-          </div>
-          <div
-            className="relative mt-12 w-full md:px-8 lg:mt-0 lg:w-7/12 xl:w-1/2"
-            role="list"
-          >
-            <div className="absolute -ml-12 mt-24 w-full">
-              {" "}
-              <Image
-                src="https://i.ibb.co/0n6DSS3/bgimg.png"
-                alt="background circle images"
-                width={1000}
-                height={500}
-              />{" "}
-            </div>
 
-            <div
-              role="listitem"
-              className="relative z-30 cursor-pointer rounded-lg bg-white p-8 shadow"
-            >
-              <div className="items-center justify-between md:flex">
-                <h2 className="text-2xl font-semibold leading-6 text-gray-800">
-                  Basic
-                </h2>
-                <p className="mt-4 text-2xl font-semibold leading-6 text-gray-800 md:mt-0">
-                  Starting at: $1000
-                </p>
+      <div className="container mx-auto mt-10 w-3/5">
+        <form onSubmit={handleSubmit} className="mx-auto">
+          <div className="space-y-4 rounded-lg p-6">
+            <h2 className="mb-4 text-center font-merriweather text-4xl text-rose-700">
+              Get Your Estimation
+            </h2>
+            <h2 className="text-black-700 pb-8 text-center font-merriweather text-lg">
+              Fields marked with an * are required
+            </h2>
+            <div className="space-y-8 font-merriweather">
+              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+                <div className="relative w-full">
+                  <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl" // Added padding-left for the icon
+                    type="text"
+                    placeholder="First Name*"
+                    required
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                </div>
+                <div className="relative w-full">
+                  <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    type="text"
+                    placeholder="Last Name*"
+                    required
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
               </div>
-              <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
-                This is for your basic portfolio and personal website
-              </p>
-              <Link href="/build/customize/basic">
-                <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
-                  Choose
-                </button>
-              </Link>
-            </div>
 
-            <div
-              role="listitem"
-              className="relative z-30 mt-3 flex cursor-pointer rounded-lg bg-white shadow"
-            >
-              <div className="h-auto  w-2.5 rounded-bl-md rounded-tl-md bg-rose-700" />
-              <div className="w-full p-8">
-                <div className="items-center justify-between md:flex">
-                  <h2 className="text-2xl font-semibold leading-6 text-gray-800">
-                    Pro
-                  </h2>
-                  <p className="mt-4 text-2xl font-semibold leading-6 text-gray-800 md:mt-0">
-                    Starting at: $2000
+              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+                <div className="relative w-full">
+                  <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    type="email"
+                    placeholder="Email*"
+                    required
+                    onChange={(e) => setEmailAddress(e.target.value)}
+                  />
+                </div>
+                <div className="relative w-full">
+                  <FaPhone className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    type="tel"
+                    placeholder="Phone Number"
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+                <div className="relative w-full">
+                  <FaGlobeAmericas className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <select
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    value={country}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                      setCountry(e.target.value)
+                    }
+                    required
+                  >
+                    <option value="">Select Country*</option>
+                    {englishSpeakingCountries.map((country) => (
+                      <option key={country} value={country}>
+                        {country}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="relative w-full">
+                  <FaCity className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    type="text"
+                    placeholder="State & City*"
+                    required
+                    onChange={(e) => setStateAndCity(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+                <div className="relative w-full">
+                  <FaBuilding className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    type="text"
+                    placeholder="Company Name"
+                    onChange={(e) => setCompanyName(e.target.value)}
+                  />
+                </div>
+                <div className="relative w-full">
+                  <FaInstagram className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
+                  <input
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    type="text"
+                    placeholder="Instagram Name"
+                    onChange={(e) => setInstagramName(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="mx-auto flex w-2/3 items-center space-x-4 align-middle">
+                <div className="mb-4 h-40 w-3/4 rounded-lg border text-lg">
+                  <textarea
+                    className="h-full w-full p-2"
+                    placeholder="Project Description*"
+                    required
+                    maxLength={250} // Limit to 250 characters
+                    style={{ resize: "none" }}
+                    onChange={(e) => setProjectDescription(e.target.value)}
+                  ></textarea>
+                  <p>length: {projectDescription.length}/250</p>{" "}
+                </div>
+                {/* Display character count */}
+                <div className="flex w-2/3 items-start p-4">
+                  <input
+                    className="mr-4 h-6 w-24 rounded-full border p-1"
+                    type="checkbox"
+                    required
+                    defaultChecked // Checkbox is initially checked
+                  />
+                  <p className="text-md font-montserrat text-gray-500">
+                    By supplying my contact information, I authorize the company
+                    representative to contact me with personalized
+                    communications like Emails / Call / SMS / Text towards this
+                    Query / Application and other products / services. This
+                    consent overrides my registration for DNC / NDNC / GDPR. *
                   </p>
                 </div>
-                <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
-                  This is for more complex sites like blogs, education sites,
-                  etc...
-                </p>
-                <Link href="/build/customize/pro">
-                  <button className="mt-5 w-full rounded bg-rose-700 px-8 py-3 py-3 text-base font-semibold text-white transition duration-150 ease-in-out hover:bg-rose-600 focus:outline-none">
-                    Choose
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 space-y-8 rounded-lg p-6">
+            <h2 className="mb-4 pb-4 text-center font-merriweather text-4xl text-rose-700">
+              Extra Questions for Website
+            </h2>
+            <div className="space-y-8 font-merriweather">
+              <div className="mx-auto flex w-2/3 flex-col items-start space-y-6 align-middle">
+                <span className="mb-4 text-2xl">
+                  I have an idea on how many pages:
+                </span>
+                <div className="flex items-center space-x-6">
+                  <input
+                    type="radio"
+                    name="pageIdea"
+                    value="yes"
+                    onChange={() => setPageIdea("yes")}
+                    checked={pageIdea === "yes"}
+                  />
+                  <span className="text-xl">I do</span>
+                </div>
+                {pageIdea === "yes" && (
+                  <input
+                    className="mt-2 rounded border p-2 text-xl"
+                    type="number"
+                    placeholder="Number of pages"
+                    value={pageCount}
+                    onChange={(e) => setPageCount(e.target.value)}
+                  />
+                )}
+                <div className="flex items-center space-x-6">
+                  <input
+                    type="radio"
+                    name="pageIdea"
+                    value="no"
+                    onChange={() => setPageIdea("no")}
+                    checked={pageIdea === "no"}
+                  />
+                  <span className="text-xl">I don't know</span>
+                </div>
+                <div className="flex items-center space-x-6">
+                  <input
+                    type="radio"
+                    name="pageIdea"
+                    value="idea"
+                    onChange={() => setPageIdea("idea")}
+                    checked={pageIdea === "idea"}
+                  />
+                  <span className="text-xl">I have an idea</span>
+                </div>
+                <button
+                  className="mt-2 rounded bg-red-500 p-2 text-white"
+                  type="button"
+                  onClick={() => {
+                    setPageIdea("");
+                    setPageCount("");
+                  }}
+                >
+                  Clear Selection
+                </button>
+              </div>
+              <div className="space-y-8 font-merriweather">
+                <div className="mx-auto flex w-2/3 flex-col items-start space-y-6 align-middle">
+                  <span className=" text-2xl">Do you require revisions?</span>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="revisions"
+                      value="yes"
+                      onChange={() => setRevisions("yes")}
+                      checked={revisions === "yes"}
+                    />
+                    <span className="text-xl">Yes</span>
+                  </div>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="revisions"
+                      value="no"
+                      onChange={() => setRevisions("no")}
+                      checked={revisions === "no"}
+                    />
+                    <span className="text-xl">No</span>
+                  </div>
+                  <button
+                    className="mt-2 rounded bg-red-500 p-2 text-white"
+                    type="button"
+                    onClick={() => {
+                      setRevisions("");
+                    }}
+                  >
+                    Clear Selection
                   </button>
-                </Link>
-              </div>
-            </div>
-            <div
-              role="listitem"
-              className="relative z-30 mt-7 cursor-pointer rounded-lg bg-white p-8 shadow"
-            >
-              <div className="items-center justify-between md:flex">
-                <h2 className="text-2xl font-semibold leading-6 text-gray-800">
-                  Enterprise
-                </h2>
-                <p className="mt-4 text-2xl font-semibold leading-6 text-gray-800 md:mt-0">
-                  Starting at: $3000
-                </p>
-              </div>
-              <p className="mt-4 font-merriweather text-base leading-6 text-gray-600 md:w-80">
-                This is where businesses and startups will get the best value. A
-                subscription based site, e-commerce, media
-              </p>
-              <Link href="/build/customize/enterprise">
-                <button className="mt-5 w-full rounded bg-gray-200 px-8 py-3 py-3 text-base font-semibold text-rose-700 transition duration-150 ease-in-out hover:bg-gray-300 focus:outline-none">
-                  Choose
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-16 font-montserrat">
-        <div className="w-full bg-gray-100 py-12">
-          <div className="container mx-auto">
-            <div className="mx-auto mb-12 w-4/5">
-              <h1 className="mb-4 text-center text-3xl font-extrabold text-gray-800 xl:text-4xl">
-                Simple &amp; Transparent Pricing
-              </h1>
-              <p className="text-center font-merriweather text-xl font-normal text-gray-600">
-                Build a website of your dream with a couple clicks and Code
-                Crafty and we will do the rest.
-              </p>
-            </div>
-            <div className="mx-auto w-11/12">
-              <div className="items-end lg:flex xl:flex">
-                <div className="mb-2 flex flex-wrap items-center justify-center bg-white pb-8 pt-8 shadow sm:mb-2 md:mb-2 lg:mb-0 xl:mb-0 xl:w-1/4">
-                  <Image width={250} height={50} src="/logo1.png" alt="" />
-                </div>
-                <div className="shadow sm:flex md:flex lg:flex xl:flex">
-                  <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
-                    <div className="mb-6">
-                      <Image
-                        src="https://cdn.tuk.dev/assets/paper-plane.png"
-                        alt="message"
-                        width={40}
-                        height={500}
-                      />
-                    </div>
-                    <p className="mb-3 text-center text-2xl font-bold text-gray-800">
-                      Basic
-                    </p>
-                    <p className="mb-6 w-full text-center font-merriweather text-sm font-normal text-gray-600">
-                      Basic resources for a starter site. Individuals and small
-                      teams.
-                    </p>
-                    <Link href="/build/customize/basic">
-                      <button className="rounded border border-rose-600 bg-white px-6 py-2 text-sm text-rose-600 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none">
-                        Choose
-                      </button>
-                    </Link>
+                  <span className="mb-4 text-2xl">
+                    Do you already have a website and need a redesign?
+                  </span>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="existingWebsite"
+                      value="yes"
+                      onChange={() => setExistingWebsite("yes")}
+                      checked={existingWebsite === "yes"}
+                    />
+                    <span className="text-xl">Yes</span>
                   </div>
-                  <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
-                    <div className="mb-5">
-                      <Image
-                        src="https://cdn.tuk.dev/assets/plane.png"
-                        alt="img"
-                        width={40}
-                        height={500}
-                      />
-                    </div>
-                    <p className="mb-3 text-center text-2xl font-bold text-gray-800">
-                      Pro
-                    </p>
-                    <p className="mb-6 w-full text-center font-merriweather text-sm font-normal text-gray-600">
-                      More power for company sites and heavy traffic. Growing
-                      business.
-                    </p>
-                    <Link href="/build/customize/pro">
-                      <button className="rounded border bg-rose-700 px-6 py-2 text-sm text-white transition duration-150 ease-in-out hover:bg-rose-600 focus:outline-none">
-                        Choose
-                      </button>
-                    </Link>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="existingWebsite"
+                      value="no"
+                      onChange={() => setExistingWebsite("no")}
+                      checked={existingWebsite === "no"}
+                    />
+                    <span className="text-xl">No</span>
                   </div>
-                  <div className="mb-2 flex flex-col items-center justify-center border-l border-r border-gray-200 bg-white pb-8 pl-6 pr-6 pt-8 sm:mb-0 md:mb-0 lg:mb-0 lg:w-1/3 xl:mb-0 xl:w-1/3">
-                    <div className="mb-6">
-                      <Image
-                        src="https://cdn.tuk.dev/assets/start-button.png"
-                        alt="img"
-                        width={40}
-                        height={500}
-                      />
-                    </div>
-
-                    <p className="mb-3 text-center text-2xl font-bold text-gray-800">
-                      Enterprise
-                    </p>
-                    <p className="mb-6 w-full text-center font-merriweather text-sm font-normal text-gray-600">
-                      Support multi-complex sites and high-resolution photos and
-                      videos.
-                    </p>
-                    <Link href="/build/customize/enterprise">
-                      <button className="rounded border border-rose-600 bg-white px-6 py-2 text-sm text-rose-600 transition duration-150 ease-in-out hover:bg-gray-200 focus:outline-none">
-                        Choose
-                      </button>
-                    </Link>
+                  <button
+                    className="mt-2 rounded bg-red-500 p-2 text-white"
+                    type="button"
+                    onClick={() => {
+                      setExistingWebsite("");
+                    }}
+                  >
+                    Clear Selection
+                  </button>
+                  <span className="mb-4 text-2xl">
+                    How quickly do you need the site done?
+                  </span>
+                  <select
+                    className="h-16 w-full rounded-full border p-2 text-xl"
+                    value={timeline}
+                    onChange={(e) => setTimeline(e.target.value)}
+                  >
+                    <option value="1_week">1 month</option>
+                    <option value="2_weeks">2 months</option>
+                    <option value="1_month">3 months</option>
+                    <option value="more_than_month">More than 3 months</option>
+                  </select>
+                  <span className="mb-4 text-2xl">
+                    Do you already have a domain (e.g., codecrafty.dev,
+                    google.com)?
+                  </span>
+                  <input
+                    className="h-16 w-full rounded-full border p-2 text-xl"
+                    type="text"
+                    placeholder="Enter your domain or leave blank if none"
+                    value={domain}
+                    onChange={(e) => setDomain(e.target.value)}
+                  />
+                  <span className="mb-4 text-2xl">
+                    Is there any other extra features that you will want put on
+                    apart from what said above?
+                  </span>
+                  <textarea
+                    className="h-40 w-full rounded-lg border p-2 text-xl"
+                    placeholder="Describe any extra features"
+                    value={extraFeatures}
+                    onChange={(e) => setExtraFeatures(e.target.value)}
+                  ></textarea>
+                  <span className="mb-4 text-2xl">
+                    Are you looking for a long-term developer?
+                  </span>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="longTermDeveloper"
+                      value="yes"
+                      onChange={() => setLongTermDeveloper("yes")}
+                      checked={longTermDeveloper === "yes"}
+                    />
+                    <span className="text-xl">Yes</span>
                   </div>
-                </div>
-              </div>
-              <div className="shadow">
-                <div>
-                  <div className="flex w-full items-center">
-                    <p className="w-3/12 pb-3 pl-4 pt-3 text-sm font-bold text-gray-600">
-                      Pricing
-                    </p>
-                    <p className="w-3/12 text-center text-sm font-bold text-gray-800 lg:hidden">
-                      Professional
-                    </p>
-                    <p className="w-3/12 text-center text-sm font-bold text-gray-800 lg:hidden">
-                      Pro Plus
-                    </p>
-                    <p className="w-3/12 text-center text-sm font-bold text-gray-800 lg:hidden">
-                      Enterprise
-                    </p>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="longTermDeveloper"
+                      value="no"
+                      onChange={() => setLongTermDeveloper("no")}
+                      checked={longTermDeveloper === "no"}
+                    />
+                    <span className="text-xl">No</span>
                   </div>
-                  <table className="w-full table-auto bg-white sm:table-fixed">
-                    <tbody>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Plan Cost
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Starting at: $1000
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Starting at: $2000
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Starting at: $3000
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div>
-                  <p className="pb-3 pl-4 pt-3 text-sm font-bold text-gray-600">
-                    Features
-                  </p>
-                  <table className="w-full table-auto bg-white sm:table-fixed">
-                    <tbody>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Full Stack Features
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Design Consultancy
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          SEO Package
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Development Team
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          Scalability Access
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          On-Call Support
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          up to 4 pages of info
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          up to 3 revisions
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          up to 8 pages of info
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm" />
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          up to 4 revisions
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm" />
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>{" "}
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          up to 12 pages of info
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm" />
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm" />
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="w-3/12 break-words border border-gray-200 p-2 text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          up to 6 revisions
-                        </td>
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm" />
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm" />
-                        <td className="w-3/12 border border-gray-200 p-2 text-center text-xs text-gray-800 sm:p-4 sm:text-sm">
-                          <div className="mx-auto h-2 w-2 rounded-full bg-rose-700" />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <button
+                    className="mt-2 rounded bg-red-500 p-2 text-white"
+                    type="button"
+                    onClick={() => {
+                      setLongTermDeveloper("");
+                    }}
+                  >
+                    Clear Selection
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <button
+            className="mt-6 rounded bg-blue-500 p-4 text-white"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
       </div>
 
       <Footer />
@@ -416,3 +479,7 @@ function Build() {
 }
 
 export default Build;
+function refetchNotes() {
+  throw new Error("Function not implemented.");
+}
+

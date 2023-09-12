@@ -22,19 +22,23 @@ export const submissionRouter = createTRPCRouter({
   create: protectedProcedure
     .input(
       z.object({
-        complexity: z.string().optional(),
-        revisions: z.boolean().optional(),
-        pages: z.boolean().optional(),
-        database: z.boolean().optional(),
-        storage: z.boolean().optional(),
-        userBase: z.boolean().optional(),
-        description: z.string().optional(),
-        monthly: z.boolean().optional(),
-        design: z.boolean().optional(),
-        databaseScale: z.boolean().optional(),
-        storageScale: z.boolean().optional(),
-        userScale: z.boolean().optional(),
-        cost: z.number().optional(),
+        pageIdea: z.string(),
+        pageCount: z.string(),
+        revisions: z.string(),
+        existingWebsite: z.string(),
+        timeline: z.string(),
+        domain: z.string(),
+        extraFeatures: z.string(),
+        longTermDeveloper: z.string(),
+        firstName: z.string(),
+        lastName: z.string(),
+        emailAddress: z.string(),
+        phoneNumber: z.string(),
+        country: z.string(),
+        stateAndCity: z.string(),
+        companyName: z.string(),
+        instagramName: z.string(),
+        projectDescription: z.string(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -51,21 +55,5 @@ export const submissionRouter = createTRPCRouter({
       });
     }),
 
-  toggle: protectedProcedure
-    .input(
-      z.object({
-        id: z.string(),
-        completed: z.boolean(),
-      })
-    )
-    .mutation(({ ctx, input: { id, completed } }) => {
-      return ctx.prisma.submission.update({
-        where: {
-          id,
-        },
-        data: {
-          completed,
-        },
-      });
-    }),
+ 
 });
