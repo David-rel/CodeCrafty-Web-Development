@@ -4,20 +4,24 @@ import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 
 type Submission = {
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
+  phoneNumber: string;
+  country: string;
+  stateAndCity: string;
+  companyName: string;
+  instagramName: string;
+  projectDescription: string;
+  pageIdea: string;
+  pageCount: string;
+  revisions: string;
+  existingWebsite: string;
+  timeline: string;
+  domain: string;
+  extraFeatures: string;
+  longTermDeveloper: string;
   createdAt: string;
-  pages: boolean | null;
-  complexity: string | null;
-  revisions: boolean | null;
-  database: boolean | null;
-  storage: boolean | null;
-  userBase: boolean | null;
-  description: string | null;
-  monthly: boolean | null;
-  design: boolean | null;
-  databaseScale: boolean | null;
-  storageScale: boolean | null;
-  userScale: boolean | null;
-  cost: number | null;
   authorId: string;
   id: string;
   // Add other fields as necessary
@@ -31,7 +35,7 @@ function IndexPage() {
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>An error occurred...</p>;
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     if (password !== process.env.NEXT_PUBLIC_PASSWORD) {
@@ -68,57 +72,71 @@ function IndexPage() {
               >
                 <p className="text-lg font-semibold">
                   <strong>Submission ID:</strong> {submission.id}
+
+                </p>
+                 <p>
+                  <strong>:</strong> {submission.authorId}
                 </p>
                 <p>
-                  <strong>Complexity:</strong> {submission.complexity}
+                  <strong>First Name:</strong> {submission.firstName}
                 </p>
                 <p>
-                  <strong>Revisions:</strong>{" "}
-                  {submission.revisions ? "Yes" : "No"}
+                  <strong>Last Name:</strong> {submission.lastName}
                 </p>
                 <p>
-                  <strong>Pages:</strong> {submission.pages ? "Yes" : "No"}
+                  <strong>Email:</strong> {submission.emailAddress}
                 </p>
                 <p>
-                  <strong>Database:</strong>{" "}
-                  {submission.database ? "Yes" : "No"}
+                  <strong>Phone Number:</strong> {submission.phoneNumber}
                 </p>
                 <p>
-                  <strong>Storage:</strong> {submission.storage ? "Yes" : "No"}
+                  <strong>Country:</strong> {submission.country}
                 </p>
                 <p>
-                  <strong>User Base:</strong>{" "}
-                  {submission.userBase ? "Yes" : "No"}
+                  <strong>State and City:</strong> {submission.stateAndCity}
                 </p>
                 <p>
-                  <strong>Monthly:</strong> {submission.monthly ? "Yes" : "No"}
+                  <strong>Company Name:</strong> {submission.companyName}
                 </p>
                 <p>
-                  <strong>Design:</strong> {submission.design ? "Yes" : "No"}
+                  <strong>Instagram Name:</strong> {submission.instagramName}
                 </p>
                 <p>
-                  <strong>Database Scale:</strong>{" "}
-                  {submission.databaseScale ? "Yes" : "No"}
+                  <strong>Project Description:</strong>{" "}
+                  {submission.projectDescription}
                 </p>
-                <p>
-                  <strong>Storage Scale:</strong>{" "}
-                  {submission.storageScale ? "Yes" : "No"}
-                </p>
-                <p>
-                  <strong>User Scale:</strong>{" "}
-                  {submission.userScale ? "Yes" : "No"}
-                </p>
-                <p>
-                  <strong>Cost:</strong> {submission.cost}
-                </p>
+
                 <p>
                   <strong>Created At:</strong>{" "}
                   {formatDate(submission.createdAt)}
                 </p>
 
+                <h3 className="pb-4 text-2xl font-bold">Extras</h3>
                 <p>
-                  <strong>Description:</strong> {submission.description}
+                  <strong>Do they have a page count idea:</strong> {submission.pageIdea}
                 </p>
+                 <p>
+                  <strong>How many pages:</strong> {submission.pageCount}
+                </p>
+                 <p>
+                  <strong>Do they want revisions:</strong> {submission.revisions}
+                </p>
+                 <p>
+                  <strong>Do they have an existing website:</strong> {submission.existingWebsite}
+                </p>
+                 <p>
+                  <strong>when od they want the website done:</strong> {submission.timeline}
+                </p>
+                 <p>
+                  <strong>do they already have a domain:</strong> {submission.domain}
+                </p>
+                 <p>
+                  <strong>extra features:</strong> {submission.extraFeatures}
+                </p>
+                 <p>
+                  <strong>do they want a long term dev:</strong> {submission.longTermDeveloper}
+                </p>
+
               </div>
             </div>
           );

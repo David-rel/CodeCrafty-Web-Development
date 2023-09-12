@@ -132,7 +132,7 @@ function Build() {
     <>
       <Navbar />
 
-      <div className="container mx-auto mt-10 w-3/5">
+      <div className="container mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         <form onSubmit={handleSubmit} className="mx-auto">
           <div className="space-y-4 rounded-lg p-6">
             <h2 className="mb-4 text-center font-merriweather text-4xl text-rose-700">
@@ -142,7 +142,7 @@ function Build() {
               Fields marked with an * are required
             </h2>
             <div className="space-y-8 font-merriweather">
-              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+              <div className="mx-auto flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <div className="relative w-full">
                   <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
                   <input
@@ -165,7 +165,7 @@ function Build() {
                 </div>
               </div>
 
-              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+              <div className="mx-auto flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <div className="relative w-full">
                   <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
                   <input
@@ -187,7 +187,7 @@ function Build() {
                 </div>
               </div>
 
-              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+              <div className="mx-auto flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <div className="relative w-full">
                   <FaGlobeAmericas className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
                   <select
@@ -218,7 +218,7 @@ function Build() {
                 </div>
               </div>
 
-              <div className="mx-auto flex w-2/3 items-center space-x-16 align-middle">
+              <div className="mx-auto flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <div className="relative w-full">
                   <FaBuilding className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
                   <input
@@ -238,7 +238,7 @@ function Build() {
                   />
                 </div>
               </div>
-              <div className="mx-auto flex w-2/3 items-center space-x-4 align-middle">
+              <div className="mx-auto flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                 <div className="mb-4 h-40 w-3/4 rounded-lg border text-lg">
                   <textarea
                     className="h-full w-full p-2"
@@ -352,6 +352,16 @@ function Build() {
                     />
                     <span className="text-xl">No</span>
                   </div>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="revisions"
+                      value="no"
+                      onChange={() => setRevisions("unknown")}
+                      checked={revisions === "unknown"}
+                    />
+                    <span className="text-xl">I don&apos;t know</span>
+                  </div>
                   <button
                     className="mt-2 rounded bg-red-500 p-2 text-white"
                     type="button"
@@ -383,6 +393,16 @@ function Build() {
                       checked={existingWebsite === "no"}
                     />
                     <span className="text-xl">No</span>
+                  </div>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="existingWebsite"
+                      value="no"
+                      onChange={() => setExistingWebsite("unknown")}
+                      checked={existingWebsite === "unknown"}
+                    />
+                    <span className="text-xl">I don&apos;t know</span>
                   </div>
                   <button
                     className="mt-2 rounded bg-red-500 p-2 text-white"
@@ -449,6 +469,16 @@ function Build() {
                       checked={longTermDeveloper === "no"}
                     />
                     <span className="text-xl">No</span>
+                  </div>
+                  <div className="flex items-center space-x-6">
+                    <input
+                      type="radio"
+                      name="longTermDeveloper"
+                      value="no"
+                      onChange={() => setLongTermDeveloper("unknown")}
+                      checked={longTermDeveloper === "unknown"}
+                    />
+                    <span className="text-xl">I don&apos;t know</span>
                   </div>
                   <button
                     className="mt-2 rounded bg-red-500 p-2 text-white"

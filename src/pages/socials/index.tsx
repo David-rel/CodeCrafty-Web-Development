@@ -7,7 +7,6 @@ import {
   FaLinkedinIn,
   FaCopy,
   FaWhatsapp,
-  FaSignal,
   FaGreaterThanEqual,
   FaHome,
   FaBell,
