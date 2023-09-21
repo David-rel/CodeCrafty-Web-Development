@@ -140,8 +140,8 @@ export default function Index() {
                 <div className="mt-8" data-aos="fade-up">
                   <p className="font-merriweather text-sm leading-normal  text-gray-800 lg:text-base">
                     Every groundbreaking website begins with a vision. When
-                    you're fueled by an idea and seek a web development partner
-                    to bring it to life, that's where we shine. Simply submit
+                    you&apos;re fueled by an idea and seek a web development partner
+                    to bring it to life, that&apos;s where we shine. Simply submit
                     your requirements, and in no time, our enthusiastic team
                     will be in touch, eager to kickstart your digital dream. Our
                     collaboration ensures your vision is articulated perfectly,
@@ -153,10 +153,10 @@ export default function Index() {
                     Enhance your digital presence with our optional AI
                     integration. By analyzing user interactions, we devise
                     strategies to captivate your audience further, including the
-                    deployment of chatbots, potentially eliminating the need for
+                    deployment of chat bots, potentially eliminating the need for
                     extensive support teams. Additionally, with our web
                     maintenance package, leave the tech nitty-gritty to us.
-                    We'll ensure your website runs seamlessly, sparing you the
+                    We&apos;ll ensure your website runs seamlessly, sparing you the
                     quest of finding a separate developer for upkeep.
                   </p>
                 </div>
@@ -174,7 +174,7 @@ export default function Index() {
               </div>
             </div>
             <div
-              className="mt-10 flex h-full w-full items-center justify-center bg-gradient-to-l from-rose-600 to-rose-400 px-4 md:px-0 md:px-8 lg:px-16 xl:mt-0 xl:w-2/5"
+              className="mt-10 flex h-full w-full items-center justify-center bg-gradient-to-l from-rose-600 to-rose-400 px-4 md:px-8 lg:px-16 xl:mt-0 xl:w-2/5"
               data-aos="fade-up"
             >
               <div className="my-10 flex flex-col items-center justify-center lg:items-start lg:justify-start">

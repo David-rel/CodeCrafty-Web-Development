@@ -32,7 +32,7 @@ function About() {
               we specialize in the cutting-edge integration of AI features. Our
               approach to bringing your dream website to life is straightforward
               and efficient. Simply reach out, and our team will swiftly engage
-              with you to craft the ideal digital platform. Whether you're
+              with you to craft the ideal digital platform. Whether you&apos;re
               seeking a portfolio, a startup platform, a redesign, or a
               comprehensive business site, CodeCrafty stands ready to assist you
               in every way possible.
@@ -506,12 +506,12 @@ function About() {
               Born from a passion to revolutionize website design and
               development, CodeCrafty emerged to bridge an evident gap. We
               identified that many platforms failed to engage users effectively,
-              leading to short-lived interactions. This sparked David's
+              leading to short-lived interactions. This sparked David&apos;s
               innovative idea: integrating AI to bolster user engagement.
               Navigating the journey from an idea to a live website was
               historically tedious, often riddled with complexities. CodeCrafty
               recognized the need for a more holistic service—one that married
-              technical prowess with a genuine understanding of a client's
+              technical prowess with a genuine understanding of a client&apos;s
               aspirations.
             </p>
             <p className="mt-6 pb-8 font-merriweather text-base font-normal leading-6 text-gray-600">
@@ -521,7 +521,7 @@ function About() {
               excellence in the web development realm. Our trajectory is marked
               by relentless innovation, an unwavering focus on our clients, and
               a commitment to sculpting a more intuitive digital landscape. As
-              we forge ahead, we're enthusiastic about co-authoring future
+              we forge ahead, we&apos;re enthusiastic about co-authoring future
               success stories with you as our central muse.
             </p>
 
@@ -644,10 +644,10 @@ function About() {
                         }}
                         className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                       >
-                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                        <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
 
                         <Link href="https://rj3729.com">
-                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
+                          <button className=" bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="h-6 w-6 text-gray-600"
@@ -677,9 +677,9 @@ function About() {
                         }}
                         className="relative flex w-full flex-col justify-center  rounded-md bg-cover "
                       >
-                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                        <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
                         <Link href="https://coerver-colorado.vercel.app/">
-                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
+                          <button className=" bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="h-6 w-6 text-gray-600"
@@ -709,9 +709,9 @@ function About() {
                         }}
                         className="relative flex w-full flex-col justify-center rounded-md bg-cover "
                       >
-                        <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                        <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
                         <Link href="https://my-portfolio-ccab3.web.app/">
-                          <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
+                          <button className=" bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="h-6 w-6 text-gray-600"
@@ -834,7 +834,7 @@ function About() {
                           }}
                           className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                         >
-                          <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-left text-lg  font-semibold text-black"></h1>
+                          <h1 className="relative left-0 ml-7 mt-7 h-64 w-40 rounded text-left text-lg  font-semibold text-black"></h1>
                           <Link href="https://rj-ai-club.vercel.app/">
                             <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                               <svg
@@ -867,7 +867,7 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
                             <Link href="https://my-portfolio-ccab3.web.app/">
                               <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
@@ -905,7 +905,7 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
                             <Link href="https://lit-line.vercel.app/">
                               <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
@@ -939,9 +939,9 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
                             <Link href="https://coerver-colorado.vercel.app/">
-                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                              <button className=" bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   className="h-6 w-6 text-gray-600"
@@ -977,11 +977,11 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
+                            <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white">
                               Who doesn’t love a good swim
                             </h1>
                             <Link href="https://codecrafty.vercel.app/">
-                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                              <button className=" bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   className="h-6 w-6 text-gray-600"
@@ -1013,9 +1013,9 @@ function About() {
                             }}
                             className="relative  flex w-full flex-col justify-center  rounded-md  bg-cover "
                           >
-                            <h1 className="absolute relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
+                            <h1 className=" relative left-0 ml-7 mt-7 h-64 w-40 rounded text-lg  font-semibold text-white"></h1>
                             <Link href="https://rj3729.com">
-                              <button className="absolute bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
+                              <button className=" bottom-7 right-10 rounded-full bg-white p-2 hover:opacity-75 focus:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   className="h-6 w-6 text-gray-600"
