@@ -13,8 +13,6 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import Image from "next/image";
 
 function About() {
-
-
   return (
     <div>
       <Navbar />
@@ -25,18 +23,19 @@ function About() {
         >
           <div className="w-full lg:w-6/12">
             <h2 className="w-full text-3xl font-bold leading-9 lg:text-4xl lg:leading-10">
-              We are here to make building your dream website hassle free
+              We are here to build your dream website with modern looks and
+              affordable prices
             </h2>
 
             <p className="mt-6 pb-8 font-merriweather text-base font-normal leading-6 text-gray-600">
-              Welcome to CodeCrafty, your one-stop shop for comprehensive web
-              design and development services. We&apos;re a creative powerhouse
-              with a passion for transforming your ideas into beautifully
-              designed, fully functional websites. With a keen understanding of
-              the digital landscape, our experts take the complexity out of
-              website design, streamlining the process to ensure your online
-              presence is built swiftly, efficiently, and aligned with your
-              unique vision.
+              Welcome to CodeCrafty. As pioneers in web development and design,
+              we specialize in the cutting-edge integration of AI features. Our
+              approach to bringing your dream website to life is straightforward
+              and efficient. Simply reach out, and our team will swiftly engage
+              with you to craft the ideal digital platform. Whether you're
+              seeking a portfolio, a startup platform, a redesign, or a
+              comprehensive business site, CodeCrafty stands ready to assist you
+              in every way possible.
             </p>
 
             <Link
@@ -209,8 +208,8 @@ function About() {
             </p>
             <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
               We were founded in 2023 by David Fales a aspiring full stack web
-              developer. His goal was to make websites easy to build for
-              clients.
+              developer. His goal was to make websites easy to build for clients
+              with ai integrated into sites.
             </p>
           </div>
           <div>
@@ -218,18 +217,19 @@ function About() {
               Creation
             </p>
             <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
-              The creation process we use to create websites takes your ideas
-              and creates a site based on your likeness. The design and
-              development is controlled by you we do the heavy lifting.
+              The creation process we use to takes your ideas and creates a site
+              based on what you want exactly. The design and development is
+              controlled by you we do the heavy lifting.
             </p>
           </div>
           <div className="hidden sm:block">
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-              Users
+              Why Us?
             </p>
             <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
-              Starting off as a new company we have reached out and created
-              websites for 8 different people/companies.
+              Why you should build with us is because we build websites that
+              look compared to other drag and drop website builders. We make
+              them look better.
             </p>
           </div>
         </div>
@@ -279,11 +279,12 @@ function About() {
         <div className="grid grid-cols-2 gap-4 sm:hidden sm:grid-cols-3 sm:gap-8">
           <div>
             <p className="mt-6 text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-              Users
+              Why Us?
             </p>
             <p className="mt-6 font-merriweather text-base font-normal leading-6 text-gray-600">
-              Starting off as a new company we have reached out and created
-              websites for 8 different people/companies.
+              Why you should build with us is because we build websites that
+              look compared to other drag and drop website builders. We make
+              them look better.
             </p>
           </div>
         </div>
@@ -293,22 +294,28 @@ function About() {
             <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
               Our Mission
             </h2>
+            <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
+              Our Core Purpose
+            </h2>
             <p className="mt-6 w-full font-merriweather text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
-              Our mission at CodeCrafty is to revolutionize the web development
-              industry by making website design and development an accessible,
-              effortless, and efficient process for all. We&apos;re here to
-              empower businesses, organizations, and individuals to create a
-              powerful online presence, without the hurdles that are typically
-              associated with web development.
+              At CodeCrafty, we envision a digital realm where website design
+              and development are intuitive, accessible, and efficient. Our core
+              mission revolves around equipping businesses, organizations, and
+              individuals with the tools and expertise to carve out a compelling
+              online footprint, eliminating traditional web development
+              complexities.
             </p>
             <p className="mt-10 w-full pb-8 font-merriweather text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
-              Beyond just creating stunning websites, we&apos;re passionate
-              about bringing your vision to life quickly and hassle-free.
-              We&apos;re committed to providing our clients with a robust
-              digital platform that serves their unique needs and amplifies
-              their online influence. At CodeCrafty, our mission is to craft the
-              web in a way that fosters your growth and success.
+              Our dedication transcends mere aesthetics. We are zealous about
+              swiftly and seamlessly translating your vision into a digital
+              reality. By seamlessly blending innovative AI capabilities into
+              our solutions, we aim to elevate your digital presence, offering a
+              distinctive edge in the digital sphere. With CodeCrafty at the
+              helm, our aspiration is to sculpt the digital landscape in a
+              manner that champions your aspirations and propels you towards
+              unprecedented growth.
             </p>
+
             <Link
               href="/contact"
               target="_blank"
@@ -357,11 +364,11 @@ function About() {
                 </div>
                 <div className="">
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-                    Building
+                    Developing/Designing
                   </p>
                   <p className="mt-2 font-merriweather text-base font-normal leading-6 text-gray-600">
-                    We build fast making your website UI and UX design look
-                    still look perfect with your great ideas.
+                    We build fast making your website UI and UX design still
+                    look perfect with your great ideas.
                   </p>
                 </div>
               </div>
@@ -408,11 +415,11 @@ function About() {
                 </div>
                 <div className="">
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-                    Connection
+                    AI Integration
                   </p>
                   <p className="mt-2 font-merriweather text-base font-normal leading-6 text-gray-600">
-                    We want to establish connections with our clients that puts
-                    them under the control of their site.
+                    We incorporate new technology to make users stay on your
+                    website for longer and get more clicks.
                   </p>
                 </div>
               </div>
@@ -445,12 +452,11 @@ function About() {
                 </div>
                 <div className="">
                   <p className="text-xl font-semibold leading-5 text-gray-800 lg:text-2xl lg:leading-6">
-                    Contact
+                    Web Maintenance
                   </p>
                   <p className="mt-2 font-merriweather text-base font-normal leading-6 text-gray-600">
-                    Being able to contact us whenever is one of our biggest
-                    importance&apos;s. Making sure that if you have a edit you
-                    want to make you can reach us immediately.
+                    After you build your dream site you want somebody to keep it
+                    going and keeping it modern day. we do that to.
                   </p>
                 </div>
               </div>
@@ -497,26 +503,28 @@ function About() {
               Our Story
             </h2>
             <p className="mt-4 font-merriweather text-base font-normal leading-6 text-gray-600">
-              CodeCrafty was born out of a desire to make website design and
-              development accessible and seamless for everyone. We noticed a gap
-              in the market - the process of getting a website from conception
-              to live was often long, complex, and fraught with challenges.
-              There was a need for a service that not only provided technical
-              expertise but also a client-centered approach, ensuring each
-              project was crafted with care, speed, and a deep understanding of
-              the client&apos;s vision.
+              Born from a passion to revolutionize website design and
+              development, CodeCrafty emerged to bridge an evident gap. We
+              identified that many platforms failed to engage users effectively,
+              leading to short-lived interactions. This sparked David's
+              innovative idea: integrating AI to bolster user engagement.
+              Navigating the journey from an idea to a live website was
+              historically tedious, often riddled with complexities. CodeCrafty
+              recognized the need for a more holistic service—one that married
+              technical prowess with a genuine understanding of a client's
+              aspirations.
             </p>
             <p className="mt-6 pb-8 font-merriweather text-base font-normal leading-6 text-gray-600">
-              Our journey began with a passionate, experienced, and
-              forward-thinking web developer and designer who had this vision.
-              Today, CodeCrafty has grown into a trusted platform, providing
-              efficient and easy-to-use web development services for a diverse
-              range of clients. Our story is one of innovation, customer
-              dedication, and an unending commitment to creating a smoother,
-              more user-friendly digital world. We&apos;re excited to write the
-              next chapters of our story with you and your success at the heart
-              of our narrative.
+              Our origin traces back to a singular visionary: a web maestro with
+              a dream of redefining digital experiences. Today, that dream has
+              evolved, with CodeCrafty standing tall as a beacon of trust and
+              excellence in the web development realm. Our trajectory is marked
+              by relentless innovation, an unwavering focus on our clients, and
+              a commitment to sculpting a more intuitive digital landscape. As
+              we forge ahead, we're enthusiastic about co-authoring future
+              success stories with you as our central muse.
             </p>
+
             <Link
               href="/build"
               rel="noopener noreferrer"

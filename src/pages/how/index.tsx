@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 
 type Step = {
   id: number;
@@ -13,30 +14,30 @@ type Step = {
 const steps: Step[] = [
   {
     id: 1,
-    title: "Step 1: Idea",
+    title: "Step 1: Ideation and Creation",
     description:
-      "Every great website starts with a great idea. Think about what you want your website to achieve, and what design elements can help you reach those goals. Start with a spark. Share your vision, your goals, and your inspiration with us. We're all ears.",
+      "This is the foundational phase. Here, we embark on the journey of transforming your abstract idea into a tangible concept. It all begins with envisioning the core purpose and potential of your website. Share those initial thoughts; they're the seeds of something magnificent.",
     imgUrl: "/idea.jpeg",
   },
   {
     id: 2,
-    title: "Step 2: Design",
+    title: "Step 2: Design/Development",
     description:
-      "A well-designed website is an inviting one. Ensure your design is clean, modern, and easy to navigate. We translate your idea into a visually engaging and functional blueprint, tailored to your unique needs.",
+      "Transitioning from ideation, this step focuses on crafting the aesthetics and structure. Using your vision as our guide, we'll create a design that resonates with your objectives. The development then ensures that the design turns into a user-friendly experience.",
     imgUrl: "/download.jpg",
   },
   {
     id: 3,
-    title: "Step 3: Development",
+    title: "Step 3: AI Integration",
     description:
-      "The development stage is where your website comes to life. Good development practices ensure your site is functional, fast, and reliable. Our skilled developers bring the design to life, incorporating the latest technology to build a responsive, efficient website.",
+      "In this age of technology, incorporating AI can elevate your website's capabilities. We seamlessly integrate advanced AI solutions to ensure your site is not just functional, but also ahead of the curve, offering unparalleled user experiences.",
     imgUrl: "/download-1.jpg",
   },
   {
-    id: 3,
-    title: "Step 4: Deployment",
+    id: 4,
+    title: "Step 4: Deployment and Maintenance",
     description:
-      "Once the site has been thoroughly tested and perfected, we launch it to the world. Your idea is now a fully-functional, live website. Enjoy the view!",
+      "The culmination of our collective efforts sees your website go live. But our journey doesn't end there. We'll be with you, ensuring smooth sailing with regular checks and maintenance, making sure your site remains optimal.",
     imgUrl: "/images.jpg",
   },
 
@@ -44,8 +45,6 @@ const steps: Step[] = [
 ];
 
 export default function Index() {
-
-
   return (
     <>
       <Navbar />
@@ -69,31 +68,40 @@ export default function Index() {
               </div>
               <div className="mt-8 grid grid-cols-2 gap-y-6">
                 <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  lg:text-base">
+                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
                     {" "}
-                    <span className="font-semibold md:font-medium">
-                      -Web Development
-                    </span>
+                    <Link href="/services/design">
+                      <span className="font-semibold md:font-medium">
+                        -Web Design
+                      </span>
+                    </Link>
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  lg:text-base">
-                    <span className="font-semibold md:font-medium">
-                      -Web Design
-                    </span>
+                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
+                    <Link href="/services/development">
+                      <span className="font-semibold md:font-medium">
+                        -Web Development
+                      </span>
+                    </Link>
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  lg:text-base">
-                    <span className="font-semibold md:font-medium">
-                      -Deployment
-                    </span>
+                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
+                    <Link href="/services/ai">
+                      <span className="font-semibold md:font-medium">
+                        -AI Integration
+                      </span>
+                    </Link>
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  lg:text-base">
-                    -Backend Sustainability
-                    <span className="font-semibold md:font-medium"></span>
+                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
+                    <Link href="/services/maintenance">
+                      <span className="font-semibold md:font-medium">
+                        -Web Maintenance
+                      </span>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -121,17 +129,37 @@ export default function Index() {
                 </h2>
               </div>
               <div className="mt-8" data-aos="fade-up">
-                <p className="font-merriweather text-sm leading-normal  text-gray-800 lg:text-base">
-                  At CodeCrafty, we believe that creating a website should be a
-                  hassle-free experience. That&apos;s why we&apos;ve made it
-                  incredibly simple for you to submit your design requirements.
-                  Once we receive your submission, our talented team of
-                  developers gets straight to work, handling every aspect of
-                  your project with care and speed. We&apos;re committed to
-                  delivering not only a visually stunning website but also a
-                  seamless user experience, all within a quick turnaround time.
-                  At CodeCrafty, we craft the web - with you and for you.
-                </p>
+                <div>
+                  <h2
+                    className="text-2xl font-bold leading-7 text-gray-800  lg:text-3xl"
+                    data-aos="fade-up"
+                  >
+                    Dive into the Details
+                  </h2>
+                </div>
+                <div className="mt-8" data-aos="fade-up">
+                  <p className="font-merriweather text-sm leading-normal  text-gray-800 lg:text-base">
+                    Every groundbreaking website begins with a vision. When
+                    you're fueled by an idea and seek a web development partner
+                    to bring it to life, that's where we shine. Simply submit
+                    your requirements, and in no time, our enthusiastic team
+                    will be in touch, eager to kickstart your digital dream. Our
+                    collaboration ensures your vision is articulated perfectly,
+                    from design to deployment. We manage both backend and
+                    frontend, ensuring that the only feedback loop required is
+                    between you and us.
+                  </p>
+                  <p className="pt-2 font-merriweather text-sm  leading-normal text-gray-800 lg:text-base">
+                    Enhance your digital presence with our optional AI
+                    integration. By analyzing user interactions, we devise
+                    strategies to captivate your audience further, including the
+                    deployment of chatbots, potentially eliminating the need for
+                    extensive support teams. Additionally, with our web
+                    maintenance package, leave the tech nitty-gritty to us.
+                    We'll ensure your website runs seamlessly, sparing you the
+                    quest of finding a separate developer for upkeep.
+                  </p>
+                </div>
               </div>
               <div className="mt-8 w-full">
                 <div className="w-full">
@@ -164,11 +192,14 @@ export default function Index() {
                 </div>
                 <div className="mt-8 flex flex-row items-center justify-start space-x-4">
                   <div>
-                    <button className="btn rounded-sm border border-white bg-white px-4 py-2 text-xs text-rose-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 md:px-8 md:py-4 lg:text-base">
-                      Start Building
-                    </button>
+                    <Link href="build">
+                      <button className="btn rounded-sm border border-white bg-white px-4 py-2 text-xs text-rose-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 md:px-8 md:py-4 lg:text-base">
+                        Start Building
+                      </button>
+                    </Link>
                   </div>
                   <div>
+                    <Link href="/about/contact"></Link>
                     <button className="btn rounded-sm border border-white px-4 py-2 text-xs text-white hover:bg-white hover:text-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 md:px-8 md:py-4 lg:text-base">
                       Contact Us
                     </button>

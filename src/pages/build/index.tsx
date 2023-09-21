@@ -14,17 +14,14 @@ import { api } from "~/utils/api";
 import { useSession } from "next-auth/react";
 
 function Build() {
+  const { data: sessionData } = useSession();
 
-  const {data: sessionData } = useSession()
+  const createSubmission = api.submission.create.useMutation({
+    onSuccess: () => {
+      void refetchNotes();
+    },
+  });
 
-    const createSubmission = api.submission.create.useMutation({
-      onSuccess: () => {
-        void refetchNotes();
-      },
-    });
-
-
-    
   const [pageIdea, setPageIdea] = useState("");
   const [pageCount, setPageCount] = useState("");
   const [revisions, setRevisions] = useState("");
@@ -48,7 +45,6 @@ function Build() {
   const [checkboxTwo, setCheckboxTwo] = useState(false);
   const [checkboxThree, setCheckboxThree] = useState(false);
   const [checkboxFour, setCheckboxFour] = useState(false);
-
 
   const englishSpeakingCountries = [
     "Australia",
@@ -81,10 +77,9 @@ function Build() {
       companyName,
       instagramName,
       projectDescription,
-
     });
 
-    if(sessionData){
+    if (sessionData) {
       createSubmission.mutate({
         pageIdea: pageIdea,
         pageCount: pageCount,
@@ -109,38 +104,34 @@ function Build() {
         maintenance: checkboxFour,
       });
 
-      alert("Your form has been submitted")
+      alert("Your form has been submitted");
 
-       setPageIdea("");
-       setPageCount("");
-       setRevisions("");
-       setExistingWebsite("");
-       setTimeline("");
-       setDomain("");
-       setExtraFeatures("");
-       setLongTermDeveloper("");
-       setFirstName("");
-       setLastName("");
-       setEmailAddress("");
-       setPhoneNumber("");
-       setCountry("");
-       setStateAndCity("");
-       setCompanyName("");
-       setInstagramName("");
-       setProjectDescription("");
-       setCheckboxOne(false);
-       setCheckboxTwo(false);
-       setCheckboxThree(false);
-       setCheckboxFour(false);
+      setPageIdea("");
+      setPageCount("");
+      setRevisions("");
+      setExistingWebsite("");
+      setTimeline("");
+      setDomain("");
+      setExtraFeatures("");
+      setLongTermDeveloper("");
+      setFirstName("");
+      setLastName("");
+      setEmailAddress("");
+      setPhoneNumber("");
+      setCountry("");
+      setStateAndCity("");
+      setCompanyName("");
+      setInstagramName("");
+      setProjectDescription("");
+      setCheckboxOne(false);
+      setCheckboxTwo(false);
+      setCheckboxThree(false);
+      setCheckboxFour(false);
 
-       window.location.reload()
-
-
+      window.location.reload();
     } else {
-      alert("You must be logged in to submit a form")
+      alert("You must be logged in to submit a form");
     }
-
-     
   };
 
   return (
@@ -548,12 +539,14 @@ function Build() {
             </div>
           </div>
 
-          <button
-            className="mt-6 rounded bg-blue-500 p-4 text-white"
-            type="submit"
-          >
-            Submit
-          </button>
+          <div className="py-5">
+            <button
+              type="submit"
+              className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-wider border-black border-4 text-rose-600 hover:bg-rose-700 hover:text-white duration-150 ease-in hover:opacity-90 md:px-10 md:py-5 md:text-lg"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
 
@@ -566,4 +559,3 @@ export default Build;
 function refetchNotes() {
   throw new Error("Function not implemented.");
 }
-

@@ -137,7 +137,7 @@ export default function Home() {
               we deliver is primed to exceed expectations.
             </p>
 
-            <Link href="/about" legacyBehavior>
+            <Link href="/about/aboutUs" legacyBehavior>
               <a className="mt-4 inline-block rounded bg-rose-600 px-4 py-2 font-montserrat font-bold text-white hover:bg-rose-700">
                 Learn More
               </a>
@@ -256,7 +256,7 @@ export default function Home() {
       <section className="bg-white px-4 py-16 font-montserrat sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl text-center">
           <h2 className="mb-4 text-4xl font-extrabold">Have a question?</h2>
-          <Link href="/contact" legacyBehavior>
+          <Link href="/about/contact" legacyBehavior>
             <a className="inline-block rounded bg-rose-600 px-6 py-3 text-lg font-bold text-white hover:bg-rose-700">
               Contact Us
             </a>
