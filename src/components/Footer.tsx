@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import Newsletter from "~/components/Newsletter";
 
 function Index() {
   return (
@@ -18,10 +19,10 @@ function Index() {
                 Phone: +1 (720) 612 2979
               </h1>
               <h1 className="text-xl font-bold">
-                Dev Email: davidfales@codecrafty.dev
+                For IT help or development: davidfales@codecrafty.dev
               </h1>
               <h1 className="text-xl font-bold">
-                Marketing Email: diego@codecrafty.dev
+                For business and questions: diego_g@codecrafty.dev
               </h1>
             </div>
 
@@ -86,7 +87,7 @@ function Index() {
             <div className="mx-auto mb-6 mt-8 w-11/12 sm:w-11/12 lg:mx-0 lg:mb-0 lg:mt-8 lg:w-1/6 xl:mx-0 xl:mb-0 xl:mt-0 xl:w-1/6">
               <div className="flex justify-start space-x-6 pr-2 sm:justify-start sm:pr-0 md:pr-0 lg:pr-0 xl:justify-end xl:pr-0">
                 <div>
-                  <Link href="#">
+                  <Link href="https://twitter.com/CodeCrafty_">
                     <svg
                       aria-label="Twitter"
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +106,7 @@ function Index() {
                   </Link>
                 </div>
                 <div>
-                  <Link href="#">
+                  <Link href="https://www.instagram.com/codecrafty_">
                     <svg
                       aria-label="Instagram"
                       xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +128,7 @@ function Index() {
                 </div>
 
                 <div>
-                  <Link href="#">
+                  <Link href="https://github.com/Code-Crafty-Web-Development">
                     <svg
                       aria-label="Github"
                       xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +147,7 @@ function Index() {
                   </Link>
                 </div>
                 <div>
-                  <Link href="#">
+                  <Link href="https://www.facebook.com/profile.php?id=100094733723225">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon icon-tabler icon-tabler-brand-facebook cursor-pointer"
@@ -167,6 +168,7 @@ function Index() {
               </div>
             </div>
           </div>
+          <Newsletter  />
         </div>
       </div>
     </div>

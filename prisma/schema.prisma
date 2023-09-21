@@ -68,6 +68,10 @@ model Submission {
   longTermDeveloper  String?
   firstName          String
   lastName           String
+  development        Boolean?
+  design             Boolean?
+  ai                 Boolean?
+  maintenance        Boolean?
   emailAddress       String
   phoneNumber        String?
   country            String

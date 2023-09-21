@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
@@ -45,6 +43,12 @@ function Build() {
   const [companyName, setCompanyName] = useState("");
   const [instagramName, setInstagramName] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
+
+  const [checkboxOne, setCheckboxOne] = useState(false);
+  const [checkboxTwo, setCheckboxTwo] = useState(false);
+  const [checkboxThree, setCheckboxThree] = useState(false);
+  const [checkboxFour, setCheckboxFour] = useState(false);
+
 
   const englishSpeakingCountries = [
     "Australia",
@@ -99,6 +103,10 @@ function Build() {
         companyName: companyName,
         instagramName: instagramName,
         projectDescription: projectDescription,
+        development: checkboxOne,
+        design: checkboxTwo,
+        ai: checkboxThree,
+        maintenance: checkboxFour,
       });
 
       alert("Your form has been submitted")
@@ -120,6 +128,13 @@ function Build() {
        setCompanyName("");
        setInstagramName("");
        setProjectDescription("");
+       setCheckboxOne(false);
+       setCheckboxTwo(false);
+       setCheckboxThree(false);
+       setCheckboxFour(false);
+
+       window.location.reload()
+
 
     } else {
       alert("You must be logged in to submit a form")
@@ -215,6 +230,45 @@ function Build() {
                     required
                     onChange={(e) => setStateAndCity(e.target.value)}
                   />
+                </div>
+              </div>
+
+              <div className="mx-auto flex items-center justify-center space-x-8">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2 h-6 w-6"
+                    checked={checkboxOne}
+                    onChange={(e) => setCheckboxOne(e.target.checked)}
+                  />
+                  <label>Development</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2 h-6 w-6"
+                    checked={checkboxTwo}
+                    onChange={(e) => setCheckboxTwo(e.target.checked)}
+                  />
+                  <label>Design</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2 h-6 w-6"
+                    checked={checkboxThree}
+                    onChange={(e) => setCheckboxThree(e.target.checked)}
+                  />
+                  <label>AI Integration</label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2 h-6 w-6"
+                    checked={checkboxFour}
+                    onChange={(e) => setCheckboxFour(e.target.checked)}
+                  />
+                  <label>Maintenance</label>
                 </div>
               </div>
 

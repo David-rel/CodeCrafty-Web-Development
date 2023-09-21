@@ -8,6 +8,9 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
         merriweather: ["Merriweather", "sans-serif"],
       },
+      animation: {
+        slideInFromBottom: "slideInFromBottom 0.5s ease-out forwards",
+      },
     },
   },
   plugins: [],

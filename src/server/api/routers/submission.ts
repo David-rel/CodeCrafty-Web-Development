@@ -39,6 +39,10 @@ export const submissionRouter = createTRPCRouter({
         companyName: z.string(),
         instagramName: z.string(),
         projectDescription: z.string(),
+        development: z.boolean(),
+        design: z.boolean(),
+        ai: z.boolean(),
+        maintenance: z.boolean(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -54,6 +58,4 @@ export const submissionRouter = createTRPCRouter({
         },
       });
     }),
-
- 
 });

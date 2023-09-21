@@ -28,6 +28,9 @@ export const env = createEnv({
     GITHUB_SECRET: z.string(),
     GOOGLE_ID: z.string(),
     GOOGLE_SECRET: z.string(),
+
+    MAILCHIMP_API_KEY: z.string(),
+    MAILCHIMP_LIST_ID: z.string(),
   },
 
   /**
@@ -54,6 +57,8 @@ export const env = createEnv({
     GITHUB_SECRET: process.env.GITHUB_SECRET,
     GOOGLE_ID: process.env.GOOGLE_ID,
     GOOGLE_SECRET: process.env.GOOGLE_SECRET,
+    MAILCHIMP_API_KEY: process.env.MAILCHIMP_API_KEY,
+    MAILCHIMP_LIST_ID: process.env.MAILCHIMP_LIST_ID,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

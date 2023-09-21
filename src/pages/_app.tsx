@@ -5,21 +5,36 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Head from "next/head";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import NewsletterPopup from "~/components/NewsletterPopup";
+import ChatPopup from "~/components/ChatPopup";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+  const [isModalVisible, setIsModalVisible] = useState(false); // Initially set to false
 
-    useEffect(() => {
-      // Importing and initializing AOS
-      import("aos")
-        .then((Aos) => {
-          Aos.init({ duration: 2000 });
-        })
-        .catch((error) => console.error(error));
-    }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsModalVisible(true); // Show the modal after 30 seconds
+    }, 30000);
+
+    return () => clearTimeout(timer); // Cleanup the timer if the component is unmounted
+  }, []);
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
+  useEffect(() => {
+    // Importing and initializing AOS
+    import("aos")
+      .then((Aos) => {
+        Aos.init({ duration: 2000 });
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <SessionProvider session={session}>
@@ -53,7 +68,14 @@ const MyApp: AppType<{ session: Session | null }> = ({
         {/* Canonical */}
         <link rel="canonical" href="https://codecrafty.dev" />
       </Head>
-      <Component {...pageProps} />
+      {isModalVisible && (
+        <NewsletterPopup isVisible={isModalVisible} onClose={closeModal} />
+      )}
+
+      <div>
+        <ChatPopup />
+        <Component {...pageProps} />
+      </div>
     </SessionProvider>
   );
 };

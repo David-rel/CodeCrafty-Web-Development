@@ -4,6 +4,10 @@ import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 
 type Submission = {
+  ai: boolean;
+  maintenance: boolean;
+  design: boolean;
+  development: boolean;
   firstName: string;
   lastName: string;
   emailAddress: string;
@@ -28,9 +32,9 @@ type Submission = {
 };
 
 function IndexPage() {
-  const [password, setPassword] = useState("");
-  const { data, isLoading, isError } =
-    api.submission.all.useQuery<Submission[]>();
+ const [password, setPassword] = useState("");
+  const [expandedId, setExpandedId] = useState<string | null>(null);  // <-- Add this line
+  const { data, isLoading, isError } = api.submission.all.useQuery<Submission[]>();
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>An error occurred...</p>;
@@ -49,6 +53,7 @@ function IndexPage() {
     return date.toLocaleDateString();
   }
 
+
   return (
     <div>
       <Navbar />
@@ -60,22 +65,28 @@ function IndexPage() {
           placeholder="Enter password"
         />
       </form>
+
       {password === process.env.NEXT_PUBLIC_PASSWORD &&
-        data.map((submission, index) => {
-          return (
-            <div key={index}>
-              <h1 className="text-3xl font-bold">Your Submissions</h1>
+        data.map((submission) => (
+          <div
+            key={submission.id}
+            className="my-4 rounded-lg bg-white p-6 shadow-md"
+          >
+            <h1
+              className="cursor-pointer text-3xl font-bold"
+              onClick={() =>
+                setExpandedId(
+                  expandedId === submission.id ? null : submission.id
+                )
+              }
+            >
+              Submission ID: {submission.id}
+            </h1>
 
-              <div
-                key={index}
-                className="my-4 rounded-lg bg-white p-6 shadow-md"
-              >
-                <p className="text-lg font-semibold">
-                  <strong>Submission ID:</strong> {submission.id}
-
-                </p>
-                 <p>
-                  <strong>:</strong> {submission.authorId}
+            {expandedId === submission.id && (
+              <>
+                <p>
+                  <strong>Author ID:</strong> {submission.authorId}
                 </p>
                 <p>
                   <strong>First Name:</strong> {submission.firstName}
@@ -105,42 +116,60 @@ function IndexPage() {
                   <strong>Project Description:</strong>{" "}
                   {submission.projectDescription}
                 </p>
+                <p>
+                  <strong>Development:</strong>{" "}
+                  {submission.development ? "yes" : "no"}
+                </p>
+                <p>
+                  <strong>Design:</strong> {submission.design ? "yes" : "no"}
+                </p>
+                <p>
+                  <strong>AI:</strong> {submission.ai ? "yes" : "no"}
+                </p>
+                <p>
+                  <strong>Maintenance:</strong>{" "}
+                  {submission.maintenance ? "yes" : "no"}
+                </p>
 
                 <p>
                   <strong>Created At:</strong>{" "}
                   {formatDate(submission.createdAt)}
                 </p>
-
                 <h3 className="pb-4 text-2xl font-bold">Extras</h3>
                 <p>
-                  <strong>Do they have a page count idea:</strong> {submission.pageIdea}
+                  <strong>Do they have a page count idea:</strong>{" "}
+                  {submission.pageIdea}
                 </p>
-                 <p>
+                <p>
                   <strong>How many pages:</strong> {submission.pageCount}
                 </p>
-                 <p>
-                  <strong>Do they want revisions:</strong> {submission.revisions}
+                <p>
+                  <strong>Do they want revisions:</strong>{" "}
+                  {submission.revisions}
                 </p>
-                 <p>
-                  <strong>Do they have an existing website:</strong> {submission.existingWebsite}
+                <p>
+                  <strong>Do they have an existing website:</strong>{" "}
+                  {submission.existingWebsite}
                 </p>
-                 <p>
-                  <strong>when od they want the website done:</strong> {submission.timeline}
+                <p>
+                  <strong>when od they want the website done:</strong>{" "}
+                  {submission.timeline}
                 </p>
-                 <p>
-                  <strong>do they already have a domain:</strong> {submission.domain}
+                <p>
+                  <strong>do they already have a domain:</strong>{" "}
+                  {submission.domain}
                 </p>
-                 <p>
+                <p>
                   <strong>extra features:</strong> {submission.extraFeatures}
                 </p>
-                 <p>
-                  <strong>do they want a long term dev:</strong> {submission.longTermDeveloper}
+                <p>
+                  <strong>do they want a long term dev:</strong>{" "}
+                  {submission.longTermDeveloper}
                 </p>
-
-              </div>
-            </div>
-          );
-        })}
+              </>
+            )}
+          </div>
+        ))}
 
       <Footer />
     </div>

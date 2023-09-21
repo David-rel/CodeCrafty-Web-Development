@@ -17,3 +17,14 @@
   font-style: normal;
   font-display: swap;
 }
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%); /* Start from below the screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* End at its original position */
+    opacity: 1;
+  }
+}

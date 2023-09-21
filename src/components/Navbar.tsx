@@ -8,7 +8,9 @@ import { useMediaQuery } from "react-responsive";
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const router = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 1125px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
   const setLocalStorageSidebarState = (state: boolean) => {
     if (typeof window !== "undefined") {
@@ -17,25 +19,22 @@ export default function Navbar() {
     }
   };
 
-const getLocalStorageSidebarState = (): boolean | null => {
-  if (typeof window !== "undefined") {
-    const storedState: string | null = localStorage.getItem("sidebarOpen");
-    if (storedState !== null) {
-      try {
-        const parsedState = JSON.parse(storedState) as boolean;
-        if (typeof parsedState === "boolean") {
-          return parsedState;
+  const getLocalStorageSidebarState = (): boolean | null => {
+    if (typeof window !== "undefined") {
+      const storedState: string | null = localStorage.getItem("sidebarOpen");
+      if (storedState !== null) {
+        try {
+          const parsedState = JSON.parse(storedState) as boolean;
+          if (typeof parsedState === "boolean") {
+            return parsedState;
+          }
+        } catch (error) {
+          console.error("Failed to parse stored sidebar state:", error);
         }
-      } catch (error) {
-        console.error("Failed to parse stored sidebar state:", error);
       }
     }
-  }
-  return null;
-};
-
-
-
+    return null;
+  };
 
   // Initialize sidebarOpen based on screen size
   const [sidebarOpen, setSidebarOpen] = useState(() => {
@@ -46,59 +45,194 @@ const getLocalStorageSidebarState = (): boolean | null => {
   useEffect(() => {
     setLocalStorageSidebarState(sidebarOpen);
   }, [sidebarOpen]);
+  const isActive = (pathname: string, paths: string[] = [], exact = true) => {
+    if (exact) {
+      return router.pathname === pathname;
+    } else {
+      return (
+        router.pathname.startsWith(pathname) || paths.includes(router.pathname)
+      );
+    }
+  };
+  const aboutPaths = [
+    "/about/aboutUs",
+    "/about/contact",
+    "/about/team",
+    "/socials",
+  ];
+  const productPaths = [
+    "/products/development",
+    "/products/design",
+    "/products/ai",
+    "/products/maintenance",
+  ];
 
-  const isActive = (pathname: string) => router.pathname === pathname;
   const links = (
     <>
-      <Link href="/" legacyBehavior>
+      <div
+        className="group relative"
+        onMouseEnter={() => setAboutDropdownOpen(true)}
+        onMouseLeave={() => setAboutDropdownOpen(false)}
+        onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+      >
         <a
-          onClick={() => {
-            setSidebarOpen(false);
-          }}
-          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
-            isActive("/")
+          className={`cursor-pointer text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/about", aboutPaths, false)
               ? "text-rose-700 underline"
-              : "text-rose-500 hover:text-rose-700 hover:underline"
-          }`}
-        >
-          Home
-        </a>
-      </Link>
-      <Link href="/about" legacyBehavior>
-        <a
-          onClick={() => {
-            setSidebarOpen(false);
-          }}
-          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
-            isActive("/about")
-              ? "text-rose-700 underline"
-              : "text-rose-500 hover:text-rose-700 hover:underline"
+              : "text-rose-500 hover:underline group-hover:text-rose-700"
           }`}
         >
           About
         </a>
-      </Link>
+        {aboutDropdownOpen && (
+          <div
+            className={`z-10 flex w-40 flex-col space-y-2 rounded-lg border border-gray-200 bg-gray-200 
+  ${
+    isMobile
+      ? "w-48 border-none bg-white pl-4 text-2xl font-semibold"
+      : "absolute left-0 text-xl"
+  }`}
+          >
+            <Link href="/about/aboutUs" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/about/aboutUs")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                About Us
+              </a>
+            </Link>
+            <Link href="/about/contact" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/about/contact")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Contact Us
+              </a>
+            </Link>
+            <Link href="/about/team" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/about/team")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                The Team
+              </a>
+            </Link>
+            <Link href="/socials" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/socials")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Our Socials
+              </a>
+            </Link>
+          </div>
+        )}
+      </div>
 
-      <Link href="/contact" legacyBehavior>
+      <div
+        className="group relative"
+        onMouseEnter={() => setProductsDropdownOpen(true)}
+        onMouseLeave={() => setProductsDropdownOpen(false)}
+        onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+      >
         <a
-          onClick={() => {
-            setSidebarOpen(false);
-          }}
-          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
-            isActive("/contact")
+          className={`cursor-pointer text-2xl font-bold  ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/services", productPaths, false)
               ? "text-rose-700 underline"
-              : "text-rose-500 hover:text-rose-700 hover:underline"
+              : "text-rose-500 hover:underline group-hover:text-rose-700"
           }`}
         >
-          Contact
+          Our Services
         </a>
-      </Link>
+        {productsDropdownOpen && (
+          <div
+            className={`z-10 flex  w-64 flex-col space-y-2 rounded-lg border border-gray-200 bg-gray-200 
+  ${
+    isMobile
+      ? "w-96 border-none bg-white pl-4 text-2xl font-semibold"
+      : "absolute left-0 text-xl"
+  }`}
+          >
+            <Link href="/services/development" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/development")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Web Development
+              </a>
+            </Link>
+            <Link href="/services/design" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/design")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Web Design
+              </a>
+            </Link>
+            <Link href="/services/ai" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/ai")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                AI Web Integration
+              </a>
+            </Link>
+            <Link href="/services/maintenance" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/maintenance")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Web Maintenance
+              </a>
+            </Link>
+          </div>
+        )}
+      </div>
+
       <Link href="/build" legacyBehavior>
         <a
           onClick={() => {
             setSidebarOpen(false);
           }}
-          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
             isActive("/build")
               ? "text-rose-700 underline"
               : "text-rose-500 hover:text-rose-700 hover:underline"
@@ -112,27 +246,15 @@ const getLocalStorageSidebarState = (): boolean | null => {
           onClick={() => {
             setSidebarOpen(false);
           }}
-          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
             isActive("/how")
               ? "text-rose-700 underline"
               : "text-rose-500 hover:text-rose-700 hover:underline"
           }`}
         >
           How we do it
-        </a>
-      </Link>
-       <Link href="/socials" legacyBehavior>
-        <a
-          onClick={() => {
-            setSidebarOpen(false);
-          }}
-          className={`text-2xl font-bold ${sidebarOpen ? "text-3xl" : ""} ${
-            isActive("/socials")
-              ? "text-rose-700 underline"
-              : "text-rose-500 hover:text-rose-700 hover:underline"
-          }`}
-        >
-          Socials
         </a>
       </Link>
     </>
@@ -151,9 +273,11 @@ const getLocalStorageSidebarState = (): boolean | null => {
         >
           <div className="flex flex-1 flex-col overflow-y-auto pb-4 pt-5">
             {/**logog image */}
-            <div className="flex items-center justify-center">
-              <Image src="/logo1.png" alt="Logo" width={150} height={40} />
-            </div>
+            <Link href="/">
+              <div className="flex items-center justify-center">
+                <Image src="/logo1.png" alt="Logo" width={150} height={40} />
+              </div>
+            </Link>
 
             <div className="px-4">
               <h2 className="mb-8 font-montserrat text-4xl font-bold underline">
@@ -161,13 +285,29 @@ const getLocalStorageSidebarState = (): boolean | null => {
               </h2>
             </div>
             <nav className=" mb-8 flex flex-1 flex-col space-y-8 px-2 font-montserrat">
+              <Link href="/" legacyBehavior>
+                <a
+                  onClick={() => {
+                    setSidebarOpen(false);
+                  }}
+                  className={`text-2xl font-bold ${
+                    sidebarOpen ? "text-3xl" : ""
+                  } ${
+                    isActive("/")
+                      ? "text-rose-700 underline"
+                      : "text-rose-500 hover:text-rose-700 hover:underline"
+                  }`}
+                >
+                  Home
+                </a>
+              </Link>
               {links}
             </nav>
             <div className="px-4">
               <div className="flex items-center gap-4">
                 {sessionData && (
                   <p className="text-l text-center font-montserrat text-black">
-                    Welcome, <p>{sessionData.user?.email}</p>
+                    Welcome, <p>{sessionData.user?.name}</p>
                   </p>
                 )}
                 <button
@@ -186,12 +326,13 @@ const getLocalStorageSidebarState = (): boolean | null => {
           </div>
         </div>
       ) : (
-        <nav className="sticky top-0 z-50 flex items-center justify-between bg-white/60 p-6 text-black backdrop-blur-lg backdrop-filter">
+        <nav className="sticky top-0 z-40 flex h-20 items-center justify-between bg-white/60 p-6 text-black backdrop-blur-lg backdrop-filter">
           <div className="flex items-center space-x-16 font-montserrat">
-            <Image src="/logo1.png" alt="Logo" width={100} height={40} />
-                        <div className="hidden md:flex space-x-1 md:space-x-10 text-md md:text-2xl">
-
-            {links}
+            <Link href="/">
+              <Image src="/logo1.png" alt="Logo" width={100} height={40} />
+            </Link>
+            <div className="text-md hidden space-x-1 md:flex md:space-x-10 md:text-2xl">
+              {links}
             </div>
           </div>
           {sessionData && <></>}
@@ -199,7 +340,7 @@ const getLocalStorageSidebarState = (): boolean | null => {
             {sessionData && (
               <p className="text-l text-center text-white">
                 <span className="font-merriweather text-black">
-                  Welcome, <p>{sessionData.user?.email}</p>
+                  Welcome, <p>{sessionData.user?.name}</p>
                 </span>
               </p>
             )}
