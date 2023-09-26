@@ -62,7 +62,7 @@ const newsletterHandler = async (
     return res.status(201).json({ error: null });
   } catch (error) {
     return res.status(400).json({
-      error: `Oops, something went wrong... Send me an email at uriklar@gmail.com and I'll add you to the list.`,
+      error: `Oops, something went wrong... Send me an email at davidfales@codecrafty.dev and I'll add you to the list.`,
     });
   }
 };
