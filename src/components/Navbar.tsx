@@ -335,6 +335,14 @@ export default function Navbar() {
               {links}
             </div>
           </div>
+
+          <a
+            href="tel:+17202994804"
+            className=" text-md hidden rounded-md border border-transparent px-4 py-2 font-merriweather font-medium text-black underline md:flex"
+          >
+            <p>+1(720)299-4804</p>
+          </a>
+
           {sessionData && <></>}
           <div className="flex items-center gap-4">
             {sessionData && (
@@ -344,6 +352,7 @@ export default function Navbar() {
                 </span>
               </p>
             )}
+
             <button
               className="rounded-lg bg-rose-700 px-5 py-2.5 text-center font-montserrat text-sm font-bold text-white hover:bg-rose-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800"
               onClick={sessionData ? () => void signOut() : () => void signIn()}
@@ -355,6 +364,12 @@ export default function Navbar() {
       )}
       {isMobile && sidebarOpen == false && (
         <>
+          {/* <div className="fixed left-0 top-0 z-50 ml-3 mt-3">
+            <Link href="/">
+              <Image src="/logo1.png" alt="Logo" width={75} height={40} />
+            </Link>
+          </div> */}
+
           <div className="fixed right-0 top-0 z-50 mr-3 mt-3 text-5xl font-bold">
             <button onClick={() => setSidebarOpen(true)}>☰</button>
           </div>

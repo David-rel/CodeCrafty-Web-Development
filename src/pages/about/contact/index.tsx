@@ -59,7 +59,7 @@ export default function IndexPage() {
                         Contact
                       </h2>
                       <h2 className="mt-2 text-base leading-8 tracking-wider text-gray-800 md:text-lg">
-                        +1 720 612 2979 (Phone)
+                        +1 (720) 299 - 4804 (Phone)
                       </h2>
                     </div>
                     <div className="mt-4 md:mt-8">
@@ -67,7 +67,7 @@ export default function IndexPage() {
                         Email
                       </h2>
                       <h2 className="mt-2 text-base leading-8 tracking-wider text-gray-800 md:text-lg">
-                        davidfalesct@gmail.com
+                        davidfales@codecrafty.dev
                       </h2>
                     </div>
                   </div>
@@ -75,7 +75,7 @@ export default function IndexPage() {
               </div>
             </div>
             <div
-              className="w-full lg:w-1/2 lg:pl-12 xl:pt-10 pr-4"
+              className="w-full pr-4 lg:w-1/2 lg:pl-12 xl:pt-10"
               data-aos="fade-left"
             >
               <div className="pl-2">
@@ -84,7 +84,7 @@ export default function IndexPage() {
                 </h1>
                 <form
                   id="contact"
-                  action="https://formspree.io/f/xeqbqzja"
+                  action="https://formspree.io/f/xaygajnp"
                   method="POST"
                 >
                   <div className="mt-3 w-full 2xl:w-8/12">

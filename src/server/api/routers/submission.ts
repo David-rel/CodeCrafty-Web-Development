@@ -2,6 +2,7 @@ import { z } from "zod";
 import {
   createTRPCRouter,
   protectedProcedure,
+  publicProcedure,
 } from "~/server/api/trpc";
 
 
@@ -19,7 +20,7 @@ export const submissionRouter = createTRPCRouter({
     ];
   }),
 
-  create: protectedProcedure
+  create: publicProcedure
     .input(
       z.object({
         pageIdea: z.string(),
@@ -43,6 +44,7 @@ export const submissionRouter = createTRPCRouter({
         design: z.boolean(),
         ai: z.boolean(),
         maintenance: z.boolean(),
+        authorId: z.string(),
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -50,11 +52,7 @@ export const submissionRouter = createTRPCRouter({
         data: {
           ...input,
           createdAt: new Date(),
-          author: {
-            connect: {
-              id: ctx.session.user.id,
-            },
-          },
+         
         },
       });
     }),

@@ -16,7 +16,7 @@ function Index() {
               </div>
 
               <h1 className="pb-4 text-xl font-bold">
-                Phone: +1 (720) 612 2979
+                Phone: +1 (720) 299 - 4804
               </h1>
               <h1 className="text-xl font-bold">
                 For IT help or development: davidfales@codecrafty.dev
@@ -32,10 +32,10 @@ function Index() {
                   Getting Started
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="/about">About Us</Link>
+                  <Link href="/about/aboutUs">About Us</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="/contact">Contact Us</Link>
+                  <Link href="/about/contact">Contact Us</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
                   <Link href="/build">Build A Site</Link>
@@ -48,19 +48,19 @@ function Index() {
             <div className="mx-auto w-11/12 pl-3 pt-3 sm:pl-0 lg:mx-0 lg:w-2/5 xl:mx-0 xl:flex xl:w-1/6 xl:justify-end">
               <ul>
                 <li className="mb-6 text-xl font-bold text-gray-800">
-                  Resources
+                  Services
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="#">Accessibility</Link>
+                  <Link href="/services/development">Web Development</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="#">Usability</Link>
+                  <Link href="/services/design">Web Design</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="#">Marketplace</Link>
+                  <Link href="/services/ai">AI Web Integration</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="#">Design &amp; Dev</Link>
+                  <Link href="/services/maintenance">Web Maintenance</Link>
                 </li>
               </ul>
             </div>
@@ -68,10 +68,10 @@ function Index() {
           <div className="mt-16 flex-wrap justify-between pb-6 pl-3 sm:pl-0 xl:mt-24 xl:flex">
             <div className="mx-auto mb-6 w-11/12 lg:mx-0 xl:mx-0 xl:mb-0 xl:w-2/6">
               <p className="text-base text-gray-800">
-                2023 CodeCrafty. All Rights Reserved
+                &copy; 2023 CodeCrafty. All Rights Reserved
               </p>
             </div>
-            <div className="mx-auto mb-6 w-11/12 lg:mx-0 lg:mb-0 xl:mx-0 xl:mb-0 xl:w-2/6">
+            {/* <div className="mx-auto mb-6 w-11/12 lg:mx-0 lg:mb-0 xl:mx-0 xl:mb-0 xl:w-2/6">
               <ul className="justify-between sm:flex md:flex lg:flex xl:flex">
                 <li className="mb-4 text-base text-gray-800 hover:text-gray-900 sm:mb-0">
                   <Link href="#">Terms of service</Link>
@@ -83,7 +83,7 @@ function Index() {
                   <Link href="#">Security</Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div className="mx-auto mb-6 mt-8 w-11/12 sm:w-11/12 lg:mx-0 lg:mb-0 lg:mt-8 lg:w-1/6 xl:mx-0 xl:mb-0 xl:mt-0 xl:w-1/6">
               <div className="flex justify-start space-x-6 pr-2 sm:justify-start sm:pr-0 md:pr-0 lg:pr-0 xl:justify-end xl:pr-0">
                 <div>
@@ -168,7 +168,7 @@ function Index() {
               </div>
             </div>
           </div>
-          <Newsletter  />
+          <Newsletter />
         </div>
       </div>
     </div>

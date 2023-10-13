@@ -50,8 +50,8 @@ function About() {
           <div className="w-full lg:w-6/12">
             <div className="relative hidden w-full lg:block">
               <Image
-                src="/about_opener.jpeg"
-                width={500}
+                src="/test2.png"
+                width={600}
                 height={500}
                 alt="people discussing on board"
               />
@@ -59,7 +59,7 @@ function About() {
 
             <div className="relative hidden w-full sm:block lg:hidden">
               <Image
-                src="/about_opener.jpeg"
+                src="/test2.png"
                 width={500}
                 height={500}
                 alt="people discussing on board"
@@ -68,7 +68,7 @@ function About() {
 
             <div className="relative block w-full sm:hidden">
               <Image
-                src="/about_opener.jpeg"
+                src="/test2.png"
                 width={500}
                 height={500}
                 alt="people discussing on board"
@@ -536,7 +536,8 @@ function About() {
           <div className="w-full items-center lg:flex lg:w-1/2 ">
             <div className="relative hidden w-full lg:block">
               <Image
-                src="/about_person.jpeg"
+                src="/us.jpeg"
+                className="rounded-lg"
                 width={1000}
                 height={500}
                 alt="people discussing on board"
@@ -544,7 +545,8 @@ function About() {
             </div>
             <div className="relative hidden h-3/4 w-full rounded sm:block lg:hidden">
               <Image
-                src="/about_person.jpeg"
+                src="/us.jpeg"
+                className="rounded-lg"
                 width={1000}
                 height={500}
                 alt="people discussing on board"
@@ -552,7 +554,8 @@ function About() {
             </div>
             <div className="relative block w-full rounded sm:hidden">
               <Image
-                src="/about_person.jpeg"
+                src="/us.jpeg"
+                className="rounded-lg"
                 width={1000}
                 height={500}
                 alt="people discussing on board"

@@ -16,29 +16,29 @@ const steps: Step[] = [
     id: 1,
     title: "Step 1: Ideation and Creation",
     description:
-      "This is the foundational phase. Here, we embark on the journey of transforming your abstract idea into a tangible concept. It all begins with envisioning the core purpose and potential of your website. Share those initial thoughts; they're the seeds of something magnificent.",
-    imgUrl: "/idea.jpeg",
+      "This is the foundational phase. Here, we embark on the journey of transforming your abstract idea into a tangible concept. It all begins with envisioning the core purpose and potential of your website. Share those initial thoughts.",
+    imgUrl: "/step1.jpeg",
   },
   {
     id: 2,
     title: "Step 2: Design/Development",
     description:
       "Transitioning from ideation, this step focuses on crafting the aesthetics and structure. Using your vision as our guide, we'll create a design that resonates with your objectives. The development then ensures that the design turns into a user-friendly experience.",
-    imgUrl: "/download.jpg",
+    imgUrl: "/step2.png",
   },
   {
     id: 3,
     title: "Step 3: AI Integration",
     description:
       "In this age of technology, incorporating AI can elevate your website's capabilities. We seamlessly integrate advanced AI solutions to ensure your site is not just functional, but also ahead of the curve, offering unparalleled user experiences.",
-    imgUrl: "/download-1.jpg",
+    imgUrl: "/step3.png",
   },
   {
     id: 4,
     title: "Step 4: Deployment and Maintenance",
     description:
       "The culmination of our collective efforts sees your website go live. But our journey doesn't end there. We'll be with you, ensuring smooth sailing with regular checks and maintenance, making sure your site remains optimal.",
-    imgUrl: "/images.jpg",
+    imgUrl: "/step4.png",
   },
 
   // add more steps as needed...
@@ -110,7 +110,7 @@ export default function Index() {
               <div className="w-full">
                 {" "}
                 <Image
-                  src="https://i.ibb.co/181DvLN/Project-Cover-6.png"
+                  src="/test4.jpeg"
                   alt="laptops"
                   width={1000}
                   height={500}
@@ -129,14 +129,7 @@ export default function Index() {
                 </h2>
               </div>
               <div className="mt-8" data-aos="fade-up">
-                <div>
-                  <h2
-                    className="text-2xl font-bold leading-7 text-gray-800  lg:text-3xl"
-                    data-aos="fade-up"
-                  >
-                    Dive into the Details
-                  </h2>
-                </div>
+               
                 <div className="mt-8" data-aos="fade-up">
                   <p className="font-merriweather text-sm leading-normal  text-gray-800 lg:text-base">
                     Every groundbreaking website begins with a vision. When
@@ -165,7 +158,7 @@ export default function Index() {
                 <div className="w-full">
                   <Image
                     data-aos="fade-up"
-                    src="https://i.ibb.co/X5br8Zg/Rectangle-44.png"
+                    src="/test3.png"
                     alt="office"
                     width={1000}
                     height={500}
@@ -217,7 +210,7 @@ export default function Index() {
       </div>
       <div className="flex flex-wrap items-center justify-center">
         {steps.map(({ id, title, description, imgUrl }) => (
-          <div key={id} className="w-full p-4 sm:w-1/2" data-aos="fade-up">
+          <div key={id} className="w-3/4 p-4 lg:w-1/4" data-aos="fade-up">
             <div className="flex flex-col items-center text-center font-merriweather">
               <div className="relative mb-4 h-64 w-full">
                 <Image

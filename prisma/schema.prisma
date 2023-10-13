@@ -45,7 +45,6 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  submission    Submission[]
 }
 
 model VerificationToken {
@@ -80,8 +79,7 @@ model Submission {
   instagramName      String?
   projectDescription String
   createdAt          DateTime @default(now())
-  authorId           String
-  author             User     @relation(fields: [authorId], references: [id])
+  authorId           String?
 
   @@index([authorId])
 }

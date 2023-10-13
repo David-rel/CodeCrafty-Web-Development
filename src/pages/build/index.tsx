@@ -16,6 +16,7 @@ import { useSession } from "next-auth/react";
 function Build() {
   const { data: sessionData } = useSession();
 
+
   const createSubmission = api.submission.create.useMutation({
     onSuccess: () => {
       void refetchNotes();
@@ -59,50 +60,39 @@ function Build() {
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    console.log({
-      pageIdea,
-      pageCount,
-      revisions,
-      existingWebsite,
-      timeline,
-      domain,
-      extraFeatures,
-      longTermDeveloper,
-      firstName,
-      lastName,
-      emailAddress,
-      phoneNumber,
-      country,
-      stateAndCity,
-      companyName,
-      instagramName,
-      projectDescription,
-    });
 
-    if (sessionData) {
-      createSubmission.mutate({
-        pageIdea: pageIdea,
-        pageCount: pageCount,
-        revisions: revisions,
-        existingWebsite: existingWebsite,
-        timeline: timeline,
-        domain: domain,
-        extraFeatures: extraFeatures,
-        longTermDeveloper: longTermDeveloper,
-        firstName: firstName,
-        lastName: lastName,
-        emailAddress: emailAddress,
-        phoneNumber: phoneNumber,
-        country: country,
-        stateAndCity: stateAndCity,
-        companyName: companyName,
-        instagramName: instagramName,
-        projectDescription: projectDescription,
-        development: checkboxOne,
-        design: checkboxTwo,
-        ai: checkboxThree,
-        maintenance: checkboxFour,
-      });
+
+      
+        createSubmission.mutate({
+          pageIdea: pageIdea,
+          pageCount: pageCount,
+          revisions: revisions,
+          existingWebsite: existingWebsite,
+          timeline: timeline,
+          domain: domain,
+          extraFeatures: extraFeatures,
+          longTermDeveloper: longTermDeveloper,
+          firstName: firstName,
+          lastName: lastName,
+          emailAddress: emailAddress,
+          phoneNumber: phoneNumber,
+          country: country,
+          stateAndCity: stateAndCity,
+          companyName: companyName,
+          instagramName: instagramName,
+          projectDescription: projectDescription,
+          development: checkboxOne,
+          design: checkboxTwo,
+          ai: checkboxThree,
+          maintenance: checkboxFour,
+          authorId: sessionData?.user.id || "unknown",
+        }, {
+          onSuccess: () => {
+            void refetchNotes();
+          },
+        });
+
+      
 
       alert("Your form has been submitted");
 
@@ -128,10 +118,8 @@ function Build() {
       setCheckboxThree(false);
       setCheckboxFour(false);
 
-      window.location.reload();
-    } else {
-      alert("You must be logged in to submit a form");
-    }
+      // window.location.reload();
+    
   };
 
   return (
@@ -317,7 +305,7 @@ function Build() {
 
           <div className="mt-10 space-y-8 rounded-lg p-6">
             <h2 className="mb-4 pb-4 text-center font-merriweather text-4xl text-rose-700">
-              Extra Questions for Website
+              Extra Questions for Website (optional)
             </h2>
             <div className="space-y-8 font-merriweather">
               <div className="mx-auto flex w-2/3 flex-col items-start space-y-6 align-middle">

@@ -112,11 +112,11 @@ export default function Home() {
         <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
           <animated.div style={slideInFromLeft1} className="w-full lg:w-1/2">
             <Image
-              className="rounded-full object-cover p-4 shadow-lg"
-              src="/about_photo.jpg"
+              className="rounded-full object-cover p-4"
+              src="/test5.png"
               alt="About us"
               layout="responsive"
-              width={500}
+              width={200}
               height={300}
             />
           </animated.div>
@@ -182,8 +182,8 @@ export default function Home() {
             className="w-full pl-4 lg:w-1/2"
           >
             <Image
-              className="rounded-full object-cover p-4 shadow-lg"
-              src="/work.jpg"
+              className="rounded-full object-cover p-4"
+              src="/test.jpeg"
               alt="About us"
               layout="responsive"
               width={500}
