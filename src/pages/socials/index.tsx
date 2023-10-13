@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -80,6 +81,9 @@ export default function SocialMediaPage() {
 
   return (
     <div>
+      <Head>
+        <title>Code Crafty - Socials</title>
+      </Head>
       <Navbar />
       <div className="relative min-h-screen bg-gray-100">
         {/* Background Image */}

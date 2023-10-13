@@ -11,10 +11,14 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import Image from "next/image";
+import Head from "next/head";
 
 function About() {
   return (
     <div>
+      <Head>
+        <title>Code Crafty - About Us</title>
+      </Head>
       <Navbar />
       <div className="px-4 py-9 font-montserrat 2xl:container md:px-6 md:py-12 lg:px-20 lg:py-16 2xl:mx-auto">
         <div

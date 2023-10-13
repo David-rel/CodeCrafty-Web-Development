@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function IndexPage() {
   const [email, setEmail] = useState("");
@@ -12,6 +13,9 @@ export default function IndexPage() {
 
   return (
     <>
+    <Head>
+      <title>Code Crafty - Contact</title>
+    </Head>
       <Navbar />
       <div className="relative py-4  font-montserrat lg:py-8">
         <div className="absolute inset-0 hidden h-2/5 w-full rounded lg:h-full lg:w-1/2 xl:block">

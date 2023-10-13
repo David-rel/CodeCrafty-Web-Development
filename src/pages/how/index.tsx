@@ -3,6 +3,7 @@ import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 type Step = {
   id: number;
@@ -47,6 +48,9 @@ const steps: Step[] = [
 export default function Index() {
   return (
     <>
+    <Head>
+      <title>Code Crafty - How We Do it</title>
+    </Head>
       <Navbar />
       <div className="font-montserrat">
         <div className="pb-20 pt-8">

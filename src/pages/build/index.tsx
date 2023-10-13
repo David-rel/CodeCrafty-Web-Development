@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa"; // Importing icons
 import { api } from "~/utils/api";
 import { useSession } from "next-auth/react";
+import Head from "next/head";
 
 function Build() {
   const { data: sessionData } = useSession();
@@ -125,6 +126,10 @@ function Build() {
   return (
     <>
       <Navbar />
+      <Head>
+        <title>Code Crafty - Submit a request</title>
+      </Head>
+
 
       <div className="container mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         <form onSubmit={handleSubmit} className="mx-auto">

@@ -320,6 +320,12 @@ export default function Navbar() {
                 </button>
               </div>
             </div>
+            <a
+              href="tel:+17202994804"
+              className=" text-md hidden rounded-md border border-transparent px-4 py-2 font-merriweather font-medium text-black underline md:flex pt-8"
+            >
+              <p>Contact Us: +1(720)299-4804</p>
+            </a>
           </div>
           <div className="absolute right-0 top-0 mr-4 mt-4 text-3xl font-bold">
             <button onClick={() => setSidebarOpen(false)}>X</button>
@@ -338,9 +344,9 @@ export default function Navbar() {
 
           <a
             href="tel:+17202994804"
-            className=" text-md hidden rounded-md border border-transparent px-4 py-2 font-merriweather font-medium text-black underline md:flex"
+            className=" text-md lg:hidden md:hidden xl:block rounded-md border border-transparent px-4 py-2 font-merriweather font-medium text-black underline"
           >
-            <p>+1(720)299-4804</p>
+            <p>Contact Us: +1(720)299-4804</p>
           </a>
 
           {sessionData && <></>}

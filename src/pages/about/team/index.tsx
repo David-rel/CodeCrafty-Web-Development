@@ -3,6 +3,7 @@ import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 type TeamMemberProps = {
   imageSrc: string;
@@ -26,6 +27,9 @@ function TeamMember({
       data-aos="fade-up"
       className="mx-auto mb-8 max-w-sm border-b border-gray-300 pb-6 font-merriweather dark:border-gray-700 sm:w-full md:w-full lg:w-full xl:w-full"
     >
+      <Head>
+        <title>Code Crafty - Team</title>
+      </Head>
       <div className="h-56 w-full rounded">
         <Image
           src={imageSrc}
