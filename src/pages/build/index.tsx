@@ -60,10 +60,6 @@ function Build() {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-
-
-
-      
         createSubmission.mutate({
           pageIdea: pageIdea,
           pageCount: pageCount,
@@ -119,7 +115,7 @@ function Build() {
       setCheckboxThree(false);
       setCheckboxFour(false);
 
-      // window.location.reload();
+      window.location.reload();
     
   };
 
