@@ -2,6 +2,7 @@ import { useState } from "react";
 import { api } from "~/utils/api";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
+import Image from "next/image";
 
 type Submission = {
   ai: boolean;
@@ -210,12 +211,14 @@ function IndexPage() {
                       </p>
                       <p>
                         Image:{" "}
-                        <img
+                        <Image
                           src={
                             getUserById(submission.authorId)?.image ||
                             "/default-image.png"
                           }
                           alt="User Image"
+                          width={100}
+                          height={100}
                         />
                       </p>
                     </div>

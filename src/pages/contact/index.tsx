@@ -6,7 +6,9 @@ import Link from "next/link";
 
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly?: {
+      initInlineWidgets?(): void;
+    };
   }
 }
 
@@ -46,7 +48,9 @@ export default function IndexPage() {
         document.body.appendChild(script);
       } else if (window.Calendly) {
         // If script is already loaded and Calendly is defined on window
-        window.Calendly.initInlineWidgets();
+        if (window.Calendly?.initInlineWidgets) {
+          window.Calendly.initInlineWidgets();
+        }
       }
     }
 
@@ -74,7 +78,7 @@ export default function IndexPage() {
         ) : (
           <div>
             <p className="font-bold">
-              It seems you're offline. Please connect to Wi-Fi to view the
+              It seems you&apos;re offline. Please connect to Wi-Fi to view the
               scheduling widget.
             </p>
             <p>

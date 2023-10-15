@@ -14,7 +14,12 @@ const bundleAnalyzerConfig = withBundleAnalyzer({
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ["i.ibb.co", "cdn.tuk.dev"],
+    domains: [
+      "i.ibb.co",
+      "cdn.tuk.dev",
+      "example.com",
+      "lh3.googleusercontent.com",
+    ],
   },
 
   /**
