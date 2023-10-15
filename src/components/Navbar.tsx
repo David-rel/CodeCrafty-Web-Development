@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 export default function Navbar() {
   const { data: sessionData } = useSession();
   const router = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 1000px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1250px)" });
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
@@ -56,7 +56,6 @@ export default function Navbar() {
   };
   const aboutPaths = [
     "/about/aboutUs",
-    "/about/contact",
     "/about/team",
     "/socials",
   ];
@@ -107,18 +106,7 @@ export default function Navbar() {
                 About Us
               </a>
             </Link>
-            <Link href="/about/contact" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/about/contact")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Contact Us
-              </a>
-            </Link>
+
             <Link href="/about/team" legacyBehavior>
               <a
                 className={`p-2 ${
@@ -257,6 +245,22 @@ export default function Navbar() {
           How we do it
         </a>
       </Link>
+      <Link href="/contact" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/contact")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700 hover:underline"
+          }`}
+        >
+          Schedule a Discussion
+        </a>
+      </Link>
     </>
   );
 
@@ -342,12 +346,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a
-            href="tel:+17202994804"
-            className=" text-md lg:hidden md:hidden xl:block rounded-md border border-transparent px-4 py-2 font-merriweather font-medium text-black underline"
-          >
-            <p>Contact Us: +1(720)299-4804</p>
-          </a>
+         
 
           {sessionData && <></>}
           <div className="flex items-center gap-4">

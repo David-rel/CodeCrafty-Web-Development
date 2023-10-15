@@ -298,9 +298,7 @@ function About() {
             <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
               Our Mission
             </h2>
-            <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
-              Our Core Purpose
-            </h2>
+
             <p className="mt-6 w-full font-merriweather text-base font-normal leading-6 text-gray-600 lg:w-10/12 xl:w-9/12">
               At CodeCrafty, we envision a digital realm where website design
               and development are intuitive, accessible, and efficient. Our core
@@ -468,7 +466,7 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="px-4 py-9 2xl:container md:px-6 md:py-12 lg:px-20 lg:py-16 2xl:mx-auto">
+      <div className=" py-9 2xl:container md:py-12 lg:py-16 2xl:mx-auto">
         <div className="mt-12 sm:mt-10 lg:mt-14">
           <div className="relative hidden w-full lg:block">
             <Image

@@ -50,7 +50,7 @@ const handleIntersect: IntersectionObserverCallback = (
     }
   }, [type, currentText, text]);
 
-  return <span ref={textRef}>{currentText}</span>;
+  return <span ref={textRef} className="text-2xl sm:text-6xl">{currentText}</span>;
 }
 
 export default TypingText;

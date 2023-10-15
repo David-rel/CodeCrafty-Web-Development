@@ -22,7 +22,9 @@ export default function DesignPage() {
             <h2 className="text-xl text-gray-500">
               Firstly, People love to see, what we
             </h2>
-            <h1 className="mb-8 text-8xl font-bold">DESIGN</h1>
+            <h1 className="mb-8 text-5xl font-bold md:text-7xl xl:text-8xl">
+              DESIGN
+            </h1>
           </div>
           <div className="flex flex-col lg:flex-row">
             <div className="flex w-full justify-center pb-6 lg:w-2/3">
@@ -62,7 +64,7 @@ export default function DesignPage() {
                 <Link
                   href="/build"
                   rel="noopener noreferrer"
-                  className="mr-4 rounded-full bg-rose-500 px-6 py-4 text-xl font-bold text-white hover:bg-rose-700"
+                  className="rounded-full bg-rose-500  px-2 py-4 text-sm font-bold text-white hover:bg-rose-700 lg:px-4 xl:text-lg"
                 >
                   BUILD YOUR DREAM SITE
                 </Link>

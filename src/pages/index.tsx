@@ -73,33 +73,34 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div data-aos="fade" className="max-w-xl text-center sm:text-left">
-            <h1 className="font-montserrat text-5xl font-extrabold sm:text-5xl ">
+            <h1 className="font-montserrat text-4xl font-extrabold sm:text-5xl ">
               Code Crafty
-              <strong className="block text-4xl font-extrabold text-rose-700">
+              <strong className="block text-3xl font-extrabold text-rose-700 sm:text-4xl">
                 Web Development and Design
               </strong>
             </h1>
 
-            <p className="mt-4 max-w-lg pb-8 font-merriweather font-semibold sm:text-xl sm:leading-relaxed">
-              Welcome to Code Crafty Web Design, Development and AI Integration.
+            <p className="mt-4 max-w-lg pb-8 font-merriweather text-lg font-semibold sm:text-xl sm:leading-relaxed">
+              Welcome to Code Crafty Web Design, Development, and AI
+              Integration.
             </p>
 
             <Link href="/build" legacyBehavior>
-              <a className="rounded bg-rose-700 px-6 py-4 font-montserrat text-lg font-bold text-white hover:bg-rose-600">
+              <a className="text-m rounded bg-rose-700 px-6 py-4 font-montserrat font-bold text-white hover:bg-rose-600 sm:text-lg">
                 Build Your Dream Site
               </a>
             </Link>
           </div>
         </div>
       </section>
-      <section className="px-4 py-16 pb-40 pt-40 sm:px-6 lg:px-8">
+      <section className="px-4 py-16 pb-8 pt-24 sm:px-6 sm:pb-40 sm:pt-40 lg:px-8">
         <div
           className="relative mx-auto max-w-screen-xl text-center"
           data-aos=""
         >
-          <h2 className="font-montserrat text-5xl font-extrabold">
+          <h2 className="font-montserrat text-4xl font-extrabold">
             <TypingText
-              text=" Design and develope your modern-day website with our team with AI Integration at Affordable
+              text="Design and develope your modern-day website with our team with AI Integration at Affordable
             Prices"
             />
           </h2>
@@ -124,10 +125,10 @@ export default function Home() {
             style={slideInFromRight1}
             className="mt-8 lg:ml-8 lg:mt-0 lg:w-1/2"
           >
-            <h2 className="mt-8 font-montserrat text-5xl font-extrabold">
+            <h2 className="mt-8 font-montserrat text-3xl font-extrabold sm:text-left sm:text-5xl">
               Who We Are
             </h2>
-            <p className="mt-4 font-merriweather text-xl">
+            <p className="mt-2 font-merriweather text-sm text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
               At CodeCrafty, our passion is building digital experiences that
               truly stand out. We believe in crafting solutions that not only
               look great but also function seamlessly. From design to
@@ -154,10 +155,10 @@ export default function Home() {
             style={slideInFromLeft2}
             className="mt-8 lg:ml-8 lg:mt-0 lg:w-1/2"
           >
-            <h2 className="mt-8 font-montserrat text-5xl font-extrabold">
+            <h2 className="mt-8 font-montserrat text-3xl font-extrabold sm:text-left sm:text-5xl">
               The Process
             </h2>
-            <p className="mt-4 font-merriweather text-xl">
+            <p className="mt-2 font-merriweather text-sm text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
               Our process at CodeCrafty is a blend of creativity and technology.
               We kick off with a deep dive into your requirements, ensuring we
               fully grasp your vision. From there, our designers craft visual
@@ -205,12 +206,12 @@ export default function Home() {
           />
 
           {/* Title */}
-          <h2 className="mt-8 font-montserrat text-5xl font-extrabold">
+          <h2 className="mt-8 font-montserrat text-3xl font-extrabold sm:text-5xl">
             Meet the Team
           </h2>
 
           {/* Description */}
-          <p className="mx-auto mt-4 max-w-2xl font-merriweather text-xl">
+          <p className="mt-2 font-merriweather text-md text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
             Our team is composed of passionate professionals dedicated to
             creating outstanding digital experiences. With expertise ranging
             from design to development, each member brings a unique perspective
@@ -218,7 +219,7 @@ export default function Home() {
           </p>
 
           {/* Button */}
-          <div className="mt-8">
+          <div className="mt-4 sm:mt-8">
             <Link href="/about/team" legacyBehavior>
               <a className="inline-block rounded bg-rose-600 px-6 py-3 font-montserrat font-bold text-white hover:bg-rose-700">
                 Get to Know Us
@@ -230,34 +231,36 @@ export default function Home() {
 
       <section className="relative flex items-center justify-center px-4 py-16 pb-40 pt-40 sm:px-6 lg:px-8">
         <div
-          className="absolute h-96 w-96 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute h-80 sm:h-96 w-80 sm:w-96 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
           data-aos="fade-up"
         />
         <div
-          className="absolute left-0 h-96 w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute mx-8 sm:mx-0 left-0 h-80 sm:h-96 w-80 sm:w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
           data-aos="fade-right"
         />
         <div
-          className="absolute right-0 h-96 w-96 -translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute mx-8 sm:mx-0 right-0 h-80 sm:h-96 w-80 sm:w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
           data-aos="fade-left"
         />
         <div className="relative z-10 text-center font-montserrat">
-          <h2 className="mb-4 text-7xl font-extrabold" data-aos="fade">
+          <h2 className="mb-4 text-4xl sm:text-7xl font-extrabold" data-aos="fade">
             Ready to start building your dream site?
           </h2>
-          <Link href="/build" legacyBehavior>
-            <a className="inline-block rounded bg-rose-600 px-6 py-3 text-3xl font-bold text-white hover:bg-rose-700">
-              Start Building
-            </a>
-          </Link>
+          <div className="pt-4">
+            <Link href="/build" legacyBehavior>
+              <a className="inline-block rounded bg-rose-600 px-6 py-3 text-xl sm:text-3xl font-bold text-white hover:bg-rose-700">
+                Start Building
+              </a>
+            </Link>
+          </div>
         </div>
       </section>
 
       <section className="bg-white px-4 py-16 font-montserrat sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl text-center">
-          <h2 className="mb-4 text-4xl font-extrabold">Have a question?</h2>
+          <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold">Have a question?</h2>
           <Link href="/about/contact" legacyBehavior>
-            <a className="inline-block rounded bg-rose-600 px-6 py-3 text-lg font-bold text-white hover:bg-rose-700">
+            <a className="inline-block rounded bg-rose-600 px-6 py-3 text-md sm:text-lg font-bold text-white hover:bg-rose-700">
               Contact Us
             </a>
           </Link>

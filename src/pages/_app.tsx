@@ -18,7 +18,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsModalVisible(true); // Show the modal after 30 seconds
-    }, 30000);
+    }, 5000);
 
     return () => clearTimeout(timer); // Cleanup the timer if the component is unmounted
   }, []);

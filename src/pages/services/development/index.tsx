@@ -43,7 +43,7 @@ export default function CustomWebSolutions() {
 
         <div className="mx-auto flex max-w-7xl flex-wrap items-center">
           <div data-aos="fade-right" className="w-full lg:w-1/2">
-            <h1 className="mb-8 text-5xl font-bold">
+            <h1 className="mb-8 text-4xl lg:text-5xl font-bold">
               Get Custom Web Solutions From Scratch
             </h1>
 

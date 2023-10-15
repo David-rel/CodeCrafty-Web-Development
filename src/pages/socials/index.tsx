@@ -96,7 +96,7 @@ export default function SocialMediaPage() {
         />
 
         {/* Central Content */}
-        <div className="absolute left-1/2 top-1/2 h-full -translate-x-1/2 -translate-y-1/2 transform overflow-y-auto md:w-full md:max-w-4xl">
+        <div className="absolute left-1/2 top-1/2 h-full -translate-x-1/2 -translate-y-1/2 transform overflow-y-auto min-w-full sm:min-w-0">
           <div className="rounded bg-white shadow-lg">
             {/* Banner Image */}
             <div className="mb-4">

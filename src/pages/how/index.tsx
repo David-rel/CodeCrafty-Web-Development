@@ -208,7 +208,7 @@ export default function Index() {
         </div>
       </div>
       <div>
-        <h2 className="pb-16 pl-48 text-2xl font-bold  leading-7 text-gray-800 lg:text-3xl">
+        <h2 className="pb-16 text-4xl font-bold  leading-7 text-gray-800 lg:text-6xl text-center">
           The Super Simple Process
         </h2>
       </div>

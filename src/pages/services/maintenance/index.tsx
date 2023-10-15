@@ -22,7 +22,7 @@ export default function DesignPage() {
             <h2 className="text-xl text-gray-500">
               Were here for you even after we build
             </h2>
-            <h1 className="mb-8 text-5xl font-bold md:text-7xl lg:text-8xl">
+            <h1 className="mb-8 text-4xl font-bold md:text-7xl lg:text-8xl">
               Web Maintenance
             </h1>
           </div>
@@ -53,7 +53,7 @@ export default function DesignPage() {
                 <Link
                   href="/build"
                   rel="noopener noreferrer"
-                  className="mr-4 rounded-full bg-rose-500 px-6 py-4 text-xl font-bold text-white hover:bg-rose-700"
+                  className="rounded-full bg-rose-500  px-2 py-4 text-sm font-bold text-white hover:bg-rose-700 lg:px-4 xl:text-lg"
                 >
                   BUILD YOUR DREAM SITE
                 </Link>

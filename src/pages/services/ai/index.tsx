@@ -19,7 +19,7 @@ export default function DesignPage() {
             <h2 className="text-xl text-gray-500">
               AI to help with your business
             </h2>
-            <h1 className="mb-8 text-5xl font-bold md:text-7xl lg:text-8xl">
+            <h1 className="mb-8 text-4xl font-bold md:text-7xl lg:text-8xl">
               AI INTEGRATION
             </h1>
           </div>
@@ -67,7 +67,7 @@ export default function DesignPage() {
                 <Link
                   href="/build"
                   rel="noopener noreferrer"
-                  className="mr-4 rounded-full bg-rose-500 px-6 py-4 text-xl font-bold text-white hover:bg-rose-700"
+                  className="rounded-full bg-rose-500  py-4 text-sm xl:text-lg px-2 lg:px-4 font-bold text-white hover:bg-rose-700"
                 >
                   BUILD YOUR DREAM SITE
                 </Link>
