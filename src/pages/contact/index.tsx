@@ -14,11 +14,11 @@ declare global {
 
 export default function IndexPage() {
   const [isOnline, setIsOnline] = useState(true); // default to true
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsOnline(navigator.onLine);
 
-    // Handle online/offline events
     function updateOnlineStatus() {
       setIsOnline(navigator.onLine);
     }
@@ -26,53 +26,42 @@ export default function IndexPage() {
     window.addEventListener("online", updateOnlineStatus);
     window.addEventListener("offline", updateOnlineStatus);
 
-    if (isOnline) {
-      const calendlyScriptId = "calendly-script";
-      let script = document.getElementById(
-        calendlyScriptId
-      ) as HTMLScriptElement;
-
-      if (!script) {
-        script = document.createElement("script");
-        script.src = "https://assets.calendly.com/assets/external/widget.js";
-        script.async = true;
-        script.id = calendlyScriptId;
-        script.onload = function () {
-          setTimeout(() => {
-            if (window.Calendly && window.Calendly.initInlineWidgets) {
-              window.Calendly.initInlineWidgets();
-            }
-          }, 500); // 500ms delay, adjust as needed
-        };
-
-        document.body.appendChild(script);
-      } else if (window.Calendly) {
-        // If script is already loaded and Calendly is defined on window
-        if (window.Calendly?.initInlineWidgets) {
-          window.Calendly.initInlineWidgets();
-        }
-      }
-    }
-
     return () => {
       window.removeEventListener("online", updateOnlineStatus);
       window.removeEventListener("offline", updateOnlineStatus);
     };
-  }, [isOnline]);
+  }, []);
+
+useEffect(() => {
+  if (
+    window.Calendly &&
+    typeof window.Calendly.initInlineWidgets === "function"
+  ) {
+    window.Calendly.initInlineWidgets();
+  }
+}, [isOnline]);
+
 
   return (
     <>
       <Head>
         <title>Code Crafty - Contact</title>
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
       </Head>
       <Navbar />
 
       <main>
-        {isOnline ? (
-          // Calendly inline widget
+        {isLoading ? (
+          <div className="flex min-h-screen items-center justify-center">
+            <span className="animate-spin text-4xl">🔄</span>
+          </div>
+        ) : isOnline ? (
           <div
             className="calendly-inline-widget"
-            data-url="https://calendly.com/diego_g"
+            data-url="https://calendly.com/diego_g/introduction?primary_color=008080&text_color=000000&background_color=ffffff&back=1&month=2023-10"
             style={{ minWidth: "320px", height: "700px" }}
           ></div>
         ) : (
@@ -83,11 +72,8 @@ export default function IndexPage() {
             </p>
             <p>
               Alternatively, you can{" "}
-              <Link
-                href="https://calendly.com/diego_g"
-                className="text-blue-600 underline"
-              >
-                click here
+              <Link href="https://calendly.com/diego_g">
+                <a className="text-blue-600 underline">click here</a>
               </Link>{" "}
               to go directly to the Calendly link.
             </p>
