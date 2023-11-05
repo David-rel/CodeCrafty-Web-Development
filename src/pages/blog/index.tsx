@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,6 +7,11 @@ import Navbar from "~/components/Navbar";
 function IndexPage() {
   return (
     <>
+    <Head>
+        <title>
+            Code Crafty - Blog
+        </title>
+    </Head>
       <Navbar />
       <div id="blog" className="bg-gray-100 px-4 py-12 xl:px-0">
         <div className="container mx-auto">

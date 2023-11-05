@@ -3,10 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
+import Head from "next/head";
 
 function WhyAI() {
   return (
     <div>
+      <Head>
+        <title>Code Crafty - Why AI in Websites</title>
+      </Head>
       <Navbar />
       <div className="mx-auto max-w-4xl px-4 py-8">
         <h1 className="mb-12 text-center text-4xl font-bold">
@@ -26,18 +30,18 @@ function WhyAI() {
           <p className="text-lg">
             In the ever-evolving digital landscape, Artificial Intelligence (AI)
             has emerged as a revolutionary force, redefining the way we interact
-            with the world wide web. It&apos;s the silent engine powering a new era
-            of user experience, driving personalized content, and streamlining
-            processes in a way that once seemed the stuff of science fiction. As
-            we stand on the cusp of this technological renaissance, AI
-            integration within websites is no longer a luxury; it&apos;s an
-            imperative. From small-scale blogs to sprawling e-commerce
-            platforms, AI is the master key to unlocking a treasure trove of
-            potential, enhancing accessibility, and ensuring that every click
-            not only serves a purpose but also anticipates the unspoken needs of
-            the user. Join us as we explore the pivotal role of AI in website
-            development and the transformative impact it has on the digital
-            journey of businesses and consumers alike.
+            with the world wide web. It&apos;s the silent engine powering a new
+            era of user experience, driving personalized content, and
+            streamlining processes in a way that once seemed the stuff of
+            science fiction. As we stand on the cusp of this technological
+            renaissance, AI integration within websites is no longer a luxury;
+            it&apos;s an imperative. From small-scale blogs to sprawling
+            e-commerce platforms, AI is the master key to unlocking a treasure
+            trove of potential, enhancing accessibility, and ensuring that every
+            click not only serves a purpose but also anticipates the unspoken
+            needs of the user. Join us as we explore the pivotal role of AI in
+            website development and the transformative impact it has on the
+            digital journey of businesses and consumers alike.
           </p>
         </div>
 
@@ -134,9 +138,9 @@ function WhyAI() {
             informs the AI, alongside rigorous monitoring and the mitigation of
             potential biases, forms the cornerstone of ethical AI deployment.
             The result is a technology that not only enhances engagement but
-            does so with a conscientious respect for the individual&apos;s rights and
-            diverse perspectives, cementing trust between the user and the
-            digital domain.
+            does so with a conscientious respect for the individual&apos;s
+            rights and diverse perspectives, cementing trust between the user
+            and the digital domain.
           </p>
           {/* Example of an external link */}
           <Link
