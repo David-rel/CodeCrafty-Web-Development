@@ -261,6 +261,22 @@ export default function Navbar() {
           Schedule a Discussion
         </a>
       </Link>
+      <Link href="/blog" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/blog")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700 hover:underline"
+          }`}
+        >
+          Our Blog
+        </a>
+      </Link>
     </>
   );
 
