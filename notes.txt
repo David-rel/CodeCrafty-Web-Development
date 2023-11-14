@@ -1,85 +1,59 @@
-{expandedId === submission.id && (
-              <>
-                <p>
-                  <strong>Author ID:</strong> {submission.authorId}
-                </p>
-                <p>
-                  <strong>First Name:</strong> {submission.firstName}
-                </p>
-                <p>
-                  <strong>Last Name:</strong> {submission.lastName}
-                </p>
-                <p>
-                  <strong>Email:</strong> {submission.emailAddress}
-                </p>
-                <p>
-                  <strong>Phone Number:</strong> {submission.phoneNumber}
-                </p>
-                <p>
-                  <strong>Country:</strong> {submission.country}
-                </p>
-                <p>
-                  <strong>State and City:</strong> {submission.stateAndCity}
-                </p>
-                <p>
-                  <strong>Company Name:</strong> {submission.companyName}
-                </p>
-                <p>
-                  <strong>Instagram Name:</strong> {submission.instagramName}
-                </p>
-                <p>
-                  <strong>Project Description:</strong>{" "}
-                  {submission.projectDescription}
-                </p>
-                <p>
-                  <strong>Development:</strong>{" "}
-                  {submission.development ? "yes" : "no"}
-                </p>
-                <p>
-                  <strong>Design:</strong> {submission.design ? "yes" : "no"}
-                </p>
-                <p>
-                  <strong>AI:</strong> {submission.ai ? "yes" : "no"}
-                </p>
-                <p>
-                  <strong>Maintenance:</strong>{" "}
-                  {submission.maintenance ? "yes" : "no"}
-                </p>
-
-                <p>
-                  <strong>Created At:</strong>{" "}
-                  {formatDate(submission.createdAt)}
-                </p>
-                <h3 className="pb-4 text-2xl font-bold">Extras</h3>
-                <p>
-                  <strong>Do they have a page count idea:</strong>{" "}
-                  {submission.pageIdea}
-                </p>
-                <p>
-                  <strong>How many pages:</strong> {submission.pageCount}
-                </p>
-                <p>
-                  <strong>Do they want revisions:</strong>{" "}
-                  {submission.revisions}
-                </p>
-                <p>
-                  <strong>Do they have an existing website:</strong>{" "}
-                  {submission.existingWebsite}
-                </p>
-                <p>
-                  <strong>when od they want the website done:</strong>{" "}
-                  {submission.timeline}
-                </p>
-                <p>
-                  <strong>do they already have a domain:</strong>{" "}
-                  {submission.domain}
-                </p>
-                <p>
-                  <strong>extra features:</strong> {submission.extraFeatures}
-                </p>
-                <p>
-                  <strong>do they want a long term dev:</strong>{" "}
-                  {submission.longTermDeveloper}
-                </p>
-              </>
-            )}
+<div>
+                <img
+                  className="w-full"
+                  src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(1).png"
+                  alt="computer"
+                />
+                <div className="flex w-full justify-between bg-indigo-700 px-8 py-4">
+                  <p className="text-sm font-semibold tracking-wide text-white">
+                    Bruce Wayne
+                  </p>
+                  <p className="text-sm font-semibold tracking-wide text-white">
+                    13TH Oct, 2020
+                  </p>
+                </div>
+                <div className="rounded-bl-3xl rounded-br-3xl bg-white px-10 py-6">
+                  <h1 className="text-4xl font-semibold tracking-wider text-gray-900">
+                    Transactions
+                  </h1>
+                  <p className="mt-6 w-11/12 text-base  tracking-wide text-gray-700 lg:text-lg lg:leading-8">
+                    Find the latest events updates or create events, concerts,
+                    conferences, workshops, exhibitions, and cultural events in
+                    all cities of the US. The aim of Eventistan is to promote
+                    healthy and entertaining event.Find the latest events
+                    updates or create events, concerts, conferences, workshops,
+                    exhibitions, and cultural events in all cities of the US.
+                    The aim of Eventistan is to promote healthy and entertaining
+                    event.
+                  </p>
+                  <div className="mt-4 flex w-full cursor-pointer items-center justify-end">
+                    <p className="text-base tracking-wide text-indigo-500">
+                      Read more
+                    </p>
+                    <svg
+                      className="ml-3 lg:ml-6"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={20}
+                      height={18}
+                      viewBox="0 0 20 18"
+                      fill="none"
+                    >
+                      <path
+                        d="M11.7998 1L18.9998 8.53662L11.7998 16.0732"
+                        stroke="#4338ca"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M1 8.53662H19"
+                        stroke="#4338ca"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div className="h-5 w-2" />
+                </div>
+              </div>
