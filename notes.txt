@@ -1,59 +1,41 @@
-<div>
-                <img
-                  className="w-full"
-                  src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(1).png"
-                  alt="computer"
-                />
-                <div className="flex w-full justify-between bg-indigo-700 px-8 py-4">
-                  <p className="text-sm font-semibold tracking-wide text-white">
-                    Bruce Wayne
-                  </p>
-                  <p className="text-sm font-semibold tracking-wide text-white">
-                    13TH Oct, 2020
-                  </p>
-                </div>
-                <div className="rounded-bl-3xl rounded-br-3xl bg-white px-10 py-6">
-                  <h1 className="text-4xl font-semibold tracking-wider text-gray-900">
-                    Transactions
-                  </h1>
-                  <p className="mt-6 w-11/12 text-base  tracking-wide text-gray-700 lg:text-lg lg:leading-8">
-                    Find the latest events updates or create events, concerts,
-                    conferences, workshops, exhibitions, and cultural events in
-                    all cities of the US. The aim of Eventistan is to promote
-                    healthy and entertaining event.Find the latest events
-                    updates or create events, concerts, conferences, workshops,
-                    exhibitions, and cultural events in all cities of the US.
-                    The aim of Eventistan is to promote healthy and entertaining
-                    event.
-                  </p>
-                  <div className="mt-4 flex w-full cursor-pointer items-center justify-end">
-                    <p className="text-base tracking-wide text-indigo-500">
-                      Read more
-                    </p>
-                    <svg
-                      className="ml-3 lg:ml-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={20}
-                      height={18}
-                      viewBox="0 0 20 18"
-                      fill="none"
-                    >
-                      <path
-                        d="M11.7998 1L18.9998 8.53662L11.7998 16.0732"
-                        stroke="#4338ca"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M1 8.53662H19"
-                        stroke="#4338ca"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="h-5 w-2" />
-                </div>
-              </div>
+import { FaHeart, FaComment, FaShare, FaBookmark } from "react-icons/fa";
+
+const SocialMediaPost = () => {
+  return (
+    <div className="my-4 max-w-sm overflow-hidden rounded bg-white text-black shadow-lg">
+      <div className="flex items-center space-x-4 border-b p-4">
+        <img className="h-10 w-10 rounded-full" src="logo1.png" alt="Profile" />
+        <div className="flex-1">
+          <div className="mb-2 text-xl font-bold">
+            vlt_dev <span className="text-base font-normal">3d</span>
+          </div>
+        </div>
+        <div>...</div>
+      </div>
+      <div className="">
+        <img
+          className="w-full rounded"
+          src="DavidFales.png"
+          alt="AI in Healthcare"
+        />
+      </div>
+
+      <div className="flex items-center border-t px-6 py-4">
+        <FaHeart className="mr-2 text-gray-600" />
+        <FaComment className="mr-2 text-gray-600" />
+        <FaShare className="mr-2 text-gray-600" />
+        <FaBookmark className="ml-auto text-gray-600" />
+      </div>
+      <div className="px-6 py-4 ">
+        <span className="mr-2 font-bold">89 likes</span>
+        <p>
+          <b>vlt_dev</b> AI in healthcare 🤖...
+        </p>
+        <p className="text-sm text-gray-700">more</p>
+        <p className="text-sm text-gray-600">Add a comment</p>
+      </div>
+    </div>
+  );
+};
+
+export default SocialMediaPost;
