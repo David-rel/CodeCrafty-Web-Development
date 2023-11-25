@@ -50,7 +50,6 @@ const ChatPopup = () => {
         const res = await fetch("/api/openai");
         const data = (await res.json()) as AssistantData;
         setMyAssistant(data);
-        console.log(data);
       } catch (error) {
         console.error("Failed to fetch assistant:", error);
       }
@@ -117,11 +116,11 @@ const ChatPopup = () => {
       {isOpen ? (
         <div
           className="flex flex-col rounded-lg bg-white shadow-lg"
-          style={{ width: "30rem", height: "36rem" }}
+          style={{ width: "25rem", height: "30rem" }}
         >
           <div className="flex items-center justify-between border-b border-gray-300 p-4">
             <h3 className="font-merriweather text-lg font-semibold">
-              Code Crafty Question Bot
+              The CodeCatalyst AI
             </h3>
             <button onClick={toggleChat} className="z-10 focus:outline-none">
               X
@@ -161,7 +160,7 @@ const ChatPopup = () => {
                 className="mr-2 flex-grow rounded border p-2"
                 placeholder="Type a message"
               />
-              <button type="submit" className="rounded border p-2">
+              <button type="submit" className="rounded border-2 p-2 bg-rose-500 hover:bg-rose-700 border-black">
                 Send
               </button>
             </div>

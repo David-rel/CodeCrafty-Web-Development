@@ -1,10 +1,6 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import type { DocumentContext } from "next/document";
+import Script from "next/script"; // Importing the Script component
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -18,12 +14,14 @@ class MyDocument extends Document {
         <Head>
           {/* Other tags */}
 
-          {/* Existing Google Analytics Script */}
-          <script
-            async
+          {/* Google Analytics Script using next/script */}
+          <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-71QP3X0V8R"
-          ></script>
-          <script
+            strategy="afterInteractive"
+          />
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -32,14 +30,16 @@ class MyDocument extends Document {
                 gtag('config', 'G-71QP3X0V8R');
               `,
             }}
-          ></script>
+          />
 
           {/* New Google Tag (gtag.js) Script */}
-          <script
-            async
+          <Script
             src="https://www.googletagmanager.com/gtag/js?id=AW-11420570446"
-          ></script>
-          <script
+            strategy="afterInteractive"
+          />
+          <Script
+            id="google-tag-manager"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -48,7 +48,7 @@ class MyDocument extends Document {
                 gtag('config', 'AW-11420570446');
               `,
             }}
-          ></script>
+          />
         </Head>
         <body>
           <Main />

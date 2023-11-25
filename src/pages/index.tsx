@@ -195,13 +195,13 @@ export default function Home() {
       </section>
 
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-screen-lg text-center">
+        <div className="relative mx-auto max-w-screen-md text-center">
           <Image
             className="mx-auto rounded-full object-cover p-4 shadow-lg"
             src="/team.jpeg"
             alt="Meet the Team"
             layout="responsive"
-            width={500}
+            width={300}
             height={300}
           />
 
@@ -211,7 +211,7 @@ export default function Home() {
           </h2>
 
           {/* Description */}
-          <p className="mt-2 font-merriweather text-md text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
+          <p className="text-md mt-2 font-merriweather text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
             Our team is composed of passionate professionals dedicated to
             creating outstanding digital experiences. With expertise ranging
             from design to development, each member brings a unique perspective
@@ -229,26 +229,60 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-rose-100 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
+          <div className="lg:w-1/2">
+            <h2 className="mb-4 font-merriweather text-3xl font-extrabold">
+              Discover CodeCatalyst AI
+            </h2>
+            <p className="mb-4 font-merriweather text-gray-700 text-lg">
+              Unveiling CodeCatalyst AI - your intelligent digital assistant,
+              designed to streamline your business communications and data
+              analysis. It&apos;s more than just a tool; it&apos;s your business growth
+              partner.
+            </p>
+            <Link href="/services/ai" legacyBehavior>
+              <a className="inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700">
+                Learn More
+              </a>
+            </Link>
+          </div>
+          <div className="mt-8 lg:mt-0 lg:w-1/2">
+            {/* Placeholder for Image */}
+            <Image
+              src="/CraftyBot.png" // Replace with your image path
+              alt="CodeCatalyst AI"
+              width={500}
+              height={300}
+              className="rounded-full"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="relative flex items-center justify-center px-4 py-16 pb-40 pt-40 sm:px-6 lg:px-8">
         <div
-          className="absolute h-80 sm:h-96 w-80 sm:w-96 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute h-80 w-80 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:h-96 sm:w-96"
           data-aos="fade-up"
         />
         <div
-          className="absolute mx-8 sm:mx-0 left-0 h-80 sm:h-96 w-80 sm:w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute left-0 mx-8 h-80 w-80 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:mx-0 sm:h-96 sm:w-96"
           data-aos="fade-right"
         />
         <div
-          className="absolute mx-8 sm:mx-0 right-0 h-80 sm:h-96 w-80 sm:w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute right-0 mx-8 h-80 w-80 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:mx-0 sm:h-96 sm:w-96"
           data-aos="fade-left"
         />
         <div className="relative z-10 text-center font-montserrat">
-          <h2 className="mb-4 text-4xl sm:text-7xl font-extrabold" data-aos="fade">
+          <h2
+            className="mb-4 text-4xl font-extrabold sm:text-7xl"
+            data-aos="fade"
+          >
             Ready to start building your dream site?
           </h2>
           <div className="pt-4">
             <Link href="/build" legacyBehavior>
-              <a className="inline-block rounded bg-rose-600 px-6 py-3 text-xl sm:text-3xl font-bold text-white hover:bg-rose-700">
+              <a className="inline-block rounded bg-rose-600 px-6 py-3 text-xl font-bold text-white hover:bg-rose-700 sm:text-3xl">
                 Start Building
               </a>
             </Link>
@@ -258,9 +292,11 @@ export default function Home() {
 
       <section className="bg-white px-4 py-16 font-montserrat sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl text-center">
-          <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold">Have a question?</h2>
+          <h2 className="mb-4 text-3xl font-extrabold sm:text-4xl">
+            Have a question?
+          </h2>
           <Link href="/about/contact" legacyBehavior>
-            <a className="inline-block rounded bg-rose-600 px-6 py-3 text-md sm:text-lg font-bold text-white hover:bg-rose-700">
+            <a className="text-md inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700 sm:text-lg">
               Contact Us
             </a>
           </Link>
