@@ -106,7 +106,7 @@ export default function DesignPage() {
                 <li>Custom Solutions - Adapts to your business requirements</li>
               </ul>
 
-              <div className="pt-6 pb-10">
+              <div className="pb-10 pt-6">
                 <Link
                   href="/build"
                   rel="noopener noreferrer"
@@ -119,7 +119,7 @@ export default function DesignPage() {
             <div className="flex items-center justify-center md:w-1/2">
               {/* Next/Image component */}
               <Image
-                src="/CraftyBot.png" // Replace with the path to your image
+                src="/CodeCatalyst.png" // Replace with the path to your image
                 alt="CodeCatalyst AI"
                 width={500} // Adjust the size as needed
                 height={300}
@@ -149,9 +149,9 @@ export default function DesignPage() {
                 with ease, freeing you to focus on other critical aspects of
                 your venture. This bot is segmented into six distinct
                 functionalities, each designed to enhance your business
-                operations. If you&apos;re interested in early access and wish to
-                participate in our alpha testing phase, please don&apos;t hesitate to
-                reach out.
+                operations. If you&apos;re interested in early access and wish
+                to participate in our alpha testing phase, please don&apos;t
+                hesitate to reach out.
               </p>
 
               {/* Bullet Points */}
@@ -191,7 +191,7 @@ export default function DesignPage() {
               </ul>
 
               {/* Call to Action */}
-              <div className="pt-6 pb-10">
+              <div className="pb-10 pt-6">
                 <Link
                   href="/contact" // Update the link
                   rel="noopener noreferrer"
@@ -204,7 +204,7 @@ export default function DesignPage() {
             <div className="flex items-center justify-center md:w-1/3">
               {/* Next/Image component */}
               <Image
-                src="/CMObot.png" // Replace with the path to your new image
+                src="/TheCMO.png" // Replace with the path to your new image
                 alt="New Chatbot"
                 width={500} // Adjust the size as needed
                 height={300}

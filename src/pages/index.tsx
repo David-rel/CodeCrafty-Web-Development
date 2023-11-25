@@ -250,7 +250,7 @@ export default function Home() {
           <div className="mt-8 lg:mt-0 lg:w-1/2">
             {/* Placeholder for Image */}
             <Image
-              src="/CraftyBot.png" // Replace with your image path
+              src="/CodeCatalyst.png" // Replace with your image path
               alt="CodeCatalyst AI"
               width={500}
               height={300}
