@@ -13,7 +13,6 @@ export default function DesignPage() {
         <Head>
           <title>Code Crafty - AI Integration</title>
         </Head>
-
         <div className="mx-auto max-w-7xl flex-wrap items-center">
           <div className="w-full pb-6 text-center">
             <h2 className="text-xl text-gray-500">
@@ -37,7 +36,10 @@ export default function DesignPage() {
               />
             </div>
 
-            <div data-aos="fade-left" className="w-full p-4 pr-12 lg:w-2/3 font-merriweather">
+            <div
+              data-aos="fade-left"
+              className="w-full p-4 pr-12 font-merriweather lg:w-2/3"
+            >
               <p className="mb-4 text-xl">
                 At Code Crafty, we are at the forefront of AI integration,
                 harnessing the power of cutting-edge technologies to enhance
@@ -67,7 +69,7 @@ export default function DesignPage() {
                 <Link
                   href="/build"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-rose-500  py-4 text-sm xl:text-lg px-2 lg:px-4 font-bold text-white hover:bg-rose-700"
+                  className="rounded-full bg-rose-500  px-2 py-4 text-sm font-bold text-white hover:bg-rose-700 lg:px-4 xl:text-lg"
                 >
                   BUILD YOUR DREAM SITE
                 </Link>
@@ -75,6 +77,145 @@ export default function DesignPage() {
             </div>
           </div>
         </div>
+        {/* CodeConverse AI Section */}
+        <section className="my-6 rounded-lg bg-gray-100 p-6 shadow-lg">
+          <div className="flex flex-col md:flex-row">
+            <div className="pr-12 md:w-1/2">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                Introducing CodeCatalyst AI
+              </h2>
+              <p className="mb-4 text-gray-700">
+                Empower your business with intelligent conversations using
+                CodeCatalyst AI, an advanced AI-driven chatbot designed to
+                transform how businesses engage with customers. Tailored to your
+                specific needs, CodeCatalyst AI is not just a product, but a
+                catalyst for growth.
+              </p>
+
+              {/* Bullet Points */}
+              <ul className="list-inside list-disc text-gray-700">
+                <li>
+                  Intuitive Interaction - Understands and responds effectively
+                </li>
+                <li>Seamless Integration - Works with your existing systems</li>
+                <li>
+                  Data-Driven Insights - Analyzes interactions for valuable
+                  feedback
+                </li>
+                <li>24/7 Availability - Always there for your customers</li>
+                <li>Custom Solutions - Adapts to your business requirements</li>
+              </ul>
+
+              <div className="pb-10 pt-6">
+                <Link
+                  href="/build"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-rose-600 px-2 py-4 text-sm font-bold text-white hover:bg-rose-700 lg:px-4 xl:text-lg"
+                >
+                  CONNECT WITH US
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center justify-center md:w-1/2">
+              {/* Next/Image component */}
+              <Image
+                src="/CodeCatalyst.png" // Replace with the path to your image
+                alt="CodeCatalyst AI"
+                width={500} // Adjust the size as needed
+                height={300}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="mt-4 flex justify-end font-bold text-rose-700">
+            <p>
+              Click the bottom right icon to start your interaction with
+              CodeCatalyst AI.
+            </p>
+          </div>
+        </section>
+
+        <section className="my-6 rounded-lg bg-rose-100 p-6 shadow-lg">
+          <div className="flex flex-col md:flex-row-reverse">
+            <div className="pl-12 md:w-2/3">
+              <h2 className="mb-4 text-2xl font-bold text-rose-900">
+                COMING SOON: Everything CMO AI Bot
+              </h2>
+
+              <p className="mb-4 text-rose-700">
+                Introducing a bot equipped with everything your company needs
+                for streamlined and efficient operation. Our AI Agent is
+                meticulously crafted to handle key marketing and business tasks
+                with ease, freeing you to focus on other critical aspects of
+                your venture. This bot is segmented into six distinct
+                functionalities, each designed to enhance your business
+                operations. If you&apos;re interested in early access and wish
+                to participate in our alpha testing phase, please don&apos;t
+                hesitate to reach out.
+              </p>
+
+              {/* Bullet Points */}
+              <ul className="list-inside list-disc space-y-4 text-rose-700">
+                <li>
+                  Social Media Controller - Optimize your social media
+                  engagement by identifying the prime posting times, crafting
+                  complete posts, and consolidating all your social media
+                  metrics.
+                </li>
+                <li>
+                  Talk to Your Data - Connect with your databases to discover
+                  the most effective marketing strategies, generate insightful
+                  graphs, and leverage your data for business growth.
+                </li>
+                <li>
+                  File Creation - Effortlessly generate contracts, business
+                  documents, Excel sheets, and more with simple prompts.
+                </li>
+                <li>
+                  Customer Relations - Automate your communication with
+                  prospective clients and interested parties. Engage them with
+                  human-like, automated emails and messaging systems.
+                </li>
+                <li>
+                  Website Analysis - Gain insights into your website&apos;s
+                  performance compared to competitors, identify optimal
+                  keywords, strategies your content for enhanced Google
+                  visibility, and increase click-through rates.
+                </li>
+                <li>
+                  Market Analysis - Conduct thorough market analyses for your
+                  services or products. Understand pricing trends, what
+                  customers are spending on, and how to position your offerings
+                  effectively.
+                </li>
+              </ul>
+
+              {/* Call to Action */}
+              <div className="pb-10 pt-6">
+                <Link
+                  href="/contact" // Update the link
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-rose-600 px-2 py-4 text-sm font-bold text-white hover:bg-rose-700 lg:px-4 xl:text-lg"
+                >
+                  BECOME A TESTER
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center justify-center md:w-1/3">
+              {/* Next/Image component */}
+              <Image
+                src="/TheCMO.png" // Replace with the path to your new image
+                alt="New Chatbot"
+                width={500} // Adjust the size as needed
+                height={300}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="mt-4 flex justify-end font-bold text-blue-700">
+            {/* Additional Information or Instruction */}
+          </div>
+        </section>
       </div>
 
       <Footer />

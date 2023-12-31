@@ -13,14 +13,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false); // Initially set to false
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsModalVisible(true); // Show the modal after 30 seconds
+      setIsModalVisible(true);
     }, 30000);
-
-    return () => clearTimeout(timer); // Cleanup the timer if the component is unmounted
+    return () => clearTimeout(timer);
   }, []);
 
   const closeModal = () => {
@@ -28,7 +27,6 @@ const MyApp: AppType<{ session: Session | null }> = ({
   };
 
   useEffect(() => {
-    // Importing and initializing AOS
     import("aos")
       .then((Aos) => {
         Aos.init({ duration: 2000 });
@@ -39,15 +37,18 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <Head>
-        <title>Code Crafty - Web Development & Design Services</title>
+        {/* Standard HTML Meta Tags */}
+        <title>Code Crafty - Web Development & Design Experts</title>
         <meta
           name="description"
-          content="Code Crafty offers premium web development and design services, tailoring custom websites for individuals and businesses of all sizes. Turn your vision into a digital reality with us."
+          content="Experience excellence in web design and development. Partner with Code Crafty to craft your next digital masterpiece."
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="./logo1.png" />
+        <link rel="icon" href="/logo1.png" />
 
-        {/* Open Graph / Social Media */}
+        {/* Open Graph / Facebook Meta Tags */}
+        <meta property="og:url" content="https://codecrafty.dev/" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:title"
           content="Code Crafty - Web Development & Design Experts"
@@ -57,21 +58,29 @@ const MyApp: AppType<{ session: Session | null }> = ({
           content="Experience excellence in web design and development. Partner with Code Crafty to craft your next digital masterpiece."
         />
         <meta property="og:image" content="https://codecrafty.dev/banner.jpg" />
-        <meta
-          property="og:image:alt"
-          content="A representation of Code Crafty's premium services"
-        />
-        <meta property="og:url" content="https://codecrafty.dev" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
 
-        {/* Canonical */}
-        <link rel="canonical" href="https://codecrafty.dev" />
+        {/* Twitter Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="codecrafty.dev" />
+        <meta property="twitter:url" content="https://codecrafty.dev/" />
+        <meta
+          name="twitter:title"
+          content="Code Crafty - Web Development & Design Experts"
+        />
+        <meta
+          name="twitter:description"
+          content="Experience excellence in web design and development. Partner with Code Crafty to craft your next digital masterpiece."
+        />
+        <meta
+          name="twitter:image"
+          content="https://codecrafty.dev/banner.jpg"
+        />
+
+        {/* Additional tags if needed */}
       </Head>
       {isModalVisible && (
         <NewsletterPopup isVisible={isModalVisible} onClose={closeModal} />
       )}
-
       <div>
         <ChatPopup />
         <Component {...pageProps} />

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   {reviews.map((review, index) => (
           <div key={index} className="flex justify-center">
             <article className="my-8 max-w-2xl rounded-lg bg-gray-100 p-4">
@@ -53,3 +54,46 @@
             </article>
           </div>
         ))}
+=======
+import { FaHeart, FaComment, FaShare, FaBookmark } from "react-icons/fa";
+
+const SocialMediaPost = () => {
+  return (
+    <div className="my-4 max-w-sm overflow-hidden rounded bg-white text-black shadow-lg">
+      <div className="flex items-center space-x-4 border-b p-4">
+        <img className="h-10 w-10 rounded-full" src="logo1.png" alt="Profile" />
+        <div className="flex-1">
+          <div className="mb-2 text-xl font-bold">
+            vlt_dev <span className="text-base font-normal">3d</span>
+          </div>
+        </div>
+        <div>...</div>
+      </div>
+      <div className="">
+        <img
+          className="w-full rounded"
+          src="DavidFales.png"
+          alt="AI in Healthcare"
+        />
+      </div>
+
+      <div className="flex items-center border-t px-6 py-4">
+        <FaHeart className="mr-2 text-gray-600" />
+        <FaComment className="mr-2 text-gray-600" />
+        <FaShare className="mr-2 text-gray-600" />
+        <FaBookmark className="ml-auto text-gray-600" />
+      </div>
+      <div className="px-6 py-4 ">
+        <span className="mr-2 font-bold">89 likes</span>
+        <p>
+          <b>vlt_dev</b> AI in healthcare 🤖...
+        </p>
+        <p className="text-sm text-gray-700">more</p>
+        <p className="text-sm text-gray-600">Add a comment</p>
+      </div>
+    </div>
+  );
+};
+
+export default SocialMediaPost;
+>>>>>>> 479a61b074afbca8ffabcc9350bca1db28feb194

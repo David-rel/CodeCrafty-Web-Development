@@ -203,13 +203,13 @@ export default function Home() {
       </div>
 
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-screen-lg text-center">
+        <div className="relative mx-auto max-w-screen-md text-center">
           <Image
             className="mx-auto rounded-full object-cover p-4 shadow-lg"
             src="/team.jpeg"
             alt="Meet the Team"
             layout="responsive"
-            width={500}
+            width={300}
             height={300}
           />
 
@@ -233,6 +233,37 @@ export default function Home() {
                 Get to Know Us
               </a>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-rose-100 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
+          <div className="lg:w-1/2">
+            <h2 className="mb-4 font-merriweather text-3xl font-extrabold">
+              Discover CodeCatalyst AI
+            </h2>
+            <p className="mb-4 font-merriweather text-gray-700 text-lg">
+              Unveiling CodeCatalyst AI - your intelligent digital assistant,
+              designed to streamline your business communications and data
+              analysis. It&apos;s more than just a tool; it&apos;s your business growth
+              partner.
+            </p>
+            <Link href="/services/ai" legacyBehavior>
+              <a className="inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700">
+                Learn More
+              </a>
+            </Link>
+          </div>
+          <div className="mt-8 lg:mt-0 lg:w-1/2">
+            {/* Placeholder for Image */}
+            <Image
+              src="/CodeCatalyst.png" // Replace with your image path
+              alt="CodeCatalyst AI"
+              width={500}
+              height={300}
+              className="rounded-full"
+            />
           </div>
         </div>
       </section>

@@ -95,7 +95,7 @@ function Team() {
         </div>
         <div className="grid grid-cols-1 gap-4 pt-20 md:grid-cols-2">
           <TeamMember
-            imageSrc="/me.jpeg"
+            imageSrc="/DavidFales.png"
             name="David Fales"
             role="CEO"
             description="The CEO, Makes sure everything is going correct and to plan. Mainly works on the Design, Development, and AI Integration into our websites."
