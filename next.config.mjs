@@ -19,6 +19,7 @@ const config = {
       "cdn.tuk.dev",
       "example.com",
       "lh3.googleusercontent.com",
+      "placehold.co",
     ],
   },
 

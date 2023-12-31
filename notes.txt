@@ -1,59 +1,55 @@
-<div>
-                <img
-                  className="w-full"
-                  src="https://cdn.tuk.dev/assets/components/111220/Blg-6/blog(1).png"
-                  alt="computer"
+  {reviews.map((review, index) => (
+          <div key={index} className="flex justify-center">
+            <article className="my-8 max-w-2xl rounded-lg bg-gray-100 p-4">
+              <div className="mb-4 flex items-center">
+                <Image
+                  className="me-4 h-10 w-10 rounded-full"
+                  src={review.image}
+                  alt=""
+                  width={40}
+                  height={40}
                 />
-                <div className="flex w-full justify-between bg-indigo-700 px-8 py-4">
-                  <p className="text-sm font-semibold tracking-wide text-white">
-                    Bruce Wayne
-                  </p>
-                  <p className="text-sm font-semibold tracking-wide text-white">
-                    13TH Oct, 2020
-                  </p>
-                </div>
-                <div className="rounded-bl-3xl rounded-br-3xl bg-white px-10 py-6">
-                  <h1 className="text-4xl font-semibold tracking-wider text-gray-900">
-                    Transactions
-                  </h1>
-                  <p className="mt-6 w-11/12 text-base  tracking-wide text-gray-700 lg:text-lg lg:leading-8">
-                    Find the latest events updates or create events, concerts,
-                    conferences, workshops, exhibitions, and cultural events in
-                    all cities of the US. The aim of Eventistan is to promote
-                    healthy and entertaining event.Find the latest events
-                    updates or create events, concerts, conferences, workshops,
-                    exhibitions, and cultural events in all cities of the US.
-                    The aim of Eventistan is to promote healthy and entertaining
-                    event.
-                  </p>
-                  <div className="mt-4 flex w-full cursor-pointer items-center justify-end">
-                    <p className="text-base tracking-wide text-indigo-500">
-                      Read more
-                    </p>
-                    <svg
-                      className="ml-3 lg:ml-6"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={20}
-                      height={18}
-                      viewBox="0 0 20 18"
-                      fill="none"
+                <div className="font-medium text-black">
+                  <p>
+                    {review.name}
+                    <time
+                      dateTime={review.reviewedOn}
+                      className="block text-sm text-gray-500 dark:text-gray-500"
                     >
-                      <path
-                        d="M11.7998 1L18.9998 8.53662L11.7998 16.0732"
-                        stroke="#4338ca"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M1 8.53662H19"
-                        stroke="#4338ca"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div className="h-5 w-2" />
+                      {review.company}
+                    </time>
+                  </p>
                 </div>
               </div>
+              <div className="mb-1 flex items-center space-x-1 rtl:space-x-reverse">
+                {[...Array(review.starRating)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className="h-4 w-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 22 20"
+                  >
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                  </svg>
+                ))}
+                <Link
+                  className="ms-2 pl-4 text-sm font-semibold text-blue-600 underline"
+                  href={review.websiteUrl}
+                >
+                  {review.websiteName}
+                </Link>
+              </div>
+              <footer className="mb-5 text-sm text-gray-500 dark:text-gray-400">
+                <p>
+                  Reviewed in Colorado, USA on{" "}
+                  <time dateTime={review.reviewedOn}>{review.reviewedOn}</time>
+                </p>
+              </footer>
+              <p className="mb-2 text-xl text-gray-500 dark:text-gray-500">
+                {review.reviewText}
+              </p>
+            </article>
+          </div>
+        ))}

@@ -58,6 +58,7 @@ export default function Navbar() {
     "/about/aboutUs",
     "/about/team",
     "/socials",
+    "/about/portfolio",
   ];
   const productPaths = [
     "/products/development",
@@ -129,6 +130,18 @@ export default function Navbar() {
                 onClick={() => setSidebarOpen(false)}
               >
                 Our Socials
+              </a>
+            </Link>
+            <Link href="/about/portfolio" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/about/portfolio")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Our Portfolio
               </a>
             </Link>
           </div>

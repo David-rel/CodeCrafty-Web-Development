@@ -6,6 +6,9 @@ import TypingText from "~/components/TypingText";
 import { useVisibility } from "../hooks/useVisibility";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
+import { Carousel } from "~/components/Carousel";
+
+
 
 export default function Home() {
   const [section1Visible, section1Ref] = useVisibility();
@@ -56,7 +59,7 @@ export default function Home() {
   });
 
   return (
-    <div>
+    <div className="">
       <Navbar />
 
       <section className="relative bg-cover bg-center bg-no-repeat">
@@ -193,6 +196,11 @@ export default function Home() {
           </animated.div>
         </div>
       </section>
+      <div className="my-2">
+        <div className="App">
+          <Carousel />
+        </div>
+      </div>
 
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-lg text-center">
@@ -211,7 +219,7 @@ export default function Home() {
           </h2>
 
           {/* Description */}
-          <p className="mt-2 font-merriweather text-md text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
+          <p className="text-md mt-2 font-merriweather text-gray-700 sm:mt-4 sm:text-left sm:text-xl">
             Our team is composed of passionate professionals dedicated to
             creating outstanding digital experiences. With expertise ranging
             from design to development, each member brings a unique perspective
@@ -231,24 +239,27 @@ export default function Home() {
 
       <section className="relative flex items-center justify-center px-4 py-16 pb-40 pt-40 sm:px-6 lg:px-8">
         <div
-          className="absolute h-80 sm:h-96 w-80 sm:w-96 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute h-80 w-80 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:h-96 sm:w-96"
           data-aos="fade-up"
         />
         <div
-          className="absolute mx-8 sm:mx-0 left-0 h-80 sm:h-96 w-80 sm:w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute left-0 mx-8 h-80 w-80 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:mx-0 sm:h-96 sm:w-96"
           data-aos="fade-right"
         />
         <div
-          className="absolute mx-8 sm:mx-0 right-0 h-80 sm:h-96 w-80 sm:w-96 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50"
+          className="absolute right-0 mx-8 h-80 w-80 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:mx-0 sm:h-96 sm:w-96"
           data-aos="fade-left"
         />
         <div className="relative z-10 text-center font-montserrat">
-          <h2 className="mb-4 text-4xl sm:text-7xl font-extrabold" data-aos="fade">
+          <h2
+            className="mb-4 text-4xl font-extrabold sm:text-7xl"
+            data-aos="fade"
+          >
             Ready to start building your dream site?
           </h2>
           <div className="pt-4">
             <Link href="/build" legacyBehavior>
-              <a className="inline-block rounded bg-rose-600 px-6 py-3 text-xl sm:text-3xl font-bold text-white hover:bg-rose-700">
+              <a className="inline-block rounded bg-rose-600 px-6 py-3 text-xl font-bold text-white hover:bg-rose-700 sm:text-3xl">
                 Start Building
               </a>
             </Link>
@@ -258,9 +269,11 @@ export default function Home() {
 
       <section className="bg-white px-4 py-16 font-montserrat sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl text-center">
-          <h2 className="mb-4 text-3xl sm:text-4xl font-extrabold">Have a question?</h2>
+          <h2 className="mb-4 text-3xl font-extrabold sm:text-4xl">
+            Have a question?
+          </h2>
           <Link href="/about/contact" legacyBehavior>
-            <a className="inline-block rounded bg-rose-600 px-6 py-3 text-md sm:text-lg font-bold text-white hover:bg-rose-700">
+            <a className="text-md inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700 sm:text-lg">
               Contact Us
             </a>
           </Link>

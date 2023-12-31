@@ -35,13 +35,16 @@ function Index() {
                   <Link href="/about/aboutUs">About Us</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="/about/contact">Contact Us</Link>
+                  <Link href="/contact">Schedule a Discussion</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="/build">Build A Site</Link>
+                  <Link href="/about/team">The Team</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
                   <Link href="/how">How We Do It</Link>
+                </li>
+                <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
+                  <Link href="/about/projects">Our Projects</Link>
                 </li>
               </ul>
             </div>
