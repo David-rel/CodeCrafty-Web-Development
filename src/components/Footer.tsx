@@ -12,17 +12,32 @@ function Index() {
             <div className="mx-auto w-11/12 lg:mx-0 lg:w-2/5 xl:mx-0 xl:w-3/6">
               <div className="mb-6 flex items-center lg:mb-0 xl:mb-0">
                 <Image src="/logo1.png" width={100} height={40} alt={""} />
-                <p className="ml-3 text-xl font-bold">CodeCrafty</p>
+                <p className="ml-3 text-3xl font-bold">Code Crafty LLC</p>
               </div>
 
               <h1 className="pb-4 text-xl font-bold">
-                Phone: +1 (720) 299 - 4804
+                Phone:{" "}
+                <Link href="tel:+17202994804" legacyBehavior>
+                  <a className="text-blue-500 underline hover:text-blue-700">
+                    +1 (720) 299 - 4804
+                  </a>
+                </Link>
               </h1>
-              <h1 className="text-xl font-bold">
-                For IT help or development: davidfales@codecrafty.dev
+              <h1 className="text-xl font-bold pt-4">
+                For IT help or development:{" "}
+                <Link href="mailto:davidfales@codecrafty.dev" legacyBehavior>
+                  <a className="text-blue-500 underline hover:text-blue-700">
+                    davidfales@codecrafty.dev
+                  </a>
+                </Link>
               </h1>
-              <h1 className="text-xl font-bold">
-                For business and questions: diego_g@codecrafty.dev
+              <h1 className="text-xl font-bold pt-4 pb-8">
+                For business and questions: {" "}
+                <Link href="mailto:diego_g@codecrafty.dev" legacyBehavior>
+                  <a className="text-blue-500 underline hover:text-blue-700">
+                    diego_g@codecrafty.dev
+                  </a>
+                </Link>
               </h1>
             </div>
 

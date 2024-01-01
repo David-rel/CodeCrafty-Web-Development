@@ -36,13 +36,14 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 50vh;
-  background-color: #ffffff; /* Changed to white */
+  height: 50vh; /* Default height for larger screens */
+  background-color: #ffffff;
 }
 
 .carousel {
   overflow: hidden;
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,22 +58,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 400px; /* Default height for larger screens */
 }
 
 .carousel-item-text {
-  font-size: 1.15rem;
+  font-size: 1.15rem; /* Default text size for larger screens */
   margin: 0px 0 20px 0;
   padding: 0 20px 0 20px;
   white-space: normal;
   color: #617d98;
 }
 
-
-
-
-/* final stage */
-
+/* Carousel buttons and indicators styling */
 .carousel-buttons {
   display: flex;
   justify-content: space-evenly;
@@ -107,8 +104,28 @@
 }
 
 .indicator-symbol-active {
-  color: #ffffff; /* Keep the active color white as before */
-  background-color: #DA3C51; /* Black background for the circle */
-  border-radius: 50%; /* Makes the background shape a circle */
-  padding: 5px; /* Adjust padding to change the size of the circle */
+  color: #ffffff;
+  background-color: #DA3C51;
+  border-radius: 50%;
+  padding: 5px;
 }
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 90%;
+  }
+
+  .App {
+    height: 80vh; /* Increased height for smaller screens */
+  }
+
+  .carousel-item {
+    height: 300px; /* Adjusted height for carousel items on smaller screens */
+  }
+
+  .carousel-item-text {
+    font-size: 0.7rem; /* Smaller font size for readability on smaller screens */
+  }
+}
+

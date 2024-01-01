@@ -7,6 +7,8 @@ import { useVisibility } from "../hooks/useVisibility";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { Carousel } from "~/components/Carousel";
+import PdfViewer from "~/components/PdfViewer";
+
 
 
 
@@ -237,17 +239,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PDF Display Section */}
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative mx-auto mb-8 max-w-screen-xl text-center">
+          <h2 className="text-3xl font-extrabold">Web Dev and AI One Pager</h2>
+        </div>
+        <div className="relative mx-auto flex max-w-screen-xl flex-col items-center justify-center space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+          <PdfViewer src="/pdfs/web.pdf" title="The Web Dev One Pager" />
+          <PdfViewer src="/pdfs/ai.pdf" title="The AI Integration One Pager" />
+        </div>
+      </section>
+
       <section className="bg-rose-100 px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
           <div className="lg:w-1/2">
             <h2 className="mb-4 font-merriweather text-3xl font-extrabold">
               Discover CodeCatalyst AI
             </h2>
-            <p className="mb-4 font-merriweather text-gray-700 text-lg">
+            <p className="mb-4 font-merriweather text-lg text-gray-700">
               Unveiling CodeCatalyst AI - your intelligent digital assistant,
               designed to streamline your business communications and data
-              analysis. It&apos;s more than just a tool; it&apos;s your business growth
-              partner.
+              analysis. It&apos;s more than just a tool; it&apos;s your business
+              growth partner.
             </p>
             <Link href="/services/ai" legacyBehavior>
               <a className="inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700">
