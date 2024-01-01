@@ -242,7 +242,9 @@ export default function Home() {
       {/* PDF Display Section */}
       <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative mx-auto mb-8 max-w-screen-xl text-center">
-          <h2 className="text-3xl font-extrabold">Web Dev and AI One Pager</h2>
+          <h2 className="text-2xl font-extrabold sm:text-3xl">
+            Web Dev and AI One Pager
+          </h2>
         </div>
         <div className="relative mx-auto flex max-w-screen-xl flex-col items-center justify-center space-y-8 md:flex-row md:space-x-8 md:space-y-0">
           <PdfViewer src="/pdfs/web.pdf" title="The Web Dev One Pager" />
