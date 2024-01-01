@@ -7,19 +7,25 @@ interface PdfViewerProps {
 
 const PdfViewer: React.FC<PdfViewerProps> = ({ src, title }) => {
   return (
-    <div className="flex w-full max-w-md flex-col items-center p-4">
-      <h3 className="mb-3 text-lg font-bold md:text-xl">{title}</h3>
-      <iframe
-        src={src}
-        width="100%"
-        height="500"
-        style={{ minHeight: "300px" }}
-        className="rounded-md border-none"
-      ></iframe>
-      <div className="mt-2 flex flex-col md:flex-row">
+    <div className="flex w-full flex-col items-center p-4">
+      <h3 className="mb-3 text-lg font-bold sm:text-xl">{title}</h3>
+      <div className="w-full overflow-hidden" style={{ paddingBottom: "141%" }}>
+        {" "}
+        {/* Maintain an aspect ratio for the container */}
+        <iframe
+          src={src}
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+          }}
+          className="rounded-md border-none"
+        ></iframe>
+      </div>
+      <div className="mt-2 flex w-full flex-col items-center sm:flex-row sm:justify-center">
         <a
           href={src}
-          className="mb-2 font-bold text-rose-700 hover:text-rose-600 md:mb-0 md:mr-4"
+          className="mb-2 font-bold text-rose-700 hover:text-rose-600 sm:mb-0 sm:mr-4"
           target="_blank"
           rel="noopener noreferrer"
         >
