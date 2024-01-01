@@ -252,6 +252,7 @@ export default function Home() {
         </div>
       </section>
 
+
       <section className="bg-rose-100 px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
           <div className="lg:w-1/2">

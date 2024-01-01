@@ -17,44 +17,30 @@ interface CarouselItemProps {
 }
 
 export const CarouselItem = ({ src, width }: CarouselItemProps) => {
-  const [style, setStyle] = useState({});
-  const [nameFontSize, setNameFontSize] = useState("1rem"); // Default font size for name
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth < 600) {
-        // For smaller screens
-        setStyle({
-          height: "auto", // Height auto for variable content
-          fontSize: "0.8rem", // Smaller font size for smaller screens
-        });
-        setNameFontSize("0.7rem"); // Even smaller font size for the name
-      } else {
-        // For larger screens
-        setStyle({
-          height: "400px", // Fixed height for larger screens
-          fontSize: "1rem", // Default font size
-        });
-        setNameFontSize("1rem"); // Reset to default font size for the name
-      }
+    // Function to determine screen size
+    function checkMobile() {
+      setIsMobile(window.innerWidth < 600);
     }
 
-    // Initialize the style
-    handleResize();
+    // Check screen size on mount and set isMobile state
+    checkMobile();
 
-    // Update style upon window resize
-    window.addEventListener("resize", handleResize);
+    // Add event listener for window resize
+    window.addEventListener("resize", checkMobile);
 
-    // Cleanup listener
-    return () => window.removeEventListener("resize", handleResize);
+    // Cleanup listener on component unmount
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Styles for name and company info on smaller screens
+  const mobileTextStyles = isMobile ? { fontSize: "0.7rem" } : {};
+
   return (
-    <div className="carousel-item overflow-hidden" style={{ ...style, width }}>
-      <article
-        className="my-8 max-w-2xl rounded-lg bg-gray-100 p-4"
-        style={style}
-      >
+    <div className="carousel-item overflow-hidden" style={{ width }}>
+      <article className="my-8 max-w-2xl rounded-lg bg-gray-100 p-4">
         <div className="mb-4 flex items-center">
           <Image
             className="me-4 h-10 w-10 rounded-full"
@@ -63,23 +49,18 @@ export const CarouselItem = ({ src, width }: CarouselItemProps) => {
             width={40}
             height={40}
           />
-          <div>
-            <p
-              className="font-medium text-black"
-              style={{ fontSize: nameFontSize }}
+          <div style={mobileTextStyles}>
+            <p className="font-medium text-black">{src.name}</p>
+            <time
+              dateTime={src.reviewedOn}
+              className="block text-sm text-gray-500 dark:text-gray-500"
             >
-              {src.name}
-              <time
-                dateTime={src.reviewedOn}
-                className="block text-sm text-gray-500 dark:text-gray-500"
-              >
-                {src.company}
-              </time>
-            </p>
+              {src.company}
+            </time>
           </div>
         </div>
         <div className="mb-1 flex items-center space-x-1 rtl:space-x-reverse">
-          {Array.from({ length: src.starRating }, (_, i) => i).map((_, i) => (
+          {Array.from({ length: src.starRating }, (_, i) => (
             <svg
               key={i}
               className="h-4 w-4 text-yellow-300"
@@ -90,23 +71,18 @@ export const CarouselItem = ({ src, width }: CarouselItemProps) => {
             </svg>
           ))}
           <Link href={src.websiteUrl} legacyBehavior>
-            <a
-              className="ms-2 pl-4 text-sm font-semibold text-blue-600 underline"
-              style={style}
-            >
+            <a className="ms-2 pl-4 text-sm font-semibold text-blue-600 underline">
               {src.websiteName}
             </a>
           </Link>
         </div>
         <footer className="mb-5 text-sm text-gray-500 dark:text-gray-400">
-          <p style={style}>
+          <p>
             Reviewed in Colorado, USA on{" "}
             <time dateTime={src.reviewedOn}>{src.reviewedOn}</time>
           </p>
         </footer>
-        <div className="carousel-item-text" style={style}>
-          {src.reviewText}
-        </div>
+        <div className="carousel-item-text">{src.reviewText}</div>
       </article>
     </div>
   );
