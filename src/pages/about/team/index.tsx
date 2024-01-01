@@ -95,7 +95,7 @@ function Team() {
         </div>
         <div className="grid grid-cols-1 gap-4 pt-20 md:grid-cols-2">
           <TeamMember
-            imageSrc="/DavidFales.png"
+            imageSrc="/David-3.png"
             name="David Fales"
             role="CEO"
             description="The CEO, Makes sure everything is going correct and to plan. Mainly works on the Design, Development, and AI Integration into our websites."
@@ -103,7 +103,7 @@ function Team() {
             insta="https://www.instagram.com/_david_rel/"
           />
           <TeamMember
-            imageSrc="/you.jpeg"
+            imageSrc="/Diegoo.jpeg"
             name="Diego Gutierrez-Raghunath"
             role="Marketing and Sales Executive"
             description="The Executive of marketing and sales, Diego is responsible for the social media platforms and communicating Code Crafty's message to the world."

@@ -31,7 +31,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   useEffect(() => {
     import("aos")
       .then((Aos) => {
-        Aos.init({ duration: 2000 });
+        Aos.init({ duration: 2000, once: true });
       })
       .catch((error) => console.error(error));
   }, []);
