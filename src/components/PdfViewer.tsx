@@ -1,26 +1,36 @@
-import React from "react";
+// components/PdfImageViewer.tsx
 
-interface PdfViewerProps {
-  src: string;
+import React from "react";
+import Image from "next/image";
+
+interface PdfImageViewerProps {
+  imageSrc: string; // the path to the image file
+  pdfSrc: string; // the path to the PDF file
   title: string;
+  altText: string;
 }
 
-const PdfViewer: React.FC<PdfViewerProps> = ({ src, title }) => {
+const PdfImageViewer: React.FC<PdfImageViewerProps> = ({
+  imageSrc,
+  pdfSrc,
+  title,
+  altText,
+}) => {
   return (
-    <div className="flex w-full flex-col items-center p-4">
-      <h3 className="mb-3 text-center text-lg font-bold sm:text-xl">{title}</h3>
-      <div className="aspect-w-16 aspect-h-9 w-full">
-        {" "}
-        {/* This will maintain a 16:9 aspect ratio */}
-        <iframe
-          src={src}
-          frameBorder="0"
-          className="h-full w-full rounded-md border-none"
-        ></iframe>
+    <div className="flex flex-col items-center p-4">
+      <h3 className="mb-3 text-lg font-bold sm:text-xl">{title}</h3>
+      <div className="shadow-lg">
+        <Image
+          src={imageSrc}
+          alt={altText}
+          width={500} // Set the desired width
+          height={707} // Set the height based on the aspect ratio of the image
+          layout="intrinsic" // Use "responsive" or "intrinsic" depending on your layout needs
+        />
       </div>
-      <div className="mt-2 flex w-full flex-col sm:flex-row">
+      <div className="mt-2 flex flex-col sm:flex-row">
         <a
-          href={src}
+          href={pdfSrc}
           className="mb-2 font-bold text-rose-700 hover:text-rose-600 sm:mb-0 sm:mr-4"
           target="_blank"
           rel="noopener noreferrer"
@@ -28,7 +38,7 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ src, title }) => {
           View Document
         </a>
         <a
-          href={src}
+          href={pdfSrc}
           download
           className="font-bold text-rose-700 hover:text-rose-600"
         >
@@ -39,4 +49,4 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ src, title }) => {
   );
 };
 
-export default PdfViewer;
+export default PdfImageViewer;

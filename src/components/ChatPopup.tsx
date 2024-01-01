@@ -116,7 +116,7 @@ const ChatPopup = () => {
       {isOpen ? (
         <div
           className="flex flex-col rounded-lg bg-white shadow-lg"
-          style={{ width: "25rem", height: "30rem" }}
+          style={{ width: "21rem", height: "30rem" }}
         >
           <div className="flex items-center justify-between border-b border-gray-300 p-4">
             <h3 className="font-merriweather text-lg font-semibold">

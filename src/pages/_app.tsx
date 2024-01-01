@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import NewsletterPopup from "~/components/NewsletterPopup";
 import ChatPopup from "~/components/ChatPopup";
+import dynamic from "next/dynamic";
+
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -33,6 +35,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
       })
       .catch((error) => console.error(error));
   }, []);
+
+  const PdfViewerWithNoSSR = dynamic(() => import("../components/PdfViewer"), {
+    ssr: false,
+    loading: () => <p>Loading PDF...</p>,
+  });
 
   return (
     <SessionProvider session={session}>
