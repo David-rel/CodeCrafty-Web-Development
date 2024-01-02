@@ -10,7 +10,6 @@ import NewsletterPopup from "~/components/NewsletterPopup";
 import ChatPopup from "~/components/ChatPopup";
 import dynamic from "next/dynamic";
 
-
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -27,11 +26,24 @@ const MyApp: AppType<{ session: Session | null }> = ({
   const closeModal = () => {
     setIsModalVisible(false);
   };
-
   useEffect(() => {
     import("aos")
       .then((Aos) => {
-        Aos.init({ duration: 2000, once: true });
+        Aos.init({
+          duration: 2000,
+          once: true,
+          easing: "ease-in-out",
+          mirror: false,
+        });
+
+        // Refresh AOS on window resize
+        const handleResize = () => {
+          Aos.refresh();
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
       })
       .catch((error) => console.error(error));
   }, []);

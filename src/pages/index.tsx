@@ -286,19 +286,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex items-center justify-center px-4 py-16 pb-40 pt-40 sm:px-6 lg:px-8">
-        <div
-          className="absolute h-80 w-80 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:h-96 sm:w-96 md:h-64 md:w-64 md:translate-y-0"
-          data-aos="fade-up"
-        />
-        <div
-          className="absolute left-0 mx-8 h-80 w-80 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:mx-0 sm:h-96 sm:w-96 md:h-64 md:w-64 md:translate-x-0 md:translate-y-0"
-          data-aos="fade-right"
-        />
-        <div
-          className="absolute right-0 mx-8 h-80 w-80 translate-x-1/4 translate-y-1/4 transform rounded-full bg-rose-200 opacity-50 sm:mx-0 sm:h-96 sm:w-96 md:h-64 md:w-64 md:translate-x-0 md:translate-y-0"
-          data-aos="fade-left"
-        />
+      <section
+        className="relative flex hidden items-center justify-center px-4 py-16 pb-40 pt-40 sm:block lg:px-8"
+        data-aos="fade-up"
+      >
+       
         <div className="relative z-10 text-center font-montserrat">
           <h2
             className="mb-4 text-4xl font-extrabold sm:text-7xl"
@@ -315,6 +307,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
 
       <section className="bg-white px-4 py-16 font-montserrat sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl text-center">
