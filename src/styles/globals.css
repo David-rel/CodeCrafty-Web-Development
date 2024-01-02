@@ -36,7 +36,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 50vh; /* Default height for larger screens */
+  height: 90vh; /* Default height for larger screens */
   background-color: #ffffff;
 }
 
