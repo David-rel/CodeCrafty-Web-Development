@@ -98,33 +98,25 @@ function Team() {
             imageSrc="/David-3.png"
             name="David Fales"
             role="CEO"
-            description="The CEO, Makes sure everything is going correct and to plan. Mainly works on the Design, Development, and AI Integration into our websites."
+            description="David, Founder and CEO, is the back end developer within Code Crafty, as well as the brains behind it all. He makes sure the team works efficiently and that goals come to fruition."
             email="davidfales@codecrafty.dev"
             insta="https://www.instagram.com/_david_rel/"
           />
           <TeamMember
             imageSrc="/Diegoo.jpeg"
             name="Diego Gutierrez-Raghunath"
-            role="Marketing and Sales Executive"
-            description="The Executive of marketing and sales, Diego is responsible for the social media platforms and communicating Code Crafty's message to the world."
+            role="Executive of Marketing and Sales"
+            description="Diego, the Executive of Marketing and Sales, is responsible for company social media, client communication and relations, and finding clients."
             email="diego_g@codecrafty.dev"
             insta="https://www.instagram.com/diego_rgr0/"
           />
           <TeamMember
             imageSrc="/Grant.jpg"
             name="Grant Rechtin"
-            role="Software Developer and Tester"
-            description="As the software and tester, Grant is responsible on making sure all outputs fro mCode Crafty are upto date and look perfect. Making sure it full fills the clients request as well."
+            role="Software Developer"
+            description="Grant, the Front End Software Developer, is responsible for making sure every website created sets the bar high for the next. He focuses on ensuring all sites are as beautiful as can be."
             email="gsrechtin@codecrafty.dev"
             insta="none"
-          />
-          <TeamMember
-            imageSrc="/Connor.jpg"
-            name="Connor Mohr"
-            role="Business Executive"
-            description="Business Executive, Connor is responsible for keeping track of the legal workings here at Code Crafty. Making sure that everything we do can help us and you."
-            email="connor.mohr@codecrafty.dev"
-            insta="https://www.instagram.com/mohr_connor/"
           />
         </div>
       </div>
