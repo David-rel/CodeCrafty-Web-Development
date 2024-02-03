@@ -8,7 +8,10 @@ import json
 def is_internal_link(link, base_url):
     return urlparse(link).netloc == urlparse(base_url).netloc
 
-# Function to get links from a given URL
+def is_pdf_link(link):
+    return link.lower().endswith('.pdf')
+
+# Function to get links from a given URL (Modified)
 def get_links_from_url(url):
     try:
         response = requests.get(url)
@@ -16,7 +19,7 @@ def get_links_from_url(url):
         for a_tag in soup.find_all('a', href=True):
             href = a_tag.get('href')
             full_url = urljoin(url, href)
-            if full_url not in all_links and is_internal_link(full_url, initial_url):
+            if full_url not in all_links and is_internal_link(full_url, initial_url) and not is_pdf_link(full_url):
                 all_links.add(full_url)
                 yield full_url
     except requests.RequestException as e:
@@ -25,6 +28,9 @@ def get_links_from_url(url):
 # Function to scrape text from a URL
 def scrape_text_from_url(url):
     try:
+        if is_pdf_link(url):
+            print(f"Skipping PDF: {url}")
+            return None  # Skip PDF files
         response = requests.get(url)
         if response.status_code == 404:
             print(f"URL not found: {url}")

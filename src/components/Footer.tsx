@@ -59,7 +59,7 @@ function Index() {
                   <Link href="/how">How We Do It</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="/about/projects">Our Projects</Link>
+                  <Link href="/about/portfolio">Our Portfolio</Link>
                 </li>
               </ul>
             </div>
