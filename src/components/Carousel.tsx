@@ -23,8 +23,7 @@ export const Carousel = () => {
       websiteUrl: "https://www.coervercolorado.com/",
       starRating: 5,
       reviewedOn: "December 22, 2023",
-      reviewText: "Code Crafty built the front end website for Coerver Colorado. This website was able to connect it to our backend servers and get more users to our page. We average around 1,200 users a month and have seen a 20% increase in users since the new website was launched. The site is clean, modern and easy to navigate. We are very happy with the results and would recommend Code Crafty to anyone looking for a new website.
-",
+      reviewText: "Code Crafty built the front end website for Coerver Colorado. This website was able to connect it to our backend servers and get more users to our page. We average around 1,200 users a month and have seen a 20% increase in users since the new website was launched. The site is clean, modern and easy to navigate. We are very happy with the results and would recommend Code Crafty to anyone looking for a new website.",
       // ... other review properties
     },
   ];
