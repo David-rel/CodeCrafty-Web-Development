@@ -145,3 +145,14 @@
 }
 
 
+
+
+/* Accordion styles */
+input[type="checkbox"]:checked ~ .accordion-content {
+  max-height: 1000px; /* Adjust as necessary */
+}
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}

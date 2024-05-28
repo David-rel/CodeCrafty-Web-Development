@@ -1,4 +1,5 @@
-import React, { FormEvent, useState } from "react";
+import type { FormEvent } from 'react';
+import React, { useState } from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import {
@@ -9,13 +10,10 @@ import {
   FaInstagram,
   FaGlobeAmericas,
   FaCity,
-} from "react-icons/fa"; // Importing icons
+} from "react-icons/fa";
 import Head from "next/head";
 
 function Build() {
-
-
-
   const [pageIdea, setPageIdea] = useState("");
   const [pageCount, setPageCount] = useState("");
   const [revisions, setRevisions] = useState("");
@@ -47,13 +45,11 @@ function Build() {
     "New Zealand",
     "United Kingdom",
     "United States",
-    // ... add other English-speaking countries if needed
   ];
 
-
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
-    throw new Error("Function not implemented.");
+  async function handleSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
+    event.preventDefault();
+    // handle form submission
   }
 
   return (
@@ -62,8 +58,6 @@ function Build() {
       <Head>
         <title>Code Crafty - Submit a request</title>
       </Head>
-
-
       <div className="container mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         <form onSubmit={handleSubmit} className="mx-auto">
           <div className="space-y-4 rounded-lg p-6">
@@ -78,7 +72,7 @@ function Build() {
                 <div className="relative w-full">
                   <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
                   <input
-                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl" // Added padding-left for the icon
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
                     type="text"
                     placeholder="First Name*"
                     required
@@ -125,9 +119,7 @@ function Build() {
                   <select
                     className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
                     value={country}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                      setCountry(e.target.value)
-                    }
+                    onChange={(e) => setCountry(e.target.value)}
                     required
                   >
                     <option value="">Select Country*</option>
@@ -215,19 +207,18 @@ function Build() {
                     className="h-full w-full p-2"
                     placeholder="Project Description*"
                     required
-                    maxLength={250} // Limit to 250 characters
+                    maxLength={250}
                     style={{ resize: "none" }}
                     onChange={(e) => setProjectDescription(e.target.value)}
                   ></textarea>
-                  <p>length: {projectDescription.length}/250</p>{" "}
+                  <p>length: {projectDescription.length}/250</p>
                 </div>
-                {/* Display character count */}
                 <div className="flex w-2/3 items-start p-4">
                   <input
                     className="mr-4 h-6 w-24 rounded-full border p-1"
                     type="checkbox"
                     required
-                    defaultChecked // Checkbox is initially checked
+                    defaultChecked
                   />
                   <p className="text-md font-montserrat text-gray-500">
                     By supplying my contact information, I authorize the company
@@ -327,7 +318,7 @@ function Build() {
                     <input
                       type="radio"
                       name="revisions"
-                      value="no"
+                      value="unknown"
                       onChange={() => setRevisions("unknown")}
                       checked={revisions === "unknown"}
                     />
@@ -369,7 +360,7 @@ function Build() {
                     <input
                       type="radio"
                       name="existingWebsite"
-                      value="no"
+                      value="unknown"
                       onChange={() => setExistingWebsite("unknown")}
                       checked={existingWebsite === "unknown"}
                     />
@@ -398,8 +389,7 @@ function Build() {
                     <option value="more_than_month">More than 3 months</option>
                   </select>
                   <span className="mb-4 text-2xl">
-                    Do you already have a domain (e.g., codecrafty.dev,
-                    google.com)?
+                    Do you already have a domain (e.g., codecrafty.dev, google.com)?
                   </span>
                   <input
                     className="h-16 w-full rounded-full border p-2 text-xl"
@@ -409,8 +399,7 @@ function Build() {
                     onChange={(e) => setDomain(e.target.value)}
                   />
                   <span className="mb-4 text-2xl">
-                    Is there any other extra features that you will want put on
-                    apart from what said above?
+                    Is there any other extra features that you will want put on apart from what said above?
                   </span>
                   <textarea
                     className="h-40 w-full rounded-lg border p-2 text-xl"
@@ -445,7 +434,7 @@ function Build() {
                     <input
                       type="radio"
                       name="longTermDeveloper"
-                      value="no"
+                      value="unknown"
                       onChange={() => setLongTermDeveloper("unknown")}
                       checked={longTermDeveloper === "unknown"}
                     />
@@ -482,6 +471,3 @@ function Build() {
 }
 
 export default Build;
-function refetchNotes() {
-  throw new Error("Function not implemented.");
-}

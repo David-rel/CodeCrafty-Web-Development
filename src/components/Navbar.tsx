@@ -269,7 +269,23 @@ export default function Navbar() {
               : "text-rose-500 hover:text-rose-700 hover:underline"
           }`}
         >
-          Schedule a Discussion
+          Get In Touch
+        </a>
+      </Link>
+      <Link href="/alias" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/alias")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700 hover:underline"
+          }`}
+        >
+          Alias
         </a>
       </Link>
       <Link href="/blog" legacyBehavior>

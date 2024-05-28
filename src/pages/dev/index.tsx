@@ -1,9 +1,18 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import cookies from "js-cookie";
 
-function Dev() {
-  return (
-    <div>Dev</div>
-  )
+export default function Dev() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = cookies.get("token");
+    if (token === "loggedin") {
+      router.push("/dev/dashboard");
+    } else {
+      router.push("/dev/login");
+    }
+  }, [router]);
+
+  return null;
 }
-
-export default Dev
