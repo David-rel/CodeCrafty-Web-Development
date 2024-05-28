@@ -30,12 +30,6 @@ export default function SocialMediaPage() {
       bgColor: "bg-blue-500",
     },
     {
-      href: "https://twitter.com/CodeCrafty_",
-      icon: <FaTwitter />,
-      label: "Twitter",
-      bgColor: "bg-blue-300",
-    },
-    {
       href: "https://www.fiverr.com/code_crafty",
       icon: <FaGreaterThanEqual />,
       label: "Fiverr",

@@ -277,7 +277,7 @@ export default function Home() {
           <div className="mt-8 lg:mt-0 lg:w-1/2">
             {/* Placeholder for Image */}
             <Image
-              src="/aliasai.webp" // Replace with your image path
+              src="/aliasLogo.png" // Replace with your image path
               alt="CodeCatalyst AI"
               width={500}
               height={300}
