@@ -1,5 +1,4 @@
-import type { FormEvent } from 'react';
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import {
@@ -10,7 +9,7 @@ import {
   FaInstagram,
   FaGlobeAmericas,
   FaCity,
-} from "react-icons/fa";
+} from "react-icons/fa"; // Importing icons
 import Head from "next/head";
 
 function Build() {
@@ -45,11 +44,77 @@ function Build() {
     "New Zealand",
     "United Kingdom",
     "United States",
+    // ... add other English-speaking countries if needed
   ];
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
+  async function handleSubmit(
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> {
     event.preventDefault();
-    // handle form submission
+
+    const formData = {
+      firstName,
+      lastName,
+      emailAddress,
+      phoneNumber,
+      country,
+      stateAndCity,
+      companyName,
+      instagramName,
+      projectDescription,
+      checkboxOne,
+      checkboxTwo,
+      checkboxThree,
+      checkboxFour,
+      pageIdea,
+      pageCount: pageCount ? parseInt(pageCount) : null,
+      revisions,
+      existingWebsite,
+      timeline,
+      domain,
+      extraFeatures,
+      longTermDeveloper,
+    };
+
+    try {
+      const response = await fetch("/api/addData", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        alert("Form submitted successfully");
+        setPageIdea("");
+        setPageCount("");
+        setRevisions("");
+        setExistingWebsite("");
+        setTimeline("");
+        setDomain("");
+        setExtraFeatures("");
+        setLongTermDeveloper("");
+        setFirstName("");
+        setLastName("");
+        setEmailAddress("");
+        setPhoneNumber("");
+        setCountry("");
+        setStateAndCity("");
+        setCompanyName("");
+        setInstagramName("");
+        setProjectDescription("");
+        setCheckboxOne(false);
+        setCheckboxTwo(false);
+        setCheckboxThree(false);
+        setCheckboxFour(false);
+      } else {
+        console.error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }
 
   return (
@@ -58,6 +123,7 @@ function Build() {
       <Head>
         <title>Code Crafty - Submit a request</title>
       </Head>
+
       <div className="container mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
         <form onSubmit={handleSubmit} className="mx-auto">
           <div className="space-y-4 rounded-lg p-6">
@@ -72,7 +138,7 @@ function Build() {
                 <div className="relative w-full">
                   <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 transform text-xl text-rose-700" />
                   <input
-                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
+                    className="h-16 w-full rounded-full border p-2 pl-10 text-xl" // Added padding-left for the icon
                     type="text"
                     placeholder="First Name*"
                     required
@@ -119,7 +185,9 @@ function Build() {
                   <select
                     className="h-16 w-full rounded-full border p-2 pl-10 text-xl"
                     value={country}
-                    onChange={(e) => setCountry(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                      setCountry(e.target.value)
+                    }
                     required
                   >
                     <option value="">Select Country*</option>
@@ -207,18 +275,19 @@ function Build() {
                     className="h-full w-full p-2"
                     placeholder="Project Description*"
                     required
-                    maxLength={250}
+                    maxLength={250} // Limit to 250 characters
                     style={{ resize: "none" }}
                     onChange={(e) => setProjectDescription(e.target.value)}
                   ></textarea>
-                  <p>length: {projectDescription.length}/250</p>
+                  <p>length: {projectDescription.length}/250</p>{" "}
                 </div>
+                {/* Display character count */}
                 <div className="flex w-2/3 items-start p-4">
                   <input
                     className="mr-4 h-6 w-24 rounded-full border p-1"
                     type="checkbox"
                     required
-                    defaultChecked
+                    defaultChecked // Checkbox is initially checked
                   />
                   <p className="text-md font-montserrat text-gray-500">
                     By supplying my contact information, I authorize the company
@@ -318,7 +387,7 @@ function Build() {
                     <input
                       type="radio"
                       name="revisions"
-                      value="unknown"
+                      value="no"
                       onChange={() => setRevisions("unknown")}
                       checked={revisions === "unknown"}
                     />
@@ -360,7 +429,7 @@ function Build() {
                     <input
                       type="radio"
                       name="existingWebsite"
-                      value="unknown"
+                      value="no"
                       onChange={() => setExistingWebsite("unknown")}
                       checked={existingWebsite === "unknown"}
                     />
@@ -389,7 +458,8 @@ function Build() {
                     <option value="more_than_month">More than 3 months</option>
                   </select>
                   <span className="mb-4 text-2xl">
-                    Do you already have a domain (e.g., codecrafty.dev, google.com)?
+                    Do you already have a domain (e.g., codecrafty.dev,
+                    google.com)?
                   </span>
                   <input
                     className="h-16 w-full rounded-full border p-2 text-xl"
@@ -399,7 +469,8 @@ function Build() {
                     onChange={(e) => setDomain(e.target.value)}
                   />
                   <span className="mb-4 text-2xl">
-                    Is there any other extra features that you will want put on apart from what said above?
+                    Is there any other extra features that you will want put on
+                    apart from what said above?
                   </span>
                   <textarea
                     className="h-40 w-full rounded-lg border p-2 text-xl"
@@ -434,7 +505,7 @@ function Build() {
                     <input
                       type="radio"
                       name="longTermDeveloper"
-                      value="unknown"
+                      value="no"
                       onChange={() => setLongTermDeveloper("unknown")}
                       checked={longTermDeveloper === "unknown"}
                     />
@@ -457,7 +528,7 @@ function Build() {
           <div className="py-5">
             <button
               type="submit"
-              className="rounded-lg bg-white px-5 py-3 text-sm font-semibold tracking-wider border-black border-4 text-rose-600 hover:bg-rose-700 hover:text-white duration-150 ease-in hover:opacity-90 md:px-10 md:py-5 md:text-lg"
+              className="rounded-lg border-4 border-black bg-white px-5 py-3 text-sm font-semibold tracking-wider text-rose-600 duration-150 ease-in hover:bg-rose-700 hover:text-white hover:opacity-90 md:px-10 md:py-5 md:text-lg"
             >
               Submit
             </button>
@@ -471,3 +542,6 @@ function Build() {
 }
 
 export default Build;
+function refetchNotes() {
+  throw new Error("Function not implemented.");
+}
