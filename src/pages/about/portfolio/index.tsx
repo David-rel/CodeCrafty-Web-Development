@@ -220,10 +220,10 @@ export default function Portfolio() {
               <p className="mb-4 text-lg text-gray-800">
                 Our team was tasked with building a project from scratch for a
                 robotics team. We developed a comprehensive system that manages
-                the team&apos;s operations, from scheduling to inventory management.
-                The system was designed with a focus on usability, ensuring that
-                the team can focus on their core work of building and
-                programming robots. This project showcased our ability to
+                the team&apos;s operations, from scheduling to inventory
+                management. The system was designed with a focus on usability,
+                ensuring that the team can focus on their core work of building
+                and programming robots. This project showcased our ability to
                 deliver a complex, custom solution that meets our client&apos;s
                 specific needs.
               </p>
@@ -232,6 +232,120 @@ export default function Portfolio() {
                   https://www.rj3729.com/
                 </a>
               </Link>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto mb-12 max-w-7xl">
+          {" "}
+          {/* Centering the grid */}
+          <div className="grid grid-cols-1 items-center gap-4 pb-16 md:grid-cols-2 md:gap-24">
+            <div>
+              {" "}
+              <h3 className="mb-3 text-5xl font-bold">Deep Sky Gallery</h3>
+              <p className="mb-4 text-lg text-gray-800">
+                Deep Sky Gallery is an astrophotography platform with advanced
+                email capabilities, a stunning gallery, and a fully functional
+                e-commerce site, all built with Next.js and Tailwind CSS. The
+                project includes an admin platform, integration with Azure for
+                cloud services, and Vercel for deployment and Google Analytics
+                for tracking. The client wanted to remake their site, and we
+                delivered a beautiful, responsive, and highly functional
+                platform that meets all their needs.
+              </p>
+              <Link href="https://www.deepskygallery.com/" legacyBehavior>
+                <a className="inline-block rounded-full bg-white px-4 py-2 text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
+                  https://www.deepskygallery.com/
+                </a>
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              {" "}
+              {/* Removed width class */}
+              <Image
+                src="/deepsky.png"
+                alt="Saool Quiz App"
+                width={100}
+                height={300}
+                layout="responsive"
+                objectFit="contain" // Changed to 'contain' to avoid cropping
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto mb-12 max-w-7xl">
+          {" "}
+          {/* Centering the grid */}
+          <div className="grid grid-cols-1 items-center gap-4 pb-16 md:grid-cols-2 md:gap-24">
+            <div className="flex justify-center">
+              {" "}
+              {/* Removed width class */}
+              <Image
+                src="/alias.png"
+                alt="Saool Quiz App"
+                width={1000}
+                height={300}
+                layout="responsive"
+                objectFit="contain" // Changed to 'contain' to avoid cropping
+                className="rounded-lg"
+              />
+            </div>
+            <div>
+              {" "}
+              <h3 className="mb-3 text-5xl font-bold">Alias</h3>
+              <p className="mb-4 text-lg text-gray-800">
+                Alias is a SaaS company that builds cutting-edge online business
+                management platforms. The project includes a sophisticated admin
+                panel, a robust database managed with Prisma, and a beautiful
+                front-end built with Next.js and Tailwind CSS. We leveraged
+                Vercel for deployment and Google Analytics for insights,
+                creating a seamless experience for users. The platform is
+                designed to help businesses manage their operations more
+                efficiently, making it an essential tool for modern enterprises.
+              </p>
+              <Link href="https://alias.software/" legacyBehavior>
+                <a className="inline-block rounded-full bg-white px-4 py-2 text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
+                  https://alias.software/
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto mb-12 max-w-7xl">
+          {" "}
+          {/* Centering the grid */}
+          <div className="grid grid-cols-1 items-center gap-4 pb-16 md:grid-cols-2 md:gap-24">
+            <div>
+              {" "}
+              <h3 className="mb-3 text-5xl font-bold">RJHS AI Engineering</h3>
+              <p className="mb-4 text-lg text-gray-800">
+                RJHS AI Engineering showcases advanced AI capabilities with an
+                admin panel connected to Azure, featuring a chatbot powered by
+                OpenAI. The project is designed to organize ideas and plans,
+                providing a comprehensive platform for managing AI initiatives.
+                Built with Next.js and Tailwind CSS, it offers a user-friendly
+                interface and robust functionality. The project highlights the
+                potential of AI, serving as a central hub for all AI-related
+                activities within the organization.
+              </p>
+              <Link href="https://rj-ai-club.vercel.app/" legacyBehavior>
+                <a className="inline-block rounded-full bg-white px-4 py-2 text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
+                  https://rj-ai-club.vercel.app/
+                </a>
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              {" "}
+              {/* Removed width class */}
+              <Image
+                src="/aiclub.png"
+                alt="Saool Quiz App"
+                width={100}
+                height={300}
+                layout="responsive"
+                objectFit="contain" // Changed to 'contain' to avoid cropping
+                className="rounded-lg"
+              />
             </div>
           </div>
         </div>

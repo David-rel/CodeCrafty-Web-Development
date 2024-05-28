@@ -1,5 +1,4 @@
 import axios from "axios";
-import { env } from "~/env.mjs";
 
 interface RequestParams {
   url: string;
@@ -14,8 +13,8 @@ interface RequestParams {
 }
 
 function getRequestParams(email: string): RequestParams {
-  const API_KEY = env.MAILCHIMP_API_KEY || "";
-  const LIST_ID = env.MAILCHIMP_LIST_ID || "";
+  const API_KEY = process.env.MAILCHIMP_API_KEY || "";
+  const LIST_ID = process.env.MAILCHIMP_LIST_ID || "";
   const DATACENTER = API_KEY.split("-")[1] || "";
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;

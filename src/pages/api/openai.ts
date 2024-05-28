@@ -1,8 +1,7 @@
 import OpenAI from "openai";
-import { env } from "~/env.mjs";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const openai = new OpenAI({ apiKey: env.OPENAI_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_KEY });
 
 export default async function handler(
   req: NextApiRequest,

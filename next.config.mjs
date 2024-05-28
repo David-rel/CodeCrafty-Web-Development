@@ -2,7 +2,6 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
-await import("./src/env.mjs");
 import withBundleAnalyzer from "@next/bundle-analyzer";
 
 // Initialize the bundle analyzer configuration

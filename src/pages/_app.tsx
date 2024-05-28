@@ -1,19 +1,12 @@
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
-import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Head from "next/head";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import NewsletterPopup from "~/components/NewsletterPopup";
 import ChatPopup from "~/components/ChatPopup";
-import dynamic from "next/dynamic";
 
-const MyApp: AppType<{ session: Session | null }> = ({
-  Component,
-  pageProps: { session, ...pageProps },
-}) => {
+const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
@@ -48,13 +41,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
       .catch((error) => console.error(error));
   }, []);
 
-  const PdfViewerWithNoSSR = dynamic(() => import("../components/PdfViewer"), {
-    ssr: false,
-    loading: () => <p>Loading PDF...</p>,
-  });
-
   return (
-    <SessionProvider session={session}>
+    <>
       <Head>
         {/* Standard HTML Meta Tags */}
         <title>Code Crafty - Web Development & Design Experts</title>
@@ -104,8 +92,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <ChatPopup />
         <Component {...pageProps} />
       </div>
-    </SessionProvider>
+    </>
   );
 };
 
-export default api.withTRPC(MyApp);
+export default MyApp;

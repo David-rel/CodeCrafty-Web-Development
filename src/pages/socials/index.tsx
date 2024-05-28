@@ -20,7 +20,7 @@ export default function SocialMediaPage() {
     {
       href: "https://codecrafty.dev",
       icon: <FaHome />,
-      label: "Get Started on our Website",
+      label: "Our Website",
       bgColor: "bg-gray-300",
     },
     {

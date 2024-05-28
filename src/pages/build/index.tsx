@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FormEvent, useState } from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import {
@@ -10,19 +10,11 @@ import {
   FaGlobeAmericas,
   FaCity,
 } from "react-icons/fa"; // Importing icons
-import { api } from "~/utils/api";
-import { useSession } from "next-auth/react";
 import Head from "next/head";
 
 function Build() {
-  const { data: sessionData } = useSession();
 
 
-  const createSubmission = api.submission.create.useMutation({
-    onSuccess: () => {
-      void refetchNotes();
-    },
-  });
 
   const [pageIdea, setPageIdea] = useState("");
   const [pageCount, setPageCount] = useState("");
@@ -58,66 +50,11 @@ function Build() {
     // ... add other English-speaking countries if needed
   ];
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-        createSubmission.mutate({
-          pageIdea: pageIdea,
-          pageCount: pageCount,
-          revisions: revisions,
-          existingWebsite: existingWebsite,
-          timeline: timeline,
-          domain: domain,
-          extraFeatures: extraFeatures,
-          longTermDeveloper: longTermDeveloper,
-          firstName: firstName,
-          lastName: lastName,
-          emailAddress: emailAddress,
-          phoneNumber: phoneNumber,
-          country: country,
-          stateAndCity: stateAndCity,
-          companyName: companyName,
-          instagramName: instagramName,
-          projectDescription: projectDescription,
-          development: checkboxOne,
-          design: checkboxTwo,
-          ai: checkboxThree,
-          maintenance: checkboxFour,
-          authorId: sessionData?.user.id || "unknown",
-        }, {
-          onSuccess: () => {
-            void refetchNotes();
-          },
-        });
 
-      
 
-      alert("Your form has been submitted");
-
-      setPageIdea("");
-      setPageCount("");
-      setRevisions("");
-      setExistingWebsite("");
-      setTimeline("");
-      setDomain("");
-      setExtraFeatures("");
-      setLongTermDeveloper("");
-      setFirstName("");
-      setLastName("");
-      setEmailAddress("");
-      setPhoneNumber("");
-      setCountry("");
-      setStateAndCity("");
-      setCompanyName("");
-      setInstagramName("");
-      setProjectDescription("");
-      setCheckboxOne(false);
-      setCheckboxTwo(false);
-      setCheckboxThree(false);
-      setCheckboxFour(false);
-
-      window.location.reload();
-    
-  };
+  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <>

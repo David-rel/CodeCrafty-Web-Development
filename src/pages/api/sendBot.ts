@@ -1,7 +1,6 @@
 // pages/api/sendBot.ts
 import type { NextApiRequest, NextApiResponse } from "next";
 import OpenAI from "openai";
-import { env } from "~/env.mjs";
 
 interface BotRequestBody {
   botInfo: {
@@ -11,7 +10,7 @@ interface BotRequestBody {
   message: string;
 }
 
-const openai = new OpenAI({ apiKey: env.OPENAI_KEY });
+const openai = new OpenAI({ apiKey: process.env.OPENAI_KEY });
 
 export default async function handler(
   req: NextApiRequest,

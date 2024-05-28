@@ -257,17 +257,18 @@ export default function Home() {
 
       <section className="bg-rose-100 px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative mx-auto max-w-screen-xl lg:flex lg:items-center">
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 pr-20">
             <h2 className="mb-4 font-merriweather text-3xl font-extrabold">
-              Discover CodeCatalyst AI
+              Coming Soon: Alias The All In One Online Business Platform
             </h2>
             <p className="mb-4 font-merriweather text-lg text-gray-700">
-              Unveiling CodeCatalyst AI - your intelligent digital assistant,
-              designed to streamline your business communications and data
-              analysis. It&apos;s more than just a tool; it&apos;s your business
-              growth partner.
+              Alias is an all-in-one online business platform that combines the
+              power of AI with the flexibility of web development. With Alias,
+              you can create, manage, and grow your online business with ease.
+              Stay tuned for more updates!
+
             </p>
-            <Link href="/services/ai" legacyBehavior>
+            <Link href="/alias" legacyBehavior>
               <a className="inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700">
                 Learn More
               </a>
@@ -276,7 +277,7 @@ export default function Home() {
           <div className="mt-8 lg:mt-0 lg:w-1/2">
             {/* Placeholder for Image */}
             <Image
-              src="/CodeCatalyst.png" // Replace with your image path
+              src="/aliasai.webp" // Replace with your image path
               alt="CodeCatalyst AI"
               width={500}
               height={300}

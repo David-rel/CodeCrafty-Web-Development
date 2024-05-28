@@ -1,4 +1,3 @@
-import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,7 +5,6 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function Navbar() {
-  const { data: sessionData } = useSession();
   const router = useRouter();
   const isMobile = useMediaQuery({ query: "(max-width: 1250px)" });
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
@@ -336,29 +334,28 @@ export default function Navbar() {
               </Link>
               {links}
             </nav>
-            <div className="px-4">
-              <div className="flex items-center gap-4">
-                {sessionData && (
-                  <p className="text-l text-center font-montserrat text-black">
-                    Welcome, <p>{sessionData.user?.name}</p>
-                  </p>
-                )}
-                <button
-                  className="rounded-lg bg-rose-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-rose-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800"
-                  onClick={
-                    sessionData ? () => void signOut() : () => void signIn()
-                  }
-                >
-                  {sessionData ? "Sign out" : "Sign in"}
-                </button>
+            <div className="px-4 text-3xl font-bold">
+              <div className="mt-4">
+                <p className="pb-14 text-rose-900">
+                  email:{" "}
+                  <a
+                    href="mailto:admin@codecrafty.dev"
+                    className="text-rose-600 underline"
+                  >
+                    admin@codecrafty.dev
+                  </a>
+                </p>
+                <p className="text-rose-900">
+                  phone:{" "}
+                  <a
+                    href="tel:+17206122979"
+                    className="text-rose-600 underline"
+                  >
+                    +1 (720) 612-2979
+                  </a>
+                </p>
               </div>
             </div>
-            <a
-              href="tel:+17202994804"
-              className=" text-md hidden rounded-md border border-transparent px-4 py-2 font-merriweather font-medium text-black underline md:flex pt-8"
-            >
-              <p>Contact Us: +1(720)299-4804</p>
-            </a>
           </div>
           <div className="absolute right-0 top-0 mr-4 mt-4 text-3xl font-bold">
             <button onClick={() => setSidebarOpen(false)}>X</button>
@@ -375,24 +372,24 @@ export default function Navbar() {
             </div>
           </div>
 
-         
-
-          {sessionData && <></>}
-          <div className="flex items-center gap-4">
-            {sessionData && (
-              <p className="text-l text-center text-white">
-                <span className="font-merriweather text-black">
-                  Welcome, <p>{sessionData.user?.name}</p>
-                </span>
+          <div className="px-4 text-xl font-bold">
+            <div className="mt-4 flex space-x-8">
+              <p className="text-rose-900">
+                
+                <a
+                  href="mailto:admin@codecrafty.dev"
+                  className="text-rose-600 underline"
+                >
+                  admin@codecrafty.dev
+                </a>
               </p>
-            )}
-
-            <button
-              className="rounded-lg bg-rose-700 px-5 py-2.5 text-center font-montserrat text-sm font-bold text-white hover:bg-rose-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800"
-              onClick={sessionData ? () => void signOut() : () => void signIn()}
-            >
-              {sessionData ? "Sign out" : "Sign in"}
-            </button>
+              <p className="text-rose-900">
+               
+                <a href="tel:+17206122979" className="text-rose-600 underline">
+                  +1 (720) 612-2979
+                </a>
+              </p>
+            </div>
           </div>
         </nav>
       )}
