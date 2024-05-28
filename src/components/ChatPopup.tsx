@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaRobot, FaSpinner } from "react-icons/fa"; // Import FaSpinner for the loading indicator
+import { FaRobot, FaSpinner } from "react-icons/fa";
 
 type Thread = {
   created_at: number;
@@ -29,12 +29,12 @@ type Assistant = {
 
 type AssistantData = {
   assistant: Assistant;
-  Thread: Thread;
+  thread: Thread;
 };
 
 type BotResponseData = {
-  message: string;
-  // include other properties that the response might have
+  status: string;
+  message?: string;
 };
 
 const ChatPopup = () => {
@@ -43,11 +43,15 @@ const ChatPopup = () => {
   const [messages, setMessages] = useState<string[]>([]);
   const [newMessage, setNewMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [runId, setRunId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchAssistant = async () => {
       try {
-        const res = await fetch("/api/openai");
+        const res = await fetch("/api/getOpenAiInfo");
+        if (!res.ok) {
+          throw new Error("Failed to fetch assistant");
+        }
         const data = (await res.json()) as AssistantData;
         setMyAssistant(data);
       } catch (error) {
@@ -60,51 +64,82 @@ const ChatPopup = () => {
     });
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    (async () => {
-      if (newMessage.trim() !== "") {
-        setMessages((prevMessages) => [...prevMessages, `You: ${newMessage}`]);
-        setNewMessage("");
-        setIsLoading(true);
-        if (myAssistant && myAssistant.assistant && myAssistant.Thread) {
-          const payload = {
-            message: newMessage,
-            botInfo: {
-              assistant: myAssistant.assistant,
-              Thread: myAssistant.Thread,
-            },
-          };
+  const fetchRunResult = async (threadId: string, runId: string) => {
+    try {
+      const response = await fetch(
+        `/api/getRunResults?thread_id=${threadId}&run_id=${runId}`
+      );
+      const responseData = (await response.json()) as BotResponseData;
 
-          try {
-            const response = await fetch("/api/sendBot", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(payload),
-            });
-
-            const responseData = (await response.json()) as BotResponseData;
-            if (responseData && responseData.message) {
-              setMessages((prevMessages) => [
-                ...prevMessages,
-                `Bot: ${responseData.message}`,
-              ]);
-            } else {
-              console.error("No response from bot");
-            }
-          } catch (error) {
-            console.error("Error sending message to bot:", error);
-          } finally {
-            setIsLoading(false);
-          }
-        }
+      if (responseData.status === "completed" && responseData.message) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          `Bot: ${responseData.message}`,
+        ]);
+      } else if (responseData.status !== "completed") {
+        setTimeout(() => fetchRunResult(threadId, runId), 2000);
       }
-    })().catch((error) => {
-      // Handle any errors that occur during the fetch
-      console.error("Error occurred during message submission:", error);
-    });
+    } catch (error) {
+      console.error("Error fetching run result:", error);
+    }
+  };
+
+  const handleSendMessage = async () => {
+    if (newMessage.trim() === "") {
+      console.log("No message to send");
+      return;
+    }
+
+    setMessages((prevMessages) => [...prevMessages, `You: ${newMessage}`]);
+    setNewMessage("");
+    setIsLoading(true);
+
+    if (!myAssistant) {
+      console.error("Assistant data is not available");
+      setIsLoading(false);
+      return;
+    }
+
+    const { assistant, thread } = myAssistant;
+    if (!assistant?.id || !thread?.id) {
+      console.error("Invalid assistant or thread data", { assistant, thread });
+      setIsLoading(false);
+      return;
+    }
+
+    const payload = {
+      message: newMessage,
+      botInfo: {
+        assistant,
+        thread,
+      },
+    };
+
+
+    try {
+      const response = await fetch("/api/sendBot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+
+      if (!response.ok) {
+        console.error("API response is not OK:", response.statusText);
+        throw new Error(`API responded with status ${response.status}`);
+      }
+
+      const responseData = (await response.json()) as { runId: string };
+
+      setRunId(responseData.runId);
+      fetchRunResult(thread.id, responseData.runId);
+    } catch (error) {
+      console.error("Error sending message to bot:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const toggleChat = () => {
@@ -147,11 +182,8 @@ const ChatPopup = () => {
             )}
           </div>
 
-          {/* Message Input Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="border-t border-gray-300 p-4"
-          >
+          {/* Message Input */}
+          <div className="border-t border-gray-300 p-4">
             <div className="flex">
               <input
                 type="text"
@@ -160,11 +192,14 @@ const ChatPopup = () => {
                 className="mr-2 flex-grow rounded border p-2"
                 placeholder="Type a message"
               />
-              <button type="submit" className="rounded border-2 p-2 bg-rose-500 hover:bg-rose-700 border-black">
+              <button
+                onClick={handleSendMessage}
+                className="rounded border-2 border-black bg-rose-500 p-2 hover:bg-rose-700"
+              >
                 Send
               </button>
             </div>
-          </form>
+          </div>
         </div>
       ) : (
         <button
