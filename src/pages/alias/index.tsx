@@ -33,9 +33,9 @@ function Alias() {
                     Check It Out
                   </button>
                 </Link>
-                <Link href="https://alias.software/getStarted">
+                <Link href="https://www.kickstarter.com/projects/codecraft/alias?ref=project_build">
                   <button className="hover:bg-teal mt-5 transform rounded border-2 border-black bg-white px-6 py-2 font-bold text-black transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-black hover:text-white">
-                    Get Started
+                    Help Fund Alias
                   </button>
                 </Link>
               </div>
@@ -89,8 +89,16 @@ function Alias() {
               access to it in the near future.
             </p>
             <Link href="https://alias.software" legacyBehavior>
-              <a className="rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700">
-                Go To Site
+              <a className="mb-4 mr-4 rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700">
+                Check It Out
+              </a>
+            </Link>
+            <Link
+              href="https://www.kickstarter.com/projects/codecraft/alias?ref=project_build"
+              legacyBehavior
+            >
+              <a className="rounded bg-white px-6 py-3 font-bold text-black hover:bg-black hover:text-white">
+                Help Fund Alias
               </a>
             </Link>
           </div>
