@@ -38,7 +38,7 @@ function Ai() {
 
           <div className="relative mx-auto flex max-w-3xl flex-1 lg:mx-0 lg:h-auto lg:w-1/2 lg:max-w-none">
             <Image
-              src="/about_person.jpeg"
+              src="/AI2.jpeg"
               alt="Hero image"
               layout="fill"
               objectFit="cover"

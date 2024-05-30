@@ -34,7 +34,7 @@ function Analytics() {
 
           <div className="relative mx-auto flex max-w-3xl flex-1 lg:mx-0 lg:h-auto lg:w-1/2 lg:max-w-none">
             <Image
-              src="/about_person.jpeg"
+              src="/EC1.avif"
               alt="Hero image"
               layout="fill"
               objectFit="cover"
@@ -82,7 +82,7 @@ function Analytics() {
           </div>
           <div className="flex w-full justify-center pb-6 lg:w-2/3">
             <Image
-              src="/about_person.jpeg"
+              src="/3PxxB-G.jpg"
               alt="Web Maintenance Services"
               width={600}
               height={500}
