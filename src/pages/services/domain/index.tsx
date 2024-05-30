@@ -12,12 +12,11 @@ function WebApps() {
         <div className="mx-auto flex w-full flex-col gap-10 px-5 sm:px-10 md:px-12 lg:max-w-7xl lg:flex-row lg:gap-12 lg:px-5">
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-7 lg:text-left xl:py-8">
             <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-5xl xl:text-6xl">
-              Deploy your site with our
+              Deploy your site with ease, using our
               <span className="via-gold bg-gradient-to-br from-rose-500 to-rose-700 bg-clip-text text-transparent">
                 {" "}
                 Domains and Hosting{" "}
               </span>
-              with ease
             </h1>
             <p className="mt-8 text-gray-700">
               It can be impossible to find good hosting and domain services. We

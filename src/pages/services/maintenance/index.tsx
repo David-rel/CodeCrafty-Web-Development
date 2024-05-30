@@ -18,7 +18,7 @@ function WebApps() {
                 {" "}
                 Web Maintenance.{" "}
               </span>
-              We can help.
+              We'll be there
             </h1>
             <p className="mt-8 text-gray-700">
               Our team can help you maintain your site and keep it up to date.
@@ -57,7 +57,7 @@ function WebApps() {
         <div className="w-full pb-6 text-center">
           <h2 className="text-xl text-gray-500">
             {" "}
-            It's more than just building a site and being done. We know that.
+            {/* It's more than just building a site and being done. We know that. */}
           </h2>
           <h1 className="mb-8 text-5xl font-bold md:text-6xl xl:text-7xl">
             Web Maintenance Specialists

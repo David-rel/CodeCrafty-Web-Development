@@ -43,7 +43,7 @@ function About() {
             </Link>
           </div>
 
-          <div className="w-full lg:w-6/12">
+          <div className="w-full pb-16 lg:w-6/12">
             <div className="relative hidden w-full lg:block">
               <Image
                 src="/test2.png"
@@ -195,7 +195,7 @@ function About() {
           <hr className="absolute top-2/4 z-10 w-full bg-gray-200" />
         </div>
         <div
-          className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8"
+          className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-8 "
           data-aos="fade"
         >
           <div>
@@ -285,7 +285,7 @@ function About() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-16 md:gap-14 lg:mt-20 lg:flex-row">
+        <div className="mt-16 flex flex-col justify-between gap-16 pt-32 md:gap-14 lg:mt-20 lg:flex-row">
           <div className="w-full lg:w-6/12">
             <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
               Our Mission
@@ -489,7 +489,7 @@ function About() {
         </div>
 
         <div
-          className="mt-16 flex flex-col justify-between gap-12 sm:mt-12 lg:mt-16 lg:flex-row lg:gap-8"
+          className="mt-16 flex flex-col justify-between gap-12 px-8 sm:mt-12 lg:mt-16 lg:flex-row lg:gap-8"
           data-aos="fade-up"
         >
           <div className="w-full lg:w-6/12 xl:w-5/12">
@@ -558,7 +558,7 @@ function About() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );
