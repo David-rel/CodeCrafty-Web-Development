@@ -64,7 +64,7 @@ export default function Home() {
     <div className="">
       <Navbar />
 
-      <section className="relative bg-cover bg-center bg-no-repeat">
+      <section className="relative bg-cover bg-center h-[80vh] bg-no-repeat">
         <Image
           src="/banner.jpg"
           layout="fill"
@@ -316,7 +316,7 @@ export default function Home() {
           <h2 className="mb-4 text-3xl font-extrabold sm:text-4xl">
             Have a question?
           </h2>
-          <Link href="/about/contact" legacyBehavior>
+          <Link href="/contact" legacyBehavior>
             <a className="text-md inline-block rounded bg-rose-600 px-6 py-3 font-bold text-white hover:bg-rose-700 sm:text-lg">
               Contact Us
             </a>

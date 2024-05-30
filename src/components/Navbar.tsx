@@ -169,31 +169,56 @@ export default function Navbar() {
   ${
     isMobile
       ? "w-96 border-none bg-white pl-4 text-2xl font-semibold"
-      : "absolute left-0 text-xl"
+      : "absolute left-0 min-h-full w-96 text-xl"
   }`}
           >
-            <Link href="/services/development" legacyBehavior>
+            <Link href="/services/website" legacyBehavior>
               <a
                 className={`p-2 ${
-                  isActive("/services/development")
+                  isActive("/services/website")
                     ? "text-rose-700 underline"
                     : "hover:text-rose-700 hover:underline"
                 }`}
                 onClick={() => setSidebarOpen(false)}
               >
-                Web Development
+                Website Development
               </a>
             </Link>
-            <Link href="/services/design" legacyBehavior>
+            <Link href="/services/webApp" legacyBehavior>
               <a
                 className={`p-2 ${
-                  isActive("/services/design")
+                  isActive("/services/webApp")
                     ? "text-rose-700 underline"
                     : "hover:text-rose-700 hover:underline"
                 }`}
                 onClick={() => setSidebarOpen(false)}
               >
-                Web Design
+                Web Application Development
+              </a>
+            </Link>
+            <Link href="/services/domain" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/domain")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Domain and Hosting
+              </a>
+            </Link>
+
+            <Link href="/services/maintenance" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/maintenance")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Web Maintenance
               </a>
             </Link>
             <Link href="/services/ai" legacyBehavior>
@@ -205,19 +230,43 @@ export default function Navbar() {
                 }`}
                 onClick={() => setSidebarOpen(false)}
               >
-                AI Web Integration
+                AI Integration
               </a>
             </Link>
-            <Link href="/services/maintenance" legacyBehavior>
+            <Link href="/services/analytics" legacyBehavior>
               <a
                 className={`p-2 ${
-                  isActive("/services/maintenance")
+                  isActive("/services/analytics")
                     ? "text-rose-700 underline"
                     : "hover:text-rose-700 hover:underline"
                 }`}
                 onClick={() => setSidebarOpen(false)}
               >
-                Web Maintenance
+                Web Analytics
+              </a>
+            </Link>
+            <Link href="/services/blog" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/blog")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                Blog Integration
+              </a>
+            </Link>
+            <Link href="/services/ecommerce" legacyBehavior>
+              <a
+                className={`p-2 ${
+                  isActive("/services/ecommerce")
+                    ? "text-rose-700 underline"
+                    : "hover:text-rose-700 hover:underline"
+                }`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                E-commerce Integration
               </a>
             </Link>
           </div>
