@@ -42,7 +42,7 @@ function Website() {
 
           <div className="relative mx-auto flex max-w-3xl flex-1 lg:mx-0 lg:h-auto lg:w-1/2 lg:max-w-none">
             <Image
-              src="/aliasLogo.png"
+              src="/webdev.jpg"
               alt="Hero image"
               layout="fill"
               objectFit="cover"
@@ -199,7 +199,7 @@ function Website() {
                 <div className="mb-4">
                   <Image
                     className="rounded-md object-contain"
-                    src="/about_person.jpeg" // replace with your image path
+                    src="/webdev2.jpg" // replace with your image path
                     alt="COE Image"
                     width={1000}
                     height={500}
