@@ -530,7 +530,7 @@ function About() {
           <div className="w-full items-center lg:flex lg:w-1/2 ">
             <div className="relative hidden w-full lg:block">
               <Image
-                src="/us.jpeg"
+                src="/team3.jpeg"
                 className="rounded-lg"
                 width={1000}
                 height={500}
@@ -539,7 +539,7 @@ function About() {
             </div>
             <div className="relative hidden h-3/4 w-full rounded sm:block lg:hidden">
               <Image
-                src="/us.jpeg"
+                src="/team3.jpeg"
                 className="rounded-lg"
                 width={1000}
                 height={500}
@@ -548,7 +548,7 @@ function About() {
             </div>
             <div className="relative block w-full rounded sm:hidden">
               <Image
-                src="/us.jpeg"
+                src="/team3.jpeg"
                 className="rounded-lg"
                 width={1000}
                 height={500}

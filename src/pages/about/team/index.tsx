@@ -95,7 +95,7 @@ function Team() {
         </div>
         <div className="grid grid-cols-1 gap-4 pt-20 md:grid-cols-2">
           <TeamMember
-            imageSrc="/David-3.png"
+            imageSrc="/people/David-2.jpg"
             name="David Fales"
             role="CEO"
             description="David, Founder and CEO, is the back end developer within Code Crafty, as well as the brains behind it all. He makes sure the team works efficiently and that goals come to fruition."
@@ -103,7 +103,7 @@ function Team() {
             insta="https://www.instagram.com/_david_rel/"
           />
           <TeamMember
-            imageSrc="/Diegoo.jpeg"
+            imageSrc="/people/Diego.jpg"
             name="Diego Gutierrez-Raghunath"
             role="Executive of Marketing and Sales"
             description="Diego, the Executive of Marketing and Sales, is responsible for company social media, client communication and relations, and finding clients."
@@ -111,12 +111,28 @@ function Team() {
             insta="https://www.instagram.com/diego_rgr0/"
           />
           <TeamMember
-            imageSrc="/Grant.jpg"
+            imageSrc="/people/Grant.jpeg"
             name="Grant Rechtin"
             role="Software Developer"
             description="Grant, the Front End Software Developer, is responsible for making sure every website created sets the bar high for the next. He focuses on ensuring all sites are as beautiful as can be."
             email="gsrechtin@codecrafty.dev"
             insta="none"
+          />
+          <TeamMember
+            imageSrc="/people/sam.jpeg"
+            name="Sam Fargo"
+            role="Design Lead"
+            description="Sam is our Design Lead, specializing in social media and website design. She brings creativity and innovation to every project, ensuring visually stunning and engaging designs."
+            email="samfargo@codecrafty.dev"
+            insta="https://www.instagram.com/samfargo.design/"
+          />
+          <TeamMember
+            imageSrc="/people/josiah.jpeg"
+            name="Josiah Hamm"
+            role="Front End Developer"
+            description="Josiah is a talented Front End Developer, responsible for creating beautiful and interactive user interfaces. He brings creativity and attention to detail to every project."
+            email="josiah@codecrafty.dev"
+            insta="https://www.instagram.com/josiah_hamm/"
           />
         </div>
       </div>

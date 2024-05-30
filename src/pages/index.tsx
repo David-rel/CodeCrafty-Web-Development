@@ -208,7 +208,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-screen-md text-center">
           <Image
             className="mx-auto rounded-full object-cover p-4 shadow-lg"
-            src="/team.jpeg"
+            src="/team4.jpeg"
             alt="Meet the Team"
             layout="responsive"
             width={300}
