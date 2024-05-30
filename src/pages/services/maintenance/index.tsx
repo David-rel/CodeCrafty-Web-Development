@@ -41,7 +41,7 @@ function WebApps() {
 
           <div className="relative mx-auto flex max-w-3xl flex-1 lg:mx-0 lg:h-auto lg:w-1/2 lg:max-w-none">
             <Image
-              src="/about_person.jpeg"
+              src="/P4.jpg"
               alt="Hero image"
               layout="fill"
               objectFit="cover"
@@ -93,7 +93,7 @@ function WebApps() {
           </div>
           <div className="flex w-full justify-center pb-6 lg:w-2/3">
             <Image
-              src="/about_person.jpeg"
+              src="/P5.webp"
               alt="Web Maintenance Services"
               width={600}
               height={500}
