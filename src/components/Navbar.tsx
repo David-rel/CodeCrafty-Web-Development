@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import NavbarDropdown, { Props as NavbarDropdownProps } from "./NavbarDropdown";
 
 export default function Navbar() {
   const router = useRouter();
@@ -43,26 +44,72 @@ export default function Navbar() {
   useEffect(() => {
     setLocalStorageSidebarState(sidebarOpen);
   }, [sidebarOpen]);
-  const isActive = (pathname: string, paths: string[] = [], exact = true) => {
+  const isActive = (
+    pathname: string,
+    paths: NavbarDropdownProps = [],
+    exact = true
+  ) => {
     if (exact) {
       return router.pathname === pathname;
     } else {
       return (
-        router.pathname.startsWith(pathname) || paths.includes(router.pathname)
+        router.pathname.startsWith(pathname) ||
+        paths.map((path) => path.path).includes(router.pathname)
       );
     }
   };
   const aboutPaths = [
-    "/about/aboutUs",
-    "/about/team",
-    "/socials",
-    "/about/portfolio",
+    {
+      name: "About Us",
+      path: "/about/aboutUs",
+    },
+    {
+      name: "The Team",
+      path: "/about/team",
+    },
+    {
+      name: "Our Socials",
+      path: "/socials",
+    },
+    {
+      name: "Our Portfolio",
+      path: "/about/portfolio",
+    },
   ];
-  const productPaths = [
-    "/products/development",
-    "/products/design",
-    "/products/ai",
-    "/products/maintenance",
+
+  const servicePaths = [
+    {
+      name: "Website Development",
+      path: "/services/website",
+    },
+    {
+      name: "Web Application Development",
+      path: "/services/webApp",
+    },
+    {
+      name: "Domain and Hosting",
+      path: "/services/domain",
+    },
+    {
+      name: "Web Maintenance",
+      path: "/services/maintenance",
+    },
+    {
+      name: "AI Integration",
+      path: "/services/ai",
+    },
+    {
+      name: "Web Analytics",
+      path: "/services/analytics",
+    },
+    {
+      name: "Blog Integration",
+      path: "/services/blog",
+    },
+    {
+      name: "E-commerce Integration",
+      path: "/services/ecommerce",
+    },
   ];
 
   const links = (
@@ -93,55 +140,7 @@ export default function Navbar() {
       : "absolute left-0 text-xl"
   }`}
           >
-            <Link href="/about/aboutUs" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/about/aboutUs")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                About Us
-              </a>
-            </Link>
-
-            <Link href="/about/team" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/about/team")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                The Team
-              </a>
-            </Link>
-            <Link href="/socials" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/socials")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Our Socials
-              </a>
-            </Link>
-            <Link href="/about/portfolio" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/about/portfolio")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Our Portfolio
-              </a>
-            </Link>
+            <NavbarDropdown props={aboutPaths} />
           </div>
         )}
       </div>
@@ -156,7 +155,7 @@ export default function Navbar() {
           className={`cursor-pointer text-2xl font-bold  ${
             sidebarOpen ? "text-3xl" : "text-xl"
           } ${
-            isActive("/services", productPaths, false)
+            isActive("/services", servicePaths, false)
               ? "text-rose-700 underline"
               : "text-rose-500 hover:underline group-hover:text-rose-700"
           }`}
@@ -172,103 +171,7 @@ export default function Navbar() {
       : "absolute left-0 min-h-full w-96 text-xl"
   }`}
           >
-            <Link href="/services/website" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/website")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Website Development
-              </a>
-            </Link>
-            <Link href="/services/webApp" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/webApp")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Web Application Development
-              </a>
-            </Link>
-            <Link href="/services/domain" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/domain")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Domain and Hosting
-              </a>
-            </Link>
-
-            <Link href="/services/maintenance" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/maintenance")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Web Maintenance
-              </a>
-            </Link>
-            <Link href="/services/ai" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/ai")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                AI Integration
-              </a>
-            </Link>
-            <Link href="/services/analytics" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/analytics")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Web Analytics
-              </a>
-            </Link>
-            <Link href="/services/blog" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/blog")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                Blog Integration
-              </a>
-            </Link>
-            <Link href="/services/ecommerce" legacyBehavior>
-              <a
-                className={`p-2 ${
-                  isActive("/services/ecommerce")
-                    ? "text-rose-700 underline"
-                    : "hover:text-rose-700 hover:underline"
-                }`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                E-commerce Integration
-              </a>
-            </Link>
+            <NavbarDropdown props={servicePaths} />
           </div>
         )}
       </div>
@@ -440,7 +343,6 @@ export default function Navbar() {
           <div className="px-4 text-xl font-bold">
             <div className="mt-4 flex space-x-8">
               <p className="text-rose-900">
-                
                 <a
                   href="mailto:admin@codecrafty.dev"
                   className="text-rose-600 underline"
@@ -449,7 +351,6 @@ export default function Navbar() {
                 </a>
               </p>
               <p className="text-rose-900">
-               
                 <a href="tel:+17206122979" className="text-rose-600 underline">
                   +1 (720) 612-2979
                 </a>
