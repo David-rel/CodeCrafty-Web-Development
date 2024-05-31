@@ -130,9 +130,9 @@ function Team() {
             imageSrc="/people/josiah.jpeg"
             name="Josiah Hamm"
             role="Front End Developer"
-            description="Josiah is a talented Front End Developer, responsible for creating beautiful and interactive user interfaces. He brings creativity and attention to detail to every project."
+            description="With a background in computer graphics alongside standard web design technologies, Josiah aims to make the projects he works on pop, striking a balance between elegant aesthetics and practical utility."
             email="josiah@codecrafty.dev"
-            insta="https://www.instagram.com/josiah_hamm/"
+            insta="https://www.instagram.com/baked_potato_lord/"
           />
         </div>
       </div>
