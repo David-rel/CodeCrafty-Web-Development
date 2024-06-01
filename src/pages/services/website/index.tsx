@@ -12,19 +12,18 @@ function Website() {
         <div className="mx-auto flex w-full flex-col gap-10 px-5 sm:px-10 md:px-12 lg:max-w-7xl lg:flex-row lg:gap-12 lg:px-5">
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-7 lg:text-left xl:py-8">
             <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-5xl xl:text-6xl">
-              Get the best
+              Build a
               <span className="via-gold bg-gradient-to-br from-rose-500 to-rose-700 bg-clip-text text-transparent">
                 {" "}
                 Website{" "}
               </span>
-              that beats the competition
+              and beat the competition
             </h1>
             <p className="mt-8 text-gray-700">
-              We build websites that are fast, secure, and easy to use. We
-              provide fully customizable and scalable coded websites. Our
+              We build websites that are fast, secure, and easy to use. Fully 
+              customizable and scalable, our
               websites are built to be responsive, accessible, and SEO friendly.
-              We can help you build a website that will help you stand out from
-              the competition.
+              Our approach will help your website stand out.
             </p>
             <div className="flex space-x-4">
               <Link href="/build">

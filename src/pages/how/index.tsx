@@ -17,28 +17,36 @@ const steps: Step[] = [
     id: 1,
     title: "Step 1: Ideation and Creation",
     description:
-      "This is the foundational phase. Here, we embark on the journey of transforming your abstract idea into a tangible concept. It all begins with envisioning the core purpose and potential of your website. Share those initial thoughts.",
+      `In the foundational phase, we transform your abstract idea into a tangible concept.
+       Begining by envisioning the core purpose and potential of your website, we adapt your spark 
+       of inspiration into a realistic design.`,
     imgUrl: "/step1.jpeg",
   },
   {
     id: 2,
     title: "Step 2: Design/Development",
     description:
-      "Transitioning from ideation, this step focuses on crafting the aesthetics and structure. Using your vision as our guide, we'll create a design that resonates with your objectives. The development then ensures that the design turns into a user-friendly experience.",
+      `Design and development focuses on crafting the aesthetics and structure of your website.
+       Using your vision as our guide, we create a design that resonates with your objectives, and
+       ensures a user-friendly experience.`,
     imgUrl: "/step2.png",
   },
   {
     id: 3,
     title: "Step 3: AI Integration",
     description:
-      "In this age of technology, incorporating AI can elevate your website's capabilities. We seamlessly integrate advanced AI solutions to ensure your site is not just functional, but also ahead of the curve, offering unparalleled user experiences.",
+      `Incorporating AI can elevate your website's capabilities.
+       We seamlessly integrate advanced AI solutions, Ensuring your site is ahead of the curve,
+       and offers unparalleled user experience.`,
     imgUrl: "/step3.png",
   },
   {
     id: 4,
     title: "Step 4: Deployment and Maintenance",
     description:
-      "The culmination of our collective efforts sees your website go live. But our journey doesn't end there. We'll be with you, ensuring smooth sailing with regular checks and maintenance, making sure your site remains optimal.",
+      `Your website going live is the culmination of our collective effort.
+      Even so, we ensure that everything runs smoothly. Preforming regular checks and maintenance,
+       making sure your site remains in optimal condition.`,
     imgUrl: "/step4.png",
   },
 
@@ -66,8 +74,8 @@ export default function Index() {
               </div>
               <div className="md:mt-3">
                 <p className="font-merriweather text-sm leading-normal  text-gray-600 lg:text-base">
-                  Learn how CodeCrafty Designs and Developes your website based
-                  on user use requests.
+                  CodeCrafty Designs and Develops around the user experience.<br/>
+                  We offer:
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-y-6">
@@ -140,11 +148,10 @@ export default function Index() {
                     you&apos;re fueled by an idea and seek a web development partner
                     to bring it to life, that&apos;s where we shine. Simply submit
                     your requirements, and in no time, our enthusiastic team
-                    will be in touch, eager to kickstart your digital dream. Our
+                    will be in touch, eager to kickstart your project. Our
                     collaboration ensures your vision is articulated perfectly,
                     from design to deployment. We manage both backend and
-                    frontend, ensuring that the only feedback loop required is
-                    between you and us.
+                    frontend, ensuring clear communication between you and us.
                   </p>
                   <p className="pt-2 font-merriweather text-sm  leading-normal text-gray-800 lg:text-base">
                     Enhance your digital presence with our optional AI
@@ -183,8 +190,8 @@ export default function Index() {
                 <div className="mt-8">
                   <p className="text-center font-merriweather text-xs leading-normal text-white md:text-base lg:text-left">
                     Do you think CodeCrafty is what you are looking for and you
-                    are ready to start building with this company. contact us or
-                    start the process of building your best dream website.
+                    are ready to start building? Contact us to
+                    start building your best website today!
                   </p>
                 </div>
                 <div className="mt-8 flex flex-row items-center justify-start space-x-4">
@@ -209,20 +216,21 @@ export default function Index() {
       </div>
       <div>
         <h2 className="pb-16 text-4xl font-bold  leading-7 text-gray-800 lg:text-6xl text-center">
-          The Super Simple Process
+          Our Process
         </h2>
       </div>
       <div className="flex flex-wrap items-center justify-center">
         {steps.map(({ id, title, description, imgUrl }) => (
           <div key={id} className="w-3/4 p-4 lg:w-1/4" data-aos="fade-up">
             <div className="flex flex-col items-center text-center font-merriweather">
-              <div className="relative mb-4 h-64 w-full">
+              <div className="relative mb-4 h-64 w-full overflow-hidden ">
                 <Image
-                  layout="fill"
-                  objectFit="cover"
+                  width={1000}
+                  height={1000}
                   src={imgUrl}
                   alt={title}
-                  className="object-cover"
+                  className="block max-w-full max-h-full"
+                  //object-cover  absolute inset-0  <-- for maintaining aspect ratio
                 />
               </div>
 
