@@ -105,7 +105,7 @@ export default function Home() {
         >
           <h2 className="font-montserrat text-4xl font-extrabold">
             <TypingText
-              text="Design and develop your modern-day website and AI Integration with our team with at Affordable
+              text="Design and develope your modern-day website with our team with AI Integration at Affordable
             Prices"
             />
           </h2>
