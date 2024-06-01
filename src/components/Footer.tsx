@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import Newsletter from "~/components/Newsletter";
 
 function Index() {
   return (
@@ -118,7 +117,6 @@ function Index() {
             </div> */}
            
           </div>
-          <Newsletter />
         </div>
       </div>
     </div>

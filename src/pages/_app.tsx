@@ -3,22 +3,11 @@ import "~/styles/globals.css";
 import Head from "next/head";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import NewsletterPopup from "~/components/NewsletterPopup";
 import ChatPopup from "~/components/ChatPopup";
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsModalVisible(true);
-    }, 30000);
-    return () => clearTimeout(timer);
-  }, []);
 
-  const closeModal = () => {
-    setIsModalVisible(false);
-  };
   useEffect(() => {
     import("aos")
       .then((Aos) => {
@@ -85,9 +74,7 @@ const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
 
         {/* Additional tags if needed */}
       </Head>
-      {isModalVisible && (
-        <NewsletterPopup isVisible={isModalVisible} onClose={closeModal} />
-      )}
+      
       <div>
         <ChatPopup />
         <Component {...pageProps} />
