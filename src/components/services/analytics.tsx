@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Footer from "~/components/Footer";
-import Navbar from "~/components/Navbar";
 import TypingText from "~/components/TypingText";
 
 function Analytics() {
   return (
     <div>
-      <Navbar />
       <section className="bg-navy relative py-32 lg:py-36">
         <div className="mx-auto flex w-full flex-col gap-10 px-5 sm:px-10 md:px-12 lg:max-w-7xl lg:flex-row lg:gap-12 lg:px-5">
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-7 lg:text-left xl:py-8">
@@ -112,7 +109,6 @@ function Analytics() {
         </div>
       </section>
       ;
-      <Footer />
     </div>
   );
 }
