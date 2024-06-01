@@ -53,12 +53,25 @@ const steps: Step[] = [
   // add more steps as needed...
 ];
 
+const ServiceText: React.FC<{ service: string, link: string }> = ({ service, link }) => {
+  return (
+    <div>
+      <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
+        {" "}
+        <Link href={link}>
+          <span className="font-semibold md:font-medium">-{service}</span>
+        </Link>
+      </p>
+    </div>
+  );
+};
+
 export default function Index() {
   return (
     <>
-    <Head>
-      <title>Code Crafty - How We Do it</title>
-    </Head>
+      <Head>
+        <title>Code Crafty - How We Do it</title>
+      </Head>
       <Navbar />
       <div className="font-montserrat">
         <div className="pb-20 pt-8">
@@ -79,43 +92,10 @@ export default function Index() {
                 </p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-y-6">
-                <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
-                    {" "}
-                    <Link href="/services/design">
-                      <span className="font-semibold md:font-medium">
-                        -Web Design
-                      </span>
-                    </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
-                    <Link href="/services/development">
-                      <span className="font-semibold md:font-medium">
-                        -Web Development
-                      </span>
-                    </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
-                    <Link href="/services/ai">
-                      <span className="font-semibold md:font-medium">
-                        -AI Integration
-                      </span>
-                    </Link>
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm font-medium leading-none text-gray-800  underline lg:text-base">
-                    <Link href="/services/maintenance">
-                      <span className="font-semibold md:font-medium">
-                        -Web Maintenance
-                      </span>
-                    </Link>
-                  </p>
-                </div>
+                <ServiceText service="Web Design" link="/services/website" />
+                <ServiceText service="Web Development" link="/services/webApp" />
+                <ServiceText service="AI Integration" link="/services/ai" />
+                <ServiceText service="Web Maintenance" link="/services/maintenance" />
               </div>
             </div>
             <div className="mt-10 flex items-center justify-center md:mt-0 lg:w-2/5">
@@ -137,11 +117,10 @@ export default function Index() {
                   className="text-2xl font-bold leading-7 text-gray-800  lg:text-3xl"
                   data-aos="fade-up"
                 >
-                  The details
+                  The Details
                 </h2>
               </div>
               <div className="mt-8" data-aos="fade-up">
-               
                 <div className="mt-8" data-aos="fade-up">
                   <p className="font-merriweather text-sm leading-normal  text-gray-800 lg:text-base">
                     Every groundbreaking website begins with a vision. When
@@ -165,7 +144,7 @@ export default function Index() {
                   </p>
                 </div>
               </div>
-              <div className="mt-8 w-full">
+              {/* <div className="mt-8 w-full">
                 <div className="w-full">
                   <Image
                     data-aos="fade-up"
@@ -175,7 +154,7 @@ export default function Index() {
                     height={500}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
             <div
               className="mt-10 flex h-full w-full items-center justify-center bg-gradient-to-l from-rose-600 to-rose-400 px-4 md:px-8 lg:px-16 xl:mt-0 xl:w-2/5"
