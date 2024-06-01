@@ -88,14 +88,18 @@ function IndexPage() {
                     <div className="relative h-56 w-full rounded-lg">
                       {" "}
                       {/* Container with a set height */}
-<Image
-  src="/blogs/whyAI1.png"
-  alt="Descriptive Text"
-  width={500}
-  height={500}
-  style={{ objectFit: "cover", width: "100%", height: "100%" }}
-   // Cover will ensure the image covers the whole area
-/>
+                      <Image
+                        src="/blogs/whyAI1.png"
+                        alt="Descriptive Text"
+                        width={500}
+                        height={500}
+                        style={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        // Cover will ensure the image covers the whole area
+                      />
                     </div>
                     <div className="flex w-full justify-between bg-rose-700 px-4 py-2">
                       <p className="text-sm font-semibold tracking-wide text-white">
