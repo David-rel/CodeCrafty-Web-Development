@@ -16,7 +16,7 @@ function Analytics() {
               Sell Anything, Anywhere
             </h1>
             <p className="mt-8 text-gray-700">
-              Ecommerce is often one of the most complex online business. But not with us
+              We make Ecommerce easy, so you can focus on growing your business.
             </p>
             <div className="flex space-x-4">
               <Link href="/start">
@@ -60,16 +60,16 @@ function Analytics() {
           <div className="w-full p-4 pr-12 font-merriweather lg:w-2/3">
             <p className="mb-4 text-xl">
               The most important aspect of an online store are reliability, 
-              ease of use, and display and without all three it might not even matter how 
+              ease of use, and display. Without all three it might not matter how 
               good your products are.
             </p>
             <p className="mb-4 text-lg text-gray-700">
               At Code Crafty, through a combination of personal expertise and customer feedback 
-              we design beautiful sales platform. 
+              we design beautiful sales platforms. 
             </p>
             <p className="mb-4 text-lg text-gray-700">
-              Despite being relatively knew in the web developement space, our team's expertise 
-              guarentees you'll never have to worry about anything other than what you want to sell.
+              Despite being relatively new in the web developement space, our team's expertise 
+              ensures you can focus on only what you want to sell.
             </p>
 
             <div className="flex justify-center space-x-4">
