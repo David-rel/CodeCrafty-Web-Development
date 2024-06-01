@@ -39,7 +39,7 @@ export default function IndexPage() {
     }
   }, [isOnline]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: { preventDefault: () => void; target: HTMLFormElement | undefined; }) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formObject = Object.fromEntries(formData.entries());
@@ -60,7 +60,7 @@ export default function IndexPage() {
         alert(`Error submitting form: ${errorData.error}`);
       }
     } catch (error) {
-      alert(`Error submitting form: ${error.message}`);
+      alert(`Error submitting form: ${(error as Error).message}`);
     }
   };
 
