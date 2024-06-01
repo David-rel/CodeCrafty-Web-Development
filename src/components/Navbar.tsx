@@ -205,7 +205,7 @@ export default function Navbar() {
               : "text-rose-500 hover:text-rose-700 hover:underline"
           }`}
         >
-          How we do it
+          Our Process
         </a>
       </Link>
       <Link href="/contact" legacyBehavior>
