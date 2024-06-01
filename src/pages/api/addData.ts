@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 const sql = require("mssql");
+import sgMail from "@sendgrid/mail";
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 const sqlConfig = {
   user: process.env.NEXT_PUBLIC_SQL_USER,
@@ -84,6 +86,60 @@ export default async function handler(
         @Revisions, @ExistingWebsite, @Timeline, @Domain, @ExtraFeatures, @LongTermDeveloper
       )
     `);
+
+    // Send an email using SendGrid
+    const emailContent = {
+      to: ["davidfales@codecrafty.dev", "diego_g@codecrafty.dev"], // Add multiple email addresses here
+      from: "admin@codecrafty.dev", // Replace with your verified sender email
+      subject: `Code Crafty: New Build Request Submission from ${companyName}`,
+      text: `You have received a new form submission:
+      
+      First Name: ${firstName}
+      Last Name: ${lastName}
+      Email Address: ${emailAddress}
+      Phone Number: ${phoneNumber}
+      Country: ${country}
+      State and City: ${stateAndCity}
+      Company Name: ${companyName}
+      Instagram Name: ${instagramName}
+      Project Description: ${projectDescription}
+      Checkbox One: ${checkboxOne}
+      Checkbox Two: ${checkboxTwo}
+      Checkbox Three: ${checkboxThree}
+      Checkbox Four: ${checkboxFour}
+      Page Idea: ${pageIdea}
+      Page Count: ${pageCount}
+      Revisions: ${revisions}
+      Existing Website: ${existingWebsite}
+      Timeline: ${timeline}
+      Domain: ${domain}
+      Extra Features: ${extraFeatures}
+      Long Term Developer: ${longTermDeveloper}`,
+      html: `<p>You have received a new form submission:</p>
+             <p><strong>First Name:</strong> ${firstName}</p>
+             <p><strong>Last Name:</strong> ${lastName}</p>
+             <p><strong>Email Address:</strong> ${emailAddress}</p>
+             <p><strong>Phone Number:</strong> ${phoneNumber}</p>
+             <p><strong>Country:</strong> ${country}</p>
+             <p><strong>State and City:</strong> ${stateAndCity}</p>
+             <p><strong>Company Name:</strong> ${companyName}</p>
+             <p><strong>Instagram Name:</strong> ${instagramName}</p>
+             <p><strong>Project Description:</strong> ${projectDescription}</p>
+             <p><strong>Checkbox One:</strong> ${checkboxOne}</p>
+             <p><strong>Checkbox Two:</strong> ${checkboxTwo}</p>
+             <p><strong>Checkbox Three:</strong> ${checkboxThree}</p>
+             <p><strong>Checkbox Four:</strong> ${checkboxFour}</p>
+             <p><strong>Page Idea:</strong> ${pageIdea}</p>
+             <p><strong>Page Count:</strong> ${pageCount}</p>
+             <p><strong>Revisions:</strong> ${revisions}</p>
+             <p><strong>Existing Website:</strong> ${existingWebsite}</p>
+             <p><strong>Timeline:</strong> ${timeline}</p>
+             <p><strong>Domain:</strong> ${domain}</p>
+             <p><strong>Extra Features:</strong> ${extraFeatures}</p>
+             <p><strong>Long Term Developer:</strong> ${longTermDeveloper}</p>`,
+    };
+
+    await sgMail.send(emailContent);
 
     return res.status(200).json({ message: "Form submitted successfully" });
   } catch (error) {
