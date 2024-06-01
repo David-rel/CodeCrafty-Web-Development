@@ -341,7 +341,7 @@ export default function Navbar() {
           </div>
 
           <div className="px-4 text-xl font-bold">
-            <div className=" flex flex-col space-x-8 items-center">
+            <div className="mt-4 flex space-x-8">
               <p className="text-rose-900">
                 <a
                   href="mailto:admin@codecrafty.dev"
