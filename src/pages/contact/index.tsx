@@ -39,6 +39,31 @@ export default function IndexPage() {
     }
   }, [isOnline]);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const formObject = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/addContact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formObject),
+      });
+
+      if (response.ok) {
+        alert("Form submitted successfully");
+      } else {
+        const errorData = await response.json();
+        alert(`Error submitting form: ${errorData.error}`);
+      }
+    } catch (error) {
+      alert(`Error submitting form: ${error.message}`);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -68,7 +93,7 @@ export default function IndexPage() {
                 <p className="pb-8 text-xl font-normal leading-relaxed text-white lg:pr-4">
                   Got a question about us? Are you interested in partnering with
                   us? Have some suggestions or just want to say Hi? Just contact
-                  us. We are here to asset you.
+                  us. We are here to assist you.
                 </p>
                 <div className="flex items-center pb-4">
                   <div>
@@ -127,8 +152,7 @@ export default function IndexPage() {
               <form
                 id="contact"
                 className="rounded-br rounded-tr bg-white px-8 py-4"
-                action="https://formspree.io/f/mbjvqylo"
-                method="POST"
+                onSubmit={handleSubmit}
               >
                 <h1 className="mb-6 text-4xl font-extrabold text-gray-800">
                   Enter Details

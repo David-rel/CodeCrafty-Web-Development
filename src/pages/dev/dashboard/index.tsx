@@ -29,8 +29,17 @@ interface FormSubmission {
   LongTermDeveloper: string;
 }
 
+interface ContactSubmission {
+  Id: number;
+  FullName: string;
+  Email: string;
+  Phone: string;
+  Message: string;
+}
+
 export default function Dashboard() {
   const [data, setData] = useState<FormSubmission[]>([]);
+  const [contact, setContact] = useState<ContactSubmission[]>([]);
   const [error, setError] = useState<string>("");
   const router = useRouter();
 
@@ -41,6 +50,7 @@ export default function Dashboard() {
       router.push("/dev/login");
     } else {
       fetchData();
+      fetchContact();
     }
   }, [router]);
 
@@ -52,6 +62,20 @@ export default function Dashboard() {
       }
       const result = await response.json();
       setData(result);
+    } catch (error: unknown) {
+      setError((error as Error).message);
+    }
+  };
+
+  const fetchContact = async () => {
+    try {
+      const response = await fetch("/api/getContact");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const result = await response.json();
+      setContact(result);
+      console.log(result);
     } catch (error: unknown) {
       setError((error as Error).message);
     }
@@ -76,79 +100,117 @@ export default function Dashboard() {
           </button>
         </div>
         {error && <p className="text-center text-red-500">{error}</p>}
-        <div className="space-y-4">
-          {data.map((submission) => (
-            <div key={submission.Id} className="rounded-lg bg-white shadow-md">
-              <input
-                type="checkbox"
-                id={`accordion-${submission.Id}`}
-                className="hidden"
-              />
-              <label
-                htmlFor={`accordion-${submission.Id}`}
-                className="block cursor-pointer border-b p-4 text-lg font-semibold"
+        <div className="flex space-x-4">
+          <div className="w-1/2 space-y-4">
+            <h1 className="text-2xl underline">Build Form Data</h1>
+            {data.map((submission) => (
+              <div
+                key={submission.Id}
+                className="rounded-lg bg-white shadow-md"
               >
-                {submission.FirstName} {submission.LastName} -{" "}
-                {submission.CompanyName}
-              </label>
-              <div className="accordion-content max-h-0 overflow-hidden transition-all">
-                <div className="p-4">
-                  <p>
-                    <strong>Email:</strong> {submission.EmailAddress}
-                  </p>
-                  <p>
-                    <strong>Phone:</strong> {submission.PhoneNumber}
-                  </p>
-                  <p>
-                    <strong>Country:</strong> {submission.Country}
-                  </p>
-                  <p>
-                    <strong>State & City:</strong> {submission.StateAndCity}
-                  </p>
-                  <p>
-                    <strong>Instagram:</strong> {submission.InstagramName}
-                  </p>
-                  <p>
-                    <strong>Project Description:</strong>{" "}
-                    {submission.ProjectDescription}
-                  </p>
-                  <p>
-                    <strong>Checkboxes:</strong>{" "}
-                    {submission.CheckboxOne ? "Development, " : ""}
-                    {submission.CheckboxTwo ? "Design, " : ""}
-                    {submission.CheckboxThree ? "AI Integration, " : ""}
-                    {submission.CheckboxFour ? "Maintenance" : ""}
-                  </p>
-                  <p>
-                    <strong>Page Idea:</strong> {submission.PageIdea}
-                  </p>
-                  <p>
-                    <strong>Page Count:</strong> {submission.PageCount}
-                  </p>
-                  <p>
-                    <strong>Revisions:</strong> {submission.Revisions}
-                  </p>
-                  <p>
-                    <strong>Existing Website:</strong>{" "}
-                    {submission.ExistingWebsite}
-                  </p>
-                  <p>
-                    <strong>Timeline:</strong> {submission.Timeline}
-                  </p>
-                  <p>
-                    <strong>Domain:</strong> {submission.Domain}
-                  </p>
-                  <p>
-                    <strong>Extra Features:</strong> {submission.ExtraFeatures}
-                  </p>
-                  <p>
-                    <strong>Long Term Developer:</strong>{" "}
-                    {submission.LongTermDeveloper}
-                  </p>
+                <input
+                  type="checkbox"
+                  id={`accordion-${submission.Id}`}
+                  className="hidden"
+                />
+                <label
+                  htmlFor={`accordion-${submission.Id}`}
+                  className="block cursor-pointer border-b p-4 text-lg font-semibold"
+                >
+                  {submission.FirstName} {submission.LastName} -{" "}
+                  {submission.CompanyName}
+                </label>
+                <div className="accordion-content max-h-0 overflow-hidden transition-all">
+                  <div className="p-4">
+                    <p>
+                      <strong>Email:</strong> {submission.EmailAddress}
+                    </p>
+                    <p>
+                      <strong>Phone:</strong> {submission.PhoneNumber}
+                    </p>
+                    <p>
+                      <strong>Country:</strong> {submission.Country}
+                    </p>
+                    <p>
+                      <strong>State & City:</strong> {submission.StateAndCity}
+                    </p>
+                    <p>
+                      <strong>Instagram:</strong> {submission.InstagramName}
+                    </p>
+                    <p>
+                      <strong>Project Description:</strong>{" "}
+                      {submission.ProjectDescription}
+                    </p>
+                    <p>
+                      <strong>Checkboxes:</strong>{" "}
+                      {submission.CheckboxOne ? "Development, " : ""}
+                      {submission.CheckboxTwo ? "Design, " : ""}
+                      {submission.CheckboxThree ? "AI Integration, " : ""}
+                      {submission.CheckboxFour ? "Maintenance" : ""}
+                    </p>
+                    <p>
+                      <strong>Page Idea:</strong> {submission.PageIdea}
+                    </p>
+                    <p>
+                      <strong>Page Count:</strong> {submission.PageCount}
+                    </p>
+                    <p>
+                      <strong>Revisions:</strong> {submission.Revisions}
+                    </p>
+                    <p>
+                      <strong>Existing Website:</strong>{" "}
+                      {submission.ExistingWebsite}
+                    </p>
+                    <p>
+                      <strong>Timeline:</strong> {submission.Timeline}
+                    </p>
+                    <p>
+                      <strong>Domain:</strong> {submission.Domain}
+                    </p>
+                    <p>
+                      <strong>Extra Features:</strong>{" "}
+                      {submission.ExtraFeatures}
+                    </p>
+                    <p>
+                      <strong>Long Term Developer:</strong>{" "}
+                      {submission.LongTermDeveloper}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="w-1/2 space-y-4">
+            <h1 className="text-2xl underline">Contact Form Data</h1>
+            {contact.map((submission) => (
+              <div
+                key={submission.Id}
+                className="rounded-lg bg-white shadow-md"
+              >
+                <input
+                  type="checkbox"
+                  id={`accordion-contact-${submission.Id}`}
+                  className="hidden"
+                />
+                <label
+                  htmlFor={`accordion-contact-${submission.Id}`}
+                  className="block cursor-pointer border-b p-4 text-lg font-semibold"
+                >
+                  {submission.FullName} - {submission.Email}
+                </label>
+                <div className="accordion-content max-h-0 overflow-hidden transition-all">
+                  <div className="p-4">
+                    <p>
+                      <strong>Phone:</strong> {submission.Phone}
+                    </p>
+                    <p>
+                      <strong>Message:</strong> {submission.Message}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <Footer />
