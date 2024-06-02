@@ -52,11 +52,11 @@ function WebApps() {
         className="mx-auto max-w-7xl flex-wrap items-center pt-16"
       >
         <div className="w-full pb-6 text-center">
-          <h2 className="text-xl text-gray-500"> Build Magic With Us</h2>
 
           <h1 className="mb-8 text-5xl font-bold md:text-7xl xl:text-8xl">
             Need More than a site?
           </h1>
+          <h2 className="text-xl text-gray-500"> Build With Us!</h2>
         </div>  
         <div className="flex flex-col lg:flex-row">
           <div className="flex w-full justify-center pb-6 lg:w-2/3">
