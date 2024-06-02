@@ -144,7 +144,10 @@
   margin: 0 auto; /* Ensures the canvas within the page has no extra margin */
 }
 
-
+a{
+  color: #E11D48;
+  text-decoration: underline;
+}
 
 
 /* Accordion styles */
