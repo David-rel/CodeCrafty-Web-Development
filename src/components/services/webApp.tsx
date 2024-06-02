@@ -55,9 +55,9 @@ function WebApps() {
           <h2 className="text-xl text-gray-500"> Build Magic With Us</h2>
 
           <h1 className="mb-8 text-5xl font-bold md:text-7xl xl:text-8xl">
-            Need More then a site?
+            Need More than a site?
           </h1>
-        </div>
+        </div>  
         <div className="flex flex-col lg:flex-row">
           <div className="flex w-full justify-center pb-6 lg:w-2/3">
             <Image
