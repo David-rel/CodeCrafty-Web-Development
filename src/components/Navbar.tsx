@@ -77,40 +77,7 @@ export default function Navbar() {
     },
   ];
 
-  const servicePaths = [
-    {
-      name: "Website Development",
-      path: "/services/website",
-    },
-    {
-      name: "Web Application Development",
-      path: "/services/webApp",
-    },
-    {
-      name: "Domain and Hosting",
-      path: "/services/domain",
-    },
-    {
-      name: "Web Maintenance",
-      path: "/services/maintenance",
-    },
-    {
-      name: "AI Integration",
-      path: "/services/ai",
-    },
-    {
-      name: "Web Analytics",
-      path: "/services/analytics",
-    },
-    {
-      name: "Blog Integration",
-      path: "/services/blog",
-    },
-    {
-      name: "E-commerce Integration",
-      path: "/services/ecommerce",
-    },
-  ];
+  
 
   const links = (
     <>
@@ -145,36 +112,22 @@ export default function Navbar() {
         )}
       </div>
 
-      <div
-        className="group relative"
-        onMouseEnter={() => setProductsDropdownOpen(true)}
-        onMouseLeave={() => setProductsDropdownOpen(false)}
-        onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-      >
+      <Link href="/services" legacyBehavior>
         <a
-          className={`cursor-pointer text-2xl font-bold  ${
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
             sidebarOpen ? "text-3xl" : "text-xl"
           } ${
-            isActive("/services", servicePaths, false)
+            isActive("/services")
               ? "text-rose-700 underline"
-              : "text-rose-500 hover:underline group-hover:text-rose-700"
+              : "text-rose-500 hover:text-rose-700 hover:underline"
           }`}
         >
           Our Services
         </a>
-        {productsDropdownOpen && (
-          <div
-            className={`z-10 flex  w-64 flex-col space-y-2 rounded-lg border border-gray-200 bg-gray-200 
-  ${
-    isMobile
-      ? "w-96 border-none bg-white pl-4 text-2xl font-semibold"
-      : "absolute left-0 min-h-full w-96 text-xl"
-  }`}
-          >
-            <NavbarDropdown props={servicePaths} />
-          </div>
-        )}
-      </div>
+      </Link>
 
       <Link href="/build" legacyBehavior>
         <a
