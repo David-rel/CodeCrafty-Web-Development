@@ -24,7 +24,7 @@ const NavbarDropdown: React.FC<{ props: Props }> = ({ props }) => {
       {props.map(({ path, name }) => (
         <Link href={path} legacyBehavior>
           <a
-            className={`p-2 ${
+            className={`p-2 text-xl ${
               isActive(path)
                 ? "text-rose-700 underline"
                 : "hover:text-rose-700 hover:underline"
