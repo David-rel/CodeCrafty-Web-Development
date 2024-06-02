@@ -48,7 +48,6 @@ function Services() {
         <title>Code Crafty - Services</title>
       </Head>
       <Navbar />
-      <Link href="/services#web-apps">webapp</Link>
       <div>
         <h1>Services</h1>
         <ServiceSection id="website" Component={<WebsiteService/>} />
