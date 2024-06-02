@@ -98,7 +98,7 @@ function Analytics() {
           </h2>
         </div>
         <div className="pt-4 text-center">
-          <Link href="/custom" legacyBehavior>
+          <Link href="/contact" legacyBehavior>
             <a className="inline-block rounded bg-rose-600 px-6 py-3 text-lg font-bold text-white hover:bg-rose-700 sm:text-xl">
               Contact Us
             </a>

@@ -20,7 +20,7 @@ function Ai() {
               One aspect that separates our sites from those of the competition is AI, the next step of web development, through analysis, chatbots, and more
             </p>
             <div className="flex space-x-4">
-              <Link href="/start">
+              <Link href="/build">
                 <button className="mt-5 transform rounded bg-rose-700 px-6 py-2 font-bold text-white transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-rose-500">
                   Get Started
                 </button>
@@ -141,7 +141,7 @@ function Ai() {
             </a>
           </Link>
         </div>
-      </section>
+      </section>  
       ;
     </div>
   );
