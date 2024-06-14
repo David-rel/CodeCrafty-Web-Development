@@ -1,13 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Footer from "~/components/Footer";
-import Navbar from "~/components/Navbar";
 
 function WebApps() {
   return (
     <div>
-      <Navbar />
       <section className="bg-navy relative py-32 lg:py-36">
         <div className="mx-auto flex w-full flex-col gap-10 px-5 sm:px-10 md:px-12 lg:max-w-7xl lg:flex-row lg:gap-12 lg:px-5">
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-7 lg:text-left xl:py-8">
@@ -25,12 +22,12 @@ function WebApps() {
               tailored to your business needs.
             </p>
             <div className="flex space-x-4">
-              <Link href="/start">
+              <Link href="/build">
                 <button className="mt-5 transform rounded bg-rose-700 px-6 py-2 font-bold text-white transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-rose-500">
                   Get Started
                 </button>
               </Link>
-              <Link href="/process">
+              <Link href="/how">
                 <button className="hover:bg-teal mt-5 transform rounded border-2 border-black bg-white px-6 py-2 font-bold text-black transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-black hover:text-white">
                   Our Process
                 </button>
@@ -55,12 +52,12 @@ function WebApps() {
         className="mx-auto max-w-7xl flex-wrap items-center pt-16"
       >
         <div className="w-full pb-6 text-center">
-          <h2 className="text-xl text-gray-500"> Build Magic With Us</h2>
 
           <h1 className="mb-8 text-5xl font-bold md:text-7xl xl:text-8xl">
-            Need More then a site?
+            Need More than a site?
           </h1>
-        </div>
+          <h2 className="text-xl text-gray-500"> Build With Us!</h2>
+        </div>  
         <div className="flex flex-col lg:flex-row">
           <div className="flex w-full justify-center pb-6 lg:w-2/3">
             <Image
@@ -133,7 +130,6 @@ function WebApps() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

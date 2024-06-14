@@ -1,32 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Footer from "~/components/Footer";
-import Navbar from "~/components/Navbar";
 import TypingText from "~/components/TypingText";
 
-function WebApps() {
+function Analytics() {
   return (
     <div>
-      <Navbar />
       <section className="bg-navy relative py-32 lg:py-36">
         <div className="mx-auto flex w-full flex-col gap-10 px-5 sm:px-10 md:px-12 lg:max-w-7xl lg:flex-row lg:gap-12 lg:px-5">
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-7 lg:text-left xl:py-8">
             <h1 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-5xl xl:text-6xl">
-              Need help with
+              Boost your website with a
               <span className="via-gold bg-gradient-to-br from-rose-500 to-rose-700 bg-clip-text text-transparent">
                 {" "}
-                Web Maintenance?{" "}
+                Blog{" "}
               </span>
-              We'll be there
             </h1>
             <p className="mt-8 text-gray-700">
-              Our team can help you maintain your site and keep it up to date.
-              We can help you with updates, backups, and more. Let us help you
-              keep your site running smoothly and securely.
+              One of the most often overlooked aspect of website visibility.
             </p>
             <div className="flex space-x-4">
-              <Link href="/start">
+              <Link href="/build">
                 <button className="mt-5 transform rounded bg-rose-700 px-6 py-2 font-bold text-white transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-rose-500">
                   Get Started
                 </button>
@@ -41,7 +35,7 @@ function WebApps() {
 
           <div className="relative mx-auto flex max-w-3xl flex-1 lg:mx-0 lg:h-auto lg:w-1/2 lg:max-w-none">
             <Image
-              src="/P4.jpg"
+              src="/7PxxTD.png"
               alt="Hero image"
               layout="fill"
               objectFit="cover"
@@ -60,27 +54,21 @@ function WebApps() {
             {/* It's more than just building a site and being done. We know that. */}
           </h2>
           <h1 className="mb-8 text-5xl font-bold md:text-6xl xl:text-7xl">
-            Web Maintenance Specialists
+            Benefits of a Blog
           </h1>
         </div>
         <div className="flex flex-col lg:flex-row">
           <div className="w-full p-4 pr-12 font-merriweather lg:w-2/3">
             <p className="mb-4 text-xl">
-              Choosing the right team for web maintenance is crucial for the
-              longevity and success of your online presence. Here's why you
-              should pick us:
+              While blogs are a great way to communicate your endevours and plans as a business, 
+              they actually play an even more important role of boosting the visibility of your website.
             </p>
             <p className="mb-4 text-lg text-gray-700">
-              Our experienced team provides proactive maintenance to ensure your
-              website is always running at peak performance. We handle
-              everything from security updates to regular backups, giving you
-              peace of mind.
+              Through the use of particular keywords and ideas, blogs can make the difference in 
+              where your website is placed by the search algorithm.
             </p>
             <p className="mb-4 text-lg text-gray-700">
-              We understand that every business is unique, and so are its
-              maintenance needs. Our tailored maintenance plans are designed to
-              meet the specific requirements of your site or app, ensuring
-              optimal performance and security.
+              Despite being overlooked, the impact of a blog can be immense and should never be overlooked
             </p>
 
             <div className="flex justify-center space-x-4">
@@ -93,7 +81,7 @@ function WebApps() {
           </div>
           <div className="flex w-full justify-center pb-6 lg:w-2/3">
             <Image
-              src="/P5.webp"
+              src="/4Pxx1C.jpg"
               alt="Web Maintenance Services"
               width={600}
               height={500}
@@ -108,7 +96,7 @@ function WebApps() {
           data-aos=""
         >
           <h2 className="font-montserrat text-2xl font-extrabold">
-            <TypingText text="Get Your Site Running Smoothly with our Web Maintenance Services" />
+            <TypingText text="The difference between those of the top and the bottom" />
           </h2>
         </div>
         <div className="pt-4 text-center">
@@ -120,10 +108,9 @@ function WebApps() {
         </div>
       </section>
       ;
-      <Footer />
     </div>
   );
 }
 
-export default WebApps;
+export default Analytics;
 

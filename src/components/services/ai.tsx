@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Footer from "~/components/Footer";
-import Navbar from "~/components/Navbar";
 import TypingText from "~/components/TypingText";
 
 function Ai() {
   return (
     <div>
-      <Navbar />
       <section className="bg-navy relative py-32 lg:py-36">
         <div className="mx-auto flex w-full flex-col gap-10 px-5 sm:px-10 md:px-12 lg:max-w-7xl lg:flex-row lg:gap-12 lg:px-5">
           <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center lg:mx-0 lg:w-1/2 lg:max-w-none lg:flex-1 lg:items-start lg:py-7 lg:text-left xl:py-8">
@@ -23,7 +20,7 @@ function Ai() {
               One aspect that separates our sites from those of the competition is AI, the next step of web development, through analysis, chatbots, and more
             </p>
             <div className="flex space-x-4">
-              <Link href="/start">
+              <Link href="/build">
                 <button className="mt-5 transform rounded bg-rose-700 px-6 py-2 font-bold text-white transition duration-300 ease-in-out hover:-translate-y-1 hover:bg-rose-500">
                   Get Started
                 </button>
@@ -144,9 +141,8 @@ function Ai() {
             </a>
           </Link>
         </div>
-      </section>
+      </section>  
       ;
-      <Footer />
     </div>
   );
 }

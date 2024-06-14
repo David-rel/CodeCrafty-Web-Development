@@ -178,7 +178,7 @@ export default function Home() {
               {" "}
               <Link href="/how" legacyBehavior>
                 <a className="mt-4 inline-block rounded bg-rose-600 px-4 py-2 font-montserrat font-bold text-white hover:bg-rose-700">
-                  How WE Do It
+                  How We Do It
                 </a>
               </Link>
             </div>

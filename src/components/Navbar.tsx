@@ -76,41 +76,6 @@ export default function Navbar() {
     },
   ];
 
-  const servicePaths = [
-    {
-      name: "Website Development",
-      path: "/services/website",
-    },
-    {
-      name: "Web Application Development",
-      path: "/services/webApp",
-    },
-    {
-      name: "Domain and Hosting",
-      path: "/services/domain",
-    },
-    {
-      name: "Web Maintenance",
-      path: "/services/maintenance",
-    },
-    {
-      name: "AI Integration",
-      path: "/services/ai",
-    },
-    {
-      name: "Web Analytics",
-      path: "/services/analytics",
-    },
-    {
-      name: "Blog Integration",
-      path: "/services/blog",
-    },
-    {
-      name: "E-commerce Integration",
-      path: "/services/ecommerce",
-    },
-  ];
-
   const NavbarElement: React.FC<{
     name: string;
     path: string;
@@ -177,11 +142,7 @@ export default function Navbar() {
     (
       <>
         <NavbarElement name="About" path="/about" dropdown={aboutPaths} />
-        <NavbarElement
-          name="Our Services"
-          path="/services"
-          dropdown={servicePaths}
-        />
+        <NavbarElement name="Our Services" path="/services" />
         <NavbarElement name="Build a site" path="/build" />
         <NavbarElement name="How we do it" path="/how" />
         <NavbarElement name="Get In Touch" path="/contact" />
