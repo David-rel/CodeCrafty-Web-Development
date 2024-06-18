@@ -13,12 +13,27 @@ const bundleAnalyzerConfig = withBundleAnalyzer({
 const config = {
   reactStrictMode: true,
   images: {
-    domains: [
-      "i.ibb.co",
-      "cdn.tuk.dev",
-      "example.com",
-      "lh3.googleusercontent.com",
-      "placehold.co",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.tuk.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "example.com",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.co",
+      },
     ],
   },
 

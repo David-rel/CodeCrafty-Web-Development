@@ -64,12 +64,12 @@ export default function Home() {
     <div className="">
       <Navbar />
 
-      <section className="relative bg-cover bg-center h-[80vh] bg-no-repeat">
+      <section className="relative overflow-hidden bg-cover bg-center h-[80vh] bg-no-repeat">
         <Image
           src="/banner.jpg"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          className="object-cover h-full w-full absolute inset-0"
+          width={1500}
+          height={1000}
           alt="CodeCrafty Banner"
           quality={90}
           priority

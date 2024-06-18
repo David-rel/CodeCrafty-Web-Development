@@ -91,8 +91,14 @@ function IndexPage() {
                       <Image
                         src="/blogs/whyAI1.png"
                         alt="Descriptive Text"
-                        layout="fill"
-                        objectFit="cover" // Cover will ensure the image covers the whole area
+                        width={500}
+                        height={500}
+                        style={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                        // Cover will ensure the image covers the whole area
                       />
                     </div>
                     <div className="flex w-full justify-between bg-rose-700 px-4 py-2">
