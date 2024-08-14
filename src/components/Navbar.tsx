@@ -7,11 +7,12 @@ import NavbarDropdown, { Props as NavbarDropdownProps } from "./NavbarDropdown";
 
 export default function Navbar() {
   const router = useRouter();
-  const isMobile = useMediaQuery({ query: "(max-width: 1395px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 1250px)" });
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
   const setLocalStorageSidebarState = (state: boolean) => {
     if (typeof window !== "undefined") {
-      // Check for server-side rendering
       localStorage.setItem("sidebarOpen", JSON.stringify(state));
     }
   };
@@ -33,7 +34,6 @@ export default function Navbar() {
     return null;
   };
 
-  // Initialize sidebarOpen based on screen size
   const [sidebarOpen, setSidebarOpen] = useState(() => {
     const storedState = getLocalStorageSidebarState();
     return storedState !== null ? storedState : isMobile ? true : false;
@@ -57,6 +57,7 @@ export default function Navbar() {
       );
     }
   };
+
   const aboutPaths = [
     {
       name: "About Us",
@@ -76,156 +77,284 @@ export default function Navbar() {
     },
   ];
 
-  const NavbarElement: React.FC<{
-    name: string;
-    path: string;
-    dropdown?: NavbarDropdownProps;
-  }> = ({ name, path, dropdown }) => {
-    if (dropdown) {
-      const [dropdownOpen, setdropdownOpen] = useState(false);
-      return (
-        <>
+  const servicePaths = [
+    {
+      name: "Website Development",
+      path: "/services/website",
+    },
+    {
+      name: "Web Application Development",
+      path: "/services/webApp",
+    },
+    {
+      name: "Domain and Hosting",
+      path: "/services/domain",
+    },
+    {
+      name: "Web Maintenance",
+      path: "/services/maintenance",
+    },
+    {
+      name: "AI Integration",
+      path: "/services/ai",
+    },
+    {
+      name: "Web Analytics",
+      path: "/services/analytics",
+    },
+    {
+      name: "Blog Integration",
+      path: "/services/blog",
+    },
+    {
+      name: "E-commerce Integration",
+      path: "/services/ecommerce",
+    },
+  ];
+
+  const links = (
+    <>
+      <div
+        className="group relative"
+        onMouseEnter={() => setAboutDropdownOpen(true)}
+        onMouseLeave={() => setAboutDropdownOpen(false)}
+        onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+      >
+        <a
+          className={`cursor-pointer text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/about", aboutPaths, false)
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
+        >
+          About
+        </a>
+        {aboutDropdownOpen && (
           <div
-            onMouseEnter={() => setdropdownOpen(true)}
-            onMouseLeave={() => setdropdownOpen(false)}
-            onClick={() => setdropdownOpen(!dropdownOpen)}
-            className="group relative cursor-pointer"
-          >
-            <a
-              className={`text-l m-0 cursor-pointer font-bold ${
-                isActive(path, dropdown, false)
-                  ? "text-rose-700 underline"
-                  : "text-rose-500 hover:underline group-hover:text-rose-700"
-              }`}
-            >
-              {name}
-            </a>
-            {dropdownOpen ? (
-              <div
-                className={`z-10 flex w-max flex-col space-y-2 rounded-lg border border-gray-200 bg-gray-200 
+            className={`z-10 flex w-40 flex-col space-y-2 rounded-lg border border-gray-200 bg-gray-200 
   ${
     isMobile
-      ? "border-none bg-white pl-4 text-2xl font-semibold"
+      ? "w-48 border-none bg-white pl-4 text-2xl font-semibold"
       : "absolute left-0 text-xl"
   }`}
-              >
-                <NavbarDropdown props={dropdown} />
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <Link
-            href={path}
-            onClick={() => {
-              setSidebarOpen(false);
-            }}
-            className={` text-l font-bold ${
-              isActive(path)
-                ? "text-rose-700 underline"
-                : "text-rose-500 hover:text-rose-700 hover:underline"
-            }`}
           >
-            {name}
-          </Link>
-        </>
-      );
-    }
-  };
+            <NavbarDropdown props={aboutPaths} />
+          </div>
+        )}
+      </div>
 
-  const links = // dropdown navbar links
-    (
-      <>
-        <NavbarElement name="About" path="/about" dropdown={aboutPaths} />
-        <NavbarElement name="Our Services" path="/services" />
-        <NavbarElement name="Build a site" path="/build" />
-        <NavbarElement name="How we do it" path="/how" />
-        <NavbarElement name="Get In Touch" path="/contact" />
-        <NavbarElement name="Alias" path="/alias" />
-        <NavbarElement name="Blog" path="/blog" />
-      </>
-    );
-
-  const mobileDisplay = // the sidebar on mobile
-    (
-      <>
-        <div
-          className={`  overflow-x-clip ${
-            sidebarOpen ? "fixed" : " hidden translate-x-full transform"
-          }  right-0 top-0
-            z-40 w-4/5  bg-white transition-all duration-200
-          ease-in-out`}
+      <div
+        className="group relative"
+        onMouseEnter={() => setProductsDropdownOpen(true)}
+        onMouseLeave={() => setProductsDropdownOpen(false)}
+        onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+      >
+        <a
+          className={`cursor-pointer text-2xl font-bold  ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/services", servicePaths, false)
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
         >
-          <div className="flex  flex-col  ">
-            {/**logo image */}
+          Our Services
+        </a>
+        {productsDropdownOpen && (
+          <div
+            className={`z-10 flex  w-64 flex-col space-y-2 rounded-lg border border-gray-200 bg-gray-200 
+  ${
+    isMobile
+      ? "w-96 border-none bg-white pl-4 text-2xl font-semibold"
+      : "absolute left-0 min-h-full w-96 text-xl"
+  }`}
+          >
+            <NavbarDropdown props={servicePaths} />
+          </div>
+        )}
+      </div>
+
+      <Link href="/build" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/build")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
+        >
+          Build a site
+        </a>
+      </Link>
+      <Link href="/how" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/how")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
+        >
+          Our Process
+        </a>
+      </Link>
+      <Link href="/contact" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/contact")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
+        >
+          Get In Touch
+        </a>
+      </Link>
+      <Link href="/alias" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/alias")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
+        >
+          Alias
+        </a>
+      </Link>
+      <Link href="/blog" legacyBehavior>
+        <a
+          onClick={() => {
+            setSidebarOpen(false);
+          }}
+          className={`text-2xl font-bold ${
+            sidebarOpen ? "text-3xl" : "text-xl"
+          } ${
+            isActive("/blog")
+              ? "text-rose-700 underline"
+              : "text-rose-500 hover:text-rose-700"
+          }`}
+        >
+          Our Blog
+        </a>
+      </Link>
+    </>
+  );
+
+  return (
+    <>
+      {isMobile ? (
+        <div
+          className={`${
+            sidebarOpen ? "" : "translate-x-full transform"
+          } fixed bottom-0 right-0 top-0 z-40 w-full overflow-auto bg-white transition-transform duration-200 ease-in-out`}
+        >
+          <div className="flex flex-1 flex-col overflow-y-auto pb-4 pt-5">
             <Link href="/">
               <div className="flex items-center justify-center">
-                <Image src="/logo1.png" alt="Logo" width={150} height={150} />
+                <Image src="/logo1.png" alt="Logo" width={150} height={40} />
               </div>
             </Link>
-            <div className="flex justify-center px-4">
+
+            <div className="px-4">
               <h2 className="mb-8 font-montserrat text-4xl font-bold underline">
                 Navigation
               </h2>
             </div>
-            <nav className=" mb-8 flex flex-1 flex-col space-y-4 px-2 font-montserrat">
-              <NavbarElement name="Home" path="/" />
+            <nav className="mb-8 flex flex-1 flex-col space-y-8 px-2 font-montserrat">
+              <Link href="/" legacyBehavior>
+                <a
+                  onClick={() => {
+                    setSidebarOpen(false);
+                  }}
+                  className={`text-2xl font-bold ${
+                    sidebarOpen ? "text-3xl" : ""
+                  } ${
+                    isActive("/")
+                      ? "text-rose-700 underline"
+                      : "text-rose-500 hover:text-rose-700"
+                  }`}
+                >
+                  Home
+                </a>
+              </Link>
               {links}
-              <div className=" text-rose-700 underline">
-                <NavbarElement
-                  name="admin@codecrafty.dev"
-                  path="mailto:admin@codecrafty.dev"
-                />
-              </div>
-              <div className=" text-rose-700 underline">
-                <NavbarElement
-                  name="+1 (720) 612-2979"
-                  path="tel:+17206122979"
-                />
-              </div>
             </nav>
+            <div className="px-4 text-3xl font-bold">
+              <div className="mt-4">
+                <p className="text-rose-900">
+                  email:{" "}
+                  <a
+                    href="mailto:admin@codecrafty.dev"
+                    className="text-rose-600 underline"
+                  >
+                    admin@codecrafty.dev
+                  </a>
+                </p>
+                <p className="text-rose-900">
+                  phone:{" "}
+                  <a
+                    href="tel:+17206122979"
+                    className="text-rose-600 underline"
+                  >
+                    +1 (720) 612-2979
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="absolute right-3 top-3 text-5xl font-bold">
+          <div className="absolute right-0 top-0 mr-4 mt-4 text-3xl font-bold">
             <button onClick={() => setSidebarOpen(false)}>X</button>
           </div>
         </div>
-
-        {sidebarOpen == false && ( // navbar icon for mobile
-          <>
-            <button
-              className="fixed right-3 top-3 z-50 text-5xl font-bold"
-              onClick={() => setSidebarOpen(true)}
-            >
-              ☰
-            </button>
-          </>
-        )}
-      </>
-    );
-
-  const desktopDisplay = // the navbar on desktop
-    (
-      <nav className="sticky top-0 z-40 flex h-min items-center justify-between bg-white/60 text-black backdrop-blur-lg backdrop-filter">
-        <div className="flex items-center space-x-10 ">
-          <Link href="/">
-            <Image src="/logo1.png" alt="Logo" width={100} height={40} />
-          </Link>
-          <div className="text-md flex items-center space-x-5 md:text-2xl">
-            {links}
+      ) : (
+        <nav className="sticky top-0 z-40 flex h-20 items-center justify-between bg-white/60 p-6 text-black backdrop-blur-lg backdrop-filter">
+          <div className="flex items-center space-x-16 font-montserrat">
+            <Link href="/">
+              <Image src="/logo1.png" alt="Logo" width={100} height={40} />
+            </Link>
+            <div className="hidden space-x-1 md:flex md:space-x-10 md:text-2xl">
+              {links}
+            </div>
           </div>
-        </div>
 
-        <div className="justify-right flex flex-col items-center space-x-8 px-4 text-xl font-bold">
-          <a href="mailto:admin@codecrafty.dev">admin@codecrafty.dev</a>
-          <a href="tel:+17206122979">+1 (720) 612-2979</a>
+          <div className="flex flex-col items-end space-y-1 px-4 text-xl font-bold">
+            <p className="text-rose-900">
+              <a href="mailto:admin@codecrafty.dev" className="text-rose-600">
+                admin@codecrafty.dev
+              </a>
+            </p>
+            <p className="text-rose-900">
+              <a href="tel:+17206122979" className="text-rose-600">
+                +1 (720) 612-2979
+              </a>
+            </p>
+          </div>
+        </nav>
+      )}
+      {isMobile && sidebarOpen === false && (
+        <div className="fixed right-0 top-0 z-50 mr-3 mt-3 text-5xl font-bold">
+          <button onClick={() => setSidebarOpen(true)}>☰</button>
         </div>
-      </nav>
-    );
-
-  return isMobile ? mobileDisplay : desktopDisplay;
+      )}
+    </>
+  );
 }

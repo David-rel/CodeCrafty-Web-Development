@@ -31,11 +31,19 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    if (
-      window.Calendly &&
-      typeof window.Calendly.initInlineWidgets === "function"
-    ) {
-      window.Calendly.initInlineWidgets();
+    if (typeof window !== "undefined") {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.onload = () => {
+        if (
+          window.Calendly &&
+          typeof window.Calendly.initInlineWidgets === "function"
+        ) {
+          window.Calendly.initInlineWidgets();
+        }
+      };
+      document.body.appendChild(script);
     }
   }, [isOnline]);
 
@@ -68,20 +76,17 @@ export default function IndexPage() {
     <>
       <Head>
         <title>Code Crafty - Contact</title>
-        <script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          async
-        ></script>
       </Head>
       <Navbar />
 
       <main>
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/diego_g/introduction?primary_color=008080&text_color=000000&background_color=ffffff&back=1&month=2023-10"
+          data-url="https://calendly.com/codecrafty-info?primary_color=f10808/"
           style={{ minWidth: "320px", height: "700px" }}
         ></div>
       </main>
+
       <div>
         <div className="container mx-auto pt-16">
           <div className="lg:flex">

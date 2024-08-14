@@ -9,6 +9,7 @@ export type Props = {
 
 const NavbarDropdown: React.FC<{ props: Props }> = ({ props }) => {
   const router = useRouter();
+
   const isActive = (pathname: string, paths: Props = [], exact = true) => {
     if (exact) {
       return router.pathname === pathname;
@@ -19,12 +20,13 @@ const NavbarDropdown: React.FC<{ props: Props }> = ({ props }) => {
       );
     }
   };
+
   return (
     <>
       {props.map(({ path, name }) => (
         <Link href={path} legacyBehavior>
           <a
-            className={`p-2 text-xl ${
+            className={`p-2 ${
               isActive(path)
                 ? "text-rose-700 underline"
                 : "hover:text-rose-700 hover:underline"
