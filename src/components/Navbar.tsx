@@ -80,35 +80,35 @@ export default function Navbar() {
   const servicePaths = [
     {
       name: "Website Development",
-      path: "/services/website",
+      path: "/services#website",
     },
     {
       name: "Web Application Development",
-      path: "/services/webApp",
+      path: "/services#webApp",
     },
     {
       name: "Domain and Hosting",
-      path: "/services/domain",
+      path: "/services#domain",
     },
     {
       name: "Web Maintenance",
-      path: "/services/maintenance",
+      path: "/services#maintenance",
     },
     {
       name: "AI Integration",
-      path: "/services/ai",
+      path: "/services#ai",
     },
     {
       name: "Web Analytics",
-      path: "/services/analytics",
+      path: "/services#analytics",
     },
     {
       name: "Blog Integration",
-      path: "/services/blog",
+      path: "/services#blog",
     },
     {
       name: "E-commerce Integration",
-      path: "/services/ecommerce",
+      path: "/services#ecommerce",
     },
   ];
 
@@ -303,19 +303,19 @@ export default function Navbar() {
                 <p className="text-rose-900">
                   email:{" "}
                   <a
-                    href="mailto:admin@codecrafty.dev"
+                    href="mailto:info@codecrafty.dev"
                     className="text-rose-600 underline"
                   >
-                    admin@codecrafty.dev
+                    info@codecrafty.dev
                   </a>
                 </p>
                 <p className="text-rose-900">
                   phone:{" "}
                   <a
-                    href="tel:+17206122979"
+                    href="tel:+17204323552"
                     className="text-rose-600 underline"
                   >
-                    +1 (720) 612-2979
+                    +1 720-432-3552
                   </a>
                 </p>
               </div>
@@ -338,13 +338,13 @@ export default function Navbar() {
 
           <div className="flex flex-col items-end space-y-1 px-4 text-xl font-bold">
             <p className="text-rose-900">
-              <a href="mailto:admin@codecrafty.dev" className="text-rose-600">
-                admin@codecrafty.dev
+              <a href="mailto:info@codecrafty.dev" className="text-rose-600">
+                info@codecrafty.dev
               </a>
             </p>
             <p className="text-rose-900">
-              <a href="tel:+17206122979" className="text-rose-600">
-                +1 (720) 612-2979
+              <a href="tel:+17204323552" className="text-rose-600">
+                +1 720-432-3552
               </a>
             </p>
           </div>

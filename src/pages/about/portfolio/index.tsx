@@ -164,6 +164,51 @@ export default function Portfolio() {
           {" "}
           {/* Centering the grid */}
           <div className="grid grid-cols-1 items-center gap-4 pb-16 md:grid-cols-2 md:gap-24">
+            <div className="flex justify-center">
+              {" "}
+              {/* Removed width class */}
+              <Image
+                src="/rmss.png"
+                alt="Saool Quiz App"
+                width={1000}
+                height={300}
+                layout="responsive"
+                objectFit="contain" // Changed to 'contain' to avoid cropping
+                className="rounded-lg"
+              />
+            </div>
+            <div>
+              {" "}
+              <h3 className="mb-3 text-5xl font-bold">
+                Rocky Mountain Sourcing Specialists
+              </h3>
+              <p className="mb-4 text-lg text-gray-800">
+                We had the privilege of developing the RMSS website for an
+                emerging company looking to establish a strong online presence
+                as they embark on their journey. We crafted a clean,
+                professional site with three key pages, offering a solid
+                foundation with room for future expansion. The site features an
+                intuitive contact submission form, is fully optimized for search
+                engines to ensure visibility, and is hosted at no cost to
+                support the company's initial growth phase. We look forward to
+                continuing our collaboration and adding more features as their
+                business evolves.
+              </p>
+              <Link
+                href="https://rocky-mountain-sourcing.vercel.app/"
+                legacyBehavior
+              >
+                <a className="inline-block rounded-full bg-white px-4 py-2 text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
+                  https://rocky-mountain-sourcing.vercel.app/
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto mb-12 max-w-7xl">
+          {" "}
+          {/* Centering the grid */}
+          <div className="grid grid-cols-1 items-center gap-4 pb-16 md:grid-cols-2 md:gap-24">
             <div>
               {" "}
               <h3 className="mb-3 text-5xl font-bold">Coerver Colorado</h3>

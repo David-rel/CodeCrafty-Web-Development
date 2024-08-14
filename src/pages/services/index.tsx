@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 
@@ -20,28 +17,13 @@ const ServiceSection: React.FC<{
   Component: React.JSX.Element;
 }> = ({ id, Component }) => {
   return (
-    <section id={id}>
-      { Component }
+    <section id={id} className="py-16">
+      {Component}
     </section>
   );
 };
 
 function Services() {
-  const router = useRouter();
-
-  const scrollToSection = (sectionId: string) => {
-    const sectionElement = document.getElementById(sectionId);
-    if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    const section = router.pathname.split("#").pop();
-    console.log("moving to section", section);
-    if (section) scrollToSection(section);
-  }, [router.asPath]);
-
   return (
     <div>
       <Head>
@@ -50,14 +32,14 @@ function Services() {
       <Navbar />
       <div>
         <h1>Services</h1>
-        <ServiceSection id="website" Component={<WebsiteService/>} />
-        <ServiceSection id="web-apps" Component={<WebAppsService/>} />
-        <ServiceSection id="domain" Component={<DomainService/>} />
-        <ServiceSection id="maintenance" Component={<MaintenanceService/>} />
-        <ServiceSection id="ai" Component={<AIService/>} />
-        <ServiceSection id="analytics" Component={<AnalyticsService/>} />
-        <ServiceSection id="blog" Component={<BlogService/>} />
-        <ServiceSection id="ecommerce" Component={<EcommerceService/>} />
+        <ServiceSection id="website" Component={<WebsiteService />} />
+        <ServiceSection id="web-apps" Component={<WebAppsService />} />
+        <ServiceSection id="domain" Component={<DomainService />} />
+        <ServiceSection id="maintenance" Component={<MaintenanceService />} />
+        <ServiceSection id="ai" Component={<AIService />} />
+        <ServiceSection id="analytics" Component={<AnalyticsService />} />
+        <ServiceSection id="blog" Component={<BlogService />} />
+        <ServiceSection id="ecommerce" Component={<EcommerceService />} />
       </div>
       <Footer />
     </div>
