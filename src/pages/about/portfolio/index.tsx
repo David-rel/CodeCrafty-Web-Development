@@ -194,12 +194,9 @@ export default function Portfolio() {
                 continuing our collaboration and adding more features as their
                 business evolves.
               </p>
-              <Link
-                href="https://rocky-mountain-sourcing.vercel.app/"
-                legacyBehavior
-              >
+              <Link href="https://www.rockymtnsourcing.com/" legacyBehavior>
                 <a className="inline-block rounded-full bg-white px-4 py-2 text-lg font-semibold text-blue-600 hover:text-blue-700 hover:underline">
-                  https://rocky-mountain-sourcing.vercel.app/
+                  https://www.rockymtnsourcing.com/
                 </a>
               </Link>
             </div>
