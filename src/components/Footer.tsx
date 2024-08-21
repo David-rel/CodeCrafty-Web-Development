@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import Newsletter from "./Newsletter";
 
 function Index() {
   return (
@@ -71,9 +72,7 @@ function Index() {
                   <Link href="/services/website">Website</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
-                  <Link href="/services/webApp">
-                    Web Application
-                  </Link>
+                  <Link href="/services/webApp">Web Application</Link>
                 </li>
                 <li className="mb-5 text-base text-gray-600 hover:text-gray-700">
                   <Link href="/services/domain">Domain and Hosting</Link>
@@ -115,8 +114,8 @@ function Index() {
                 </li>
               </ul>
             </div> */}
-           
           </div>
+          <Newsletter />
         </div>
       </div>
     </div>
