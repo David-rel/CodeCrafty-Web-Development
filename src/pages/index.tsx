@@ -5,7 +5,7 @@ import Footer from "~/components/Footer";
 import TypingText from "~/components/TypingText";
 import { useVisibility } from "../hooks/useVisibility";
 import { useEffect, useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated } from "@react-spring/web";
 import { Carousel } from "~/components/Carousel";
 import PdfViewer from "~/components/PdfViewer";
 
